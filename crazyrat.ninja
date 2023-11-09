@@ -1,0 +1,1035 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>CrazyRat - Offensive Security in ethical way</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Tomasz Zysko (CrazyRat) hacker without heart."/>
+    <meta property="og:site_name" content="Tomasz Zysko (CrazyRat)"/>
+    <meta property="og:title" content="CrazyRat Home Page"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Penetration Tester, Red Teamer, Security Architect, OSCP, OSWP, CISSP, CEH, CPTE"/>
+    <meta property="og:url" content="https://crazyrat.ninja"/>
+    <link rel="canonical" href="https://crazyrat.ninja"/>
+    <link href="https://fonts.googleapis.com/css?display=swap&family=Source+Sans+Pro:200,200italic" rel="stylesheet" type="text/css"/>
+    <style>
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    blockquote, q {
+        quotes: none;
+    }
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    body {
+        -webkit-text-size-adjust:none
+    }
+
+    mark {
+        background-color: transparent;
+        color:inherit
+    }
+
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0
+    }
+
+    input[type="text"], input[type="email"], select, textarea {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance:none
+    }
+
+    *, * :before, * :after {
+        box-sizing: border-box;
+    }
+
+    body {
+        line-height: 1.0;
+        min-height: var(--viewport-height);
+        min-width: 320px;
+        overflow-x: hidden;
+        word-wrap: break-word;
+        background-color: #17192e;
+    }
+
+    :root {
+        --background-height: 100vh;
+        --site-language-alignment: left;
+        --site-language-direction: ltr;
+        --site-language-flex-alignment: flex-start;
+        --site-language-indent-left: 1;
+        --site-language-indent-right: 0;
+        --viewport-height: 100vh;
+    }
+
+    html {
+        font-size: 18pt;
+    }
+
+    u {
+        text-decoration: underline;
+    }
+
+    strong {
+        color: inherit;
+        font-weight: bolder;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    code {
+        background-color: rgba(144, 144, 144, 0.25);
+        border-radius: 0.25em;
+        font-family: 'Lucida Console', 'Courier New', monospace;
+        font-size: 0.9em;
+        font-weight: normal;
+        letter-spacing: 0;
+        margin: 0 0.25em;
+        padding: 0.25em 0.5em;
+        text-indent: 0;
+    }
+
+    mark {
+        background-color: rgba(144, 144, 144, 0.25);
+    }
+
+    s {
+        text-decoration: line-through;
+    }
+
+    sub {
+        font-size: smaller;
+        vertical-align: sub;
+    }
+
+    sup {
+        font-size: smaller;
+        vertical-align: super;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+        transition: color 0.25s ease;
+    }
+
+    #wrapper {
+        -webkit-overflow-scrolling: touch;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: var(--viewport-height);
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+    }
+
+    #main {
+        --alignment: center;
+        --flex-alignment: center;
+        --indent-left: 1;
+        --indent-right: 1;
+        --border-radius-tl: 0;
+        --border-radius-tr: 0;
+        --border-radius-br: 0;
+        --border-radius-bl: 0;
+        align-items: center;
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        justify-content: center;
+        max-width: 100%;
+        position: relative;
+        text-align: var(--alignment);
+        z-index: 1;
+        transition: opacity 1.125s ease 0s, transform 1.125s ease 0s;
+    }
+
+    #main > .inner {
+        --padding-horizontal: 1rem;
+        --padding-vertical: 1.25rem;
+        --spacing: 0.625rem;
+        --width: 26rem;
+        border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
+        max-width: 100%;
+        position: relative;
+        width: var(--width);
+        z-index: 1;
+        padding: var(--padding-vertical) var(--padding-horizontal);
+    }
+
+    #main > .inner > * {
+        margin-top: var(--spacing);
+        margin-bottom: var(--spacing);
+        transition: opacity 1s ease-in-out 0s;
+    }
+
+    #main > .inner > :first-child {
+        margin-top: 0 !important;
+    }
+
+    #main > .inner > :last-child {
+        margin-bottom: 0 !important;
+    }
+
+    #main > .inner > .full {
+        margin-left: calc(var(--padding-horizontal) * -1);
+        max-width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
+        width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
+    }
+
+    #main > .inner > .full:first-child {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        margin-top: calc(var(--padding-vertical) * -1) !important;
+    }
+
+    #main > .inner > .full:last-child {
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        margin-bottom: calc(var(--padding-vertical) * -1) !important;
+    }
+
+    #main > .inner > .full.screen {
+        border-radius: 0 !important;
+        max-width: 100vw;
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+        right: auto;
+    }
+
+    body.is-loading #main {
+        opacity: 0;
+        transform: scale(0.94375);
+    }
+
+    body.is-loading #main > .inner > * {
+        opacity: 0;
+    }
+
+    #main > .inner > :nth-child(2) {
+        transition-delay: 0.125s;
+    }
+
+    #main > .inner > :nth-child(3) {
+        transition-delay: 0.25s;
+    }
+
+    #main > .inner > :nth-child(4) {
+        transition-delay: 0.375s;
+    }
+
+    #main > .inner > :nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    body.is-instant #main, body.is-instant #main > .inner > *, body.is-instant #main > .inner > section > * {
+        transition: none !important;
+    }
+
+    body.is-instant:after {
+        display: none !important;
+        transition: none !important;
+    }
+
+    .image {
+        display: block;
+        line-height: 0;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .image .frame {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        display: inline-block;
+        max-width: 75%;
+        overflow: hidden;
+        vertical-align: top;
+        width: 75%;
+    }
+
+    .image .frame img {
+        border-radius: 0 !important;
+        max-width: 75%;
+        vertical-align: top;
+        width: inherit;
+    }
+
+    .image.full .frame {
+        display: block;
+    }
+
+    .image.full:first-child .frame {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+    .image.full:last-child .frame {
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+    }
+
+    #image01 .frame {
+        width: 15rem;
+        border-radius: 100%;
+        transition: none;
+    }
+
+    #image01 .frame img {
+        transition: none;
+    }
+
+    h1, h2, h3, p {
+        direction: var(--site-language-direction);
+        position: relative;
+    }
+
+    h1 span.p, h2 span.p, h3 span.p, p span.p {
+        display: block;
+        position: relative;
+    }
+
+    h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 strong, h3 strong, p strong, h1 a, h2 a, h3 a, p a, h1 code, h2 code, h3 code, p code, h1 mark, h2 mark, h3 mark, p mark {
+        -webkit-text-fill-color: currentcolor;
+    }
+
+    #title {
+        color: #FFFFFF;
+        font-family: 'Source Sans Pro', sans-serif;
+        letter-spacing: -0.075rem;
+        width: 100%;
+        font-size: 2.25em;
+        line-height: 1.5;
+        font-weight: 200;
+    }
+
+    #title a {
+        text-decoration: underline;
+    }
+
+    #title a:hover {
+        text-decoration: none;
+    }
+
+    #title span.p:nth-child(n + 2) {
+        margin-top: 1rem;
+    }
+
+    #text01 {
+        color: rgba(255, 255, 255, 0.561);
+        font-family: 'Source Sans Pro', sans-serif;
+        letter-spacing: -0.025rem;
+        width: 100%;
+        font-size: 1.25em;
+        line-height: 1.75;
+        font-weight: 200;
+    }
+
+    #text01 a {
+        text-decoration: underline;
+    }
+
+    #text01 a:hover {
+        text-decoration: underline;
+    }
+
+    #text01 span.p:nth-child(n + 2) {
+        margin-top: 1rem;
+    }
+
+    #text02 {
+        color: rgba(255, 255, 255, 0.561);
+        font-family: 'Source Sans Pro', sans-serif;
+        letter-spacing: -0.025rem;
+        width: 100%;
+        font-size: 0.75em;
+        line-height: 1.75;
+        font-weight: 200;
+    }
+
+    #text02 a {
+        text-decoration: underline;
+    }
+
+    #text02 a:hover {
+        text-decoration: underline;
+    }
+
+    #text02 span.p:nth-child(n + 2) {
+        margin-top: 1rem;
+    }
+
+
+    hr {
+        border: 0;
+        padding: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    hr:before {
+        content: '';
+        display: inline-block;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    #divider01:not(:first-child) {
+        margin-top: 1.125rem !important;
+    }
+
+    #divider01:not(:last-child) {
+        margin-bottom: 1.125rem !important;
+    }
+
+    #divider01:before {
+        width: 100%;
+        border-top: solid 1px rgba(255, 255, 255, 0.141);
+        height: 1px;
+        margin-top: -0.5px;
+    }
+
+    .icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: var(--flex-alignment);
+        letter-spacing: 0;
+        padding: 0;
+    }
+
+    .icons li {
+        position: relative;
+        z-index: 1;
+    }
+
+    .icons li a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .icons li a svg {
+        display: block;
+        position: relative;
+    }
+
+    .icons li a + svg {
+        display: block;
+        height: 100%;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .icons li a .label {
+        display: none;
+    }
+
+    #icons01 {
+        font-size: 1.5em;
+        gap: 1.125rem;
+    }
+
+    #icons01:not(:first-child) {
+        margin-top: 1.1875rem !important;
+    }
+
+    #icons01:not(:last-child) {
+        margin-bottom: 1.1875rem !important;
+    }
+
+    #icons01 li a {
+        border-radius: 100%;
+        height: 2em;
+        width: 2em;
+        transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    #icons01 li a svg {
+        height: 90%;
+        width: 90%;
+        transition: fill 0.25s ease;
+    }
+
+    #icons01 a svg {
+        fill: rgba(255, 255, 255, 0.561);
+    }
+
+    #icons01 a {
+        border: solid 1px rgba(255, 255, 255, 0.141);
+    }
+
+    #icons01 a:hover {
+        border-color: #FFFFFF !important;
+    }
+
+    #icons01 a:hover svg {
+        fill: #FFFFFF !important;
+    }
+
+    #icons01 li a + svg {
+        transition: fill 0.25s ease, stroke 0.25s ease;
+    }
+
+    @media (max-width: 1920px) {
+    }
+
+    @media (max-width: 1680px) {
+        html {
+            font-size: 13pt;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        html {
+            font-size: 13pt;
+        }
+    }
+
+    @media (max-width: 1024px) {
+    }
+
+    @media (max-width: 980px) {
+        html {
+            font-size: 11pt;
+        }
+    }
+
+    @media (max-width: 736px) {
+        html {
+            font-size: 11pt;
+        }
+
+        #main {
+            --alignment: center;
+            --flex-alignment: center;
+            --indent-left: 1;
+            --indent-right: 1;
+        }
+
+        #main > .inner {
+            --padding-horizontal: 1rem;
+            --padding-vertical: 1.25rem;
+            --spacing: 0.625rem;
+        }
+
+        #image01 .frame {
+            width: 9rem;
+        }
+
+        #title {
+            letter-spacing: -0.065625rem;
+            width: 100%;
+            font-size: 3em;
+            line-height: 1.5;
+        }
+
+        #text01 {
+            letter-spacing: -0.021875rem;
+            width: 100%;
+            font-size: 1.25em;
+            line-height: 1.75;
+        }
+
+        #divider01:not(:first-child) {
+            margin-top: 1.125rem !important;
+        }
+
+        #divider01:not(:last-child) {
+            margin-bottom: 1.125rem !important;
+        }
+
+        #divider01:before {
+            width: 100rem;
+        }
+
+        #icons01 {
+            font-size: 1.5em;
+            gap: 1.125rem;
+        }
+
+        #icons01:not(:first-child) {
+            margin-top: 0.890625rem !important;
+        }
+
+        #icons01:not(:last-child) {
+            margin-bottom: 0.890625rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #main > .inner {
+            --spacing: 0.546875rem;
+        }
+    }
+
+    @media (max-width: 360px) {
+        #main > .inner {
+            --padding-horizontal: 0.75rem;
+            --padding-vertical: 0.9375rem;
+            --spacing: 0.46875rem;
+        }
+
+        #title {
+            font-size: 3em;
+        }
+
+        #text01 {
+            font-size: 1.25em;
+        }
+
+        #icons01 {
+            gap: 0.84375rem;
+        }
+    }
+    </style>
+    <noscript>
+        <style>
+        body {
+            overflow: auto !important;
+        }
+
+        #main {
+            opacity: 1.0 !important;
+            transform: none !important;
+            transition: none !important;
+            filter: none !important;
+        }
+
+        #main > .inner > * {
+            opacity: 1.0 !important;
+            transform: none !important;
+            transition: none !important;
+            filter: none !important;
+        }
+        </style>
+    </noscript>
+</head>
+<body class="is-loading">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
+        <symbol id="icon-0c4db87eff374f0f1ef47f8f043f0132" viewBox="0 0 100 100">
+	    <path d="M 64.5 16 C 54.8466 16 47 23.8466 47 33.5 C 47 34.612975 47.239051 35.649481 47.441406 36.697266 C 25.881358 34.793239 15.450335 21.403751 14.001953 19.412109 A 1.0001 1.0001 0 0 0 12.326172 19.5 C 10.830125 22.096365 10 25.327371 10 28.5 C 10 33.68572 12.466385 38.537405 16.300781 41.707031 C 15.200572 41.527267 14.28279 41.289576 13.566406 41.050781 C 12.161275 40.582404 11.554687 40.167969 11.554688 40.167969 A 1.0001 1.0001 0 0 0 10 41 C 10 48.238221 14.566882 54.385889 20.953125 56.841797 C 20.622271 56.859584 20.337443 57 20 57 C 19.147392 57 17.845018 56.92449 17.0625 56.808594 A 1.0001 1.0001 0 0 0 15.992188 58.179688 L 16.076172 58.382812 A 1.0001 1.0001 0 0 0 16.078125 58.388672 C 18.616781 64.391466 24.800144 68.552058 31.517578 69.582031 C 26.297103 73.538616 19.508644 76 12.5 76 L 11 76 A 1.0001 1.0001 0 0 0 10.445312 77.832031 C 16.663396 81.97742 24.952062 84 33.5 84 C 60.274418 84 82 62.274418 82 35.5 A 1.0001 1.0001 0 0 0 82 35.490234 C 82 35.490234 81.993998 34.87894 81.986328 34.240234 C 81.981728 33.851303 81.976826 33.639764 81.972656 33.361328 C 86.86431 30.439635 89.800781 26.599609 89.800781 26.599609 A 1.0001 1.0001 0 0 0 88.71875 25.041016 C 88.71875 25.041016 85.486778 25.821369 82.072266 26.207031 C 86.054307 22.877916 87.449219 19.316406 87.449219 19.316406 A 1.0001 1.0001 0 0 0 86.021484 18.121094 C 86.021484 18.121094 81.075033 20.716475 76.613281 20.943359 C 73.467486 17.908115 69.21376 16 64.5 16 z M 64.5 18 C 68.856381 18 72.776277 19.797639 75.59375 22.6875 A 1.0001 1.0001 0 0 0 76.332031 22.988281 C 79.465469 22.913051 82.20469 21.973629 84.257812 21.107422 C 83.286248 22.546273 81.678701 24.397531 79.082031 26.076172 A 1.0001 1.0001 0 0 0 78.708984 27.314453 C 78.761294 27.434385 78.819031 27.620382 78.912109 27.857422 A 1.0001 1.0001 0 0 0 79.865234 28.490234 C 82.084306 28.441124 84.331582 28.072004 86.091797 27.712891 C 84.765988 29.00661 82.862586 30.620803 80.474609 31.966797 A 1.0001 1.0001 0 0 0 79.966797 32.878906 C 79.966799 32.878961 79.978718 33.626627 79.986328 34.263672 C 79.993944 34.900716 80 35.509766 80 35.509766 C 79.994637 61.198775 59.19027 82 33.5 82 C 26.599599 82 19.989658 80.52774 14.599609 77.806641 C 22.152358 77.330627 29.387787 74.464381 34.666016 69.746094 A 1.0001 1.0001 0 0 0 34.027344 68 C 27.717528 67.823398 21.64961 64.083733 18.755859 58.917969 C 19.189528 58.939162 19.629741 59 20 59 C 22.215848 59 24.339214 58.651386 26.333984 57.943359 A 1.0001 1.0001 0 0 0 26.060547 56.001953 C 18.746713 55.552973 12.927418 49.829862 12.154297 42.599609 C 12.510284 42.756951 12.434169 42.782744 12.933594 42.949219 C 14.528462 43.480842 16.888889 44 20 44 A 1.0001 1.0001 0 0 0 20.427734 42.095703 C 15.467541 39.75499 12 34.266873 12 28.5 C 12 26.20086 12.611205 23.910494 13.501953 21.892578 C 16.60185 25.774302 27.420269 37.485392 48.537109 38.863281 A 1.0001 1.0001 0 0 0 49.566406 37.599609 C 49.20555 36.284657 49 34.916686 49 33.5 C 49 24.9274 55.9274 18 64.5 18 z M 64.5 21 C 60.811943 21 57.496914 22.617858 55.208984 25.166016 A 0.50005 0.50005 0 1 0 55.953125 25.833984 C 58.061196 23.486142 61.104057 22 64.5 22 C 67.36354 22 70.04768 23.047904 72.166016 24.955078 A 0.50005 0.50005 0 1 0 72.833984 24.212891 C 70.53832 22.146065 67.60846 21 64.5 21 z M 53.617188 27.994141 A 0.50005 0.50005 0 0 0 53.150391 28.291016 C 52.698066 29.272789 52.372841 30.319587 52.1875 31.416016 A 0.50026397 0.50026397 0 1 0 53.173828 31.583984 C 53.344487 30.574413 53.642918 29.611211 54.058594 28.708984 A 0.50005 0.50005 0 0 0 53.617188 27.994141 z M 52.492188 32.992188 A 0.50005 0.50005 0 0 0 52 33.5 C 52 33.87054 52.044266 34.220554 52.072266 34.542969 A 0.50005 0.50005 0 1 0 53.068359 34.457031 C 53.03835 34.111448 53 33.78746 53 33.5 A 0.50005 0.50005 0 0 0 52.492188 32.992188 z M 72.548828 52.994141 A 0.50005 0.50005 0 0 0 72.083984 53.289062 C 67.250061 63.728797 58.30392 71.885733 47.335938 75.673828 A 0.5003204 0.5003204 0 1 0 47.664062 76.619141 C 58.89208 72.741235 68.042158 64.397204 72.990234 53.710938 A 0.50005 0.50005 0 0 0 72.548828 52.994141 z M 41.490234 77.240234 A 0.50005 0.50005 0 0 0 41.40625 77.25 C 39.79001 77.556256 38.140748 77.768095 36.464844 77.884766 A 0.50025983 0.50025983 0 1 0 36.535156 78.882812 C 38.249252 78.763484 39.93799 78.546166 41.59375 78.232422 A 0.50005 0.50005 0 0 0 41.490234 77.240234 z M 32.509766 77.970703 A 0.50009537 0.50009537 0 1 0 32.490234 78.970703 C 32.810171 78.977388 33.141239 79 33.5 79 A 0.50005 0.50005 0 1 0 33.5 78 C 33.184761 78 32.859827 77.978023 32.509766 77.970703 z"/>
+        </symbol>
+        <symbol id="icon-a1eb5cac0cee3b05a40d856c98ce14a5" viewBox="0 0 40 40">
+            <path d="M27.2,4.7v4.9h-2.9c-1.1,0-1.8,0.2-2.1,0.6c-0.4,0.5-0.6,1.1-0.6,2v3.5H27l-0.7,5.4h-4.7v14H16v-14h-4.7v-5.4H16v-4.1 c0-2.3,0.6-4.1,1.9-5.3s2.9-1.9,5.2-1.9C24.8,4.4,26.2,4.5,27.2,4.7L27.2,4.7z"/>
+        </symbol>
+        <symbol id="icon-85976685de3e4af37529a1ce5d57d2a7" viewBox="0 0 100 100">
+	    <path d="M 30.306641 17.654297 C 23.138641 17.654297 17.306641 23.486297 17.306641 30.654297 L 17.306641 69.654297 C 17.306641 76.822297 23.138641 82.654297 30.306641 82.654297 L 69.306641 82.654297 C 76.474641 82.654297 82.306641 76.822297 82.306641 69.654297 L 82.306641 30.654297 C 82.306641 23.485297 76.475641 17.654297 69.306641 17.654297 L 30.306641 17.654297 z M 30.306641 19.654297 L 69.306641 19.654297 C 75.371641 19.654297 80.306641 24.589297 80.306641 30.654297 L 80.306641 69.654297 C 80.306641 75.719297 75.371641 80.654297 69.306641 80.654297 L 30.306641 80.654297 C 24.241641 80.654297 19.306641 75.719297 19.306641 69.654297 L 19.306641 30.654297 C 19.306641 24.589297 24.241641 19.654297 30.306641 19.654297 z M 33.144531 22.652344 C 27.168531 22.652344 22.306641 27.514234 22.306641 33.490234 L 22.306641 66.816406 C 22.306641 72.792406 27.168531 77.652344 33.144531 77.652344 L 66.470703 77.652344 C 72.446703 77.652344 77.306641 72.792406 77.306641 66.816406 L 77.306641 48.154297 C 77.306641 47.877297 77.082641 47.654297 76.806641 47.654297 C 76.530641 47.654297 76.306641 47.878297 76.306641 48.154297 L 76.306641 66.816406 C 76.306641 72.240406 71.894703 76.654297 66.470703 76.654297 L 33.144531 76.654297 C 27.720531 76.654297 23.306641 72.240406 23.306641 66.816406 L 23.306641 33.490234 C 23.306641 28.066234 27.720531 23.652344 33.144531 23.652344 L 66.806641 23.652344 C 67.082641 23.652344 67.306641 23.428344 67.306641 23.152344 C 67.306641 22.876344 67.082641 22.652344 66.806641 22.652344 L 33.144531 22.652344 z M 38.824219 35.695312 C 36.737219 35.695312 35.222656 37.157828 35.222656 39.173828 C 35.222656 41.189828 36.706109 42.652344 38.787109 42.652344 C 40.874109 42.652344 42.390625 41.190109 42.390625 39.162109 C 42.340625 37.121109 40.872219 35.695312 38.824219 35.695312 z M 38.824219 36.695312 C 40.345219 36.695312 41.353625 37.674781 41.390625 39.175781 C 41.391625 40.634781 40.321906 41.654297 38.753906 41.654297 C 37.264906 41.654297 36.222656 40.634781 36.222656 39.175781 C 36.222656 37.715781 37.292219 36.695312 38.824219 36.695312 z M 76.806641 37.654297 C 76.530641 37.654297 76.306641 37.877297 76.306641 38.154297 L 76.306641 40.154297 C 76.306641 40.430297 76.530641 40.654297 76.806641 40.654297 C 77.082641 40.654297 77.306641 40.430297 77.306641 40.154297 L 77.306641 38.154297 C 77.306641 37.878297 77.082641 37.654297 76.806641 37.654297 z M 76.806641 41.654297 C 76.530641 41.654297 76.306641 41.878297 76.306641 42.154297 L 76.306641 46.154297 C 76.306641 46.430297 76.530641 46.654297 76.806641 46.654297 C 77.082641 46.654297 77.306641 46.430297 77.306641 46.154297 L 77.306641 42.154297 C 77.306641 41.877297 77.082641 41.654297 76.806641 41.654297 z M 57.576172 44.53125 C 55.376172 44.54425 53.592687 45.201031 52.304688 46.582031 L 52.304688 45.152344 C 52.304688 44.876344 52.080688 44.652344 51.804688 44.652344 L 45.730469 44.652344 C 45.593469 44.652344 45.462188 44.707641 45.367188 44.806641 C 45.273187 44.905641 45.224469 45.039781 45.230469 45.175781 C 45.311469 46.924781 45.230469 63.978391 45.230469 64.150391 C 45.229469 64.284391 45.282 64.411859 45.375 64.505859 C 45.469 64.599859 45.596516 64.652344 45.728516 64.652344 L 51.806641 64.652344 C 52.082641 64.652344 52.306641 64.428344 52.306641 64.152344 L 52.306641 53.539062 C 52.306641 52.927062 52.365422 52.472547 52.482422 52.185547 C 52.725422 51.585547 53.481625 50.189453 55.265625 50.189453 C 57.933625 50.189453 58.222656 52.896453 58.222656 54.064453 L 58.304688 64.15625 C 58.306688 64.43125 58.530688 64.652344 58.804688 64.652344 L 64.804688 64.652344 C 65.080687 64.652344 65.304688 64.428344 65.304688 64.152344 L 65.304688 53.974609 C 65.304688 50.644609 64.483281 48.135578 62.863281 46.517578 C 61.543281 45.199578 59.765172 44.53125 57.576172 44.53125 z M 35.806641 44.654297 C 35.530641 44.654297 35.306641 44.878297 35.306641 45.154297 L 35.306641 64.154297 C 35.306641 64.430297 35.530641 64.654297 35.806641 64.654297 L 41.806641 64.654297 C 42.082641 64.654297 42.306641 64.430297 42.306641 64.154297 L 42.306641 45.154297 C 42.306641 44.878297 42.082641 44.654297 41.806641 44.654297 L 35.806641 44.654297 z M 57.560547 45.533203 L 57.576172 45.533203 C 59.491172 45.533203 61.033203 46.103563 62.158203 47.226562 C 63.583203 48.649563 64.306641 50.919609 64.306641 53.974609 L 64.306641 63.654297 L 59.302734 63.654297 L 59.222656 54.0625 C 59.222656 51.0575 57.707578 49.189453 55.267578 49.189453 C 53.607578 49.189453 52.219641 50.168594 51.556641 51.808594 C 51.388641 52.220594 51.306641 52.786062 51.306641 53.539062 L 51.306641 63.652344 L 46.232422 63.652344 C 46.245422 60.956344 46.295188 48.681297 46.242188 45.654297 L 51.306641 45.654297 L 51.306641 47.957031 C 51.250641 48.098031 51.273609 48.261437 51.349609 48.398438 C 51.438609 48.555437 51.625641 48.654297 51.806641 48.654297 C 52.014641 48.654297 52.192578 48.488063 52.267578 48.289062 C 52.997578 47.089062 54.345547 45.533203 57.560547 45.533203 z M 36.306641 45.654297 L 41.306641 45.654297 L 41.306641 63.654297 L 36.306641 63.654297 L 36.306641 45.654297 z"/>
+        </symbol>
+        <symbol id="icon-c3c8e1063e3b7f84f6b54712741de139" viewBox="0 0 100 100">
+	    <path d="M 50 15 C 30.681866 15 15 30.68188 15 50 C 15 69.31812 30.681866 85 50 85 C 69.318134 85 85 69.31812 85 50 C 85 30.68188 69.318134 15 50 15 z M 50 17 C 68.237254 17 83 31.762758 83 50 C 83 68.237242 68.237254 83 50 83 C 31.762746 83 17 68.237242 17 50 C 17 31.762758 31.762746 17 50 17 z M 50 21 C 33.989776 21 21 33.989776 21 50 C 21 66.010224 33.989776 79 50 79 C 56.257603 79 62.057391 77.015569 66.796875 73.642578 A 0.50005 0.50005 0 1 0 66.216797 72.828125 C 64.02537 74.387717 61.595952 75.628533 59 76.509766 L 59 67.654297 C 59 65.362555 57.875049 63.332743 56.197266 62 L 56.949219 62 C 64.125169 62 69.955078 56.217233 69.955078 49.039062 C 69.955078 45.680566 68.634131 42.648229 66.541016 40.341797 C 66.917166 38.069441 66.871804 35.037218 65.972656 32.341797 A 0.50005 0.50005 0 0 0 65.498047 32 C 60.908282 32 57.379304 35.29733 56.632812 36 L 44.166016 36 C 43.470527 35.335798 40.090535 32 35.5 32 A 0.50005 0.50005 0 0 0 35.025391 32.341797 C 34.228287 34.734105 33.953379 37.468413 34.160156 39.599609 C 31.643771 41.968046 30.046875 45.309801 30.046875 49.039062 C 30.046875 56.217233 35.876881 61.998047 43.052734 61.998047 L 44.046875 61.998047 C 42.68886 62.982838 41.623099 64.293745 41.212891 65.96875 C 40.286771 65.95965 39.243539 65.92719 38.279297 65.677734 C 37.220658 65.403858 36.304039 64.919165 35.734375 64.064453 C 34.484775 62.190053 33.555191 61.211167 32.710938 60.6875 C 31.866682 60.163833 31.1145 60.150391 30.5 60.150391 C 30.109167 60.150391 29.748902 60.250351 29.474609 60.476562 C 29.200317 60.702776 29.046002 61.048332 29.027344 61.392578 C 28.990024 62.081071 29.368159 62.786127 30.046875 63.464844 C 31.276875 64.694844 31.182109 64.565391 32.412109 67.025391 C 33.489153 69.181137 36.234373 70.834325 41 70.955078 L 41 76.513672 C 29.950742 72.766267 22 62.319434 22 50 C 22 34.530224 34.530224 22 50 22 C 65.469776 22 78 34.530224 78 50 C 78 52.885591 77.564291 55.669322 76.753906 58.287109 A 0.50005 0.50005 0 1 0 77.708984 58.582031 C 78.5486 55.869818 79 52.986409 79 50 C 79 33.989776 66.010224 21 50 21 z M 35.886719 33.068359 C 39.907048 33.268403 43.032917 36.284719 43.652344 36.865234 A 0.50005 0.50005 0 0 0 43.994141 37 L 56.796875 37 A 0.50005 0.50005 0 0 0 57.138672 36.863281 C 57.71237 36.323732 61.066829 33.276043 65.099609 33.070312 C 65.832243 35.542279 65.90584 38.369116 65.544922 40.376953 A 0.50005 0.50005 0 0 0 65.673828 40.808594 C 67.704625 42.959471 68.955078 45.849047 68.955078 49.039062 C 68.955078 55.676893 63.589269 61 56.949219 61 L 54.5 61 A 0.50005 0.50005 0 0 0 54.291016 61.955078 C 56.436878 62.938714 58 65.142453 58 67.654297 L 58 76.822266 C 55.463784 77.577774 52.783033 78 50 78 C 47.218912 78 44.535356 77.590149 42 76.835938 L 42 70.5 A 0.50005 0.50005 0 0 0 41.5 70 C 36.611467 70 34.2132 68.39393 33.306641 66.578125 C 32.076641 64.118125 31.983906 63.987813 30.753906 62.757812 C 30.202623 62.20653 30.01466 61.681273 30.027344 61.447266 C 30.033644 61.330262 30.059378 61.290897 30.111328 61.248047 C 30.163288 61.205197 30.275833 61.150391 30.5 61.150391 C 31.1145 61.150391 31.540598 61.138281 32.183594 61.537109 C 32.82659 61.935942 33.691944 62.803541 34.902344 64.619141 C 35.64968 65.740428 36.824732 66.333408 38.027344 66.644531 C 39.229955 66.955655 40.484833 66.998047 41.5 66.998047 A 0.50005 0.50005 0 0 0 41.994141 66.580078 C 42.328173 64.526464 43.842569 62.807595 45.708984 61.953125 A 0.50005 0.50005 0 0 0 45.5 60.998047 L 43.052734 60.998047 C 36.412588 60.998047 31.046875 55.676894 31.046875 49.039062 C 31.046875 45.513478 32.571391 42.361995 34.990234 40.166016 A 0.50005 0.50005 0 0 0 35.150391 39.736328 C 34.933645 37.881846 35.208061 35.307415 35.886719 33.068359 z M 36.171875 41.974609 A 0.50005 0.50005 0 0 0 35.832031 42.132812 C 34.939977 43.05849 34.246587 44.123814 33.775391 45.28125 A 0.50005 0.50005 0 1 0 34.701172 45.658203 C 35.123975 44.619639 35.746789 43.662495 36.552734 42.826172 A 0.50005 0.50005 0 0 0 36.171875 41.974609 z M 33.634766 47.021484 A 0.50005 0.50005 0 0 0 33.169922 47.449219 C 33.087872 47.969906 33.046875 48.501021 33.046875 49.039062 C 33.046875 49.567907 33.087865 50.089628 33.167969 50.597656 A 0.50005 0.50005 0 1 0 34.154297 50.441406 C 34.082397 49.985435 34.046875 49.516219 34.046875 49.039062 C 34.046875 48.553105 34.084255 48.074781 34.158203 47.605469 A 0.50005 0.50005 0 0 0 33.634766 47.021484 z M 34.195312 51.980469 A 0.50005 0.50005 0 0 0 33.726562 52.669922 C 34.985945 55.8963 37.872171 58.311364 41.373047 58.90625 A 0.50005 0.50005 0 1 0 41.539062 57.921875 C 38.389939 57.386761 35.79082 55.208262 34.658203 52.306641 A 0.50005 0.50005 0 0 0 34.195312 51.980469 z M 76.509766 59.935547 A 0.50005 0.50005 0 0 0 76.0625 60.257812 C 75.074305 62.767592 73.732636 65.099497 72.099609 67.195312 A 0.50028355 0.50028355 0 1 0 72.888672 67.810547 C 74.579645 65.640363 75.968382 63.225221 76.992188 60.625 A 0.50005 0.50005 0 0 0 76.509766 59.935547 z M 70.763672 68.988281 A 0.50005 0.50005 0 0 0 70.425781 69.152344 C 69.754741 69.867597 69.045712 70.546718 68.302734 71.189453 A 0.50005 0.50005 0 1 0 68.957031 71.945312 C 69.726054 71.280047 70.459338 70.576684 71.154297 69.835938 A 0.50005 0.50005 0 0 0 70.814453 68.988281 A 0.50005 0.50005 0 0 0 70.763672 68.988281 z"/>            
+        </symbol>
+    </svg>
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <div id="image01" class="image">
+                    <span class="frame">
+                        <img src="img/gotroot_square.jpg" alt="Got Root Face"/>
+                    </span>
+                </div>
+                <h1 id="title">Tomasz Zysko (CrazyRat)</h1>
+                <p id="text01">Penetration Tester, Red Teamer, Security Architect - all about offensive side of the cybersecurity. Mostly breaks to learn and fix at the end.</p>
+		<p id="text02">I'm a security consultant for DevOps. System administrator when needed and full time IT Architect. I also mess up with code. Recently I'm part of the Red Team doing all bad things for greater good.</p>
+		<p id="text02">If you want to quickly get the overview of my confirmed experience check out <a href="certs.html">this awesome cybersecurity certification roadmap</a> on which I've marked certs I own. My progress in learning of Microsoft/Azure stack is visible <a href="https://learn.microsoft.com/en-gb/users/crazyrat/">here</a>.</p>
+		<p id="text02">In addition, you can check how am I doing at <a href="https://app.hackthebox.eu/profile/234030">Hack The Box</a> and <a href="https://pentesterlab.com/profile/crazyrat">Pentester lab</a> platforms.</p>
+<hr id="divider01">
+                <ul id="icons01" class="icons">
+                    <li>
+                        <a class="n02" href="https://linkedin.com/in/crazyrat/">
+                            <svg>
+                                <use xlink:href="#icon-85976685de3e4af37529a1ce5d57d2a7"></use>
+                            </svg>
+                            <span class="label">LinkedIn</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="n01" href="https://twitter.com/crazyratpl">
+                            <svg>
+                                <use xlink:href="#icon-0c4db87eff374f0f1ef47f8f043f0132"></use>
+                            </svg>
+                            <span class="label">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="n04" href="https://github.com/crazyrat-software/">
+                            <svg>
+                                <use xlink:href="#icon-c3c8e1063e3b7f84f6b54712741de139"></use>
+                            </svg>
+                            <span class="label">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+<hr id="divider01">
+<p id="text02">Copyright &copy; CrazyRat 2023.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function() {
+        var on = addEventListener,
+            $ = function(q) {
+                return document.querySelector(q)
+            },
+            $$ = function(q) {
+                return document.querySelectorAll(q)
+            },
+            $body = document.body,
+            $inner = $('.inner'),
+            client = (function() {
+                var o = {
+                        browser: 'other',
+                        browserVersion: 0,
+                        os: 'other',
+                        osVersion: 0,
+                        mobile: false,
+                        canUse: null,
+                        flags: {
+                            lsdUnits: false,
+                        },
+                    },
+                    ua = navigator.userAgent,
+                    a,
+                    i;
+                a = [['firefox', /Firefox\/([0-9\.]+)/], ['edge', /Edge\/([0-9\.]+)/], ['safari', /Version\/([0-9\.]+).+Safari/], ['chrome', /Chrome\/([0-9\.]+)/], ['chrome', /CriOS\/([0-9\.]+)/], ['ie', /Trident\/.+rv:([0-9]+)/]];
+                for (i = 0; i < a.length; i++) {
+                    if (ua.match(a[i][1])) {
+                        o.browser = a[i][0];
+                        o.browserVersion = parseFloat(RegExp.$1);
+                        break;
+                    }
+                }
+                a = [['ios', /([0-9_]+) like Mac OS X/, function(v) {
+                    return v.replace('_', '.').replace('_', '');
+                }], ['ios', /CPU like Mac OS X/, function(v) {
+                    return 0
+                }], ['ios', /iPad; CPU/, function(v) {
+                    return 0
+                }], ['android', /Android ([0-9\.]+)/, null], ['mac', /Macintosh.+Mac OS X ([0-9_]+)/, function(v) {
+                    return v.replace('_', '.').replace('_', '');
+                }], ['windows', /Windows NT ([0-9\.]+)/, null], ['undefined', /Undefined/, null], ];
+                for (i = 0; i < a.length; i++) {
+                    if (ua.match(a[i][1])) {
+                        o.os = a[i][0];
+                        o.osVersion = parseFloat(a[i][2] ? (a[i][2])(RegExp.$1) : RegExp.$1);
+                        break;
+                    }
+                }
+                if (o.os == 'mac' && ('ontouchstart' in window) && ((screen.width == 1024 && screen.height == 1366) || (screen.width == 834 && screen.height == 1112) || (screen.width == 810 && screen.height == 1080) || (screen.width == 768 && screen.height == 1024)))
+                    o.os = 'ios';
+                o.mobile = (o.os == 'android' || o.os == 'ios');
+                var _canUse = document.createElement('div');
+                o.canUse = function(property, value) {
+                    var style;
+                    style = _canUse.style;
+                    if (!(property in style))
+                        return false;
+                    if (typeof value !== 'undefined') {
+                        style[property] = value;
+                        if (style[property] == '')
+                            return false;
+                    }
+                    return true;
+                };
+                o.flags.lsdUnits = o.canUse('width', '100dvw');
+                return o;
+            }()),
+            trigger = function(t) {
+                dispatchEvent(new Event(t));
+            },
+            cssRules = function(selectorText) {
+                var ss = document.styleSheets,
+                    a = [],
+                    f = function(s) {
+                        var r = s.cssRules,
+                            i;
+                        for (i = 0; i < r.length; i++) {
+                            if (r[i] instanceof CSSMediaRule && matchMedia(r[i].conditionText).matches)
+                                (f)(r[i]);
+                            else if (r[i] instanceof CSSStyleRule && r[i].selectorText == selectorText)
+                                a.push(r[i]);
+                        }
+                    },
+                    x,
+                    i;
+                for (i = 0; i < ss.length; i++)
+                    f(ss[i]);
+                return a;
+            },
+            thisHash = function() {
+                var h = location.hash ? location.hash.substring(1) : null,
+                    a;
+                if (!h)
+                    return null;
+                if (h.match(/\?/)) {
+                    a = h.split('?');
+                    h = a[0];
+                    history.replaceState(undefined, undefined, '#' + h);
+                    window.location.search = a[1];
+                }
+                if (h.length > 0 && !h.match(/^[a-zA-Z]/))
+                    h = 'x' + h;
+                if (typeof h == 'string')
+                    h = h.toLowerCase();
+                return h;
+            },
+            scrollToElement = function(e, style, duration) {
+                var y,
+                    cy,
+                    dy,
+                    start,
+                    easing,
+                    offset,
+                    f;
+                if (!e)
+                    y = 0;
+                else {
+                    offset = (e.dataset.scrollOffset ? parseInt(e.dataset.scrollOffset) : 0) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+                    switch (e.dataset.scrollBehavior ? e.dataset.scrollBehavior : 'default') {
+                    case 'default':
+                    default:
+                        y = e.offsetTop + offset;
+                        break;
+                    case 'center':
+                        if (e.offsetHeight < window.innerHeight)
+                            y = e.offsetTop - ((window.innerHeight - e.offsetHeight) / 2) + offset;
+                        else
+                            y = e.offsetTop - offset;
+                        break;
+                    case 'previous':
+                        if (e.previousElementSibling)
+                            y = e.previousElementSibling.offsetTop + e.previousElementSibling.offsetHeight + offset;
+                        else
+                            y = e.offsetTop + offset;
+                        break;
+                    }
+                }
+                if (!style)
+                    style = 'smooth';
+                if (!duration)
+                    duration = 750;
+                if (style == 'instant') {
+                    window.scrollTo(0, y);
+                    return;
+                }
+                start = Date.now();
+                cy = window.scrollY;
+                dy = y - cy;
+                switch (style) {
+                case 'linear':
+                    easing = function(t) {
+                        return t
+                    };
+                    break;
+                case 'smooth':
+                    easing = function(t) {
+                        return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+                    };
+                    break;
+                }
+                f = function() {
+                    var t = Date.now() - start;
+                    if (t >= duration)
+                        window.scroll(0, y);
+                    else {
+                        window.scroll(0, cy + (dy * easing(t / duration)));
+                        requestAnimationFrame(f);
+                    }
+                };
+                f();
+            },
+            scrollToTop = function() {
+                scrollToElement(null);
+            },
+            loadElements = function(parent) {
+                var a,
+                    e,
+                    x,
+                    i;
+                a = parent.querySelectorAll('iframe[data-src]:not([data-src=""])');
+                for (i = 0; i < a.length; i++) {
+                    a[i].contentWindow.location.replace(a[i].dataset.src);
+                    a[i].dataset.initialSrc = a[i].dataset.src;
+                    a[i].dataset.src = '';
+                }
+                a = parent.querySelectorAll('video[autoplay]');
+                for (i = 0; i < a.length; i++) {
+                    if (a[i].paused)
+                        a[i].play();
+                }
+                e = parent.querySelector('[data-autofocus="1"]');
+                x = e ? e.tagName : null;
+                switch (x) {
+                case 'FORM':
+                    e = e.querySelector('.field input, .field select, .field textarea');
+                    if (e)
+                        e.focus();
+                    break;
+                default:
+                    break;
+                }
+            },
+            unloadElements = function(parent) {
+                var a,
+                    e,
+                    x,
+                    i;
+                a = parent.querySelectorAll('iframe[data-src=""]');
+                for (i = 0; i < a.length; i++) {
+                    if (a[i].dataset.srcUnload === '0')
+                        continue;
+                    if ('initialSrc' in a[i].dataset)
+                        a[i].dataset.src = a[i].dataset.initialSrc;
+                    else
+                        a[i].dataset.src = a[i].src;
+                    a[i].contentWindow.location.replace('about:blank');
+                }
+                a = parent.querySelectorAll('video');
+                for (i = 0; i < a.length; i++) {
+                    if (!a[i].paused)
+                        a[i].pause();
+                }
+                e = $(':focus');
+                if (e)
+                    e.blur();
+            };
+        window._scrollToTop = scrollToTop;
+        var thisURL = function() {
+            return window.location.href.replace(window.location.search, '').replace(/#$/, '');
+        };
+        var getVar = function(name) {
+            var a = window.location.search.substring(1).split('&'),
+                b,
+                k;
+            for (k in a) {
+                b = a[k].split('=');
+                if (b[0] == name)
+                    return b[1];
+            }
+            return null;
+        };
+        var errors = {
+            handle: function(handler) {
+                window.onerror = function(message, url, line, column, error) {
+                    (handler)(error.message);
+                    return true;
+                };
+            },
+            unhandle: function() {
+                window.onerror = null;
+            }
+        };
+        on('load', function() {
+            setTimeout(function() {
+                $body.className = $body.className.replace(/\bis-loading\b/, 'is-playing');
+                setTimeout(function() {
+                    $body.className = $body.className.replace(/\bis-playing\b/, 'is-ready');
+                }, 1500);
+            }, 100);
+        });
+        loadElements(document.body);
+        var style,
+            sheet,
+            rule;
+        style = document.createElement('style');
+        style.appendChild(document.createTextNode(''));
+        document.head.appendChild(style);
+        sheet = style.sheet;
+        if (client.mobile) {
+            (function() {
+                if (client.flags.lsdUnits) {
+                    document.documentElement.style.setProperty('--viewport-height', '100dvh');
+                    document.documentElement.style.setProperty('--background-height', '100lvh');
+                } else {
+                    var f = function() {
+                        document.documentElement.style.setProperty('--viewport-height', window.innerHeight + 'px');
+                        document.documentElement.style.setProperty('--background-height', (window.innerHeight + 250) + 'px');
+                    };
+                    on('load', f);
+                    on('resize', f);
+                    on('orientationchange', function() {
+                        setTimeout(function() {
+                            (f)();
+                        }, 100);
+                    });
+                }
+            })();
+        }
+        if (client.os == 'android') {
+            (function() {
+                sheet.insertRule('body::after { }', 0);
+                rule = sheet.cssRules[0];
+                var f = function() {
+                    rule.style.cssText = 'height: ' + (Math.max(screen.width, screen.height)) + 'px';
+                };
+                on('load', f);
+                on('orientationchange', f);
+                on('touchmove', f);
+            })();
+            $body.classList.add('is-touch');
+        } else if (client.os == 'ios') {
+            if (client.osVersion <= 11)
+                (function() {
+                    sheet.insertRule('body::after { }', 0);
+                    rule = sheet.cssRules[0];
+                    rule.style.cssText = '-webkit-transform: scale(1.0)';
+                })();
+            if (client.osVersion <= 11)
+                (function() {
+                    sheet.insertRule('body.ios-focus-fix::before { }', 0);
+                    rule = sheet.cssRules[0];
+                    rule.style.cssText = 'height: calc(100% + 60px)';
+                    on('focus', function(event) {
+                        $body.classList.add('ios-focus-fix');
+                    }, true);
+                    on('blur', function(event) {
+                        $body.classList.remove('ios-focus-fix');
+                    }, true);
+                })();
+            $body.classList.add('is-touch');
+        }
+    })();
+    </script>
+</body>
+</html>
+
