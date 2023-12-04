@@ -977,8 +977,8 @@
                 $body.className = $body.className.replace(/\bis-loading\b/, 'is-playing');
                 setTimeout(function() {
                     $body.className = $body.className.replace(/\bis-playing\b/, 'is-ready');
-                }, 1500);
-            }, 100);
+                }, 2500);
+            }, 500);
         });
         loadElements(document.body);
         var style,
@@ -1003,7 +1003,7 @@
                     on('orientationchange', function() {
                         setTimeout(function() {
                             (f)();
-                        }, 100);
+                        }, 500);
                     });
                 }
             })();
