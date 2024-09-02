@@ -6,9 +6,19 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://crazyrat.pl/</loc>
-  <lastmod>2023-09-22T10:00:14+00:00</lastmod>
+  <loc>https://crazyrat.ninja/</loc>
+  <lastmod>2024-09-01T10:00:14+00:00</lastmod>
 </url>
 
+<url>
+  <loc>https://crazyrat.ninja/contact/</loc>
+  <lastmod>2024-09-01T10:00:14+00:00</lastmod>
+</url>
+
+
+<url>
+  <loc>https://crazyrat.ninja/about/</loc>
+  <lastmod>2024-09-01T10:00:14+00:00</lastmod>
+</url>
 
 </urlset>
