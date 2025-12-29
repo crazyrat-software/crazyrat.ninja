@@ -1,10 +1,18 @@
 /*
  * CrazyRat - Minimal JavaScript
- * Only essential functionality for cross-platform compatibility
+ * Loading animation and mobile viewport fix
  */
 
 (function() {
     'use strict';
+
+    // Loading animation - remove is-loading class after page loads
+    window.addEventListener('load', function() {
+        // Small delay before starting animation
+        setTimeout(function() {
+            document.body.classList.remove('is-loading');
+        }, 100);
+    });
 
     // Fix for mobile viewport height (address bar issues)
     function setViewportHeight() {
@@ -12,7 +20,6 @@
         document.documentElement.style.setProperty('--vh', vh + 'px');
     }
 
-    // Set on load and resize
     setViewportHeight();
     window.addEventListener('resize', setViewportHeight);
     window.addEventListener('orientationchange', function() {
