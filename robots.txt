@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://crazyrat.pl/sitemap.xml
+Sitemap: https://crazyrat.ninja/sitemap.xml
