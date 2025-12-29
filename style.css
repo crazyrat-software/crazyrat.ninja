@@ -34,6 +34,8 @@ body {
     min-width: 320px;
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
+    position: relative;
+    z-index: 0;
 }
 
 /* Background with blur effect */
