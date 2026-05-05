@@ -5,11 +5,12 @@
 Tomasz Zysko (CrazyRat) is an OSCP and CISSP certified offensive-security expert with 25+ years of experience in penetration testing, red team operations, and security architecture. Sectors: FinTech, insurance, cryptocurrency. Also vCISO advisory.
 
 ## Services
-- Penetration Testing — external & internal network assessments
-- Red Team Operations — adversary simulation
-- Web Application Security — OWASP-aligned assessments
-- Wireless Security Assessment
-- Security Architecture Review
+- Penetration Testing — external & internal network assessments — https://crazyrat.ninja/services/penetration-testing.html
+- Red Team Operations — adversary simulation — https://crazyrat.ninja/services/red-team-operations.html
+- Web Application Security — OWASP-aligned assessments — https://crazyrat.ninja/services/web-application-security.html
+- Wireless Security Assessment — https://crazyrat.ninja/services/wireless-security-assessment.html
+- Security Architecture Review — https://crazyrat.ninja/services/security-architecture-review.html
+- Services hub: https://crazyrat.ninja/services/
 
 ## Contact
 Website:  https://crazyrat.ninja/contact/
