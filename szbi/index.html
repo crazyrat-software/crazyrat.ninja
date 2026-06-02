@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumentacja NIS2 / KSC – Portal Dokumentów</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { background: var(--bg); }
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white; padding: 40px; margin-bottom: 28px; border-radius: 6px;
+  }
+  .hero h1 { font-size: 1.8rem; margin-bottom: 8px; }
+  .hero p { opacity: .85; max-width: 680px; line-height: 1.6; }
+  .hero .sub { font-size: .8rem; opacity: .6; margin-top: 10px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+  .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+  .stat-box {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 6px; padding: 18px 24px; flex: 1; min-width: 140px; text-align: center;
+  }
+  .stat-box .num { font-size: 2rem; font-weight: 700; color: var(--primary); }
+  .stat-box .lbl { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>System Zarządzania Bezpieczeństwem Informacji</h1>
+    <p>Dokumentacja zgodności z Dyrektywą NIS2 oraz nowelizacją polskiej Ustawy o Krajowym Systemie Cyberbezpieczeństwa (KSC). Dokumenty powiązane logicznie, gotowe do wypełnienia przez organizację.</p>
+    <div class="sub">Wersja projektu: 1.0 | Data: <span class="fill-org">▸ wpisz datę zatwierdzenia</span> | Właściciel: <span class="fill-org">▸ nazwa organizacji</span></div>
+  </div>
+
+  <!-- Legenda kolorów -->
+  <div class="section" style="margin-bottom:20px;">
+    <h2>Legenda – pola do wypełnienia przez organizację</h2>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--fill-org);border-color:var(--fill-org-border);"></div>
+        <span><strong>Żółte pole</strong> – organizacja wpisuje własną wartość (brak ograniczeń)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--fill-const);border-color:var(--fill-const-border);"></div>
+        <span><strong>Pomarańczowe pole</strong> – wartość z ograniczeniem <span class="constraint-badge">min/max</span> pokazanym obok</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--fill-ref);border-color:var(--fill-ref-border);"></div>
+        <span><strong>Niebieskie pole</strong> – odwołanie do innego dokumentu lub data</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--fill-critical);border-color:var(--fill-critical-border);"></div>
+        <span><strong>Czerwone pole</strong> – pole krytyczne, wymagane bezwzględnie przez KSC/NIS2</span>
+      </div>
+    </div>
+    <div class="callout info">
+      <div class="icon">ℹ️</div>
+      <div>Pola oznaczone <strong>▸</strong> oznaczają miejsce do wypełnienia. Tekst w nawiasach kwadratowych <code>[...]</code> to instrukcja lub przykład – należy go zastąpić właściwą treścią organizacji.</div>
+    </div>
+  </div>
+
+  <!-- Statystyki -->
+  <div class="stat-row">
+    <div class="stat-box"><div class="num">21</div><div class="lbl">Dokumentów łącznie</div></div>
+    <div class="stat-box"><div class="num">6</div><div class="lbl">Etapów</div></div>
+    <div class="stat-box"><div class="num" id="done-count" style="color:var(--success)">21</div><div class="lbl">Gotowych</div></div>
+    <div class="stat-box"><div class="num" style="color:var(--success)">100%</div><div class="lbl">Kompletność</div></div>
+  </div>
+
+  <!-- ETAP 1 -->
+  <div class="stage-block">
+    <h2><span class="badge etap1">ETAP 1</span> Dokumenty Fundamentalne <span class="badge active" style="margin-left:auto;">✓ Gotowy</span></h2>
+    <p class="muted" style="margin-bottom:12px;">Polityka bezpieczeństwa, zarządzanie ryzykiem i rejestr ryzyk – podstawa całego SZBI.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="doc-grid">
+      <a class="doc-card" href="docs/DOC-001-polityka-bezpieczenstwa.html">
+        <div class="doc-num">DOC-001 <span class="badge active">GOTOWY</span></div>
+        <h3>Polityka Bezpieczeństwa Informacji</h3>
+        <p>Główny dokument SZBI. Cele, zakres, role, zasady. Powiązany ze wszystkimi pozostałymi dokumentami.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-002-zarzadzanie-ryzykiem.html">
+        <div class="doc-num">DOC-002 <span class="badge active">GOTOWY</span></div>
+        <h3>Procedura Zarządzania Ryzykiem</h3>
+        <p>Metodologia oceny i postępowania z ryzykiem cyberbezpieczeństwa. Wymóg art. 8 KSC.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-003-rejestr-ryzyk.html">
+        <div class="doc-num">DOC-003 <span class="badge active">GOTOWY</span></div>
+        <h3>Rejestr Ryzyk</h3>
+        <p>Szablon rejestru z kryteriami akceptacji ryzyka i matrycą prawdopodobieństwo/wpływ.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-004-role-i-odpowiedzialnosci.html">
+        <div class="doc-num">DOC-004 <span class="badge active">GOTOWY</span></div>
+        <h3>Role i Odpowiedzialności (RACI)</h3>
+        <p>Macierz RACI dla wszystkich funkcji bezpieczeństwa. Wymóg KSC dot. osoby odpowiedzialnej za cyberbezpieczeństwo.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ETAP 2 -->
+  <div class="stage-block">
+    <h2><span class="badge etap2">ETAP 2</span> Zarządzanie Incydentami <span class="badge active" style="margin-left:auto;">✓ Gotowy</span></h2>
+    <p class="muted" style="margin-bottom:12px;">Procedury wykrywania, obsługi i zgłaszania incydentów cyberbezpieczeństwa – kluczowy wymóg NIS2/KSC.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="doc-grid">
+      <a class="doc-card" href="docs/DOC-005-polityka-incydentow.html">
+        <div class="doc-num">DOC-005 <span class="badge active">GOTOWY</span></div>
+        <h3>Polityka Zarządzania Incydentami</h3>
+        <p>Definicje, klasyfikacja P1–P4, progi istotności, obowiązki raportowania do CSIRT (24h/72h).</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-006-procedura-zglaszania.html">
+        <div class="doc-num">DOC-006 <span class="badge active">GOTOWY</span></div>
+        <h3>Procedura Zgłaszania Incydentów</h3>
+        <p>Oś czasu, formularze A–D, kroki krok-po-kroku, zgłoszenia do CSIRT i UODO.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-007-plan-reagowania.html">
+        <div class="doc-num">DOC-007 <span class="badge active">GOTOWY</span></div>
+        <h3>Plan Reagowania na Incydenty</h3>
+        <p>Playbooki PB-001–004 (ransomware, konto, wyciek, DDoS), PICERL, komunikacja kryzysowa.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ETAP 3 -->
+  <div class="stage-block">
+    <h2><span class="badge etap3">ETAP 3</span> Kontrola Dostępu, Kryptografia i Dane <span class="badge active" style="margin-left:auto;">✓ Gotowy</span></h2>
+    <p class="muted" style="margin-bottom:12px;">Polityki techniczne dotyczące tożsamości, haseł, szyfrowania i klasyfikacji informacji.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="doc-grid">
+      <a class="doc-card" href="docs/DOC-008-kontrola-dostepu.html">
+        <div class="doc-num">DOC-008 <span class="badge active">GOTOWY</span></div>
+        <h3>Polityka Kontroli Dostępu</h3>
+        <p>Zasady dostępu, MFA, przeglądy uprawnień, privileged access, hasła (min. 8 znaków).</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-009-kryptografia.html">
+        <div class="doc-num">DOC-009 <span class="badge active">GOTOWY</span></div>
+        <h3>Polityka Kryptograficzna</h3>
+        <p>Algorytmy, długości kluczy, zarządzanie certyfikatami, szyfrowanie danych w spoczynku i ruchu.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-010-klasyfikacja-informacji.html">
+        <div class="doc-num">DOC-010 <span class="badge active">GOTOWY</span></div>
+        <h3>Klasyfikacja i Ochrona Informacji</h3>
+        <p>Poziomy klasyfikacji, etykietowanie, obsługa mediów, dane osobowe (RODO).</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ETAP 4 -->
+  <div class="stage-block">
+    <h2><span class="badge etap4">ETAP 4</span> Ciągłość, Backup i Operacje <span class="badge active" style="margin-left:auto;">✓ Gotowy</span></h2>
+    <p class="muted" style="margin-bottom:12px;">Ciągłość działania, odtwarzanie po awarii, zarządzanie zmianami i podatnościami.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="doc-grid">
+      <a class="doc-card" href="docs/DOC-011-ciaglosc-dzialania.html">
+        <div class="doc-num">DOC-011 <span class="badge active">GOTOWY</span></div>
+        <h3>Plan Ciągłości Działania (BCP)</h3>
+        <p>RTO/RPO, procedury awaryjne, testy, komunikacja kryzysowa.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-012-backup.html">
+        <div class="doc-num">DOC-012 <span class="badge active">GOTOWY</span></div>
+        <h3>Procedura Backup i Odtwarzania</h3>
+        <p>Harmonogram, retencja, testy odtwarzania, izolacja kopii zapasowych.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-013-zarzadzanie-zmianami.html">
+        <div class="doc-num">DOC-013 <span class="badge active">GOTOWY</span></div>
+        <h3>Procedura Zarządzania Zmianami</h3>
+        <p>CAB, klasyfikacja zmian, testy, rollback, okna serwisowe.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-014-podatnosci.html">
+        <div class="doc-num">DOC-014 <span class="badge active">GOTOWY</span></div>
+        <h3>Zarządzanie Podatnościami</h3>
+        <p>Skanowanie, CVSS, SLA patchowania (krytyczne 72h), pentesty.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ETAP 5 -->
+  <div class="stage-block">
+    <h2><span class="badge etap5">ETAP 5</span> Łańcuch Dostaw i Zasoby Ludzkie <span class="badge active" style="margin-left:auto;">✓ Gotowy</span></h2>
+    <p class="muted" style="margin-bottom:12px;">Bezpieczeństwo dostawców, pracowników i program szkoleń – wymóg art. 21 NIS2.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="doc-grid">
+      <a class="doc-card" href="docs/DOC-015-dostawcy.html">
+        <div class="doc-num">DOC-015 <span class="badge active">GOTOWY</span></div>
+        <h3>Polityka Zarządzania Dostawcami</h3>
+        <p>Ocena ryzyka dostawcy, wymogi umowne, monitoring, audyty łańcucha dostaw.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-016-bezpieczenstwo-hr.html">
+        <div class="doc-num">DOC-016 <span class="badge active">GOTOWY</span></div>
+        <h3>Bezpieczeństwo Zasobów Ludzkich</h3>
+        <p>Weryfikacja pracowników, umowy NDA, offboarding, kary za naruszenia.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-017-szkolenia.html">
+        <div class="doc-num">DOC-017 <span class="badge active">GOTOWY</span></div>
+        <h3>Program Szkoleń i Świadomości</h3>
+        <p>Plany szkoleń, phishing awareness, obowiązkowe certyfikacje, rejestr.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ETAP 6 -->
+  <div class="stage-block">
+    <h2><span class="badge etap6">ETAP 6</span> Fizyczne, Sieciowe i Aktywa <span class="badge active" style="margin-left:auto;">✓ Gotowy</span></h2>
+    <p class="muted" style="margin-bottom:12px;">Bezpieczeństwo fizyczne, sieci, rejestr aktywów i audyt zgodności.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+    <div class="doc-grid">
+      <a class="doc-card" href="docs/DOC-018-bezpieczenstwo-fizyczne.html">
+        <div class="doc-num">DOC-018 <span class="badge active">GOTOWY</span></div>
+        <h3>Bezpieczeństwo Fizyczne i Środowiskowe</h3>
+        <p>Strefy bezpieczeństwa, kontrola wejścia, serwerownie, CCTV, czysty biurko.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-019-bezpieczenstwo-sieciowe.html">
+        <div class="doc-num">DOC-019 <span class="badge active">GOTOWY</span></div>
+        <h3>Bezpieczeństwo Sieci i Systemów</h3>
+        <p>Segmentacja, DMZ, firewall, monitoring, SOC, logi (min. 12 mies.).</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-020-rejestr-aktywow.html">
+        <div class="doc-num">DOC-020 <span class="badge active">GOTOWY</span></div>
+        <h3>Rejestr Aktywów Informacyjnych</h3>
+        <p>Klasyfikacja aktywów, właściciele, wartość, zależności krytyczne.</p>
+      </a>
+      <a class="doc-card" href="docs/DOC-021-audyt-zgodnosc.html">
+        <div class="doc-num">DOC-021 <span class="badge active">GOTOWY</span></div>
+        <h3>Procedura Audytu i Zgodności</h3>
+        <p>Plan audytów, raportowanie do zarządu, KPIs bezpieczeństwa, deklaracja stosowania.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Wymagania prawne -->
+  <div class="section">
+    <h2>Podstawy prawne</h2>
+    <table>
+      <tr><th>Akt prawny</th><th>Kluczowe wymagania dokumentacyjne</th><th>Powiązane dokumenty</th></tr>
+      <tr><td><strong>Dyrektywa NIS2</strong><br>(UE 2022/2555)</td><td>Art. 21 – środki zarządzania ryzykiem, polityki, ciągłość, łańcuch dostaw, MFA, szyfrowanie, szkolenia</td><td>DOC-001, 002, 011, 015, 008, 009, 017</td></tr>
+      <tr><td><strong>Ustawa KSC</strong><br>(nowelizacja 2024)</td><td>Art. 8 – system zarządzania bezpieczeństwem; art. 10 – obsługa incydentów; art. 15 – zgłaszanie incydentów do CSIRT</td><td>DOC-001, 005, 006, 007</td></tr>
+      <tr><td><strong>RODO</strong><br>(UE 2016/679)</td><td>Środki techniczne i organizacyjne, ochrona danych osobowych, naruszenia danych</td><td>DOC-010, 005, 016</td></tr>
+      <tr><td><strong>ISO/IEC 27001:2022</strong></td><td>Referencyjny standard SZBI – annex A stanowi bazę kontroli</td><td>Wszystkie dokumenty</td></tr>
+    </table>
+  </div>
+
+  <div style="text-align:center; color:var(--muted); font-size:.75rem; padding:20px 0;">
+    Dokumentacja NIS2/KSC v1.0 – Kompletna | 21/21 dokumentów gotowych | Wszystkie 6 etapów zakończone
+  </div>
+</div>
+</body>
+</html>

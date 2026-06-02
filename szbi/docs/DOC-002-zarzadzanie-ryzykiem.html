@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOC-002 Procedura Zarządzania Ryzykiem – NIS2/KSC</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+<header class="top-bar">
+  <span class="logo">SZBI / NIS2</span>
+  <span class="doc-id">DOC-002</span>
+  <span style="flex:1"></span>
+  <a href="../index.html">← Portal dokumentów</a>
+</header>
+
+<aside class="sidebar">
+  <h3>Etap 1 – Fundamenty</h3>
+  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+  <a href="DOC-002-zarzadzanie-ryzykiem.html" class="active">DOC-002 Zarządzanie ryzykiem</a>
+  <a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
+  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+  <h3>Etap 2 – Incydenty</h3>
+  <a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+  <a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+  <h3>Etap 3 – Dostęp i dane</h3>
+  <a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+  <a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+  <h3>Etap 4 – Operacje</h3>
+  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+  <a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+  <h3>Etap 5 – Ludzie</h3>
+  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+  <h3>Etap 6 – Fizyczne/Sieć</h3>
+  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+</aside>
+
+<main class="content">
+
+  <div class="doc-header">
+    <h1>Procedura Zarządzania Ryzykiem Cyberbezpieczeństwa</h1>
+    <div class="subtitle">Metodologia identyfikacji, analizy, oceny i postępowania z ryzykiem</div>
+    <dl class="doc-meta">
+      <dt>Numer dokumentu</dt><dd>DOC-002</dd>
+      <dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
+      <dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
+      <dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+      <dt>Następny przegląd</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+      <dt>Właściciel</dt><dd class="fill-critical">▸ CISO / Osoba odpowiedzialna za cyberbezpieczeństwo</dd>
+      <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+      <dt>Podstawa prawna</dt><dd>Art. 8 ust. 2 KSC; Art. 21(2)(a) NIS2; ISO/IEC 27005:2022</dd>
+      <dt>Nadrzędny dokument</dt><dd><a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a></dd>
+    </dl>
+  </div>
+
+  <!-- 1. Cel -->
+  <div class="section">
+    <h2>1. Cel i Zakres</h2>
+    <p>Niniejsza procedura opisuje metodologię zarządzania ryzykiem cyberbezpieczeństwa stosowaną przez organizację. Zapewnia systematyczne podejście do identyfikacji, analizy, oceny i postępowania z ryzykami, które mogą wpłynąć na poufność, integralność lub dostępność informacji i usług.</p>
+    <p>Procedura ma zastosowanie do:</p>
+    <ul>
+      <li>Wszystkich systemów informacyjnych obsługujących usługi kluczowe/ważne,</li>
+      <li>Infrastruktury IT/OT organizacji,</li>
+      <li>Procesów i usług realizowanych przez dostawców (łańcuch dostaw).</li>
+    </ul>
+    <div class="callout info">
+      <div class="icon">ℹ️</div>
+      <div>Wyniki oceny ryzyka są rejestrowane w <a href="DOC-003-rejestr-ryzyk.html"><strong>DOC-003 Rejestr Ryzyk</strong></a>. Procedura jest stosowana co najmniej raz w roku oraz po istotnych zmianach w środowisku IT.</div>
+    </div>
+  </div>
+
+  <!-- 2. Metodologia -->
+  <div class="section">
+    <h2>2. Metodologia Oceny Ryzyka</h2>
+    <h3>2.1 Wybór metodologii</h3>
+    <div class="fill-block org">
+      <span class="label">▸ Organizacja wypełnia – wybór metodologii</span>
+      <p>Organizacja stosuje następującą metodologię oceny ryzyka:</p>
+      <p><span class="fill-org">▸ [Wybrać jedną lub opisać własną]: OCTAVE Allegro / FAIR / ISO 27005 / NIST SP 800-30 / metodologia własna oparta na macierzy prawdopodobieństwo × wpływ</span></p>
+    </div>
+
+    <h3>2.2 Skala oceny</h3>
+    <p>Organizacja stosuje skalę <span class="fill-const">▸ [3/4/5]-stopniową <span class="constraint-badge">min. 3-stop.</span></span> dla oceny prawdopodobieństwa i wpływu:</p>
+
+    <p class="table-caption">Tabela 1 – Skala prawdopodobieństwa</p>
+    <table>
+      <tr><th>Wartość</th><th>Poziom</th><th>Opis</th><th>Częstotliwość orientacyjna</th></tr>
+      <tr><td><strong>1</strong></td><td>Bardzo niskie</td><td>Zdarzenie wysoce nieprawdopodobne</td><td class="fill-org">▸ [np. raz na 10 lat]</td></tr>
+      <tr><td><strong>2</strong></td><td>Niskie</td><td>Zdarzenie mało prawdopodobne</td><td class="fill-org">▸ [np. raz na 3-5 lat]</td></tr>
+      <tr><td><strong>3</strong></td><td>Średnie</td><td>Zdarzenie możliwe do wystąpienia</td><td class="fill-org">▸ [np. raz na 1-3 lata]</td></tr>
+      <tr><td><strong>4</strong></td><td>Wysokie</td><td>Zdarzenie prawdopodobne</td><td class="fill-org">▸ [np. raz w roku]</td></tr>
+      <tr><td><strong>5</strong></td><td>Bardzo wysokie</td><td>Zdarzenie bardzo prawdopodobne lub regularne</td><td class="fill-org">▸ [np. kilka razy w roku]</td></tr>
+    </table>
+
+    <p class="table-caption">Tabela 2 – Skala wpływu</p>
+    <table>
+      <tr><th>Wartość</th><th>Poziom</th><th>Wpływ finansowy (orientacyjny)</th><th>Wpływ operacyjny</th><th>Wpływ reputacyjny</th></tr>
+      <tr><td><strong>1</strong></td><td>Minimalny</td><td class="fill-org">▸ poniżej [X PLN]</td><td>Brak zakłóceń lub minimalne</td><td>Brak zauważalnych skutków</td></tr>
+      <tr><td><strong>2</strong></td><td>Mały</td><td class="fill-org">▸ [X] – [Y PLN]</td><td>Krótkotrwałe zakłócenia wewnętrzne</td><td>Lokalne / wewnętrzne</td></tr>
+      <tr><td><strong>3</strong></td><td>Średni</td><td class="fill-org">▸ [Y] – [Z PLN]</td><td>Zakłócenia widoczne dla klientów</td><td>Uwaga mediów lokalnych</td></tr>
+      <tr><td><strong>4</strong></td><td>Poważny</td><td class="fill-org">▸ [Z] – [W PLN]</td><td>Istotne zakłócenia usług kluczowych</td><td>Uwaga mediów krajowych</td></tr>
+      <tr><td><strong>5</strong></td><td>Krytyczny</td><td class="fill-org">▸ powyżej [W PLN]</td><td>Utrata zdolności do działania</td><td>Uwaga mediów ogólnoświatowych, kara KSC</td></tr>
+    </table>
+
+    <h3>2.3 Obliczanie poziomu ryzyka</h3>
+    <div style="background:#f0f4ff; border:1px solid #4a90d9; border-radius:6px; padding:16px; margin:12px 0; text-align:center;">
+      <strong style="font-size:1.1rem;">Ryzyko (R) = Prawdopodobieństwo (P) × Wpływ (W)</strong>
+      <p style="font-size:.85rem; color:#5a6a7e; margin-top:6px;">Wynik: 1–25 (przy skali 5-stopniowej) lub odpowiednio przy skali 3-stopniowej: 1–9</p>
+    </div>
+
+    <p class="table-caption">Tabela 3 – Matryca ryzyka (przykład 5×5)</p>
+    <table>
+      <tr>
+        <th>P \ W</th>
+        <th style="background:#1a7a4a;">1<br>Minimalny</th>
+        <th style="background:#5aab5a;">2<br>Mały</th>
+        <th style="background:#d4a000;">3<br>Średni</th>
+        <th style="background:#e07b00;">4<br>Poważny</th>
+        <th style="background:#c0392b;">5<br>Krytyczny</th>
+      </tr>
+      <tr><th>5 – B. wys.</th><td style="background:#d4ffe0;">5</td><td style="background:#fffbcc;">10</td><td style="background:#ffecd0;">15</td><td style="background:#ffe0e0;">20</td><td style="background:#ffb0b0;"><strong>25</strong></td></tr>
+      <tr><th>4 – Wys.</th><td style="background:#d4ffe0;">4</td><td style="background:#fffbcc;">8</td><td style="background:#ffecd0;">12</td><td style="background:#ffe0e0;">16</td><td style="background:#ffe0e0;">20</td></tr>
+      <tr><th>3 – Śred.</th><td style="background:#d4ffe0;">3</td><td style="background:#d4ffe0;">6</td><td style="background:#fffbcc;">9</td><td style="background:#ffecd0;">12</td><td style="background:#ffe0e0;">15</td></tr>
+      <tr><th>2 – Niskie</th><td style="background:#d4ffe0;">2</td><td style="background:#d4ffe0;">4</td><td style="background:#d4ffe0;">6</td><td style="background:#fffbcc;">8</td><td style="background:#ffecd0;">10</td></tr>
+      <tr><th>1 – B. niskie</th><td style="background:#d4ffe0;">1</td><td style="background:#d4ffe0;">2</td><td style="background:#d4ffe0;">3</td><td style="background:#d4ffe0;">4</td><td style="background:#fffbcc;">5</td></tr>
+    </table>
+    <div style="font-size:.8rem; margin-top:8px; display:flex; gap:16px; flex-wrap:wrap;">
+      <span style="background:#d4ffe0;padding:2px 8px;border-radius:3px;">Zielony 1–6: Akceptowalne</span>
+      <span style="background:#fffbcc;padding:2px 8px;border-radius:3px;">Żółty 7–12: Monitorowane</span>
+      <span style="background:#ffecd0;padding:2px 8px;border-radius:3px;">Pomarańczowy 13–16: Wymagające leczenia</span>
+      <span style="background:#ffe0e0;padding:2px 8px;border-radius:3px;">Czerwony 17–25: Pilne działanie</span>
+    </div>
+  </div>
+
+  <!-- 3. Proces zarządzania ryzykiem -->
+  <div class="section">
+    <h2>3. Proces Zarządzania Ryzykiem – Etapy</h2>
+
+    <h3>Etap 1: Ustalenie kontekstu</h3>
+    <p>Przed przystąpieniem do oceny ryzyka należy zdefiniować:</p>
+    <ul>
+      <li>Zakres oceny (system, proces, usługa, cała organizacja),</li>
+      <li>Cele biznesowe i wymagania regulacyjne,</li>
+      <li>Kryteria akceptacji ryzyka (patrz pkt 4),</li>
+      <li>Zasoby zaangażowane w ocenę.</li>
+    </ul>
+    <div class="fill-block org">
+      <span class="label">▸ Organizacja uzupełnia – kontekst zewnętrzny</span>
+      <p><strong>Kontekst zewnętrzny:</strong> <span class="fill-org">▸ [opis otoczenia regulacyjnego, branżowego, geograficznego organizacji]</span></p>
+      <p><strong>Kontekst wewnętrzny:</strong> <span class="fill-org">▸ [opis struktury, procesów, systemów IT/OT organizacji]</span></p>
+    </div>
+
+    <h3>Etap 2: Identyfikacja aktywów</h3>
+    <p>Inwentaryzacja aktywów informacyjnych przeprowadzana jest zgodnie z <a href="DOC-020-rejestr-aktywow.html" class="ref-link">DOC-020 Rejestr Aktywów</a>. Kategorie aktywów:</p>
+    <table>
+      <tr><th>Kategoria</th><th>Przykłady</th></tr>
+      <tr><td>Dane</td><td>Dane klientów, dane operacyjne, dane osobowe, dane finansowe, dokumentacja techniczna</td></tr>
+      <tr><td>Oprogramowanie</td><td>Systemy operacyjne, aplikacje biznesowe, oprogramowanie SCADA/ICS, oprogramowanie custom</td></tr>
+      <tr><td>Sprzęt</td><td>Serwery, urządzenia sieciowe, stacje robocze, urządzenia OT/IoT</td></tr>
+      <tr><td>Usługi</td><td>Usługi w chmurze, połączenia sieciowe, usługi zewnętrznych dostawców</td></tr>
+      <tr><td>Personel</td><td>Pracownicy z uprawnieniami administracyjnymi, personel kluczowy</td></tr>
+      <tr><td>Lokalizacje</td><td>Serwerownie, biura, obiekty przemysłowe</td></tr>
+    </table>
+
+    <h3>Etap 3: Identyfikacja zagrożeń i podatności</h3>
+    <p>Dla każdego aktywu identyfikowane są zagrożenia i powiązane podatności:</p>
+    <table>
+      <tr><th>Kategoria zagrożeń</th><th>Przykładowe zagrożenia</th></tr>
+      <tr><td>Złośliwe oprogramowanie</td><td>Ransomware, wirusy, trojany, spyware, rootkit</td></tr>
+      <tr><td>Ataki sieciowe</td><td>DDoS, man-in-the-middle, SQL injection, XSS</td></tr>
+      <tr><td>Błędy ludzkie</td><td>Nieumyślne usunięcie danych, błędna konfiguracja, phishing</td></tr>
+      <tr><td>Zagrożenia wewnętrzne</td><td>Kradzież danych przez pracownika, sabotaż, nieuprawniony dostęp</td></tr>
+      <tr><td>Awarie techniczne</td><td>Awaria sprzętu, błędy oprogramowania, utrata zasilania</td></tr>
+      <tr><td>Ataki APT</td><td>Zaawansowane ataki ukierunkowane, kampanie szpiegowskie</td></tr>
+      <tr><td>Zagrożenia fizyczne</td><td>Kradzież sprzętu, pożar, powódź, sabotaż fizyczny</td></tr>
+      <tr><td>Łańcuch dostaw</td><td>Kompromitacja oprogramowania dostawcy, backdoor w sprzęcie</td></tr>
+    </table>
+
+    <h3>Etap 4: Analiza i ocena ryzyka</h3>
+    <p>Dla każdego zidentyfikowanego zagrożenia:</p>
+    <ol>
+      <li>Oszacuj <strong>prawdopodobieństwo</strong> (P) wystąpienia wg skali z Tabeli 1,</li>
+      <li>Oszacuj <strong>wpływ</strong> (W) na CIA (poufność, integralność, dostępność) wg Tabeli 2,</li>
+      <li>Oblicz <strong>poziom ryzyka</strong> R = P × W,</li>
+      <li>Uwzględnij istniejące <strong>zabezpieczenia</strong> (ryzyko rezydualne),</li>
+      <li>Porównaj ryzyko rezydualne z <strong>kryterium akceptacji</strong> z pkt 4.</li>
+    </ol>
+
+    <h3>Etap 5: Postępowanie z ryzykiem</h3>
+    <p>Na podstawie oceny wybierz jedną ze strategii postępowania:</p>
+    <table>
+      <tr><th>Strategia</th><th>Opis</th><th>Kiedy stosować</th></tr>
+      <tr><td><strong>Modyfikacja</strong> (leczenie)</td><td>Wdrożenie dodatkowych zabezpieczeń obniżających ryzyko</td><td>Ryzyko &gt; próg akceptacji; opłacalność działania jest wysoka</td></tr>
+      <tr><td><strong>Akceptacja</strong></td><td>Świadome przyjęcie ryzyka bez dodatkowych działań</td><td>Ryzyko ≤ próg akceptacji lub koszty leczenia nieproporcjonalnie wysokie</td></tr>
+      <tr><td><strong>Unikanie</strong></td><td>Zaprzestanie działalności lub eliminacja przyczyny ryzyka</td><td>Ryzyko krytyczne; brak opłacalnych środków zaradczych</td></tr>
+      <tr><td><strong>Transfer</strong></td><td>Ubezpieczenie cyber, umowy SLA z dostawcami</td><td>Ryzyko finansowe możliwe do przetransferowania</td></tr>
+    </table>
+    <div class="fill-block org">
+      <span class="label">▸ Organizacja uzupełnia – plany postępowania z ryzykiem</span>
+      <p>Dla każdego ryzyka powyżej progu akceptacji tworzy się Plan Postępowania z Ryzykiem (PPR) zawierający: środek zaradczy, osobę odpowiedzialną, termin wdrożenia i miernik skuteczności. PPR dokumentowane w <a href="DOC-003-rejestr-ryzyk.html">DOC-003</a>.</p>
+    </div>
+
+    <h3>Etap 6: Komunikacja ryzyka</h3>
+    <p>Wyniki oceny ryzyka są:</p>
+    <ul>
+      <li>Raportowane do zarządu co najmniej raz na <span class="fill-const">▸ [6 miesięcy]<span class="constraint-badge">max. 12 mies.</span></span>,</li>
+      <li>Uwzględniane przy podejmowaniu decyzji inwestycyjnych,</li>
+      <li>Komunikowane właścicielom systemów i CISO.</li>
+    </ul>
+
+    <h3>Etap 7: Monitorowanie i przegląd</h3>
+    <p>Rejestr ryzyk (DOC-003) jest aktualizowany:</p>
+    <ul>
+      <li>Regularnie co <span class="fill-const">▸ [12 miesięcy]<span class="constraint-badge">max. 12 mies. – KSC</span></span>,</li>
+      <li>Po każdym poważnym incydencie,</li>
+      <li>Po wdrożeniu nowych systemów lub zmianach infrastruktury,</li>
+      <li>Po zmianach przepisów prawa.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Kryteria akceptacji -->
+  <div class="section">
+    <h2>4. Kryteria Akceptacji Ryzyka</h2>
+    <div class="fill-block critical">
+      <span class="label">⚠ Krytyczne – zarząd musi zatwierdzić kryteria akceptacji</span>
+      <p>Zarząd organizacji zatwierdza następujące progi akceptacji ryzyka:</p>
+      <table>
+        <tr><th>Poziom ryzyka (R)</th><th>Kwalifikacja</th><th>Wymagane działanie</th><th>Akceptuje</th></tr>
+        <tr style="background:#d4ffe0;"><td>1–6</td><td>Niskie (Akceptowalne)</td><td>Monitoring, brak obligatoryjnych działań</td><td class="fill-org">▸ CISO</td></tr>
+        <tr style="background:#fffbcc;"><td>7–12</td><td>Średnie (Monitorowane)</td><td>PPR w ciągu <span class="fill-const">▸ [90 dni]</span>, przegląd kwartalny</td><td class="fill-org">▸ CISO + właściciel systemu</td></tr>
+        <tr style="background:#ffecd0;"><td>13–16</td><td>Wysokie (Wymagające leczenia)</td><td>PPR w ciągu <span class="fill-const">▸ [30 dni]</span>, raport do zarządu</td><td class="fill-critical">▸ Zarząd</td></tr>
+        <tr style="background:#ffe0e0;"><td>17–25</td><td>Krytyczne (Pilne)</td><td>Natychmiastowe działanie, raport w ciągu <span class="fill-const">▸ [72h]</span></td><td class="fill-critical">▸ Zarząd (pilne)</td></tr>
+      </table>
+    </div>
+    <p>Daty zatwierdzeń i podpisy odpowiednich decydentów przechowywane są w rejestrze DOC-003.</p>
+  </div>
+
+  <!-- 5. Dokumentacja -->
+  <div class="section">
+    <h2>5. Dokumentacja i Zapisy</h2>
+    <table>
+      <tr><th>Dokument/Zapis</th><th>Forma</th><th>Przechowywanie</th><th>Retencja</th></tr>
+      <tr><td>Rejestr Ryzyk</td><td><a href="DOC-003-rejestr-ryzyk.html">DOC-003</a> (HTML + eksport)</td><td class="fill-org">▸ [lokalizacja – system dokumentacji / sharepoint / plik]</td><td class="fill-const">▸ min. 5 lat<span class="constraint-badge">min. 5 lat – KSC</span></td></tr>
+      <tr><td>Plany Postępowania z Ryzykiem</td><td>Załącznik do DOC-003</td><td class="fill-org">▸</td><td class="fill-const">▸ min. 5 lat</td></tr>
+      <tr><td>Raporty z oceny ryzyka</td><td>Dokument PDF/Word</td><td class="fill-org">▸</td><td class="fill-const">▸ min. 5 lat</td></tr>
+    </table>
+  </div>
+
+  <!-- Historia zmian -->
+  <div class="section">
+    <h2>6. Historia Zmian</h2>
+    <table>
+      <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
+      <tr>
+        <td class="fill-org">▸ 1.0</td>
+        <td class="fill-org">▸ DD.MM.RRRR</td>
+        <td class="fill-org">▸ Imię Nazwisko</td>
+        <td class="fill-org">▸ Pierwsze wydanie</td>
+        <td class="fill-critical">▸ Zarząd</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="muted" style="text-align:right; margin-top:8px;">DOC-002 Procedura Zarządzania Ryzykiem | v1.0 | NIS2/KSC</div>
+</main>
+
+<footer class="page-footer">
+  Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-002 Zarządzanie Ryzykiem &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOC-003 Rejestr Ryzyk – NIS2/KSC</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .risk-low    { background: #d4ffe0; }
+  .risk-med    { background: #fffbcc; }
+  .risk-high   { background: #ffecd0; }
+  .risk-crit   { background: #ffe0e0; }
+  .risk-score  { font-weight: 700; font-size: 1rem; text-align: center; }
+  .tiny        { font-size: .75rem; }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<header class="top-bar">
+  <span class="logo">SZBI / NIS2</span>
+  <span class="doc-id">DOC-003</span>
+  <span style="flex:1"></span>
+  <a href="../index.html">← Portal dokumentów</a>
+</header>
+
+<aside class="sidebar">
+  <h3>Etap 1 – Fundamenty</h3>
+  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+  <a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
+  <a href="DOC-003-rejestr-ryzyk.html" class="active">DOC-003 Rejestr ryzyk</a>
+  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+  <h3>Etap 2 – Incydenty</h3>
+  <a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+  <a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+  <h3>Etap 3 – Dostęp i dane</h3>
+  <a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+  <a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+  <h3>Etap 4 – Operacje</h3>
+  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+  <a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+  <h3>Etap 5 – Ludzie</h3>
+  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+  <h3>Etap 6 – Fizyczne/Sieć</h3>
+  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+</aside>
+
+<main class="content">
+
+  <div class="doc-header">
+    <h1>Rejestr Ryzyk Cyberbezpieczeństwa</h1>
+    <div class="subtitle">Centralny rejestr zidentyfikowanych ryzyk, ocen i planów postępowania</div>
+    <dl class="doc-meta">
+      <dt>Numer dokumentu</dt><dd>DOC-003</dd>
+      <dt>Wersja rejestru</dt><dd class="fill-org">▸ 1.0</dd>
+      <dt>Data ostatniej aktualizacji</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+      <dt>Następna aktualizacja</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+      <dt>Właściciel rejestru</dt><dd class="fill-critical">▸ CISO</dd>
+      <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+      <dt>Metodologia</dt><dd><a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002</a> (skala 5×5)</dd>
+      <dt>Podstawa prawna</dt><dd>Art. 8 KSC; Art. 21(2)(a) NIS2</dd>
+    </dl>
+  </div>
+
+  <!-- Legenda matrycy -->
+  <div class="section">
+    <h2>Legenda Rejestru</h2>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px;">
+      <span style="background:#d4ffe0;padding:4px 10px;border-radius:4px;font-size:.8rem;border:1px solid #5aab5a;"><strong>R 1–6</strong> Niskie – Akceptowalne</span>
+      <span style="background:#fffbcc;padding:4px 10px;border-radius:4px;font-size:.8rem;border:1px solid #e6c800;"><strong>R 7–12</strong> Średnie – Monitorowane</span>
+      <span style="background:#ffecd0;padding:4px 10px;border-radius:4px;font-size:.8rem;border:1px solid #e07b00;"><strong>R 13–16</strong> Wysokie – Leczenie wymagane</span>
+      <span style="background:#ffe0e0;padding:4px 10px;border-radius:4px;font-size:.8rem;border:1px solid #c0392b;"><strong>R 17–25</strong> Krytyczne – Pilne działanie</span>
+    </div>
+    <p class="muted">P = Prawdopodobieństwo (1–5), W = Wpływ (1–5), R = Ryzyko brutto (P×W), Rr = Ryzyko rezydualne po uwzględnieniu zabezpieczeń.</p>
+    <div class="callout info">
+      <div class="icon">ℹ️</div>
+      <div>Każdy wiersz oznaczony <span class="fill-org" style="padding:1px 5px;">żółtym</span> lub <span class="fill-critical" style="padding:1px 5px;">czerwonym</span> należy wypełnić danymi organizacji. Wiersze demonstracyjne (R-001 do R-010) zawierają <strong>przykładowe ryzyka</strong> typowe dla podmiotów KSC – organizacja weryfikuje je, usuwa nieadekwatne i dodaje własne.</div>
+    </div>
+  </div>
+
+  <!-- Rejestr ryzyk -->
+  <div class="section">
+    <h2>Rejestr Ryzyk – Tabela Główna</h2>
+    <p class="table-caption">Ryzyka R-001 do R-010: przykłady typowe dla podmiotów KSC. R-011+: ryzyka własne organizacji.</p>
+
+    <div style="overflow-x:auto;">
+    <table style="min-width:1100px; font-size:.78rem;">
+      <tr>
+        <th>ID</th>
+        <th>Aktywo / System</th>
+        <th>Zagrożenie</th>
+        <th>Podatność</th>
+        <th>P</th>
+        <th>W</th>
+        <th>R</th>
+        <th>Istniejące zabezpieczenia</th>
+        <th>Rr</th>
+        <th>Strategia</th>
+        <th>Plan postępowania / Środek</th>
+        <th>Właściciel</th>
+        <th>Termin</th>
+        <th>Status</th>
+      </tr>
+
+      <!-- Przykładowe ryzyka -->
+      <tr class="risk-crit">
+        <td><strong>R-001</strong></td>
+        <td>Systemy OT/SCADA (usługi kluczowe)</td>
+        <td>Ransomware – szyfrowanie systemów operacyjnych</td>
+        <td>Brak segmentacji IT/OT, brak aktualizacji</td>
+        <td>4</td><td>5</td>
+        <td class="risk-score">20</td>
+        <td>Antywirus (podstawowy)</td>
+        <td class="risk-score" style="background:#ffe0e0;">16</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Segmentacja sieci, EDR dla OT, aktualizacje, backup offline]</td>
+        <td class="fill-critical">▸ [Administrator/CISO]</td>
+        <td class="fill-org">▸ DD.MM.RRRR</td>
+        <td class="fill-org">▸ [Otwarte/W toku/Zamknięte]</td>
+      </tr>
+      <tr class="risk-crit">
+        <td><strong>R-002</strong></td>
+        <td>Konta uprzywilejowane (AD, serwery)</td>
+        <td>Przejęcie konta administratora – atak credential stuffing / spear phishing</td>
+        <td>Brak MFA, słabe hasła, współdzielone konta</td>
+        <td>4</td><td>5</td>
+        <td class="risk-score">20</td>
+        <td>Polityka haseł (min. 8 znaków)</td>
+        <td class="risk-score" style="background:#ffe0e0;">16</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Wdrożenie MFA dla wszystkich kont uprzywilejowanych, PAM]</td>
+        <td class="fill-critical">▸ [Administrator/CISO]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-high">
+        <td><strong>R-003</strong></td>
+        <td>Strona internetowa / portal klientów</td>
+        <td>Atak DDoS – niedostępność usług</td>
+        <td>Brak ochrony anty-DDoS, pojedynczy dostawca łącza</td>
+        <td>3</td><td>4</td>
+        <td class="risk-score">12</td>
+        <td>Firewall podstawowy</td>
+        <td class="risk-score" style="background:#ffecd0;">12</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Usługa anty-DDoS u operatora lub CDN, redundancja łącza]</td>
+        <td class="fill-critical">▸ [Administrator sieci]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-high">
+        <td><strong>R-004</strong></td>
+        <td>Poczta elektroniczna / użytkownicy</td>
+        <td>Phishing – wyłudzenie danych lub instalacja złośliwego oprogramowania</td>
+        <td>Brak szkoleń, brak filtrowania poczty, brak DMARC</td>
+        <td>5</td><td>3</td>
+        <td class="risk-score">15</td>
+        <td>Filtr spam podstawowy</td>
+        <td class="risk-score" style="background:#ffecd0;">12</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Szkolenia phishing awareness, wdrożenie DMARC/DKIM/SPF, zaawansowany filtr poczty]</td>
+        <td class="fill-critical">▸ [CISO / IT]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-high">
+        <td><strong>R-005</strong></td>
+        <td>Dane klientów / baza danych</td>
+        <td>Wyciek danych – SQL injection lub nieautoryzowany dostęp</td>
+        <td>Brak WAF, stare wersje silnika DB, nadmiarowe uprawnienia</td>
+        <td>3</td><td>5</td>
+        <td class="risk-score">15</td>
+        <td>Szyfrowanie danych w spoczynku</td>
+        <td class="risk-score" style="background:#ffecd0;">10</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [WAF, aktualizacja DB, przegląd uprawnień, monitorowanie zapytań]</td>
+        <td class="fill-critical">▸ [DBA / CISO]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-med">
+        <td><strong>R-006</strong></td>
+        <td>Systemy backup / kopie zapasowe</td>
+        <td>Zniszczenie/zaszyfrowanie kopii zapasowych przez ransomware</td>
+        <td>Kopie online, brak izolacji, nieprzetestowane odtwarzanie</td>
+        <td>3</td><td>4</td>
+        <td class="risk-score">12</td>
+        <td>Codzienne kopie zapasowe</td>
+        <td class="risk-score" style="background:#fffbcc;">8</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Kopia offline (air-gap), zasada 3-2-1, kwartalne testy odtwarzania]</td>
+        <td class="fill-critical">▸ [Administrator]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-med">
+        <td><strong>R-007</strong></td>
+        <td>Dostawcy i usługi zewnętrzne</td>
+        <td>Kompromitacja organizacji przez dostawcę IT (supply chain attack)</td>
+        <td>Brak oceny bezpieczeństwa dostawców, szerokie uprawnienia zdalnego dostępu</td>
+        <td>2</td><td>5</td>
+        <td class="risk-score">10</td>
+        <td>Umowy NDA z dostawcami</td>
+        <td class="risk-score" style="background:#fffbcc;">8</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Ocena bezpieczeństwa dostawców wg DOC-015, PAM dla dostępu zdalnego]</td>
+        <td class="fill-critical">▸ [CISO / Zakupy]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-med">
+        <td><strong>R-008</strong></td>
+        <td>Pracownicy / zasoby ludzkie</td>
+        <td>Insider threat – celowe lub nieumyślne ujawnienie danych przez pracownika</td>
+        <td>Brak monitorowania aktywności, brak offboarding procedure</td>
+        <td>2</td><td>4</td>
+        <td class="risk-score">8</td>
+        <td>Umowy poufności (NDA)</td>
+        <td class="risk-score" style="background:#fffbcc;">6</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Procedura offboardingu DOC-016, DLP, monitoring uprzywilejowanych]</td>
+        <td class="fill-critical">▸ [HR / CISO]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-low">
+        <td><strong>R-009</strong></td>
+        <td>Serwerownia / infrastruktura fizyczna</td>
+        <td>Nieuprawniony dostęp fizyczny do serwerowni</td>
+        <td>Niewystarczająca kontrola dostępu fizycznego</td>
+        <td>2</td><td>3</td>
+        <td class="risk-score">6</td>
+        <td>Zamek, lista uprawnionych osób</td>
+        <td class="risk-score" style="background:#d4ffe0;">4</td>
+        <td>Modyfikacja</td>
+        <td class="fill-org">▸ [Dostęp na kartę, CCTV, rejestr wejść wg DOC-018]</td>
+        <td class="fill-critical">▸ [Facility Manager]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr class="risk-low">
+        <td><strong>R-010</strong></td>
+        <td>Certyfikaty SSL/TLS</td>
+        <td>Wygaśnięcie certyfikatu – niedostępność usług HTTPS</td>
+        <td>Brak monitorowania ważności certyfikatów</td>
+        <td>3</td><td>2</td>
+        <td class="risk-score">6</td>
+        <td>Ręczna kontrola raz w roku</td>
+        <td class="risk-score" style="background:#d4ffe0;">3</td>
+        <td>Akceptacja</td>
+        <td class="fill-org">▸ [Automatyczny monitoring certyfikatów, powiadomienia 30/7 dni przed wygaśnięciem]</td>
+        <td class="fill-critical">▸ [Administrator]</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+
+      <!-- Wiersze do wypełnienia przez organizację -->
+      <tr>
+        <td class="fill-critical"><strong>R-011</strong></td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org risk-score">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org risk-score">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-critical">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr>
+        <td class="fill-critical"><strong>R-012</strong></td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org risk-score">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org risk-score">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-critical">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+      <tr>
+        <td class="fill-critical"><strong>R-013</strong></td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org risk-score">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org risk-score">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-critical">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <!-- Akceptacja ryzyk -->
+  <div class="section">
+    <h2>Akceptacja Ryzyk Rezydualnych</h2>
+    <p>Poniższe ryzyka rezydualne zostały świadomie zaakceptowane przez upoważnionych decydentów:</p>
+    <table>
+      <tr><th>ID Ryzyka</th><th>Ryzyko rezydualne (Rr)</th><th>Uzasadnienie akceptacji</th><th>Akceptował</th><th>Data</th><th>Data przeglądu</th></tr>
+      <tr>
+        <td class="fill-org">▸ R-XXX</td>
+        <td class="fill-org">▸ [wartość]</td>
+        <td class="fill-org">▸ [koszt zabezpieczenia nieproporcjonalny / ryzyko w granicach apetytu]</td>
+        <td class="fill-critical">▸ [Imię Nazwisko, stanowisko]</td>
+        <td class="fill-org">▸ DD.MM.RRRR</td>
+        <td class="fill-org">▸ DD.MM.RRRR</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Podsumowanie -->
+  <div class="section">
+    <h2>Podsumowanie Rejestru</h2>
+    <table>
+      <tr><th>Poziom ryzyka</th><th>Liczba ryzyk brutto</th><th>Liczba ryzyk rezydualnych</th><th>Trend</th></tr>
+      <tr class="risk-crit"><td>Krytyczne (17–25)</td><td class="fill-org">▸</td><td class="fill-org">▸</td><td class="fill-org">▸ [↑ / ↓ / →]</td></tr>
+      <tr class="risk-high"><td>Wysokie (13–16)</td><td class="fill-org">▸</td><td class="fill-org">▸</td><td class="fill-org">▸</td></tr>
+      <tr class="risk-med"><td>Średnie (7–12)</td><td class="fill-org">▸</td><td class="fill-org">▸</td><td class="fill-org">▸</td></tr>
+      <tr class="risk-low"><td>Niskie (1–6)</td><td class="fill-org">▸</td><td class="fill-org">▸</td><td class="fill-org">▸</td></tr>
+      <tr><td><strong>RAZEM</strong></td><td class="fill-org">▸</td><td class="fill-org">▸</td><td></td></tr>
+    </table>
+
+    <h3>Komentarz CISO do aktualnego stanu ryzyk</h3>
+    <div class="fill-block org">
+      <span class="label">▸ CISO wypełnia przy każdej aktualizacji</span>
+      <p class="fill-org">▸ [Opis aktualnej sytuacji, najważniejszych ryzyk, postępu w realizacji PPR, zmian w krajobrazie zagrożeń]</p>
+    </div>
+  </div>
+
+  <!-- Historia zmian -->
+  <div class="section">
+    <h2>Historia Zmian Rejestru</h2>
+    <table>
+      <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis zmian</th></tr>
+      <tr>
+        <td class="fill-org">▸ 1.0</td>
+        <td class="fill-org">▸ DD.MM.RRRR</td>
+        <td class="fill-org">▸ Imię Nazwisko</td>
+        <td class="fill-org">▸ Pierwsze wydanie – ryzyka przykładowe R-001–R-010</td>
+      </tr>
+      <tr>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+        <td class="fill-org">▸</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="muted" style="text-align:right; margin-top:8px;">DOC-003 Rejestr Ryzyk | v1.0 | NIS2/KSC</div>
+</main>
+
+<footer class="page-footer">
+  Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-003 Rejestr Ryzyk &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a>
+</footer>
+</div>
+</body>
+</html>
