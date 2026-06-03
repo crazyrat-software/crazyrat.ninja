@@ -1,233 +1,225 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOC-012 Procedura Backup i Odtwarzania – NIS2/KSC</title>
-<link rel="stylesheet" href="../css/style.css">
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="page-wrapper">
 <header class="top-bar">
-  <span class="logo">SZBI / NIS2</span><span class="doc-id">DOC-012</span>
-  <span style="flex:1"></span><a href="../index.html">← Portal dokumentów</a>
+<span class="logo">SZBI / NIS2</span><span class="doc-id">DOC-012</span>
+<span style="flex:1"></span><a href="../index.html">← Portal dokumentów</a>
 </header>
 <aside class="sidebar">
-  <h3>Etap 1 – Fundamenty</h3>
-  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
-  <a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
-  <a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
-  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
-  <h3>Etap 2 – Incydenty</h3>
-  <a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
-  <a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
-  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
-  <h3>Etap 3 – Dostęp i dane</h3>
-  <a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
-  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
-  <a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
-  <h3>Etap 4 – Operacje</h3>
-  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
-  <a href="DOC-012-backup.html" class="active">DOC-012 Backup i odtwarzanie</a>
-  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
-  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
-  <h3>Etap 5 – Ludzie</h3>
-  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
-  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
-  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
-  <h3>Etap 6 – Fizyczne/Sieć</h3>
-  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
-  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
-  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
-  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+<h3>Etap 1 – Fundamenty</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+<h3>Etap 2 – Incydenty</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+<h3>Etap 3 – Dostęp i dane</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+<h3>Etap 4 – Operacje</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+<a class="active" href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+<h3>Etap 5 – Ludzie</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+<h3>Etap 6 – Fizyczne/Sieć</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
 </aside>
 <main class="content">
-
 <div class="doc-header">
-  <h1>Procedura Backup i Odtwarzania Danych</h1>
-  <div class="subtitle">Zasada 3-2-1, harmonogram, szyfrowanie i testy odtwarzania</div>
-  <dl class="doc-meta">
-    <dt>Numer dokumentu</dt><dd>DOC-012</dd>
-    <dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
-    <dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
-    <dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
-    <dt>Właściciel</dt><dd class="fill-critical">▸ Administrator IT / CISO</dd>
-    <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
-    <dt>Podstawa prawna</dt><dd>Art. 21(2)(c) NIS2; Art. 8 KSC; ISO/IEC 27001:2022 A.8.13</dd>
-    <dt>Dokumenty powiązane</dt><dd><a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a> | <a href="DOC-009-kryptografia.html">DOC-009</a></dd>
-  </dl>
+<h1>Procedura Backup i Odtwarzania Danych</h1>
+<div class="subtitle">Zasada 3-2-1, harmonogram, szyfrowanie i testy odtwarzania</div>
+<dl class="doc-meta">
+<dt>Numer dokumentu</dt><dd>DOC-012</dd>
+<dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
+<dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+<dt>Właściciel</dt><dd class="fill-critical">▸ Administrator IT / CISO</dd>
+<dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+<dt>Podstawa prawna</dt><dd>Art. 21(2)(c) NIS2; Art. 8 KSC; ISO/IEC 27001:2022 A.8.13</dd>
+<dt>Dokumenty powiązane</dt><dd><a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a> | <a href="DOC-009-kryptografia.html">DOC-009</a></dd>
+</dl>
 </div>
-
 <div class="section">
-  <h2>1. Zasada 3-2-1 i Wymagania Podstawowe</h2>
-  <div class="callout info">
-    <div class="icon">💾</div>
-    <div>
-      <strong>Zasada 3-2-1 (minimum):</strong><br>
-      <strong>3</strong> kopie danych (1 produkcja + 2 backup) |
+<h2>1. Zasada 3-2-1 i Wymagania Podstawowe</h2>
+<div class="callout info">
+<div class="icon">💾</div>
+<div>
+<strong>Zasada 3-2-1 (minimum):</strong><br/>
+<strong>3</strong> kopie danych (1 produkcja + 2 backup) |
       <strong>2</strong> różne nośniki/technologie |
       <strong>1</strong> kopia off-site lub offline (air-gap)
     </div>
-  </div>
-  <div class="fill-block critical">
-    <span class="label">⚠ Krytyczne – kopie zapasowe muszą być izolowane od sieci produkcyjnej</span>
-    <p>Co najmniej jedna kopia zapasowa musi być <strong>offline lub air-gapped</strong> – niedostępna z sieci produkcyjnej. Zapobiega to szyfrowaniu kopii przez ransomware. Organizacja potwierdza realizację tej zasady: <span class="fill-critical">▸ [TAK / NIE – jeśli NIE, opisz plan wdrożenia]</span></p>
-  </div>
 </div>
-
+<div class="fill-block critical">
+<span class="label">⚠ Krytyczne – kopie zapasowe muszą być izolowane od sieci produkcyjnej</span>
+<p>Co najmniej jedna kopia zapasowa musi być <strong>offline lub air-gapped</strong> – niedostępna z sieci produkcyjnej. Zapobiega to szyfrowaniu kopii przez ransomware. Organizacja potwierdza realizację tej zasady: <span class="fill-critical">▸ [TAK / NIE – jeśli NIE, opisz plan wdrożenia]</span></p>
+</div>
+</div>
 <div class="section">
-  <h2>2. Harmonogram Backupu</h2>
-  <table>
-    <tr><th>System / zbiór danych</th><th>Typ danych</th><th>Częstotliwość</th><th>Typ backupu</th><th>Retencja</th><th>Lokalizacja</th></tr>
-    <tr>
-      <td class="fill-critical">▸ [Serwer plików / NAS]</td>
-      <td class="fill-org">▸ Dane użytkowników</td>
-      <td class="fill-const">▸ [Dziennie]<span class="constraint-badge">min. dziennie</span></td>
-      <td class="fill-org">▸ [Pełny tygodniowo + przyrostowy dziennie]</td>
-      <td class="fill-const">▸ [90 dni]<span class="constraint-badge">min. 30 dni</span></td>
-      <td class="fill-critical">▸ [Lokalizacja 1 + Lokalizacja 2 off-site]</td>
-    </tr>
-    <tr>
-      <td class="fill-critical">▸ [Baza danych ERP / CRM]</td>
-      <td class="fill-org">▸ Dane biznesowe</td>
-      <td class="fill-const">▸ [Co 4h / dziennie]<span class="constraint-badge">min. dziennie</span></td>
-      <td class="fill-org">▸ [Pełny + logi transakcji]</td>
-      <td class="fill-const">▸ [1 rok]<span class="constraint-badge">min. wg wymogów prawnych</span></td>
-      <td class="fill-critical">▸</td>
-    </tr>
-    <tr>
-      <td class="fill-critical">▸ [Kontroler domeny / AD]</td>
-      <td class="fill-org">▸ Konfiguracja i tożsamość</td>
-      <td class="fill-const">▸ [Dziennie]<span class="constraint-badge">min. dziennie</span></td>
-      <td class="fill-org">▸ [Pełny]</td>
-      <td class="fill-const">▸ [30 dni]<span class="constraint-badge">min. 30 dni</span></td>
-      <td class="fill-critical">▸</td>
-    </tr>
-    <tr>
-      <td class="fill-critical">▸ [Systemy OT/SCADA]</td>
-      <td class="fill-org">▸ Konfiguracja i dane procesów</td>
-      <td class="fill-const">▸ [Po każdej zmianie + tygodniowo]</td>
-      <td class="fill-org">▸ [Konfiguracja + snapshot]</td>
-      <td class="fill-critical">▸ [min. 1 rok]</td>
-      <td class="fill-critical">▸ [Offline/air-gap WYMAGANE]</td>
-    </tr>
-    <tr>
-      <td class="fill-org">▸ [Maszyny wirtualne]</td>
-      <td class="fill-org">▸ VM snapshots</td>
-      <td class="fill-const">▸ [Dziennie]<span class="constraint-badge">min. dziennie</span></td>
-      <td class="fill-org">▸ [Snapshot / pełny tygodniowo]</td>
-      <td class="fill-org">▸ [30 dni]</td>
-      <td class="fill-org">▸</td>
-    </tr>
-  </table>
+<h2>2. Harmonogram Backupu</h2>
+<table>
+<tr><th>System / zbiór danych</th><th>Typ danych</th><th>Częstotliwość</th><th>Typ backupu</th><th>Retencja</th><th>Lokalizacja</th></tr>
+<tr>
+<td class="fill-critical">▸ [Serwer plików / NAS]</td>
+<td class="fill-org">▸ Dane użytkowników</td>
+<td class="fill-const">▸ [Dziennie]<span class="constraint-badge">min. dziennie</span></td>
+<td class="fill-org">▸ [Pełny tygodniowo + przyrostowy dziennie]</td>
+<td class="fill-const">▸ [90 dni]<span class="constraint-badge">min. 30 dni</span></td>
+<td class="fill-critical">▸ [Lokalizacja 1 + Lokalizacja 2 off-site]</td>
+</tr>
+<tr>
+<td class="fill-critical">▸ [Baza danych ERP / CRM]</td>
+<td class="fill-org">▸ Dane biznesowe</td>
+<td class="fill-const">▸ [Co 4h / dziennie]<span class="constraint-badge">min. dziennie</span></td>
+<td class="fill-org">▸ [Pełny + logi transakcji]</td>
+<td class="fill-const">▸ [1 rok]<span class="constraint-badge">min. wg wymogów prawnych</span></td>
+<td class="fill-critical">▸</td>
+</tr>
+<tr>
+<td class="fill-critical">▸ [Kontroler domeny / AD]</td>
+<td class="fill-org">▸ Konfiguracja i tożsamość</td>
+<td class="fill-const">▸ [Dziennie]<span class="constraint-badge">min. dziennie</span></td>
+<td class="fill-org">▸ [Pełny]</td>
+<td class="fill-const">▸ [30 dni]<span class="constraint-badge">min. 30 dni</span></td>
+<td class="fill-critical">▸</td>
+</tr>
+<tr>
+<td class="fill-critical">▸ [Systemy OT/SCADA]</td>
+<td class="fill-org">▸ Konfiguracja i dane procesów</td>
+<td class="fill-const">▸ [Po każdej zmianie + tygodniowo]</td>
+<td class="fill-org">▸ [Konfiguracja + snapshot]</td>
+<td class="fill-critical">▸ [min. 1 rok]</td>
+<td class="fill-critical">▸ [Offline/air-gap WYMAGANE]</td>
+</tr>
+<tr>
+<td class="fill-org">▸ [Maszyny wirtualne]</td>
+<td class="fill-org">▸ VM snapshots</td>
+<td class="fill-const">▸ [Dziennie]<span class="constraint-badge">min. dziennie</span></td>
+<td class="fill-org">▸ [Snapshot / pełny tygodniowo]</td>
+<td class="fill-org">▸ [30 dni]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
 </div>
-
 <div class="section">
-  <h2>3. Wymagania Techniczne</h2>
-  <table>
-    <tr><th>Wymaganie</th><th>Standard</th><th>Realizacja w organizacji</th></tr>
-    <tr>
-      <td>Szyfrowanie kopii zapasowych</td>
-      <td class="fill-critical"><strong>WYMAGANE BEZWZGLĘDNIE</strong></td>
-      <td class="fill-org">▸ [narzędzie + algorytm, np. AES-256]</td>
-    </tr>
-    <tr>
-      <td>Weryfikacja integralności (hash)</td>
-      <td>Wymagana po każdym backup</td>
-      <td class="fill-org">▸ [automatyczna weryfikacja SHA-256 / wbudowana w narzędzie]</td>
-    </tr>
-    <tr>
-      <td>Klucze szyfrowania backupu</td>
-      <td>Przechowywane oddzielnie od backupu</td>
-      <td class="fill-critical">▸ [lokalizacja kluczy – sejf fizyczny / KMS]</td>
-    </tr>
-    <tr>
-      <td>Izolacja off-site / air-gap</td>
-      <td class="fill-critical"><strong>WYMAGANE</strong></td>
-      <td class="fill-critical">▸ [opis rozwiązania – chmura / taśma / drugi DC]</td>
-    </tr>
-    <tr>
-      <td>Immutable backup (niemodyfikowalny)</td>
-      <td>Zalecany (ochrona przed ransomware)</td>
-      <td class="fill-org">▸ [WORM storage / Object Lock S3 / Veeam immutable]</td>
-    </tr>
-  </table>
-  <div class="fill-block org">
-    <span class="label">▸ Organizacja uzupełnia – narzędzie backupowe</span>
-    <p><strong>Oprogramowanie backup:</strong> <span class="fill-org">▸ [np. Veeam / Acronis / Bacula / Windows Server Backup]</span></p>
-    <p><strong>Dostawca chmurowy (backup off-site):</strong> <span class="fill-org">▸ [np. Azure Backup / AWS S3 / Backblaze B2]</span></p>
-  </div>
+<h2>3. Wymagania Techniczne</h2>
+<table>
+<tr><th>Wymaganie</th><th>Standard</th><th>Realizacja w organizacji</th></tr>
+<tr>
+<td>Szyfrowanie kopii zapasowych</td>
+<td class="fill-critical"><strong>WYMAGANE BEZWZGLĘDNIE</strong></td>
+<td class="fill-org">▸ [narzędzie + algorytm, np. AES-256]</td>
+</tr>
+<tr>
+<td>Weryfikacja integralności (hash)</td>
+<td>Wymagana po każdym backup</td>
+<td class="fill-org">▸ [automatyczna weryfikacja SHA-256 / wbudowana w narzędzie]</td>
+</tr>
+<tr>
+<td>Klucze szyfrowania backupu</td>
+<td>Przechowywane oddzielnie od backupu</td>
+<td class="fill-critical">▸ [lokalizacja kluczy – sejf fizyczny / KMS]</td>
+</tr>
+<tr>
+<td>Izolacja off-site / air-gap</td>
+<td class="fill-critical"><strong>WYMAGANE</strong></td>
+<td class="fill-critical">▸ [opis rozwiązania – chmura / taśma / drugi DC]</td>
+</tr>
+<tr>
+<td>Immutable backup (niemodyfikowalny)</td>
+<td>Zalecany (ochrona przed ransomware)</td>
+<td class="fill-org">▸ [WORM storage / Object Lock S3 / Veeam immutable]</td>
+</tr>
+</table>
+<div class="fill-block org">
+<span class="label">▸ Organizacja uzupełnia – narzędzie backupowe</span>
+<p><strong>Oprogramowanie backup:</strong> <span class="fill-org">▸ [np. Veeam / Acronis / Bacula / Windows Server Backup]</span></p>
+<p><strong>Dostawca chmurowy (backup off-site):</strong> <span class="fill-org">▸ [np. Azure Backup / AWS S3 / Backblaze B2]</span></p>
 </div>
-
+</div>
 <div class="section">
-  <h2>4. Procedura Odtwarzania Danych</h2>
-  <h3>4.1 Odtwarzanie standardowe (dane usunięte przez użytkownika)</h3>
-  <ol>
-    <li>Użytkownik zgłasza żądanie odtworzenia do helpdesk / administratora.</li>
-    <li>Administrator weryfikuje tożsamość i uprawnienia do danych.</li>
-    <li>Identyfikacja punktu backupu sprzed utraty (RPO).</li>
-    <li>Odtworzenie na środowisko testowe → weryfikacja przez właściciela.</li>
-    <li>Skopiowanie na środowisko produkcyjne.</li>
-    <li>Zamknięcie zgłoszenia i dokumentacja w rejestrze odtworzeń.</li>
-  </ol>
-  <p><strong>Czas realizacji (SLA):</strong> <span class="fill-const">▸ [np. 4h dla danych krytycznych, 24h dla standardowych]</span></p>
-
-  <h3>4.2 Odtwarzanie awaryjne (katastrofa / ransomware)</h3>
-  <div class="callout danger">
-    <div class="icon">⚠️</div>
-    <div><strong>PRZED odtworzeniem z backupu:</strong> upewnij się, że środowisko jest czyste (brak złośliwego kodu). Odtworzenie na zainfekowane środowisko = ponowne zarażenie kopii zapasowych.</div>
-  </div>
-  <ol>
-    <li>Izolacja zainfekowanych systemów (DOC-007 PB-001).</li>
-    <li>Przygotowanie czystego środowiska docelowego (nowy system / VM).</li>
-    <li>Weryfikacja backupu – czy kopia pochodzi sprzed infekcji? Sprawdź hash integralności.</li>
-    <li>Odtworzenie na czyste środowisko.</li>
-    <li>Testy funkcjonalne.</li>
-    <li>Zamknięcie podatności / wektora ataku <strong>PRZED</strong> przywróceniem do sieci.</li>
-    <li>Monitoring po przywróceniu przez min. <span class="fill-const">▸ [72h]</span>.</li>
-  </ol>
+<h2>4. Procedura Odtwarzania Danych</h2>
+<h3>4.1 Odtwarzanie standardowe (dane usunięte przez użytkownika)</h3>
+<ol>
+<li>Użytkownik zgłasza żądanie odtworzenia do helpdesk / administratora.</li>
+<li>Administrator weryfikuje tożsamość i uprawnienia do danych.</li>
+<li>Identyfikacja punktu backupu sprzed utraty (RPO).</li>
+<li>Odtworzenie na środowisko testowe → weryfikacja przez właściciela.</li>
+<li>Skopiowanie na środowisko produkcyjne.</li>
+<li>Zamknięcie zgłoszenia i dokumentacja w rejestrze odtworzeń.</li>
+</ol>
+<p><strong>Czas realizacji (SLA):</strong> <span class="fill-const">▸ [np. 4h dla danych krytycznych, 24h dla standardowych]</span></p>
+<h3>4.2 Odtwarzanie awaryjne (katastrofa / ransomware)</h3>
+<div class="callout danger">
+<div class="icon">⚠️</div>
+<div><strong>PRZED odtworzeniem z backupu:</strong> upewnij się, że środowisko jest czyste (brak złośliwego kodu). Odtworzenie na zainfekowane środowisko = ponowne zarażenie kopii zapasowych.</div>
 </div>
-
+<ol>
+<li>Izolacja zainfekowanych systemów (DOC-007 PB-001).</li>
+<li>Przygotowanie czystego środowiska docelowego (nowy system / VM).</li>
+<li>Weryfikacja backupu – czy kopia pochodzi sprzed infekcji? Sprawdź hash integralności.</li>
+<li>Odtworzenie na czyste środowisko.</li>
+<li>Testy funkcjonalne.</li>
+<li>Zamknięcie podatności / wektora ataku <strong>PRZED</strong> przywróceniem do sieci.</li>
+<li>Monitoring po przywróceniu przez min. <span class="fill-const">▸ [72h]</span>.</li>
+</ol>
+</div>
 <div class="section">
-  <h2>5. Testy Odtwarzania</h2>
-  <div class="fill-block const">
-    <span class="label">Wymaganie – testy minimum co kwartał</span>
-    <table>
-      <tr><th>Typ testu</th><th>Częstotliwość</th><th>Zakres</th><th>Odpowiedzialny</th><th>Dokumentacja</th></tr>
-      <tr>
-        <td>Test odtworzenia pliku/folderu</td>
-        <td class="fill-const">▸ co miesiąc<span class="constraint-badge">min. co kwartał</span></td>
-        <td>Losowy plik lub folder</td>
-        <td class="fill-critical">▸ Admin IT</td>
-        <td>Rejestr testów</td>
-      </tr>
-      <tr>
-        <td>Test odtworzenia całego systemu (DR test)</td>
-        <td class="fill-const">▸ co 6 mies.<span class="constraint-badge">min. 1×/rok</span></td>
-        <td>Pełne odtworzenie serwera krytycznego</td>
-        <td class="fill-critical">▸ Admin IT + CISO</td>
-        <td>Protokół testu DRP</td>
-      </tr>
-      <tr>
-        <td>Weryfikacja szyfrowania i integralności</td>
-        <td class="fill-const">▸ po każdym backupie (automatycznie)</td>
-        <td>Hash SHA-256 każdej kopii</td>
-        <td>Automatyczny</td>
-        <td>Logi narzędzia backup</td>
-      </tr>
-    </table>
-  </div>
+<h2>5. Testy Odtwarzania</h2>
+<div class="fill-block const">
+<span class="label">Wymaganie – testy minimum co kwartał</span>
+<table>
+<tr><th>Typ testu</th><th>Częstotliwość</th><th>Zakres</th><th>Odpowiedzialny</th><th>Dokumentacja</th></tr>
+<tr>
+<td>Test odtworzenia pliku/folderu</td>
+<td class="fill-const">▸ co miesiąc<span class="constraint-badge">min. co kwartał</span></td>
+<td>Losowy plik lub folder</td>
+<td class="fill-critical">▸ Admin IT</td>
+<td>Rejestr testów</td>
+</tr>
+<tr>
+<td>Test odtworzenia całego systemu (DR test)</td>
+<td class="fill-const">▸ co 6 mies.<span class="constraint-badge">min. 1×/rok</span></td>
+<td>Pełne odtworzenie serwera krytycznego</td>
+<td class="fill-critical">▸ Admin IT + CISO</td>
+<td>Protokół testu DRP</td>
+</tr>
+<tr>
+<td>Weryfikacja szyfrowania i integralności</td>
+<td class="fill-const">▸ po każdym backupie (automatycznie)</td>
+<td>Hash SHA-256 każdej kopii</td>
+<td>Automatyczny</td>
+<td>Logi narzędzia backup</td>
+</tr>
+</table>
 </div>
-
+</div>
 <div class="section">
-  <h2>6. Historia Zmian</h2>
-  <table>
-    <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
-    <tr><td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD.MM.RRRR</td><td class="fill-org">▸</td><td class="fill-org">▸ Pierwsze wydanie</td><td class="fill-critical">▸ Zarząd</td></tr>
-  </table>
+<h2>6. Historia Zmian</h2>
+<table>
+<tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
+<tr><td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD.MM.RRRR</td><td class="fill-org">▸</td><td class="fill-org">▸ Pierwsze wydanie</td><td class="fill-critical">▸ Zarząd</td></tr>
+</table>
 </div>
-
 <div class="muted" style="text-align:right;margin-top:8px;">DOC-012 Procedura Backup i Odtwarzania | v1.0 | NIS2/KSC</div>
 </main>
-<footer class="page-footer">Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-012 Procedura Backup i Odtwarzania &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a></footer>
+<footer class="page-footer">Dokumentacja NIS2/KSC SZBI  |  DOC-012 Procedura Backup i Odtwarzania  |  <a href="../index.html" style="color:#7baed4;">← Portal</a></footer>
 </div></body></html>

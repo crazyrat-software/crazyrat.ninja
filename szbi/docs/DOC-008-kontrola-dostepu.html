@@ -1,340 +1,325 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOC-008 Polityka Kontroli Dostępu – NIS2/KSC</title>
-<link rel="stylesheet" href="../css/style.css">
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="page-wrapper">
 <header class="top-bar">
-  <span class="logo">SZBI / NIS2</span><span class="doc-id">DOC-008</span>
-  <span style="flex:1"></span><a href="../index.html">← Portal dokumentów</a>
+<span class="logo">SZBI / NIS2</span><span class="doc-id">DOC-008</span>
+<span style="flex:1"></span><a href="../index.html">← Portal dokumentów</a>
 </header>
 <aside class="sidebar">
-  <h3>Etap 1 – Fundamenty</h3>
-  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
-  <a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
-  <a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
-  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
-  <h3>Etap 2 – Incydenty</h3>
-  <a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
-  <a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
-  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
-  <h3>Etap 3 – Dostęp i dane</h3>
-  <a href="DOC-008-kontrola-dostepu.html" class="active">DOC-008 Kontrola dostępu</a>
-  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
-  <a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
-  <h3>Etap 4 – Operacje</h3>
-  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
-  <a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
-  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
-  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
-  <h3>Etap 5 – Ludzie</h3>
-  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
-  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
-  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
-  <h3>Etap 6 – Fizyczne/Sieć</h3>
-  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
-  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
-  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
-  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+<h3>Etap 1 – Fundamenty</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+<h3>Etap 2 – Incydenty</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+<h3>Etap 3 – Dostęp i dane</h3>
+<a class="active" href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+<h3>Etap 4 – Operacje</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+<a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+<h3>Etap 5 – Ludzie</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+<h3>Etap 6 – Fizyczne/Sieć</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
 </aside>
 <main class="content">
-
 <div class="doc-header">
-  <h1>Polityka Kontroli Dostępu</h1>
-  <div class="subtitle">Zarządzanie tożsamością, hasłami, uprawnieniami i uwierzytelnianiem wieloskładnikowym (MFA)</div>
-  <dl class="doc-meta">
-    <dt>Numer dokumentu</dt><dd>DOC-008</dd>
-    <dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
-    <dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
-    <dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
-    <dt>Właściciel</dt><dd class="fill-critical">▸ CISO / Administrator IT</dd>
-    <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
-    <dt>Podstawa prawna</dt><dd>Art. 21(2)(j) NIS2; Art. 8 KSC; ISO/IEC 27001:2022 A.5.15–A.5.18, A.8.2–A.8.5</dd>
-    <dt>Dokumenty powiązane</dt><dd>
-      <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a> |
+<h1>Polityka Kontroli Dostępu</h1>
+<div class="subtitle">Zarządzanie tożsamością, hasłami, uprawnieniami i uwierzytelnianiem wieloskładnikowym (MFA)</div>
+<dl class="doc-meta">
+<dt>Numer dokumentu</dt><dd>DOC-008</dd>
+<dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
+<dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+<dt>Właściciel</dt><dd class="fill-critical">▸ CISO / Administrator IT</dd>
+<dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+<dt>Podstawa prawna</dt><dd>Art. 21(2)(j) NIS2; Art. 8 KSC; ISO/IEC 27001:2022 A.5.15–A.5.18, A.8.2–A.8.5</dd>
+<dt>Dokumenty powiązane</dt><dd>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a> |
       <a href="DOC-009-kryptografia.html">DOC-009</a> |
       <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016</a> |
       <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a>
-    </dd>
-  </dl>
+</dd>
+</dl>
 </div>
-
 <div class="section">
-  <h2>1. Zasady Ogólne Kontroli Dostępu</h2>
-  <ul>
-    <li><strong>Minimalne uprawnienia (Least Privilege)</strong> – użytkownik otrzymuje wyłącznie uprawnienia niezbędne do pracy.</li>
-    <li><strong>Potrzeba wiedzy (Need-to-Know)</strong> – dostęp do danych wyłącznie dla osób wymagających ich w pracy.</li>
-    <li><strong>Rozdzielenie obowiązków (Segregation of Duties)</strong> – krytyczne operacje wymagają więcej niż jednej osoby.</li>
-    <li><strong>Domyślna odmowa (Default Deny)</strong> – dostęp jest zabroniony, dopóki nie zostanie jawnie przyznany.</li>
-    <li><strong>Rozliczalność</strong> – każdy dostęp jest logowany i przypisany do konkretnego użytkownika.</li>
-  </ul>
+<h2>1. Zasady Ogólne Kontroli Dostępu</h2>
+<ul>
+<li><strong>Minimalne uprawnienia (Least Privilege)</strong> – użytkownik otrzymuje wyłącznie uprawnienia niezbędne do pracy.</li>
+<li><strong>Potrzeba wiedzy (Need-to-Know)</strong> – dostęp do danych wyłącznie dla osób wymagających ich w pracy.</li>
+<li><strong>Rozdzielenie obowiązków (Segregation of Duties)</strong> – krytyczne operacje wymagają więcej niż jednej osoby.</li>
+<li><strong>Domyślna odmowa (Default Deny)</strong> – dostęp jest zabroniony, dopóki nie zostanie jawnie przyznany.</li>
+<li><strong>Rozliczalność</strong> – każdy dostęp jest logowany i przypisany do konkretnego użytkownika.</li>
+</ul>
 </div>
-
 <div class="section">
-  <h2>2. Zarządzanie Kontami Użytkowników</h2>
-
-  <h3>2.1 Tworzenie i modyfikacja kont</h3>
-  <p>Konta tworzone wyłącznie na podstawie formalnego wniosku zatwierdzonego przez przełożonego i administratora. Szablon wniosku: <span class="fill-org">▸ [link / lokalizacja formularza]</span>.</p>
-  <table>
-    <tr><th>Typ konta</th><th>Zatwierdzenie</th><th>MFA</th><th>Przegląd uprawnień</th></tr>
-    <tr>
-      <td>Użytkownik standardowy</td>
-      <td class="fill-org">▸ [bezpośredni przełożony]</td>
-      <td class="fill-const">▸ Zalecane<span class="constraint-badge">wymagane od 2025</span></td>
-      <td class="fill-const">▸ co 12 mies.<span class="constraint-badge">min. 1×/rok</span></td>
-    </tr>
-    <tr>
-      <td>Konto uprzywilejowane (admin)</td>
-      <td class="fill-critical">▸ CISO + przełożony</td>
-      <td class="fill-critical"><strong>WYMAGANE BEZWZGLĘDNIE</strong></td>
-      <td class="fill-const">▸ co 6 mies.<span class="constraint-badge">min. 2×/rok</span></td>
-    </tr>
-    <tr>
-      <td>Konto usługowe / techniczne</td>
-      <td class="fill-critical">▸ CISO + admin</td>
-      <td>N/D (hasło rotowane)</td>
-      <td class="fill-const">▸ co 6 mies.</td>
-    </tr>
-    <tr>
-      <td>Konto zewnętrzne (dostawca)</td>
-      <td class="fill-critical">▸ CISO + właściciel systemu</td>
-      <td class="fill-critical"><strong>WYMAGANE</strong></td>
-      <td class="fill-const">▸ co 3 mies.<span class="constraint-badge">min. 1×/rok</span></td>
-    </tr>
-    <tr>
-      <td>Konto awaryjne (break-glass)</td>
-      <td class="fill-critical">▸ CISO + Zarząd</td>
-      <td class="fill-critical"><strong>WYMAGANE</strong></td>
-      <td class="fill-const">▸ co 6 mies.</td>
-    </tr>
-  </table>
-
-  <h3>2.2 Blokada i usuwanie kont</h3>
-  <ul>
-    <li>Blokada przy zmianie stanowiska – natychmiast po decyzji HR.</li>
-    <li>Blokada przy rozwiązaniu stosunku pracy – nie później niż <span class="fill-const">▸ [w dniu odejścia, do godziny 17:00]<span class="constraint-badge">max. 24h</span></span>. Procedura w <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016</a>.</li>
-    <li>Automatyczna blokada nieaktywnych kont po <span class="fill-const">▸ [90 dniach]<span class="constraint-badge">max. 90 dni</span></span> braku logowania.</li>
-    <li>Usunięcie konta po <span class="fill-org">▸ [30 dniach]</span> od blokady, po potwierdzeniu przez właściciela systemu.</li>
-  </ul>
-
-  <h3>2.3 Przegląd uprawnień</h3>
-  <div class="fill-block const">
-    <span class="label">Wymaganie – przegląd uprawnień minimum raz w roku (NIS2/KSC)</span>
-    <p>Właściciele systemów przeglądają uprawnienia co <span class="fill-const">▸ [6 miesięcy]<span class="constraint-badge">min. 1×/rok</span></span>. Konta uprzywilejowane co <span class="fill-const">▸ [3 miesiące]<span class="constraint-badge">min. 2×/rok</span></span>. Wyniki dokumentowane w rejestrze przeglądów. Nadmiarowe uprawnienia usuwane w ciągu <span class="fill-const">▸ [5 dni roboczych]</span> od stwierdzenia.</p>
-  </div>
+<h2>2. Zarządzanie Kontami Użytkowników</h2>
+<h3>2.1 Tworzenie i modyfikacja kont</h3>
+<p>Konta tworzone wyłącznie na podstawie formalnego wniosku zatwierdzonego przez przełożonego i administratora. Szablon wniosku: <span class="fill-org">▸ [link / lokalizacja formularza]</span>.</p>
+<table>
+<tr><th>Typ konta</th><th>Zatwierdzenie</th><th>MFA</th><th>Przegląd uprawnień</th></tr>
+<tr>
+<td>Użytkownik standardowy</td>
+<td class="fill-org">▸ [bezpośredni przełożony]</td>
+<td class="fill-const">▸ Zalecane<span class="constraint-badge">wymagane od 2025</span></td>
+<td class="fill-const">▸ co 12 mies.<span class="constraint-badge">min. 1×/rok</span></td>
+</tr>
+<tr>
+<td>Konto uprzywilejowane (admin)</td>
+<td class="fill-critical">▸ CISO + przełożony</td>
+<td class="fill-critical"><strong>WYMAGANE BEZWZGLĘDNIE</strong></td>
+<td class="fill-const">▸ co 6 mies.<span class="constraint-badge">min. 2×/rok</span></td>
+</tr>
+<tr>
+<td>Konto usługowe / techniczne</td>
+<td class="fill-critical">▸ CISO + admin</td>
+<td>N/D (hasło rotowane)</td>
+<td class="fill-const">▸ co 6 mies.</td>
+</tr>
+<tr>
+<td>Konto zewnętrzne (dostawca)</td>
+<td class="fill-critical">▸ CISO + właściciel systemu</td>
+<td class="fill-critical"><strong>WYMAGANE</strong></td>
+<td class="fill-const">▸ co 3 mies.<span class="constraint-badge">min. 1×/rok</span></td>
+</tr>
+<tr>
+<td>Konto awaryjne (break-glass)</td>
+<td class="fill-critical">▸ CISO + Zarząd</td>
+<td class="fill-critical"><strong>WYMAGANE</strong></td>
+<td class="fill-const">▸ co 6 mies.</td>
+</tr>
+</table>
+<h3>2.2 Blokada i usuwanie kont</h3>
+<ul>
+<li>Blokada przy zmianie stanowiska – natychmiast po decyzji HR.</li>
+<li>Blokada przy rozwiązaniu stosunku pracy – nie później niż <span class="fill-const">▸ [w dniu odejścia, do godziny 17:00]<span class="constraint-badge">max. 24h</span></span>. Procedura w <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016</a>.</li>
+<li>Automatyczna blokada nieaktywnych kont po <span class="fill-const">▸ [90 dniach]<span class="constraint-badge">max. 90 dni</span></span> braku logowania.</li>
+<li>Usunięcie konta po <span class="fill-org">▸ [30 dniach]</span> od blokady, po potwierdzeniu przez właściciela systemu.</li>
+</ul>
+<h3>2.3 Przegląd uprawnień</h3>
+<div class="fill-block const">
+<span class="label">Wymaganie – przegląd uprawnień minimum raz w roku (NIS2/KSC)</span>
+<p>Właściciele systemów przeglądają uprawnienia co <span class="fill-const">▸ [6 miesięcy]<span class="constraint-badge">min. 1×/rok</span></span>. Konta uprzywilejowane co <span class="fill-const">▸ [3 miesiące]<span class="constraint-badge">min. 2×/rok</span></span>. Wyniki dokumentowane w rejestrze przeglądów. Nadmiarowe uprawnienia usuwane w ciągu <span class="fill-const">▸ [5 dni roboczych]</span> od stwierdzenia.</p>
 </div>
-
-<div class="section">
-  <h2>3. Polityka Haseł</h2>
-  <div class="callout info">
-    <div class="icon">ℹ️</div>
-    <div>Pola <span class="fill-const" style="padding:1px 4px;">pomarańczowe</span> wskazują <strong>minimalne progi wymagane przez KSC / ENISA</strong>. Organizacja wpisuje swoją obowiązującą politykę – musi być co najmniej równa wartości minimalnej.</div>
-  </div>
-
-  <h3>3.1 Hasła użytkowników standardowych</h3>
-  <table>
-    <tr><th>Parametr</th><th>Minimum KSC / dobre praktyki</th><th>Polityka organizacji</th></tr>
-    <tr>
-      <td>Minimalna długość hasła</td>
-      <td><strong style="color:#c0392b;">min. 8 znaków</strong></td>
-      <td class="fill-const">▸ [wpisz liczbę, np. 12]<span class="constraint-badge">min. 8 znaków</span></td>
-    </tr>
-    <tr>
-      <td>Wielkie litery (A–Z)</td>
-      <td>Zalecane</td>
-      <td class="fill-org">▸ [wymagane / zalecane]</td>
-    </tr>
-    <tr>
-      <td>Małe litery (a–z)</td>
-      <td>Zalecane</td>
-      <td class="fill-org">▸ [wymagane / zalecane]</td>
-    </tr>
-    <tr>
-      <td>Cyfry (0–9)</td>
-      <td>Zalecane</td>
-      <td class="fill-org">▸ [wymagane / zalecane]</td>
-    </tr>
-    <tr>
-      <td>Znaki specjalne (!@#$…)</td>
-      <td>Zalecane</td>
-      <td class="fill-org">▸ [wymagane / zalecane]</td>
-    </tr>
-    <tr>
-      <td>Maksymalna ważność hasła</td>
-      <td>Brak obligatoryjnego max. (NIST SP 800-63B zaleca bez wygasania przy dobrej złożoności)</td>
-      <td class="fill-org">▸ [np. 365 dni / brak wygasania]</td>
-    </tr>
-    <tr>
-      <td>Historia haseł (zakaz powtórzeń)</td>
-      <td>Zalecane min. 5</td>
-      <td class="fill-const">▸ [np. ostatnie 10]<span class="constraint-badge">min. 5</span></td>
-    </tr>
-    <tr>
-      <td>Blokada po nieudanych próbach</td>
-      <td>Zalecane</td>
-      <td class="fill-const">▸ [np. po 5 próbach]<span class="constraint-badge">max. 10 prób</span></td>
-    </tr>
-    <tr>
-      <td>Czas trwania blokady / odblokowanie</td>
-      <td>—</td>
-      <td class="fill-org">▸ [np. 15 min automatycznie / ręcznie przez admina]</td>
-    </tr>
-    <tr>
-      <td>Screen lock po nieaktywności</td>
-      <td>Zalecane</td>
-      <td class="fill-const">▸ [np. 10 minut]<span class="constraint-badge">max. 15 min</span></td>
-    </tr>
-  </table>
-
-  <h3>3.2 Hasła kont uprzywilejowanych (administratorzy)</h3>
-  <table>
-    <tr><th>Parametr</th><th>Minimum (zalecenie ENISA)</th><th>Polityka organizacji</th></tr>
-    <tr>
-      <td>Minimalna długość</td>
-      <td><strong style="color:#c0392b;">min. 16 znaków</strong></td>
-      <td class="fill-const">▸ [np. 20 znaków]<span class="constraint-badge">min. 16 znaków</span></td>
-    </tr>
-    <tr>
-      <td>Złożoność</td>
-      <td>Wszystkie 4 kategorie znaków</td>
-      <td class="fill-critical">Wielkie + małe + cyfry + znaki specjalne – OBOWIĄZKOWE</td>
-    </tr>
-    <tr>
-      <td>Maksymalna ważność</td>
-      <td>—</td>
-      <td class="fill-const">▸ [np. 90 dni]<span class="constraint-badge">max. 180 dni</span></td>
-    </tr>
-    <tr>
-      <td>Narzędzie PAM / menedżer haseł</td>
-      <td>Zalecany</td>
-      <td class="fill-org">▸ [np. CyberArk / BeyondTrust / HashiCorp Vault / KeePass Enterprise]</td>
-    </tr>
-  </table>
-
-  <h3>3.3 Hasła kont usługowych (service accounts)</h3>
-  <p>Długość: <span class="fill-const">▸ min. 32 znaki losowe<span class="constraint-badge">min. 20 znaków</span></span>, generowane automatycznie (PAM lub skrypt). Rotacja co <span class="fill-const">▸ [90 dni]<span class="constraint-badge">max. 180 dni</span></span> lub po każdym incydencie bezpieczeństwa.</p>
-
-  <h3>3.4 Zakazy bezwzględne</h3>
-  <ul>
-    <li>Zakaz używania haseł słownikowych, imion, dat urodzin, nazwy organizacji.</li>
-    <li>Zakaz współdzielenia haseł między użytkownikami.</li>
-    <li>Zakaz zapisywania haseł w plikach tekstowych, e-mailach, komunikatorach, kartkach przyklejonych do monitora.</li>
-    <li>Zakaz używania tych samych haseł do systemów służbowych i prywatnych.</li>
-  </ul>
 </div>
-
 <div class="section">
-  <h2>4. Uwierzytelnianie Wieloskładnikowe (MFA)</h2>
-  <div class="fill-block critical">
-    <span class="label">⚠ Krytyczne – art. 21(2)(j) NIS2: MFA wymagane dla wszystkich użytkowników systemów kluczowych</span>
-    <table>
-      <tr><th>Scenariusz dostępu</th><th>Wymaganie MFA</th><th>Akceptowane metody</th></tr>
-      <tr>
-        <td>Dostęp zdalny (VPN, RDP, SSH)</td>
-        <td><strong style="color:#c0392b;">WYMAGANE BEZWZGLĘDNIE</strong></td>
-        <td class="fill-org">▸ [TOTP (Google/MS Authenticator) / FIDO2 / hardware token]</td>
-      </tr>
-      <tr>
-        <td>Konta uprzywilejowane (admini)</td>
-        <td><strong style="color:#c0392b;">WYMAGANE BEZWZGLĘDNIE</strong></td>
-        <td class="fill-org">▸ [FIDO2 / hardware token (YubiKey) / TOTP]</td>
-      </tr>
-      <tr>
-        <td>Systemy kluczowe / OT/ICS</td>
-        <td><strong style="color:#c0392b;">WYMAGANE – SMS niedopuszczalne</strong></td>
-        <td class="fill-critical">▸ FIDO2 lub hardware token WYŁĄCZNIE</td>
-      </tr>
-      <tr>
-        <td>Panele administracyjne chmury (AWS/Azure/GCP)</td>
-        <td><strong style="color:#c0392b;">WYMAGANE</strong></td>
-        <td class="fill-org">▸</td>
-      </tr>
-      <tr>
-        <td>Poczta e-mail (zdalny dostęp web)</td>
-        <td class="fill-const">▸ [Wymagane]<span class="constraint-badge">min. dla zdalnego dostępu</span></td>
-        <td class="fill-org">▸ [TOTP / push notification]</td>
-      </tr>
-      <tr>
-        <td>Dostęp z sieci wewnętrznej (biuro)</td>
-        <td class="fill-org">▸ [Wymagane / Zalecane]</td>
-        <td class="fill-org">▸</td>
-      </tr>
-    </table>
-    <p style="margin-top:8px; font-size:.85rem;"><strong>Niedopuszczalne:</strong> SMS jako metoda MFA dla kont uprzywilejowanych i systemów kluczowych (podatność SIM swapping). SMS dopuszczalny wyłącznie dla kont standardowych jako opcja zastępcza.</p>
-  </div>
-  <div class="fill-block org">
-    <span class="label">▸ Organizacja uzupełnia – wdrożone rozwiązanie MFA</span>
-    <p><strong>Platforma MFA:</strong> <span class="fill-org">▸ [np. Microsoft Entra ID MFA / Duo Security / RSA SecurID / YubiKey / FreeOTP]</span></p>
-    <p><strong>Data pełnego wdrożenia MFA dla kont uprzywilejowanych:</strong> <span class="fill-critical">▸ DD.MM.RRRR</span></p>
-    <p><strong>Procent kont objętych MFA:</strong> <span class="fill-org">▸ [np. 100% uprzywilejowane, X% standardowe]</span></p>
-  </div>
+<h2>3. Polityka Haseł</h2>
+<div class="callout info">
+<div class="icon">ℹ️</div>
+<div>Pola <span class="fill-const" style="padding:1px 4px;">pomarańczowe</span> wskazują <strong>minimalne progi wymagane przez KSC / ENISA</strong>. Organizacja wpisuje swoją obowiązującą politykę – musi być co najmniej równa wartości minimalnej.</div>
 </div>
-
-<div class="section">
-  <h2>5. Zarządzanie Dostępem Uprzywilejowanym (PAM)</h2>
-  <ul>
-    <li>Każdy administrator posiada <strong>dwa oddzielne konta</strong>: standardowe (praca codzienna) i uprzywilejowane (wyłącznie zadania administracyjne).</li>
-    <li>Logowania na konta uprzywilejowane rejestrowane w centralnym logu audytowym.</li>
-    <li>Sesje uprzywilejowane nagrywane i archiwizowane przez <span class="fill-const">▸ [12 miesięcy]<span class="constraint-badge">min. 12 mies. – KSC</span></span>.</li>
-    <li>Dostęp tymczasowy Just-In-Time (JIT): przyznawany na maks. <span class="fill-const">▸ [4 godziny]</span>, wymaga ponownego zatwierdzenia przez CISO.</li>
-    <li>Konta break-glass: hasło w zapieczętowanej kopercie w sejfie CISO; otwarcie rejestrowane w rejestrze incydentów.</li>
-  </ul>
-  <div class="fill-block org">
-    <span class="label">▸ Organizacja uzupełnia</span>
-    <p><strong>System PAM:</strong> <span class="fill-org">▸ [np. CyberArk / BeyondTrust / HashiCorp Vault / zarządzanie ręczne z rejestrem]</span></p>
-    <p><strong>Rejestr kont uprzywilejowanych:</strong> <span class="fill-critical">▸ [lokalizacja rejestru / link do DOC-020]</span></p>
-  </div>
+<h3>3.1 Hasła użytkowników standardowych</h3>
+<table>
+<tr><th>Parametr</th><th>Minimum KSC / dobre praktyki</th><th>Polityka organizacji</th></tr>
+<tr>
+<td>Minimalna długość hasła</td>
+<td><strong style="color:#c0392b;">min. 8 znaków</strong></td>
+<td class="fill-const">▸ [wpisz liczbę, np. 12]<span class="constraint-badge">min. 8 znaków</span></td>
+</tr>
+<tr>
+<td>Wielkie litery (A–Z)</td>
+<td>Zalecane</td>
+<td class="fill-org">▸ [wymagane / zalecane]</td>
+</tr>
+<tr>
+<td>Małe litery (a–z)</td>
+<td>Zalecane</td>
+<td class="fill-org">▸ [wymagane / zalecane]</td>
+</tr>
+<tr>
+<td>Cyfry (0–9)</td>
+<td>Zalecane</td>
+<td class="fill-org">▸ [wymagane / zalecane]</td>
+</tr>
+<tr>
+<td>Znaki specjalne (!@#$…)</td>
+<td>Zalecane</td>
+<td class="fill-org">▸ [wymagane / zalecane]</td>
+</tr>
+<tr>
+<td>Maksymalna ważność hasła</td>
+<td>Brak obligatoryjnego max. (NIST SP 800-63B zaleca bez wygasania przy dobrej złożoności)</td>
+<td class="fill-org">▸ [np. 365 dni / brak wygasania]</td>
+</tr>
+<tr>
+<td>Historia haseł (zakaz powtórzeń)</td>
+<td>Zalecane min. 5</td>
+<td class="fill-const">▸ [np. ostatnie 10]<span class="constraint-badge">min. 5</span></td>
+</tr>
+<tr>
+<td>Blokada po nieudanych próbach</td>
+<td>Zalecane</td>
+<td class="fill-const">▸ [np. po 5 próbach]<span class="constraint-badge">max. 10 prób</span></td>
+</tr>
+<tr>
+<td>Czas trwania blokady / odblokowanie</td>
+<td>—</td>
+<td class="fill-org">▸ [np. 15 min automatycznie / ręcznie przez admina]</td>
+</tr>
+<tr>
+<td>Screen lock po nieaktywności</td>
+<td>Zalecane</td>
+<td class="fill-const">▸ [np. 10 minut]<span class="constraint-badge">max. 15 min</span></td>
+</tr>
+</table>
+<h3>3.2 Hasła kont uprzywilejowanych (administratorzy)</h3>
+<table>
+<tr><th>Parametr</th><th>Minimum (zalecenie ENISA)</th><th>Polityka organizacji</th></tr>
+<tr>
+<td>Minimalna długość</td>
+<td><strong style="color:#c0392b;">min. 16 znaków</strong></td>
+<td class="fill-const">▸ [np. 20 znaków]<span class="constraint-badge">min. 16 znaków</span></td>
+</tr>
+<tr>
+<td>Złożoność</td>
+<td>Wszystkie 4 kategorie znaków</td>
+<td class="fill-critical">Wielkie + małe + cyfry + znaki specjalne – OBOWIĄZKOWE</td>
+</tr>
+<tr>
+<td>Maksymalna ważność</td>
+<td>—</td>
+<td class="fill-const">▸ [np. 90 dni]<span class="constraint-badge">max. 180 dni</span></td>
+</tr>
+<tr>
+<td>Narzędzie PAM / menedżer haseł</td>
+<td>Zalecany</td>
+<td class="fill-org">▸ [np. CyberArk / BeyondTrust / HashiCorp Vault / KeePass Enterprise]</td>
+</tr>
+</table>
+<h3>3.3 Hasła kont usługowych (service accounts)</h3>
+<p>Długość: <span class="fill-const">▸ min. 32 znaki losowe<span class="constraint-badge">min. 20 znaków</span></span>, generowane automatycznie (PAM lub skrypt). Rotacja co <span class="fill-const">▸ [90 dni]<span class="constraint-badge">max. 180 dni</span></span> lub po każdym incydencie bezpieczeństwa.</p>
+<h3>3.4 Zakazy bezwzględne</h3>
+<ul>
+<li>Zakaz używania haseł słownikowych, imion, dat urodzin, nazwy organizacji.</li>
+<li>Zakaz współdzielenia haseł między użytkownikami.</li>
+<li>Zakaz zapisywania haseł w plikach tekstowych, e-mailach, komunikatorach, kartkach przyklejonych do monitora.</li>
+<li>Zakaz używania tych samych haseł do systemów służbowych i prywatnych.</li>
+</ul>
 </div>
-
 <div class="section">
-  <h2>6. Dostęp Zdalny i Zewnętrzny</h2>
-  <table>
-    <tr><th>Typ dostępu</th><th>Wymagania</th><th>Narzędzie</th></tr>
-    <tr>
-      <td>VPN pracownicy</td>
-      <td>MFA wymagane; tylko firmowe urządzenia lub MDM; Split tunneling: <span class="fill-org">▸ [dozwolone/niedozwolone]</span></td>
-      <td class="fill-org">▸ [np. OpenVPN / Cisco AnyConnect / WireGuard]</td>
-    </tr>
-    <tr>
-      <td>Dostęp zdalny dostawcy</td>
-      <td>MFA wymagane; wyłącznie na czas prac; sesja nadzorowana przez PAM; zakaz dostępu poza zakresem umowy</td>
-      <td class="fill-org">▸ [np. dedykowany VPN / BeyondTrust Remote Access]</td>
-    </tr>
-    <tr>
-      <td>Praca zdalna (home office)</td>
-      <td>Szyfrowany dysk; VPN obligatoryjny; screen lock po <span class="fill-const">▸ [5 min]<span class="constraint-badge">max. 15 min</span></span></td>
-      <td class="fill-org">▸</td>
-    </tr>
-    <tr>
-      <td>BYOD (własne urządzenia)</td>
-      <td class="fill-org">▸ [Dopuszczone / Niedopuszczone] – jeśli dopuszczone: MDM obowiązkowy, separacja danych służbowych</td>
-      <td class="fill-org">▸ [np. Microsoft Intune / JAMF]</td>
-    </tr>
-  </table>
+<h2>4. Uwierzytelnianie Wieloskładnikowe (MFA)</h2>
+<div class="fill-block critical">
+<span class="label">⚠ Krytyczne – art. 21(2)(j) NIS2: MFA wymagane dla wszystkich użytkowników systemów kluczowych</span>
+<table>
+<tr><th>Scenariusz dostępu</th><th>Wymaganie MFA</th><th>Akceptowane metody</th></tr>
+<tr>
+<td>Dostęp zdalny (VPN, RDP, SSH)</td>
+<td><strong style="color:#c0392b;">WYMAGANE BEZWZGLĘDNIE</strong></td>
+<td class="fill-org">▸ [TOTP (Google/MS Authenticator) / FIDO2 / hardware token]</td>
+</tr>
+<tr>
+<td>Konta uprzywilejowane (admini)</td>
+<td><strong style="color:#c0392b;">WYMAGANE BEZWZGLĘDNIE</strong></td>
+<td class="fill-org">▸ [FIDO2 / hardware token (YubiKey) / TOTP]</td>
+</tr>
+<tr>
+<td>Systemy kluczowe / OT/ICS</td>
+<td><strong style="color:#c0392b;">WYMAGANE – SMS niedopuszczalne</strong></td>
+<td class="fill-critical">▸ FIDO2 lub hardware token WYŁĄCZNIE</td>
+</tr>
+<tr>
+<td>Panele administracyjne chmury (AWS/Azure/GCP)</td>
+<td><strong style="color:#c0392b;">WYMAGANE</strong></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>Poczta e-mail (zdalny dostęp web)</td>
+<td class="fill-const">▸ [Wymagane]<span class="constraint-badge">min. dla zdalnego dostępu</span></td>
+<td class="fill-org">▸ [TOTP / push notification]</td>
+</tr>
+<tr>
+<td>Dostęp z sieci wewnętrznej (biuro)</td>
+<td class="fill-org">▸ [Wymagane / Zalecane]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
+<p style="margin-top:8px; font-size:.85rem;"><strong>Niedopuszczalne:</strong> SMS jako metoda MFA dla kont uprzywilejowanych i systemów kluczowych (podatność SIM swapping). SMS dopuszczalny wyłącznie dla kont standardowych jako opcja zastępcza.</p>
 </div>
-
-<div class="section">
-  <h2>7. Logowanie i Monitoring Dostępu</h2>
-  <p>Wszystkie logowania do systemów są rejestrowane i przechowywane przez <span class="fill-const">▸ [12 miesięcy]<span class="constraint-badge">min. 12 mies. – KSC</span></span>. Minimalna zawartość logu: identyfikator użytkownika, timestamp (UTC), adres IP źródłowy, system docelowy, typ zdarzenia, wynik (sukces/odmowa).</p>
-  <p>Alerty SIEM skonfigurowane dla: logowań poza godzinami pracy, wielokrotnych błędów uwierzytelnienia, logowań z nowych lokalizacji, eskalacji uprawnień. Szczegóły w <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a>.</p>
+<div class="fill-block org">
+<span class="label">▸ Organizacja uzupełnia – wdrożone rozwiązanie MFA</span>
+<p><strong>Platforma MFA:</strong> <span class="fill-org">▸ [np. Microsoft Entra ID MFA / Duo Security / RSA SecurID / YubiKey / FreeOTP]</span></p>
+<p><strong>Data pełnego wdrożenia MFA dla kont uprzywilejowanych:</strong> <span class="fill-critical">▸ DD.MM.RRRR</span></p>
+<p><strong>Procent kont objętych MFA:</strong> <span class="fill-org">▸ [np. 100% uprzywilejowane, X% standardowe]</span></p>
 </div>
-
+</div>
 <div class="section">
-  <h2>8. Historia Zmian</h2>
-  <table>
-    <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
-    <tr>
-      <td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD.MM.RRRR</td>
-      <td class="fill-org">▸</td><td class="fill-org">▸ Pierwsze wydanie</td>
-      <td class="fill-critical">▸ Zarząd</td>
-    </tr>
-  </table>
+<h2>5. Zarządzanie Dostępem Uprzywilejowanym (PAM)</h2>
+<ul>
+<li>Każdy administrator posiada <strong>dwa oddzielne konta</strong>: standardowe (praca codzienna) i uprzywilejowane (wyłącznie zadania administracyjne).</li>
+<li>Logowania na konta uprzywilejowane rejestrowane w centralnym logu audytowym.</li>
+<li>Sesje uprzywilejowane nagrywane i archiwizowane przez <span class="fill-const">▸ [12 miesięcy]<span class="constraint-badge">min. 12 mies. – KSC</span></span>.</li>
+<li>Dostęp tymczasowy Just-In-Time (JIT): przyznawany na maks. <span class="fill-const">▸ [4 godziny]</span>, wymaga ponownego zatwierdzenia przez CISO.</li>
+<li>Konta break-glass: hasło w zapieczętowanej kopercie w sejfie CISO; otwarcie rejestrowane w rejestrze incydentów.</li>
+</ul>
+<div class="fill-block org">
+<span class="label">▸ Organizacja uzupełnia</span>
+<p><strong>System PAM:</strong> <span class="fill-org">▸ [np. CyberArk / BeyondTrust / HashiCorp Vault / zarządzanie ręczne z rejestrem]</span></p>
+<p><strong>Rejestr kont uprzywilejowanych:</strong> <span class="fill-critical">▸ [lokalizacja rejestru / link do DOC-020]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>6. Dostęp Zdalny i Zewnętrzny</h2>
+<table>
+<tr><th>Typ dostępu</th><th>Wymagania</th><th>Narzędzie</th></tr>
+<tr>
+<td>VPN pracownicy</td>
+<td>MFA wymagane; tylko firmowe urządzenia lub MDM; Split tunneling: <span class="fill-org">▸ [dozwolone/niedozwolone]</span></td>
+<td class="fill-org">▸ [np. OpenVPN / Cisco AnyConnect / WireGuard]</td>
+</tr>
+<tr>
+<td>Dostęp zdalny dostawcy</td>
+<td>MFA wymagane; wyłącznie na czas prac; sesja nadzorowana przez PAM; zakaz dostępu poza zakresem umowy</td>
+<td class="fill-org">▸ [np. dedykowany VPN / BeyondTrust Remote Access]</td>
+</tr>
+<tr>
+<td>Praca zdalna (home office)</td>
+<td>Szyfrowany dysk; VPN obligatoryjny; screen lock po <span class="fill-const">▸ [5 min]<span class="constraint-badge">max. 15 min</span></span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>BYOD (własne urządzenia)</td>
+<td class="fill-org">▸ [Dopuszczone / Niedopuszczone] – jeśli dopuszczone: MDM obowiązkowy, separacja danych służbowych</td>
+<td class="fill-org">▸ [np. Microsoft Intune / JAMF]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>7. Logowanie i Monitoring Dostępu</h2>
+<p>Wszystkie logowania do systemów są rejestrowane i przechowywane przez <span class="fill-const">▸ [12 miesięcy]<span class="constraint-badge">min. 12 mies. – KSC</span></span>. Minimalna zawartość logu: identyfikator użytkownika, timestamp (UTC), adres IP źródłowy, system docelowy, typ zdarzenia, wynik (sukces/odmowa).</p>
+<p>Alerty SIEM skonfigurowane dla: logowań poza godzinami pracy, wielokrotnych błędów uwierzytelnienia, logowań z nowych lokalizacji, eskalacji uprawnień. Szczegóły w <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a>.</p>
+</div>
+<div class="section">
+<h2>8. Historia Zmian</h2>
+<table>
+<tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD.MM.RRRR</td>
+<td class="fill-org">▸</td><td class="fill-org">▸ Pierwsze wydanie</td>
+<td class="fill-critical">▸ Zarząd</td>
+</tr>
+</table>
 </div>
 <div class="muted" style="text-align:right;margin-top:8px;">DOC-008 Polityka Kontroli Dostępu | v1.0 | NIS2/KSC</div>
 </main>
-<footer class="page-footer">Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-008 Kontrola Dostępu &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a></footer>
+<footer class="page-footer">Dokumentacja NIS2/KSC SZBI  |  DOC-008 Kontrola Dostępu  |  <a href="../index.html" style="color:#7baed4;">← Portal</a></footer>
 </div></body></html>
