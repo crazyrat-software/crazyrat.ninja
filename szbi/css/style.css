@@ -3,7 +3,7 @@
    ============================================================ */
 
 :root {
-  --primary:       #1a3a5c;
+  --primary:       #1a3a6c;
   --primary-light: #2563a8;
   --secondary:     #e8f0f9;
   --accent:        #c0392b;
@@ -38,7 +38,7 @@ body {
 /* ---- Layout ---- */
 .page-wrapper {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 360px 1fr;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
@@ -56,6 +56,27 @@ body {
 .top-bar .doc-id { font-size: .8rem; opacity: .7; }
 .top-bar a { color: #a8c8ff; text-decoration: none; font-size: .85rem; }
 .top-bar a:hover { color: var(--white); }
+
+
+a {
+  display: inline;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: .83rem;
+  padding: 6px 5px;
+  border-left: 5px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: all .15s;
+}
+a:hover,
+a.active {
+  color: var(--primary-light);
+  background: rgba(255,255,255,.08);
+  border-left-color: #5aabff;
+  border-bottom-color: #5aabff;
+}
+
+
 
 aside.sidebar {
   grid-column: 1;
@@ -166,6 +187,7 @@ footer.page-footer {
   border: 1.5px solid var(--fill-org-border);
   border-radius: 3px;
   padding: 2px 6px;
+  color: var(--primary) !important;
 }
 .fill-const {
   background: var(--fill-const);
@@ -178,12 +200,14 @@ footer.page-footer {
   border: 1.5px solid var(--fill-ref-border);
   border-radius: 3px;
   padding: 2px 6px;
+  color: var(--primary) !important;
 }
 .fill-critical {
   background: var(--fill-critical);
   border: 1.5px solid var(--fill-critical-border);
   border-radius: 3px;
   padding: 2px 6px;
+  color: var(--primary) !important;
 }
 
 /* Block-level fill areas */
