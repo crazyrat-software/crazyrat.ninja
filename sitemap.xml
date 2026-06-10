@@ -1,62 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Root (language selector, redirects to /en/ or /pl/) -->
   <url>
     <loc>https://crazyrat.ninja/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/"/>
+  </url>
+
+  <!-- Homepages -->
+  <url>
+    <loc>https://crazyrat.ninja/en/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/"/>
   </url>
   <url>
-    <loc>https://crazyrat.ninja/services/</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://crazyrat.ninja/pl/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/"/>
+  </url>
+
+  <!-- Services index -->
+  <url>
+    <loc>https://crazyrat.ninja/en/services/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/"/>
   </url>
   <url>
-    <loc>https://crazyrat.ninja/services/penetration-testing.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://crazyrat.ninja/pl/services/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/"/>
+  </url>
+
+  <!-- Penetration Testing -->
+  <url>
+    <loc>https://crazyrat.ninja/en/services/penetration-testing.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/penetration-testing.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/penetration-testing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/penetration-testing.html"/>
   </url>
   <url>
-    <loc>https://crazyrat.ninja/services/red-team-operations.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://crazyrat.ninja/pl/services/penetration-testing.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/penetration-testing.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/penetration-testing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/penetration-testing.html"/>
   </url>
+
+  <!-- Red Team Operations -->
   <url>
-    <loc>https://crazyrat.ninja/services/web-application-security.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://crazyrat.ninja/en/services/red-team-operations.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/red-team-operations.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/red-team-operations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/red-team-operations.html"/>
   </url>
   <url>
-    <loc>https://crazyrat.ninja/services/wireless-security-assessment.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://crazyrat.ninja/pl/services/red-team-operations.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/red-team-operations.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/red-team-operations.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/red-team-operations.html"/>
   </url>
+
+  <!-- Web Application Security -->
   <url>
-    <loc>https://crazyrat.ninja/services/security-architecture-review.html</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://crazyrat.ninja/en/services/web-application-security.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/web-application-security.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/web-application-security.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/web-application-security.html"/>
   </url>
   <url>
-    <loc>https://crazyrat.ninja/about/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://crazyrat.ninja/pl/services/web-application-security.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/web-application-security.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/web-application-security.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/web-application-security.html"/>
+  </url>
+
+  <!-- Wireless Security Assessment -->
+  <url>
+    <loc>https://crazyrat.ninja/en/services/wireless-security-assessment.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/wireless-security-assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/wireless-security-assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/wireless-security-assessment.html"/>
+  </url>
+  <url>
+    <loc>https://crazyrat.ninja/pl/services/wireless-security-assessment.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/wireless-security-assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/wireless-security-assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/wireless-security-assessment.html"/>
+  </url>
+
+  <!-- Security Architecture Review -->
+  <url>
+    <loc>https://crazyrat.ninja/en/services/security-architecture-review.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/security-architecture-review.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/security-architecture-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/security-architecture-review.html"/>
+  </url>
+  <url>
+    <loc>https://crazyrat.ninja/pl/services/security-architecture-review.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/security-architecture-review.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/security-architecture-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/security-architecture-review.html"/>
+  </url>
+
+  <!-- Compliance and Audit (NIS2) -->
+  <url>
+    <loc>https://crazyrat.ninja/en/services/compliance-and-audit.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/compliance-and-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/compliance-and-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/compliance-and-audit.html"/>
+  </url>
+  <url>
+    <loc>https://crazyrat.ninja/pl/services/compliance-and-audit.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/services/compliance-and-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/services/compliance-and-audit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/compliance-and-audit.html"/>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://crazyrat.ninja/en/about/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/about/"/>
   </url>
   <url>
-    <loc>https://crazyrat.ninja/contact/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://crazyrat.ninja/pl/about/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/about/"/>
+  </url>
+
+  <!-- Certifications portfolio -->
+  <url>
+    <loc>https://crazyrat.ninja/about/certs.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://crazyrat.ninja/about/cert2.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://crazyrat.ninja/en/contact/</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/contact/"/>
   </url>
   <url>
+    <loc>https://crazyrat.ninja/pl/contact/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crazyrat.ninja/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://crazyrat.ninja/pl/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/contact/"/>
+  </url>
+
+  <!-- Downloads (certifications) -->
+  <url>
+    <loc>https://crazyrat.ninja/download/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- SZBI - System Zarządzania Bezpieczeństwem Informacji (Polish only) -->
+  <url>
     <loc>https://crazyrat.ninja/szbi/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -186,4 +368,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
 </urlset>
