@@ -383,11 +383,10 @@ noscript + .wrapper .inner > * {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     text-decoration: none;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.05rem;
+    font-size: 1.4rem;
+    line-height: 1;
     color: rgba(255, 255, 255, 0.7);
-    transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+    transition: border-color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
 }
 
 .lang-icons a:hover,
