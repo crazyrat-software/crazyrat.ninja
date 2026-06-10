@@ -364,6 +364,40 @@ noscript + .wrapper .inner > * {
     transition: none !important;
 }
 
+/* Language Switcher */
+.lang-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+}
+
+.lang-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.lang-icons a:hover,
+.lang-icons a[aria-current="true"] {
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    opacity: 1;
+}
+
 /* Print styles */
 @media print {
     body::before,
