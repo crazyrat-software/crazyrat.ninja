@@ -153,7 +153,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/security-architecture-review.html"/>
   </url>
 
-  <!-- Compliance and Audit (NIS2) -->
+  <!-- Compliance and Audit -->
   <url>
     <loc>https://crazyrat.ninja/en/services/compliance-and-audit.html</loc>
     <lastmod>2026-06-10</lastmod>
@@ -173,7 +173,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/services/compliance-and-audit.html"/>
   </url>
 
-  <!-- About -->
+  <!-- About (localized) -->
   <url>
     <loc>https://crazyrat.ninja/en/about/</loc>
     <lastmod>2026-06-10</lastmod>
@@ -193,16 +193,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/about/"/>
   </url>
 
-  <!-- Certifications portfolio -->
+  <!-- About (standalone profile page, self-canonical) -->
+  <url>
+    <loc>https://crazyrat.ninja/about/</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://crazyrat.ninja/about/certs.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2024-09-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://crazyrat.ninja/about/cert2.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2024-09-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -227,18 +233,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://crazyrat.ninja/en/contact/"/>
   </url>
 
-  <!-- Downloads (certifications) -->
-  <url>
-    <loc>https://crazyrat.ninja/download/</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- SZBI - System Zarządzania Bezpieczeństwem Informacji (Polish only) -->
+  <!-- SZBI / ISMS (Polish) -->
   <url>
     <loc>https://crazyrat.ninja/szbi/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
