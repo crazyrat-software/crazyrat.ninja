@@ -1,243 +1,233 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOC-010 Klasyfikacja i Ochrona Informacji – NIS2/KSC</title>
-<link rel="stylesheet" href="../css/style.css">
-    <script src="/schema.js"></script>
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="page-wrapper">
 <header class="top-bar">
-  <span class="logo">SZBI / NIS2</span><span class="doc-id">DOC-010</span>
-  <span style="flex:1"></span><a href="../index.html">← Portal dokumentów</a>
+<span class="logo">SZBI / NIS2</span><span class="doc-id">DOC-010</span>
+<span style="flex:1"></span><a href="../index.html">← Portal dokumentów</a>
 </header>
 <aside class="sidebar">
-  <h3>Etap 1 – Fundamenty</h3>
-  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
-  <a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
-  <a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
-  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
-  <h3>Etap 2 – Incydenty</h3>
-  <a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
-  <a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
-  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
-  <h3>Etap 3 – Dostęp i dane</h3>
-  <a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
-  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
-  <a href="DOC-010-klasyfikacja-informacji.html" class="active">DOC-010 Klasyfikacja informacji</a>
-  <h3>Etap 4 – Operacje</h3>
-  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
-  <a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
-  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
-  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
-  <h3>Etap 5 – Ludzie</h3>
-  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
-  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
-  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
-  <h3>Etap 6 – Fizyczne/Sieć</h3>
-  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
-  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
-  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
-  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+<h3>Etap 1 – Fundamenty</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+<h3>Etap 2 – Incydenty</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+<h3>Etap 3 – Dostęp i dane</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+<a class="active" href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+<h3>Etap 4 – Operacje</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+<a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+<h3>Etap 5 – Ludzie</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+<h3>Etap 6 – Fizyczne/Sieć</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
 </aside>
 <main class="content">
-
 <div class="doc-header">
-  <h1>Klasyfikacja i Ochrona Informacji</h1>
-  <div class="subtitle">Poziomy klasyfikacji, etykietowanie, obsługa nośników i ochrona danych osobowych</div>
-  <dl class="doc-meta">
-    <dt>Numer dokumentu</dt><dd>DOC-010</dd>
-    <dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
-    <dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
-    <dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
-    <dt>Właściciel</dt><dd class="fill-critical">▸ CISO / DPO</dd>
-    <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
-    <dt>Podstawa prawna</dt><dd>Art. 21(2) NIS2; Art. 8 KSC; ISO/IEC 27001:2022 A.5.9–A.5.14; RODO art. 5, 25, 32</dd>
-    <dt>Dokumenty powiązane</dt><dd><a href="DOC-009-kryptografia.html">DOC-009</a> | <a href="DOC-008-kontrola-dostepu.html">DOC-008</a> | <a href="DOC-020-rejestr-aktywow.html">DOC-020</a></dd>
-  </dl>
+<h1>Klasyfikacja i Ochrona Informacji</h1>
+<div class="subtitle">Poziomy klasyfikacji, etykietowanie, obsługa nośników i ochrona danych osobowych</div>
+<dl class="doc-meta">
+<dt>Numer dokumentu</dt><dd>DOC-010</dd>
+<dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
+<dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+<dt>Właściciel</dt><dd class="fill-critical">▸ CISO / DPO</dd>
+<dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+<dt>Podstawa prawna</dt><dd>Art. 21(2) <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32022L2555" rel="noopener" target="_blank">NIS2</a>; Art. 8 <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000252" rel="noopener" target="_blank">KSC</a>; <a href="https://www.iso.org/standard/27001" rel="noopener" target="_blank">ISO/IEC 27001:2022</a> A.5.9–A.5.14; <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32016R0679" rel="noopener" target="_blank">RODO</a> art. 5, 25, 32</dd>
+<dt>Dokumenty powiązane</dt><dd><a href="DOC-009-kryptografia.html">DOC-009</a> | <a href="DOC-008-kontrola-dostepu.html">DOC-008</a> | <a href="DOC-020-rejestr-aktywow.html">DOC-020</a></dd>
+</dl>
 </div>
-
 <div class="section">
-  <h2>1. Schemat Klasyfikacji Informacji</h2>
-  <p>Organizacja stosuje <strong>4-poziomowy schemat klasyfikacji</strong> informacji, oparty na potencjalnym wpływie ujawnienia na organizację i osoby trzecie:</p>
-
-  <table>
-    <tr>
-      <th>Poziom</th><th>Etykieta</th><th>Opis</th><th>Przykłady</th><th>Domyślna ochrona</th>
-    </tr>
-    <tr style="background:#d4ffe0;">
-      <td><strong>1</strong></td>
-      <td><strong>PUBLICZNE</strong></td>
-      <td>Informacje przeznaczone do publicznego udostępnienia lub niepoświające ryzyka przy ujawnieniu</td>
-      <td>Strona www, broszury, ogłoszenia prasowe</td>
-      <td>Podstawowa (integralność)</td>
-    </tr>
-    <tr style="background:#fffbcc;">
-      <td><strong>2</strong></td>
-      <td><strong>WEWNĘTRZNE</strong></td>
-      <td>Informacje do użytku wewnętrznego, ograniczone ujawnienie nie powoduje poważnych szkód</td>
-      <td>Procedury wewnętrzne, organy, raporty robocze, e-maile wewnętrzne</td>
-      <td>Kontrola dostępu, brak szyfrowania wymaganego</td>
-    </tr>
-    <tr style="background:#ffecd0;">
-      <td><strong>3</strong></td>
-      <td><strong>POUFNE</strong></td>
-      <td>Informacje sensytywne – nieuprawnione ujawnienie może narazić organizację lub osoby</td>
-      <td>Dane klientów, dane osobowe, umowy handlowe, hasła, klucze API, wyniki auditów</td>
-      <td>Szyfrowanie wymagane, MFA, rejestr dostępów</td>
-    </tr>
-    <tr style="background:#ffe0e0;">
-      <td><strong>4</strong></td>
-      <td><strong>TAJNE</strong></td>
-      <td>Informacje krytyczne – ujawnienie może wyrządzić poważne lub nieodwracalne szkody</td>
-      <td>Klucze kryptograficzne, hasła do kont krytycznych, plany awaryjne, tajemnice przedsiębiorstwa, dane szczególnej kategorii RODO</td>
-      <td>Szyfrowanie wymagane, silna kontrola dostępu, fizyczna ochrona nośników</td>
-    </tr>
-  </table>
+<h2>1. Schemat Klasyfikacji Informacji</h2>
+<p>Organizacja stosuje <strong>4-poziomowy schemat klasyfikacji</strong> informacji, oparty na potencjalnym wpływie ujawnienia na organizację i osoby trzecie:</p>
+<table>
+<tr>
+<th>Poziom</th><th>Etykieta</th><th>Opis</th><th>Przykłady</th><th>Domyślna ochrona</th>
+</tr>
+<tr style="background:#d4ffe0;">
+<td><strong>1</strong></td>
+<td><strong>PUBLICZNE</strong></td>
+<td>Informacje przeznaczone do publicznego udostępnienia lub niepoświające ryzyka przy ujawnieniu</td>
+<td>Strona www, broszury, ogłoszenia prasowe</td>
+<td>Podstawowa (integralność)</td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>2</strong></td>
+<td><strong>WEWNĘTRZNE</strong></td>
+<td>Informacje do użytku wewnętrznego, ograniczone ujawnienie nie powoduje poważnych szkód</td>
+<td>Procedury wewnętrzne, organy, raporty robocze, e-maile wewnętrzne</td>
+<td>Kontrola dostępu, brak szyfrowania wymaganego</td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>3</strong></td>
+<td><strong>POUFNE</strong></td>
+<td>Informacje sensytywne – nieuprawnione ujawnienie może narazić organizację lub osoby</td>
+<td>Dane klientów, dane osobowe, umowy handlowe, hasła, klucze API, wyniki auditów</td>
+<td>Szyfrowanie wymagane, MFA, rejestr dostępów</td>
+</tr>
+<tr style="background:#ffe0e0;">
+<td><strong>4</strong></td>
+<td><strong>TAJNE</strong></td>
+<td>Informacje krytyczne – ujawnienie może wyrządzić poważne lub nieodwracalne szkody</td>
+<td>Klucze kryptograficzne, hasła do kont krytycznych, plany awaryjne, tajemnice przedsiębiorstwa, dane szczególnej kategorii RODO</td>
+<td>Szyfrowanie wymagane, silna kontrola dostępu, fizyczna ochrona nośników</td>
+</tr>
+</table>
 </div>
-
 <div class="section">
-  <h2>2. Obowiązki Klasyfikacji</h2>
-  <ul>
-    <li><strong>Twórca informacji</strong> odpowiada za nadanie początkowej klasyfikacji w momencie tworzenia lub otrzymania informacji.</li>
-    <li><strong>Właściciel systemu</strong> odpowiada za klasyfikację zbiorów danych przetwarzanych w systemie.</li>
-    <li>Klasyfikację należy przejśrzeć przy każdej znaczącej zmianie treści lub kontekstu użycia dokumentu.</li>
-    <li>Domyślna klasyfikacja dla nowych dokumentów (brak etykiety): <span class="fill-const">▸ [WEWNĘTRZNE]<span class="constraint-badge">nie niższy niż Wewnętrzne</span></span>.</li>
-  </ul>
+<h2>2. Obowiązki Klasyfikacji</h2>
+<ul>
+<li><strong>Twórca informacji</strong> odpowiada za nadanie początkowej klasyfikacji w momencie tworzenia lub otrzymania informacji.</li>
+<li><strong>Właściciel systemu</strong> odpowiada za klasyfikację zbiorów danych przetwarzanych w systemie.</li>
+<li>Klasyfikację należy przejśrzeć przy każdej znaczącej zmianie treści lub kontekstu użycia dokumentu.</li>
+<li>Domyślna klasyfikacja dla nowych dokumentów (brak etykiety): <span class="fill-const">▸ [WEWNĘTRZNE]<span class="constraint-badge">nie niższy niż Wewnętrzne</span></span>.</li>
+</ul>
 </div>
-
 <div class="section">
-  <h2>3. Etykietowanie i Oznaczanie</h2>
-  <div class="fill-block org">
-    <span class="label">▸ Organizacja uzupełnia – sposób etykietowania</span>
-    <table>
-      <tr><th>Nośnik/format</th><th>Metoda etykietowania</th><th>Lokalizacja etykiety</th></tr>
-      <tr>
-        <td>Dokumenty elektroniczne (Office, PDF)</td>
-        <td class="fill-org">▸ [nagłówek/stopka / metadata / watermark]</td>
-        <td class="fill-org">▸ [stopka każdej strony / tytuł dokumentu]</td>
-      </tr>
-      <tr>
-        <td>Poczta e-mail</td>
-        <td class="fill-org">▸ [temat / nagłówek wiadomości / automatyczne etykietowanie]</td>
-        <td class="fill-org">▸ [początek tematu: np. [POUFNE]]</td>
-      </tr>
-      <tr>
-        <td>Nośniki fizyczne (dyski USB, wydruki)</td>
-        <td class="fill-org">▸ [naklejka fizyczna / opis na kopercie]</td>
-        <td class="fill-org">▸ [widoczne miejsce na nośniku]</td>
-      </tr>
-      <tr>
-        <td>Foldery i zasoby sieciowe</td>
-        <td class="fill-org">▸ [nazwa folderu / plik README z klasyfikacją]</td>
-        <td class="fill-org">▸</td>
-      </tr>
-    </table>
-  </div>
+<h2>3. Etykietowanie i Oznaczanie</h2>
+<div class="fill-block org">
+<span class="label">▸ Organizacja uzupełnia – sposób etykietowania</span>
+<table>
+<tr><th>Nośnik/format</th><th>Metoda etykietowania</th><th>Lokalizacja etykiety</th></tr>
+<tr>
+<td>Dokumenty elektroniczne (Office, PDF)</td>
+<td class="fill-org">▸ [nagłówek/stopka / metadata / watermark]</td>
+<td class="fill-org">▸ [stopka każdej strony / tytuł dokumentu]</td>
+</tr>
+<tr>
+<td>Poczta e-mail</td>
+<td class="fill-org">▸ [temat / nagłówek wiadomości / automatyczne etykietowanie]</td>
+<td class="fill-org">▸ [początek tematu: np. [POUFNE]]</td>
+</tr>
+<tr>
+<td>Nośniki fizyczne (dyski USB, wydruki)</td>
+<td class="fill-org">▸ [naklejka fizyczna / opis na kopercie]</td>
+<td class="fill-org">▸ [widoczne miejsce na nośniku]</td>
+</tr>
+<tr>
+<td>Foldery i zasoby sieciowe</td>
+<td class="fill-org">▸ [nazwa folderu / plik README z klasyfikacją]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
 </div>
-
+</div>
 <div class="section">
-  <h2>4. Zasady Postępowania według Poziomów</h2>
-  <table>
-    <tr><th>Zasada</th><th>PUBLICZNE</th><th>WEWNĘTRZNE</th><th>POUFNE</th><th>TAJNE</th></tr>
-    <tr>
-      <td>Udostępnianie zewnętrzne</td>
-      <td style="background:#d4ffe0;">Dozwolone</td>
-      <td style="background:#fffbcc;">Wymaga zatwierdzenia</td>
-      <td style="background:#ffecd0;">Wymaga NDA + zatwierdzenia zarządu</td>
-      <td style="background:#ffe0e0;">Niedozwolone bez decyzji zarządu</td>
-    </tr>
-    <tr>
-      <td>Szyfrowanie w tranzycie</td>
-      <td>Zalecane</td>
-      <td>Zalecane</td>
-      <td style="background:#ffecd0;"><strong>Wymagane (TLS)</strong></td>
-      <td style="background:#ffe0e0;"><strong>Wymagane (end-to-end)</strong></td>
-    </tr>
-    <tr>
-      <td>Szyfrowanie w spoczynku</td>
-      <td>Nie wymagane</td>
-      <td>Zalecane</td>
-      <td style="background:#ffecd0;"><strong>Wymagane</strong></td>
-      <td style="background:#ffe0e0;"><strong>Wymagane (AES-256+)</strong></td>
-    </tr>
-    <tr>
-      <td>Drukowanie</td>
-      <td>Dozwolone</td>
-      <td>Dozwolone</td>
-      <td style="background:#ffecd0;">Wymaga nadzoru, niszczarka</td>
-      <td style="background:#ffe0e0;">Zakaz lub za zgodą CISO, niszczarka 4-pass</td>
-    </tr>
-    <tr>
-      <td>Retencja</td>
-      <td class="fill-org">▸ [np. 5 lat]</td>
-      <td class="fill-org">▸ [np. 5 lat]</td>
-      <td class="fill-const">▸ [np. 10 lat]<span class="constraint-badge">wg wymogów prawnych</span></td>
-      <td class="fill-const">▸ [np. 10 lat lub bezterminowo]<span class="constraint-badge">wg wymogów prawnych</span></td>
-    </tr>
-    <tr>
-      <td>Niszczenie (elektroniczne)</td>
-      <td>Standardowe usunięcie</td>
-      <td>Standardowe usunięcie</td>
-      <td style="background:#ffecd0;">Bezpieczne usunięcie (shred / wipe)</td>
-      <td style="background:#ffe0e0;">Kryptograficzne wymazanie + fizyczne zniszczenie nośnika</td>
-    </tr>
-  </table>
+<h2>4. Zasady Postępowania według Poziomów</h2>
+<table>
+<tr><th>Zasada</th><th>PUBLICZNE</th><th>WEWNĘTRZNE</th><th>POUFNE</th><th>TAJNE</th></tr>
+<tr>
+<td>Udostępnianie zewnętrzne</td>
+<td style="background:#d4ffe0;">Dozwolone</td>
+<td style="background:#fffbcc;">Wymaga zatwierdzenia</td>
+<td style="background:#ffecd0;">Wymaga NDA + zatwierdzenia zarządu</td>
+<td style="background:#ffe0e0;">Niedozwolone bez decyzji zarządu</td>
+</tr>
+<tr>
+<td>Szyfrowanie w tranzycie</td>
+<td>Zalecane</td>
+<td>Zalecane</td>
+<td style="background:#ffecd0;"><strong>Wymagane (TLS)</strong></td>
+<td style="background:#ffe0e0;"><strong>Wymagane (end-to-end)</strong></td>
+</tr>
+<tr>
+<td>Szyfrowanie w spoczynku</td>
+<td>Nie wymagane</td>
+<td>Zalecane</td>
+<td style="background:#ffecd0;"><strong>Wymagane</strong></td>
+<td style="background:#ffe0e0;"><strong>Wymagane (AES-256+)</strong></td>
+</tr>
+<tr>
+<td>Drukowanie</td>
+<td>Dozwolone</td>
+<td>Dozwolone</td>
+<td style="background:#ffecd0;">Wymaga nadzoru, niszczarka</td>
+<td style="background:#ffe0e0;">Zakaz lub za zgodą CISO, niszczarka 4-pass</td>
+</tr>
+<tr>
+<td>Retencja</td>
+<td class="fill-org">▸ [np. 5 lat]</td>
+<td class="fill-org">▸ [np. 5 lat]</td>
+<td class="fill-const">▸ [np. 10 lat]<span class="constraint-badge">wg wymogów prawnych</span></td>
+<td class="fill-const">▸ [np. 10 lat lub bezterminowo]<span class="constraint-badge">wg wymogów prawnych</span></td>
+</tr>
+<tr>
+<td>Niszczenie (elektroniczne)</td>
+<td>Standardowe usunięcie</td>
+<td>Standardowe usunięcie</td>
+<td style="background:#ffecd0;">Bezpieczne usunięcie (shred / wipe)</td>
+<td style="background:#ffe0e0;">Kryptograficzne wymazanie + fizyczne zniszczenie nośnika</td>
+</tr>
+</table>
 </div>
-
 <div class="section">
-  <h2>5. Dane Osobowe – RODO</h2>
-  <div class="callout danger">
-    <div class="icon">⚠️</div>
-    <div><strong>Dane osobowe stanowią co najmniej poziom POUFNE.</strong> Dane szczególnej kategorii (art. 9 RODO: dane zdrowotne, biometryczne, polityczne, światopoglądowe) – TAJNE.</div>
-  </div>
-  <table>
-    <tr><th>Typ danych osobowych</th><th>Klasyfikacja minimalna</th><th>Szczególne wymagania</th></tr>
-    <tr>
-      <td>Dane zwykłe (imię, e-mail, adres)</td>
-      <td><strong>POUFNE</strong></td>
-      <td>Zgodność z RODO, retencja wg celów przetwarzania</td>
-    </tr>
-    <tr>
-      <td>Dane szczególnej kategorii (art. 9)</td>
-      <td><strong>TAJNE</strong></td>
-      <td>Szyfrowanie end-to-end, dostęp tylko niezbędnym osobom</td>
-    </tr>
-    <tr>
-      <td>Dane uwierzytelniające (hasła, kody)</td>
-      <td><strong>TAJNE</strong></td>
-      <td>Tylko jako hash (bcrypt/Argon2) – nigdy plain text</td>
-    </tr>
-  </table>
-  <p>Retencja danych osobowych: <span class="fill-const">▸ [wg rejestru czynności przetwarzania (RCP) u DPO]<span class="constraint-badge">wg RODO i celów przetwarzania</span></span>.</p>
+<h2>5. Dane Osobowe – RODO</h2>
+<div class="callout danger">
+<div class="icon">⚠️</div>
+<div><strong>Dane osobowe stanowią co najmniej poziom POUFNE.</strong> Dane szczególnej kategorii (art. 9 RODO: dane zdrowotne, biometryczne, polityczne, światopoglądowe) – TAJNE.</div>
 </div>
-
+<table>
+<tr><th>Typ danych osobowych</th><th>Klasyfikacja minimalna</th><th>Szczególne wymagania</th></tr>
+<tr>
+<td>Dane zwykłe (imię, e-mail, adres)</td>
+<td><strong>POUFNE</strong></td>
+<td>Zgodność z RODO, retencja wg celów przetwarzania</td>
+</tr>
+<tr>
+<td>Dane szczególnej kategorii (art. 9)</td>
+<td><strong>TAJNE</strong></td>
+<td>Szyfrowanie end-to-end, dostęp tylko niezbędnym osobom</td>
+</tr>
+<tr>
+<td>Dane uwierzytelniające (hasła, kody)</td>
+<td><strong>TAJNE</strong></td>
+<td>Tylko jako hash (bcrypt/Argon2) – nigdy plain text</td>
+</tr>
+</table>
+<p>Retencja danych osobowych: <span class="fill-const">▸ [wg rejestru czynności przetwarzania (RCP) u DPO]<span class="constraint-badge">wg RODO i celów przetwarzania</span></span>.</p>
+</div>
 <div class="section">
-  <h2>6. Obsługa Nośników Fizycznych</h2>
-  <ul>
-    <li>Nośniki z danymi POUFNYMI i TAJNYMI muszą być szyfrowane (→ DOC-009).</li>
-    <li>Nośniki przeznaczone do wyrzucenia lub przekazania muszą być trwale wyczyszczone (NIST 800-88 lub fizycznie zniszczone).</li>
-    <li>Przenoszenie nośników TAJNYCH poza siedzibę: wymaga <span class="fill-org">▸ [pisemnego zatwierdzenia CISO]</span>.</li>
-    <li>Nośniki gubione lub skradzione: natychmiastowe zgłoszenie do CISO → procedura incydentu (DOC-005).</li>
-  </ul>
+<h2>6. Obsługa Nośników Fizycznych</h2>
+<ul>
+<li>Nośniki z danymi POUFNYMI i TAJNYMI muszą być szyfrowane (→ DOC-009).</li>
+<li>Nośniki przeznaczone do wyrzucenia lub przekazania muszą być trwale wyczyszczone (NIST 800-88 lub fizycznie zniszczone).</li>
+<li>Przenoszenie nośników TAJNYCH poza siedzibę: wymaga <span class="fill-org">▸ [pisemnego zatwierdzenia CISO]</span>.</li>
+<li>Nośniki gubione lub skradzione: natychmiastowe zgłoszenie do CISO → procedura incydentu (DOC-005).</li>
+</ul>
 </div>
-
 <div class="section">
-  <h2>7. Historia Zmian</h2>
-  <table>
-    <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
-    <tr>
-      <td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD.MM.RRRR</td>
-      <td class="fill-org">▸</td><td class="fill-org">▸ Pierwsze wydanie</td>
-      <td class="fill-critical">▸ Zarząd</td>
-    </tr>
-  </table>
+<h2>7. Historia Zmian</h2>
+<table>
+<tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD.MM.RRRR</td>
+<td class="fill-org">▸</td><td class="fill-org">▸ Pierwsze wydanie</td>
+<td class="fill-critical">▸ Zarząd</td>
+</tr>
+</table>
 </div>
-
 <div class="muted" style="text-align:right;margin-top:8px;">DOC-010 Klasyfikacja i Ochrona Informacji | v1.0 | NIS2/KSC</div>
 </main>
-<footer class="page-footer">Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-010 Klasyfikacja i Ochrona Informacji &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a>  <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">&#169; 2026 Tomasz Zysko / CrazyRat &nbsp;&middot;&nbsp; Wszelkie prawa zastrze&#380;one &nbsp;&middot;&nbsp; Dokument obj&#281;ty ochron&#261; prawa autorskiego &nbsp;&middot;&nbsp; Reprodukcja lub redystrybucja bez pisemnej zgody autora jest zabroniona</div>
+<footer class="page-footer">Dokumentacja NIS2/KSC SZBI  |  DOC-010 Klasyfikacja i Ochrona Informacji  |  <a href="../index.html" style="color:#7baed4;">← Portal</a> <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  Wszelkie prawa zastrzeżone  ·  Dokument objęty ochroną prawa autorskiego  ·  Reprodukcja lub redystrybucja bez pisemnej zgody autora jest zabroniona</div>
 </footer>
 </div></body></html>

@@ -1,355 +1,334 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOC-005 Polityka Zarządzania Incydentami – NIS2/KSC</title>
-<link rel="stylesheet" href="../css/style.css">
-    <script src="/schema.js"></script>
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="page-wrapper">
-
 <header class="top-bar">
-  <span class="logo">SZBI / NIS2</span>
-  <span class="doc-id">DOC-005</span>
-  <span style="flex:1"></span>
-  <a href="../index.html">← Portal dokumentów</a>
+<span class="logo">SZBI / NIS2</span>
+<span class="doc-id">DOC-005</span>
+<span style="flex:1"></span>
+<a href="../index.html">← Portal dokumentów</a>
 </header>
-
 <aside class="sidebar">
-  <h3>Etap 1 – Fundamenty</h3>
-  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
-  <a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
-  <a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
-  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
-  <h3>Etap 2 – Incydenty</h3>
-  <a href="DOC-005-polityka-incydentow.html" class="active">DOC-005 Polityka incydentów</a>
-  <a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
-  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
-  <h3>Etap 3 – Dostęp i dane</h3>
-  <a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
-  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
-  <a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
-  <h3>Etap 4 – Operacje</h3>
-  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
-  <a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
-  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
-  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
-  <h3>Etap 5 – Ludzie</h3>
-  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
-  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
-  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
-  <h3>Etap 6 – Fizyczne/Sieć</h3>
-  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
-  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
-  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
-  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+<h3>Etap 1 – Fundamenty</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+<h3>Etap 2 – Incydenty</h3>
+<a class="active" href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+<h3>Etap 3 – Dostęp i dane</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+<h3>Etap 4 – Operacje</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+<a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+<h3>Etap 5 – Ludzie</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+<h3>Etap 6 – Fizyczne/Sieć</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
 </aside>
-
 <main class="content">
-
-  <div class="doc-header">
-    <h1>Polityka Zarządzania Incydentami Cyberbezpieczeństwa</h1>
-    <div class="subtitle">Zasady wykrywania, klasyfikacji, obsługi i raportowania incydentów</div>
-    <dl class="doc-meta">
-      <dt>Numer dokumentu</dt><dd>DOC-005</dd>
-      <dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
-      <dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
-      <dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
-      <dt>Następny przegląd</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
-      <dt>Właściciel</dt><dd class="fill-critical">▸ CISO</dd>
-      <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
-      <dt>Podstawa prawna</dt><dd>Art. 23 NIS2; Art. 10–15 KSC; ISO/IEC 27035</dd>
-      <dt>Dokumenty powiązane</dt><dd>
-        <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a> |
+<div class="doc-header">
+<h1>Polityka Zarządzania Incydentami Cyberbezpieczeństwa</h1>
+<div class="subtitle">Zasady wykrywania, klasyfikacji, obsługi i raportowania incydentów</div>
+<dl class="doc-meta">
+<dt>Numer dokumentu</dt><dd>DOC-005</dd>
+<dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
+<dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+<dt>Następny przegląd</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+<dt>Właściciel</dt><dd class="fill-critical">▸ CISO</dd>
+<dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+<dt>Podstawa prawna</dt><dd>Art. 23 <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32022L2555" rel="noopener" target="_blank">NIS2</a>; Art. 10–15 <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000252" rel="noopener" target="_blank">KSC</a>; <a href="https://www.iso.org/search.html?q=ISO%2FIEC%2027035" rel="noopener" target="_blank">ISO/IEC 27035</a></dd>
+<dt>Dokumenty powiązane</dt><dd>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a> |
         <a href="DOC-006-procedura-zglaszania.html">DOC-006</a> |
         <a href="DOC-007-plan-reagowania.html">DOC-007</a> |
         <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004</a>
-      </dd>
-    </dl>
-  </div>
-
-  <!-- 1. Cel -->
-  <div class="section">
-    <h2>1. Cel i Zakres</h2>
-    <p>Niniejsza polityka określa zasady zarządzania incydentami cyberbezpieczeństwa w organizacji, w tym sposób ich wykrywania, klasyfikacji, obsługi, dokumentowania i raportowania do właściwych organów – w szczególności do właściwego CSIRT zgodnie z wymaganiami KSC.</p>
-    <div class="callout danger">
-      <div class="icon">⚠️</div>
-      <div>
-        <strong>Obowiązek ustawowy:</strong> Art. 23 NIS2 i art. 10–15 nowelizacji KSC nakładają na podmioty kluczowe i ważne obowiązek posiadania zdolności do wykrywania incydentów oraz ich zgłaszania do właściwego CSIRT w ściśle określonych terminach (wczesne ostrzeżenie: <strong>24 h</strong>, zgłoszenie: <strong>72 h</strong>, raport końcowy: <strong>1 miesiąc</strong>).
+</dd>
+</dl>
+</div>
+<!-- 1. Cel -->
+<div class="section">
+<h2>1. Cel i Zakres</h2>
+<p>Niniejsza polityka określa zasady zarządzania incydentami cyberbezpieczeństwa w organizacji, w tym sposób ich wykrywania, klasyfikacji, obsługi, dokumentowania i raportowania do właściwych organów – w szczególności do właściwego CSIRT zgodnie z wymaganiami KSC.</p>
+<div class="callout danger">
+<div class="icon">⚠️</div>
+<div>
+<strong>Obowiązek ustawowy:</strong> Art. 23 NIS2 i art. 10–15 nowelizacji KSC nakładają na podmioty kluczowe i ważne obowiązek posiadania zdolności do wykrywania incydentów oraz ich zgłaszania do właściwego CSIRT w ściśle określonych terminach (wczesne ostrzeżenie: <strong>24 h</strong>, zgłoszenie: <strong>72 h</strong>, raport końcowy: <strong>1 miesiąc</strong>).
       </div>
-    </div>
-  </div>
-
-  <!-- 2. Definicje -->
-  <div class="section">
-    <h2>2. Definicje i Klasyfikacja Incydentów</h2>
-
-    <h3>2.1 Definicje</h3>
-    <table>
-      <tr><th>Pojęcie</th><th>Definicja</th></tr>
-      <tr><td><strong>Zdarzenie</strong></td><td>Każde zaobserwowane wystąpienie w systemie lub sieci wskazujące na możliwe naruszenie bezpieczeństwa</td></tr>
-      <tr><td><strong>Incydent</strong></td><td>Zdarzenie mające rzeczywisty niekorzystny wpływ na bezpieczeństwo sieci i systemów informacyjnych</td></tr>
-      <tr><td><strong>Poważny incydent</strong></td><td>Incydent powodujący znaczne zakłócenie lub mogący powodować znaczne zakłócenie świadczenia usług kluczowych/ważnych (zob. kryteria istotności w pkt 2.3)</td></tr>
-      <tr><td><strong>Incydent w łańcuchu dostaw</strong></td><td>Incydent u dostawcy lub podmiotu zewnętrznego mający wpływ na organizację</td></tr>
-      <tr><td><strong>Podatność</strong></td><td>Słabość systemu, która może zostać wykorzystana przez zagrożenie</td></tr>
-      <tr><td><strong>CSIRT</strong></td><td>Właściwy Zespół Reagowania na Incydenty (CSIRT NASK / GOV / MON / sektorowy)</td></tr>
-    </table>
-
-    <h3>2.2 Klasyfikacja według poziomu dotkliwości</h3>
-    <table>
-      <tr><th>Poziom</th><th>Nazwa</th><th>Opis</th><th>Przykłady</th><th>Czas reakcji</th></tr>
-      <tr style="background:#d4ffe0;">
-        <td><strong>P4</strong></td><td>Niski</td>
-        <td>Ograniczony wpływ, brak zakłóceń usług</td>
-        <td>Pojedyncze złośliwe oprogramowanie na stacji, próba phishingu bez powodzenia</td>
-        <td class="fill-const">▸ [8h]<span class="constraint-badge">do 24h</span></td>
-      </tr>
-      <tr style="background:#fffbcc;">
-        <td><strong>P3</strong></td><td>Średni</td>
-        <td>Umiarkowany wpływ, ograniczone zakłócenie</td>
-        <td>Atak DDoS na systemy pomocnicze, nieautoryzowany dostęp do danych nieklasyfikowanych</td>
-        <td class="fill-const">▸ [4h]<span class="constraint-badge">do 8h</span></td>
-      </tr>
-      <tr style="background:#ffecd0;">
-        <td><strong>P2</strong></td><td>Wysoki</td>
-        <td>Znaczny wpływ, zakłócenie usług ważnych</td>
-        <td>Atak ransomware na systemy backoffice, wyciek danych osobowych, kompromitacja konta uprzywilejowanego</td>
-        <td class="fill-const">▸ [2h]<span class="constraint-badge">do 4h</span></td>
-      </tr>
-      <tr style="background:#ffe0e0;">
-        <td><strong>P1</strong></td><td>Krytyczny</td>
-        <td>Poważny incydent w rozumieniu KSC, zakłócenie usług kluczowych</td>
-        <td>Ransomware na OT/SCADA, atak na infrastrukturę krytyczną, wyciek danych na dużą skalę</td>
-        <td class="fill-const">▸ [1h]<span class="constraint-badge">do 2h</span></td>
-      </tr>
-    </table>
-
-    <h3>2.3 Kryteria istotności – próg „poważnego incydentu" (KSC)</h3>
-    <div class="fill-block critical">
-      <span class="label">⚠ Krytyczne – organizacja określa progi zgodnie z KSC / wytycznymi ENISA</span>
-      <p>Incydent uznaje się za <strong>poważny</strong> (wymagający zgłoszenia do CSIRT), gdy spełniony jest co najmniej jeden z poniższych warunków:</p>
-      <table>
-        <tr><th>Kryterium</th><th>Próg organizacji</th><th>Wymaganie min. KSC/NIS2</th></tr>
-        <tr>
-          <td>Czas niedostępności usługi kluczowej</td>
-          <td class="fill-const">▸ [np. powyżej 30 min]<span class="constraint-badge">próg wg sektora</span></td>
-          <td>Wg rozporządzenia wykonawczego do KSC dla sektora</td>
-        </tr>
-        <tr>
-          <td>Liczba dotkniętych użytkowników</td>
-          <td class="fill-const">▸ [np. powyżej X użytkowników]</td>
-          <td>Wg rozporządzenia wykonawczego do KSC</td>
-        </tr>
-        <tr>
-          <td>Strata finansowa (szacunkowa)</td>
-          <td class="fill-const">▸ [np. powyżej X PLN]</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>Wyciek danych osobowych</td>
-          <td>Każde naruszenie danych osobowych</td>
-          <td>RODO art. 33 (zgłoszenie do UODO 72h)</td>
-        </tr>
-        <tr>
-          <td>Wpływ na infrastrukturę krytyczną</td>
-          <td>Każde zdarzenie dotykające OT/ICS</td>
-          <td>Art. 23(3) NIS2</td>
-        </tr>
-        <tr>
-          <td>Zasięg geograficzny</td>
-          <td class="fill-org">▸ [np. incydent transgranicznie, min. 2 państwa UE]</td>
-          <td>Art. 23(6) NIS2 – zgłoszenie do ENISA</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- 3. Obowiązek zgłaszania -->
-  <div class="section">
-    <h2>3. Obowiązek i Terminy Zgłaszania – Wymóg KSC/NIS2</h2>
-    <div class="callout danger">
-      <div class="icon">🕐</div>
-      <div><strong>Terminy są ustawowe i nieprzekraczalne. Przekroczenie grozi karą administracyjną.</strong></div>
-    </div>
-
-    <table>
-      <tr><th>Etap zgłoszenia</th><th>Termin</th><th>Adresat</th><th>Zawartość</th></tr>
-      <tr style="background:#ffe0e0;">
-        <td><strong>Wczesne ostrzeżenie</strong><br>(Early Warning)</td>
-        <td><strong style="color:#c0392b;">24 godziny</strong><br>od wykrycia</td>
-        <td>Właściwy CSIRT<br><span class="fill-critical">▸ [CSIRT NASK / sektorowy]</span></td>
-        <td>Informacja o wystąpieniu poważnego incydentu lub podejrzenia; wskazanie wpływu transgranicznego (jeśli dotyczy)</td>
-      </tr>
-      <tr style="background:#ffecd0;">
-        <td><strong>Zgłoszenie incydentu</strong></td>
-        <td><strong style="color:#e07b00;">72 godziny</strong><br>od wykrycia</td>
-        <td>Właściwy CSIRT</td>
-        <td>Ocena incydentu, wstępna klasyfikacja dotkliwości, wskaźniki kompromitacji (IoC), podjęte działania zaradcze</td>
-      </tr>
-      <tr style="background:#fffbcc;">
-        <td><strong>Raport pośredni</strong><br>(jeśli wymagany)</td>
-        <td><strong>Na żądanie CSIRT</strong></td>
-        <td>CSIRT / organ nadzorczy</td>
-        <td>Aktualny status obsługi, ewolucja incydentu</td>
-      </tr>
-      <tr style="background:#d4ffe0;">
-        <td><strong>Raport końcowy</strong></td>
-        <td><strong>1 miesiąc</strong><br>od zgłoszenia lub<br>od zamknięcia incydentu</td>
-        <td>Właściwy CSIRT</td>
-        <td>Pełny opis incydentu, pierwotna przyczyna (RCA), podjęte środki zaradcze, wyciągnięte wnioski</td>
-      </tr>
-      <tr style="background:#dff0ff;">
-        <td><strong>Naruszenie danych osobowych</strong><br>(RODO)</td>
-        <td><strong style="color:#1a4a8a;">72 godziny</strong><br>od wykrycia</td>
-        <td>UODO</td>
-        <td>Formularz UODO: charakter naruszenia, liczba osób, możliwe skutki, podjęte środki</td>
-      </tr>
-    </table>
-
-    <h3>3.1 Ścieżka eskalacji i powiadamiania</h3>
-    <p>Każdy pracownik, który wykryje lub podejrzewa incydent, zobowiązany jest niezwłocznie powiadomić:</p>
-    <ol>
-      <li>Swojego przełożonego ORAZ</li>
-      <li>CISO / Osobę odpowiedzialną za cyberbezpieczeństwo przez:
+</div>
+</div>
+<!-- 2. Definicje -->
+<div class="section">
+<h2>2. Definicje i Klasyfikacja Incydentów</h2>
+<h3>2.1 Definicje</h3>
+<table>
+<tr><th>Pojęcie</th><th>Definicja</th></tr>
+<tr><td><strong>Zdarzenie</strong></td><td>Każde zaobserwowane wystąpienie w systemie lub sieci wskazujące na możliwe naruszenie bezpieczeństwa</td></tr>
+<tr><td><strong>Incydent</strong></td><td>Zdarzenie mające rzeczywisty niekorzystny wpływ na bezpieczeństwo sieci i systemów informacyjnych</td></tr>
+<tr><td><strong>Poważny incydent</strong></td><td>Incydent powodujący znaczne zakłócenie lub mogący powodować znaczne zakłócenie świadczenia usług kluczowych/ważnych (zob. kryteria istotności w pkt 2.3)</td></tr>
+<tr><td><strong>Incydent w łańcuchu dostaw</strong></td><td>Incydent u dostawcy lub podmiotu zewnętrznego mający wpływ na organizację</td></tr>
+<tr><td><strong>Podatność</strong></td><td>Słabość systemu, która może zostać wykorzystana przez zagrożenie</td></tr>
+<tr><td><strong>CSIRT</strong></td><td>Właściwy Zespół Reagowania na Incydenty (CSIRT NASK / GOV / MON / sektorowy)</td></tr>
+</table>
+<h3>2.2 Klasyfikacja według poziomu dotkliwości</h3>
+<table>
+<tr><th>Poziom</th><th>Nazwa</th><th>Opis</th><th>Przykłady</th><th>Czas reakcji</th></tr>
+<tr style="background:#d4ffe0;">
+<td><strong>P4</strong></td><td>Niski</td>
+<td>Ograniczony wpływ, brak zakłóceń usług</td>
+<td>Pojedyncze złośliwe oprogramowanie na stacji, próba phishingu bez powodzenia</td>
+<td class="fill-const">▸ [8h]<span class="constraint-badge">do 24h</span></td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>P3</strong></td><td>Średni</td>
+<td>Umiarkowany wpływ, ograniczone zakłócenie</td>
+<td>Atak DDoS na systemy pomocnicze, nieautoryzowany dostęp do danych nieklasyfikowanych</td>
+<td class="fill-const">▸ [4h]<span class="constraint-badge">do 8h</span></td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>P2</strong></td><td>Wysoki</td>
+<td>Znaczny wpływ, zakłócenie usług ważnych</td>
+<td>Atak ransomware na systemy backoffice, wyciek danych osobowych, kompromitacja konta uprzywilejowanego</td>
+<td class="fill-const">▸ [2h]<span class="constraint-badge">do 4h</span></td>
+</tr>
+<tr style="background:#ffe0e0;">
+<td><strong>P1</strong></td><td>Krytyczny</td>
+<td>Poważny incydent w rozumieniu KSC, zakłócenie usług kluczowych</td>
+<td>Ransomware na OT/SCADA, atak na infrastrukturę krytyczną, wyciek danych na dużą skalę</td>
+<td class="fill-const">▸ [1h]<span class="constraint-badge">do 2h</span></td>
+</tr>
+</table>
+<h3>2.3 Kryteria istotności – próg „poważnego incydentu" (KSC)</h3>
+<div class="fill-block critical">
+<span class="label">⚠ Krytyczne – organizacja określa progi zgodnie z KSC / wytycznymi ENISA</span>
+<p>Incydent uznaje się za <strong>poważny</strong> (wymagający zgłoszenia do CSIRT), gdy spełniony jest co najmniej jeden z poniższych warunków:</p>
+<table>
+<tr><th>Kryterium</th><th>Próg organizacji</th><th>Wymaganie min. KSC/NIS2</th></tr>
+<tr>
+<td>Czas niedostępności usługi kluczowej</td>
+<td class="fill-const">▸ [np. powyżej 30 min]<span class="constraint-badge">próg wg sektora</span></td>
+<td>Wg rozporządzenia wykonawczego do KSC dla sektora</td>
+</tr>
+<tr>
+<td>Liczba dotkniętych użytkowników</td>
+<td class="fill-const">▸ [np. powyżej X użytkowników]</td>
+<td>Wg rozporządzenia wykonawczego do KSC</td>
+</tr>
+<tr>
+<td>Strata finansowa (szacunkowa)</td>
+<td class="fill-const">▸ [np. powyżej X PLN]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Wyciek danych osobowych</td>
+<td>Każde naruszenie danych osobowych</td>
+<td>RODO art. 33 (zgłoszenie do UODO 72h)</td>
+</tr>
+<tr>
+<td>Wpływ na infrastrukturę krytyczną</td>
+<td>Każde zdarzenie dotykające OT/ICS</td>
+<td>Art. 23(3) NIS2</td>
+</tr>
+<tr>
+<td>Zasięg geograficzny</td>
+<td class="fill-org">▸ [np. incydent transgranicznie, min. 2 państwa UE]</td>
+<td>Art. 23(6) NIS2 – zgłoszenie do ENISA</td>
+</tr>
+</table>
+</div>
+</div>
+<!-- 3. Obowiązek zgłaszania -->
+<div class="section">
+<h2>3. Obowiązek i Terminy Zgłaszania – Wymóg KSC/NIS2</h2>
+<div class="callout danger">
+<div class="icon">🕐</div>
+<div><strong>Terminy są ustawowe i nieprzekraczalne. Przekroczenie grozi karą administracyjną.</strong></div>
+</div>
+<table>
+<tr><th>Etap zgłoszenia</th><th>Termin</th><th>Adresat</th><th>Zawartość</th></tr>
+<tr style="background:#ffe0e0;">
+<td><strong>Wczesne ostrzeżenie</strong><br/>(Early Warning)</td>
+<td><strong style="color:#c0392b;">24 godziny</strong><br/>od wykrycia</td>
+<td>Właściwy CSIRT<br/><span class="fill-critical">▸ [CSIRT NASK / sektorowy]</span></td>
+<td>Informacja o wystąpieniu poważnego incydentu lub podejrzenia; wskazanie wpływu transgranicznego (jeśli dotyczy)</td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>Zgłoszenie incydentu</strong></td>
+<td><strong style="color:#e07b00;">72 godziny</strong><br/>od wykrycia</td>
+<td>Właściwy CSIRT</td>
+<td>Ocena incydentu, wstępna klasyfikacja dotkliwości, wskaźniki kompromitacji (IoC), podjęte działania zaradcze</td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>Raport pośredni</strong><br/>(jeśli wymagany)</td>
+<td><strong>Na żądanie CSIRT</strong></td>
+<td>CSIRT / organ nadzorczy</td>
+<td>Aktualny status obsługi, ewolucja incydentu</td>
+</tr>
+<tr style="background:#d4ffe0;">
+<td><strong>Raport końcowy</strong></td>
+<td><strong>1 miesiąc</strong><br/>od zgłoszenia lub<br/>od zamknięcia incydentu</td>
+<td>Właściwy CSIRT</td>
+<td>Pełny opis incydentu, pierwotna przyczyna (RCA), podjęte środki zaradcze, wyciągnięte wnioski</td>
+</tr>
+<tr style="background:#dff0ff;">
+<td><strong>Naruszenie danych osobowych</strong><br/>(RODO)</td>
+<td><strong style="color:#1a4a8a;">72 godziny</strong><br/>od wykrycia</td>
+<td>UODO</td>
+<td>Formularz UODO: charakter naruszenia, liczba osób, możliwe skutki, podjęte środki</td>
+</tr>
+</table>
+<h3>3.1 Ścieżka eskalacji i powiadamiania</h3>
+<p>Każdy pracownik, który wykryje lub podejrzewa incydent, zobowiązany jest niezwłocznie powiadomić:</p>
+<ol>
+<li>Swojego przełożonego ORAZ</li>
+<li>CISO / Osobę odpowiedzialną za cyberbezpieczeństwo przez:
         <ul>
-          <li>Telefon: <span class="fill-critical">▸ [numer alarmowy 24/7]</span></li>
-          <li>E-mail: <span class="fill-critical">▸ [security@organizacja.pl lub dedykowany adres]</span></li>
-          <li>System ticketowy: <span class="fill-org">▸ [nazwa systemu, np. ServiceNow / Jira]</span></li>
-        </ul>
-      </li>
-    </ol>
-    <div class="callout warning">
-      <div class="icon">⚠️</div>
-      <div><strong>Zakaz samodzielnego usuwania śladów!</strong> Pracownik, który wykryje incydent, nie może podejmować działań mogących zniszczyć dowody (logi, pliki). Należy wyłącznie zgłosić zdarzenie i – jeśli to konieczne – odłączyć urządzenie od sieci.</div>
-    </div>
-  </div>
-
-  <!-- 4. Kategorie incydentów -->
-  <div class="section">
-    <h2>4. Kategorie Incydentów</h2>
-    <table>
-      <tr><th>Kategoria</th><th>Typ</th><th>Przykłady</th></tr>
-      <tr><td><strong>MAL</strong></td><td>Złośliwe oprogramowanie</td><td>Ransomware, wirus, trojan, spyware, rootkit, cryptominer</td></tr>
-      <tr><td><strong>PHI</strong></td><td>Phishing / Inżynieria społeczna</td><td>Spear phishing, vishing, smishing, BEC (Business Email Compromise)</td></tr>
-      <tr><td><strong>NET</strong></td><td>Ataki sieciowe</td><td>DDoS, skanowanie, man-in-the-middle, brute force, port scanning</td></tr>
-      <tr><td><strong>WEB</strong></td><td>Ataki na aplikacje webowe</td><td>SQL injection, XSS, CSRF, RFI/LFI, atak na API</td></tr>
-      <tr><td><strong>ACC</strong></td><td>Naruszenie kontroli dostępu</td><td>Nieautoryzowany dostęp, przejęcie konta, eskalacja uprawnień</td></tr>
-      <tr><td><strong>DAT</strong></td><td>Naruszenie danych</td><td>Wyciek danych, eksfiltracja, nieautoryzowane ujawnienie, zgubienie nośnika</td></tr>
-      <tr><td><strong>INS</strong></td><td>Insider threat</td><td>Celowe działanie pracownika, sabotaż, kradzież IP</td></tr>
-      <tr><td><strong>SUP</strong></td><td>Łańcuch dostaw</td><td>Kompromitacja oprogramowania dostawcy, backdoor w sprzęcie</td></tr>
-      <tr><td><strong>PHY</strong></td><td>Fizyczny</td><td>Kradzież sprzętu, nieautoryzowany dostęp do serwerowni</td></tr>
-      <tr><td><strong>OTH</strong></td><td>Inne</td><td>Nieuprawniona modyfikacja konfiguracji, błędna konfiguracja, anomalia w OT</td></tr>
-    </table>
-  </div>
-
-  <!-- 5. Role -->
-  <div class="section">
-    <h2>5. Role i Odpowiedzialności w Zarządzaniu Incydentami</h2>
-    <p>Szczegółowa macierz RACI dla incydentów w <a href="DOC-004-role-i-odpowiedzialnosci.html" class="ref-link">DOC-004</a>. Poniżej kluczowe obowiązki:</p>
-    <table>
-      <tr><th>Rola</th><th>Obowiązki przy incydencie</th></tr>
-      <tr><td><strong>Każdy pracownik</strong></td><td>Natychmiastowe zgłoszenie podejrzanego zdarzenia; nieusuwanie dowodów; odłączenie urządzenia jeśli konieczne</td></tr>
-      <tr><td><strong>CISO / Koordynator IR</strong></td><td>Ocena i klasyfikacja; uruchomienie procedury reagowania; powiadomienie CSIRT; eskalacja do zarządu; dokumentacja</td></tr>
-      <tr><td><strong>Administrator IT</strong></td><td>Zbieranie logów i dowodów forensycznych; izolacja systemów; wdrożenie środków zaradczych; odtwarzanie</td></tr>
-      <tr><td><strong>Zarząd</strong></td><td>Podejmowanie decyzji kryzysowych; autoryzacja działań nadzwyczajnych; komunikacja zewnętrzna (media, regulatorzy)</td></tr>
-      <tr><td><strong>Radca prawny / DPO</strong></td><td>Ocena obowiązków prawnych; zgłoszenie do UODO (jeśli dotyczy); dokumentacja prawna</td></tr>
-    </table>
-  </div>
-
-  <!-- 6. Rejestr incydentów -->
-  <div class="section">
-    <h2>6. Rejestr Incydentów</h2>
-    <p>Organizacja prowadzi centralny Rejestr Incydentów. Każdy incydent (niezależnie od poziomu) musi być zarejestrowany. Rejestr jest prowadzony przez CISO i przechowywany przez <span class="fill-const">▸ min. 5 lat<span class="constraint-badge">min. 5 lat – KSC</span></span>.</p>
-    <div class="fill-block org">
-      <span class="label">▸ Organizacja uzupełnia – narzędzie prowadzenia rejestru</span>
-      <p><strong>Narzędzie:</strong> <span class="fill-org">▸ [np. system SIEM / ticketing (ServiceNow / Jira) / dedykowany arkusz]</span></p>
-      <p><strong>Lokalizacja:</strong> <span class="fill-org">▸ [ścieżka / URL do rejestru]</span></p>
-      <p><strong>Dostęp:</strong> <span class="fill-org">▸ [kto ma dostęp do rejestru]</span></p>
-    </div>
-
-    <h3>Minimalna zawartość wpisu w rejestrze incydentów:</h3>
-    <table>
-      <tr><th>Pole</th><th>Opis</th><th>Wymagane?</th></tr>
-      <tr><td>ID incydentu</td><td>Unikalny identyfikator (np. INC-2024-001)</td><td>TAK</td></tr>
-      <tr><td>Data i godzina wykrycia</td><td>Timestamp pierwszego wykrycia</td><td>TAK</td></tr>
-      <tr><td>Kategoria (zob. pkt 4)</td><td>MAL / PHI / NET / WEB / ACC / DAT / INS / SUP / PHY / OTH</td><td>TAK</td></tr>
-      <tr><td>Poziom dotkliwości (P1–P4)</td><td>Zob. pkt 2.2</td><td>TAK</td></tr>
-      <tr><td>Opis zdarzenia</td><td>Co się stało, jakie systemy dotknięte</td><td>TAK</td></tr>
-      <tr><td>Dotknięte systemy / usługi</td><td>Lista systemów/aktywów</td><td>TAK</td></tr>
-      <tr><td>Pierwotna przyczyna (RCA)</td><td>Po zamknięciu incydentu</td><td>TAK (po zamknięciu)</td></tr>
-      <tr><td>Podjęte działania</td><td>Chronologiczny log działań</td><td>TAK</td></tr>
-      <tr><td>Czy zgłoszono do CSIRT?</td><td>TAK/NIE + data i godzina zgłoszenia</td><td>TAK (jeśli P1)</td></tr>
-      <tr><td>Czy zgłoszono do UODO?</td><td>TAK/NIE + data</td><td>TAK (jeśli dotyczy)</td></tr>
-      <tr><td>Data zamknięcia</td><td>Timestamp zamknięcia incydentu</td><td>TAK</td></tr>
-      <tr><td>Wyciągnięte wnioski (lessons learned)</td><td>Co poprawić</td><td>TAK (po zamknięciu)</td></tr>
-    </table>
-  </div>
-
-  <!-- 7. Wyciąganie wniosków -->
-  <div class="section">
-    <h2>7. Wyciąganie Wniosków i Doskonalenie</h2>
-    <p>Po każdym incydencie P1 i P2 oraz wybranych incydentach P3 przeprowadzany jest przegląd post-incydentowy (Post-Incident Review / PIR) w ciągu <span class="fill-const">▸ [5 dni roboczych]<span class="constraint-badge">max. 2 tyg.</span></span> od zamknięcia incydentu.</p>
-    <p>PIR odpowiada na pytania:</p>
-    <ul>
-      <li>Co się stało i dlaczego (analiza przyczyn źródłowych – RCA)?</li>
-      <li>Czy procedury zadziałały poprawnie?</li>
-      <li>Czy zgłoszenie do CSIRT odbyło się w terminie?</li>
-      <li>Jakie zmiany w zabezpieczeniach należy wdrożyć?</li>
-      <li>Czy aktualizacja Rejestru Ryzyk (DOC-003) jest potrzebna?</li>
-    </ul>
-    <p>Wnioski z PIR są przekazywane do CISO i implementowane jako działania naprawcze z określonym terminem i właścicielem.</p>
-  </div>
-
-  <!-- 8. Testowanie -->
-  <div class="section">
-    <h2>8. Testowanie Zdolności do Reagowania</h2>
-    <p>Organizacja regularnie testuje procedury zarządzania incydentami:</p>
-    <table>
-      <tr><th>Typ testu</th><th>Częstotliwość</th><th>Zakres</th><th>Odpowiedzialny</th></tr>
-      <tr>
-        <td>Ćwiczenie Tabletop (symulacja stołowa)</td>
-        <td class="fill-const">▸ min. raz na rok<span class="constraint-badge">min. 1/rok – NIS2</span></td>
-        <td>Scenariusz incydentu P1 z udziałem zarządu i CISO</td>
-        <td class="fill-critical">▸ CISO</td>
-      </tr>
-      <tr>
-        <td>Test komunikacji alarmowej</td>
-        <td class="fill-const">▸ [co kwartał]</td>
-        <td>Weryfikacja kanałów zgłaszania, numerów kontaktowych</td>
-        <td class="fill-critical">▸ CISO / Admin IT</td>
-      </tr>
-      <tr>
-        <td>Test powiadamiania CSIRT</td>
-        <td class="fill-org">▸ [raz w roku, w ramach ćwiczenia]</td>
-        <td>Weryfikacja formularzy, kanałów komunikacji z CSIRT</td>
-        <td class="fill-critical">▸ CISO</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- Historia zmian -->
-  <div class="section">
-    <h2>9. Historia Zmian</h2>
-    <table>
-      <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
-      <tr>
-        <td class="fill-org">▸ 1.0</td>
-        <td class="fill-org">▸ DD.MM.RRRR</td>
-        <td class="fill-org">▸</td>
-        <td class="fill-org">▸ Pierwsze wydanie</td>
-        <td class="fill-critical">▸ Zarząd</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="muted" style="text-align:right; margin-top:8px;">DOC-005 Polityka Zarządzania Incydentami | v1.0 | NIS2/KSC</div>
+<li>Telefon: <span class="fill-critical">▸ [numer alarmowy 24/7]</span></li>
+<li>E-mail: <span class="fill-critical">▸ [security@organizacja.pl lub dedykowany adres]</span></li>
+<li>System ticketowy: <span class="fill-org">▸ [nazwa systemu, np. ServiceNow / Jira]</span></li>
+</ul>
+</li>
+</ol>
+<div class="callout warning">
+<div class="icon">⚠️</div>
+<div><strong>Zakaz samodzielnego usuwania śladów!</strong> Pracownik, który wykryje incydent, nie może podejmować działań mogących zniszczyć dowody (logi, pliki). Należy wyłącznie zgłosić zdarzenie i – jeśli to konieczne – odłączyć urządzenie od sieci.</div>
+</div>
+</div>
+<!-- 4. Kategorie incydentów -->
+<div class="section">
+<h2>4. Kategorie Incydentów</h2>
+<table>
+<tr><th>Kategoria</th><th>Typ</th><th>Przykłady</th></tr>
+<tr><td><strong>MAL</strong></td><td>Złośliwe oprogramowanie</td><td>Ransomware, wirus, trojan, spyware, rootkit, cryptominer</td></tr>
+<tr><td><strong>PHI</strong></td><td>Phishing / Inżynieria społeczna</td><td>Spear phishing, vishing, smishing, BEC (Business Email Compromise)</td></tr>
+<tr><td><strong>NET</strong></td><td>Ataki sieciowe</td><td>DDoS, skanowanie, man-in-the-middle, brute force, port scanning</td></tr>
+<tr><td><strong>WEB</strong></td><td>Ataki na aplikacje webowe</td><td>SQL injection, XSS, CSRF, RFI/LFI, atak na API</td></tr>
+<tr><td><strong>ACC</strong></td><td>Naruszenie kontroli dostępu</td><td>Nieautoryzowany dostęp, przejęcie konta, eskalacja uprawnień</td></tr>
+<tr><td><strong>DAT</strong></td><td>Naruszenie danych</td><td>Wyciek danych, eksfiltracja, nieautoryzowane ujawnienie, zgubienie nośnika</td></tr>
+<tr><td><strong>INS</strong></td><td>Insider threat</td><td>Celowe działanie pracownika, sabotaż, kradzież IP</td></tr>
+<tr><td><strong>SUP</strong></td><td>Łańcuch dostaw</td><td>Kompromitacja oprogramowania dostawcy, backdoor w sprzęcie</td></tr>
+<tr><td><strong>PHY</strong></td><td>Fizyczny</td><td>Kradzież sprzętu, nieautoryzowany dostęp do serwerowni</td></tr>
+<tr><td><strong>OTH</strong></td><td>Inne</td><td>Nieuprawniona modyfikacja konfiguracji, błędna konfiguracja, anomalia w OT</td></tr>
+</table>
+</div>
+<!-- 5. Role -->
+<div class="section">
+<h2>5. Role i Odpowiedzialności w Zarządzaniu Incydentami</h2>
+<p>Szczegółowa macierz RACI dla incydentów w <a class="ref-link" href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004</a>. Poniżej kluczowe obowiązki:</p>
+<table>
+<tr><th>Rola</th><th>Obowiązki przy incydencie</th></tr>
+<tr><td><strong>Każdy pracownik</strong></td><td>Natychmiastowe zgłoszenie podejrzanego zdarzenia; nieusuwanie dowodów; odłączenie urządzenia jeśli konieczne</td></tr>
+<tr><td><strong>CISO / Koordynator IR</strong></td><td>Ocena i klasyfikacja; uruchomienie procedury reagowania; powiadomienie CSIRT; eskalacja do zarządu; dokumentacja</td></tr>
+<tr><td><strong>Administrator IT</strong></td><td>Zbieranie logów i dowodów forensycznych; izolacja systemów; wdrożenie środków zaradczych; odtwarzanie</td></tr>
+<tr><td><strong>Zarząd</strong></td><td>Podejmowanie decyzji kryzysowych; autoryzacja działań nadzwyczajnych; komunikacja zewnętrzna (media, regulatorzy)</td></tr>
+<tr><td><strong>Radca prawny / DPO</strong></td><td>Ocena obowiązków prawnych; zgłoszenie do UODO (jeśli dotyczy); dokumentacja prawna</td></tr>
+</table>
+</div>
+<!-- 6. Rejestr incydentów -->
+<div class="section">
+<h2>6. Rejestr Incydentów</h2>
+<p>Organizacja prowadzi centralny Rejestr Incydentów. Każdy incydent (niezależnie od poziomu) musi być zarejestrowany. Rejestr jest prowadzony przez CISO i przechowywany przez <span class="fill-const">▸ min. 5 lat<span class="constraint-badge">min. 5 lat – KSC</span></span>.</p>
+<div class="fill-block org">
+<span class="label">▸ Organizacja uzupełnia – narzędzie prowadzenia rejestru</span>
+<p><strong>Narzędzie:</strong> <span class="fill-org">▸ [np. system SIEM / ticketing (ServiceNow / Jira) / dedykowany arkusz]</span></p>
+<p><strong>Lokalizacja:</strong> <span class="fill-org">▸ [ścieżka / URL do rejestru]</span></p>
+<p><strong>Dostęp:</strong> <span class="fill-org">▸ [kto ma dostęp do rejestru]</span></p>
+</div>
+<h3>Minimalna zawartość wpisu w rejestrze incydentów:</h3>
+<table>
+<tr><th>Pole</th><th>Opis</th><th>Wymagane?</th></tr>
+<tr><td>ID incydentu</td><td>Unikalny identyfikator (np. INC-2024-001)</td><td>TAK</td></tr>
+<tr><td>Data i godzina wykrycia</td><td>Timestamp pierwszego wykrycia</td><td>TAK</td></tr>
+<tr><td>Kategoria (zob. pkt 4)</td><td>MAL / PHI / NET / WEB / ACC / DAT / INS / SUP / PHY / OTH</td><td>TAK</td></tr>
+<tr><td>Poziom dotkliwości (P1–P4)</td><td>Zob. pkt 2.2</td><td>TAK</td></tr>
+<tr><td>Opis zdarzenia</td><td>Co się stało, jakie systemy dotknięte</td><td>TAK</td></tr>
+<tr><td>Dotknięte systemy / usługi</td><td>Lista systemów/aktywów</td><td>TAK</td></tr>
+<tr><td>Pierwotna przyczyna (RCA)</td><td>Po zamknięciu incydentu</td><td>TAK (po zamknięciu)</td></tr>
+<tr><td>Podjęte działania</td><td>Chronologiczny log działań</td><td>TAK</td></tr>
+<tr><td>Czy zgłoszono do CSIRT?</td><td>TAK/NIE + data i godzina zgłoszenia</td><td>TAK (jeśli P1)</td></tr>
+<tr><td>Czy zgłoszono do UODO?</td><td>TAK/NIE + data</td><td>TAK (jeśli dotyczy)</td></tr>
+<tr><td>Data zamknięcia</td><td>Timestamp zamknięcia incydentu</td><td>TAK</td></tr>
+<tr><td>Wyciągnięte wnioski (lessons learned)</td><td>Co poprawić</td><td>TAK (po zamknięciu)</td></tr>
+</table>
+</div>
+<!-- 7. Wyciąganie wniosków -->
+<div class="section">
+<h2>7. Wyciąganie Wniosków i Doskonalenie</h2>
+<p>Po każdym incydencie P1 i P2 oraz wybranych incydentach P3 przeprowadzany jest przegląd post-incydentowy (Post-Incident Review / PIR) w ciągu <span class="fill-const">▸ [5 dni roboczych]<span class="constraint-badge">max. 2 tyg.</span></span> od zamknięcia incydentu.</p>
+<p>PIR odpowiada na pytania:</p>
+<ul>
+<li>Co się stało i dlaczego (analiza przyczyn źródłowych – RCA)?</li>
+<li>Czy procedury zadziałały poprawnie?</li>
+<li>Czy zgłoszenie do CSIRT odbyło się w terminie?</li>
+<li>Jakie zmiany w zabezpieczeniach należy wdrożyć?</li>
+<li>Czy aktualizacja Rejestru Ryzyk (DOC-003) jest potrzebna?</li>
+</ul>
+<p>Wnioski z PIR są przekazywane do CISO i implementowane jako działania naprawcze z określonym terminem i właścicielem.</p>
+</div>
+<!-- 8. Testowanie -->
+<div class="section">
+<h2>8. Testowanie Zdolności do Reagowania</h2>
+<p>Organizacja regularnie testuje procedury zarządzania incydentami:</p>
+<table>
+<tr><th>Typ testu</th><th>Częstotliwość</th><th>Zakres</th><th>Odpowiedzialny</th></tr>
+<tr>
+<td>Ćwiczenie Tabletop (symulacja stołowa)</td>
+<td class="fill-const">▸ min. raz na rok<span class="constraint-badge">min. 1/rok – NIS2</span></td>
+<td>Scenariusz incydentu P1 z udziałem zarządu i CISO</td>
+<td class="fill-critical">▸ CISO</td>
+</tr>
+<tr>
+<td>Test komunikacji alarmowej</td>
+<td class="fill-const">▸ [co kwartał]</td>
+<td>Weryfikacja kanałów zgłaszania, numerów kontaktowych</td>
+<td class="fill-critical">▸ CISO / Admin IT</td>
+</tr>
+<tr>
+<td>Test powiadamiania CSIRT</td>
+<td class="fill-org">▸ [raz w roku, w ramach ćwiczenia]</td>
+<td>Weryfikacja formularzy, kanałów komunikacji z CSIRT</td>
+<td class="fill-critical">▸ CISO</td>
+</tr>
+</table>
+</div>
+<!-- Historia zmian -->
+<div class="section">
+<h2>9. Historia Zmian</h2>
+<table>
+<tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td>
+<td class="fill-org">▸ DD.MM.RRRR</td>
+<td class="fill-org">▸</td>
+<td class="fill-org">▸ Pierwsze wydanie</td>
+<td class="fill-critical">▸ Zarząd</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right; margin-top:8px;">DOC-005 Polityka Zarządzania Incydentami | v1.0 | NIS2/KSC</div>
 </main>
-
 <footer class="page-footer">
-  Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-005 Polityka Zarządzania Incydentami &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a>
-  <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">&#169; 2026 Tomasz Zysko / CrazyRat &nbsp;&middot;&nbsp; Wszelkie prawa zastrze&#380;one &nbsp;&middot;&nbsp; Dokument obj&#281;ty ochron&#261; prawa autorskiego &nbsp;&middot;&nbsp; Reprodukcja lub redystrybucja bez pisemnej zgody autora jest zabroniona</div>
+  Dokumentacja NIS2/KSC SZBI  |  DOC-005 Polityka Zarządzania Incydentami  |  <a href="../index.html" style="color:#7baed4;">← Portal</a>
+<div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  Wszelkie prawa zastrzeżone  ·  Dokument objęty ochroną prawa autorskiego  ·  Reprodukcja lub redystrybucja bez pisemnej zgody autora jest zabroniona</div>
 </footer>
 </div>
 </body>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DOC-006 Procedura Zgłaszania Incydentów – NIS2/KSC</title>
-<link rel="stylesheet" href="../css/style.css">
+<link href="../css/style.css" rel="stylesheet"/>
 <style>
   .timeline { position:relative; padding-left:32px; }
   .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:3px; background:var(--border); }
@@ -17,330 +18,308 @@
   .step-box { background:var(--secondary); border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:10px 0; }
   .step-num { display:inline-block; width:26px; height:26px; background:var(--primary); color:white; border-radius:50%; text-align:center; line-height:26px; font-size:.8rem; font-weight:700; margin-right:8px; flex-shrink:0; }
 </style>
-    <script src="/schema.js"></script>
 </head>
 <body>
 <div class="page-wrapper">
-
 <header class="top-bar">
-  <span class="logo">SZBI / NIS2</span>
-  <span class="doc-id">DOC-006</span>
-  <span style="flex:1"></span>
-  <a href="../index.html">← Portal dokumentów</a>
+<span class="logo">SZBI / NIS2</span>
+<span class="doc-id">DOC-006</span>
+<span style="flex:1"></span>
+<a href="../index.html">← Portal dokumentów</a>
 </header>
-
 <aside class="sidebar">
-  <h3>Etap 1 – Fundamenty</h3>
-  <a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
-  <a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
-  <a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
-  <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
-  <h3>Etap 2 – Incydenty</h3>
-  <a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
-  <a href="DOC-006-procedura-zglaszania.html" class="active">DOC-006 Zgłaszanie incydentów</a>
-  <a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
-  <h3>Etap 3 – Dostęp i dane</h3>
-  <a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
-  <a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
-  <a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
-  <h3>Etap 4 – Operacje</h3>
-  <a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
-  <a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
-  <a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
-  <a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
-  <h3>Etap 5 – Ludzie</h3>
-  <a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
-  <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
-  <a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
-  <h3>Etap 6 – Fizyczne/Sieć</h3>
-  <a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
-  <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
-  <a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
-  <a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
+<h3>Etap 1 – Fundamenty</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Polityka bezpieczeństwa</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Zarządzanie ryzykiem</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Rejestr ryzyk</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Role i RACI</a>
+<h3>Etap 2 – Incydenty</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Polityka incydentów</a>
+<a class="active" href="DOC-006-procedura-zglaszania.html">DOC-006 Zgłaszanie incydentów</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Plan reagowania</a>
+<h3>Etap 3 – Dostęp i dane</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Kontrola dostępu</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Kryptografia</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Klasyfikacja informacji</a>
+<h3>Etap 4 – Operacje</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Ciągłość działania</a>
+<a href="DOC-012-backup.html">DOC-012 Backup i odtwarzanie</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Zarządzanie zmianami</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Podatności</a>
+<h3>Etap 5 – Ludzie</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Dostawcy</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 Bezpieczeństwo HR</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Szkolenia</a>
+<h3>Etap 6 – Fizyczne/Sieć</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Bezp. fizyczne</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Bezp. sieci</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Rejestr aktywów</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audyt i zgodność</a>
 </aside>
-
 <main class="content">
-
-  <div class="doc-header">
-    <h1>Procedura Zgłaszania Incydentów Cyberbezpieczeństwa</h1>
-    <div class="subtitle">Krok po kroku: od wykrycia do raportu końcowego – terminy 24h / 72h / 1 miesiąc</div>
-    <dl class="doc-meta">
-      <dt>Numer dokumentu</dt><dd>DOC-006</dd>
-      <dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
-      <dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
-      <dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
-      <dt>Właściciel</dt><dd class="fill-critical">▸ CISO</dd>
-      <dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
-      <dt>Podstawa prawna</dt><dd>Art. 23 NIS2; Art. 11–15 KSC; Art. 33–34 RODO</dd>
-      <dt>Dokumenty powiązane</dt><dd>
-        <a href="DOC-005-polityka-incydentow.html">DOC-005</a> |
+<div class="doc-header">
+<h1>Procedura Zgłaszania Incydentów Cyberbezpieczeństwa</h1>
+<div class="subtitle">Krok po kroku: od wykrycia do raportu końcowego – terminy 24h / 72h / 1 miesiąc</div>
+<dl class="doc-meta">
+<dt>Numer dokumentu</dt><dd>DOC-006</dd>
+<dt>Wersja</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">PROJEKT</span></dd>
+<dt>Data wydania</dt><dd class="fill-org">▸ DD.MM.RRRR</dd>
+<dt>Właściciel</dt><dd class="fill-critical">▸ CISO</dd>
+<dt>Zatwierdził</dt><dd class="fill-critical">▸ Zarząd / CEO</dd>
+<dt>Podstawa prawna</dt><dd>Art. 23 <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32022L2555" rel="noopener" target="_blank">NIS2</a>; Art. 11–15 <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20260000252" rel="noopener" target="_blank">KSC</a>; Art. 33–34 <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32016R0679" rel="noopener" target="_blank">RODO</a></dd>
+<dt>Dokumenty powiązane</dt><dd>
+<a href="DOC-005-polityka-incydentow.html">DOC-005</a> |
         <a href="DOC-007-plan-reagowania.html">DOC-007</a> |
         <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004</a>
-      </dd>
-    </dl>
-  </div>
-
-  <!-- KARTA SZYBKIEGO REAGOWANIA -->
-  <div style="background:#1a3a5c; color:white; border-radius:6px; padding:20px 24px; margin-bottom:20px;">
-    <div style="font-size:1rem; font-weight:700; margin-bottom:12px; color:#ff9999;">🚨 KARTA SZYBKIEGO REAGOWANIA – INCYDENT P1/P2</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:.85rem;">
-      <div>
-        <div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">ZGŁOŚ NATYCHMIAST DO:</div>
-        <div class="fill-critical" style="background:#ffe0e0; color:#7f0000; padding:4px 8px; border-radius:3px; margin-bottom:6px;">▸ CISO: [telefon 24/7]</div>
-        <div class="fill-critical" style="background:#ffe0e0; color:#7f0000; padding:4px 8px; border-radius:3px;">▸ Helpdesk: [numer wewnętrzny]</div>
-      </div>
-      <div>
-        <div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">NIE ROBIMY:</div>
-        <div style="font-size:.82rem; color:#ffdddd;">✗ Nie usuwamy logów ani plików<br>✗ Nie informujemy mediów bez zgody<br>✗ Nie wyłączamy systemów bez zgody CISO</div>
-      </div>
-      <div>
-        <div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">CSIRT (poważny incydent):</div>
-        <div style="font-size:.82rem; color:#c8e6ff;">incydent@cert.pl | +48 22 38 08 274</div>
-      </div>
-      <div>
-        <div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">UODO (naruszenie danych os.):</div>
-        <div style="font-size:.82rem; color:#c8e6ff;">kancelaria@uodo.gov.pl | 72h</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 1. Zakres -->
-  <div class="section">
-    <h2>1. Zakres i Zastosowanie</h2>
-    <p>Niniejsza procedura opisuje szczegółowe kroki, formularze i terminy wymagane przy zgłaszaniu incydentów cyberbezpieczeństwa do wewnętrznych i zewnętrznych interesariuszy. Stosuje się ją łącznie z <a href="DOC-005-polityka-incydentow.html">DOC-005</a> (klasyfikacja, definicje) oraz <a href="DOC-007-plan-reagowania.html">DOC-007</a> (obsługa techniczna).</p>
-    <p>Procedura obowiązuje dla wszystkich incydentów zarejestrowanych przez organizację. Obowiązek zgłoszenia do CSIRT dotyczy wyłącznie <strong>poważnych incydentów</strong> (poziom P1 i wybrane P2 wg kryteriów z DOC-005 pkt 2.3).</p>
-  </div>
-
-  <!-- 2. Oś czasu -->
-  <div class="section">
-    <h2>2. Oś Czasu Zgłaszania – Poważny Incydent</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-dot crit"></div>
-        <div class="tl-time">T+0 – Wykrycie incydentu</div>
-        <div class="tl-title">Zdarzenie wykryte / zgłoszone</div>
-        <div class="tl-body">Pracownik, system SIEM, alert IDS/IPS lub dostawca wykrywa incydent. Natychmiastowe zgłoszenie do CISO. Uruchomienie Formularza Wstępnego (Załącznik A).</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot crit"></div>
-        <div class="tl-time" style="color:#e07b00;">T+1h – Wstępna ocena</div>
-        <div class="tl-title">CISO: ocena i klasyfikacja</div>
-        <div class="tl-body">Czy to poważny incydent w rozumieniu KSC? Jeśli TAK → zegar 24h startuje. Uruchomienie Planu Reagowania (<a href="DOC-007-plan-reagowania.html">DOC-007</a>).</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot crit"></div>
-        <div class="tl-time" style="color:#c0392b;">T+24h – WCZESNE OSTRZEŻENIE (OBOWIĄZKOWE)</div>
-        <div class="tl-title">Zgłoszenie do właściwego CSIRT</div>
-        <div class="tl-body">
-          Kanał: <strong>incydent@cert.pl</strong> (CSIRT NASK) lub właściwy CSIRT sektorowy.<br>
-          Zawartość: informacja o incydencie, wskazanie wpływu transgranicznego (jeśli dotyczy).<br>
-          <strong>Użyć Formularza Wczesnego Ostrzeżenia (Załącznik B).</strong>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time" style="color:#e07b00;">T+72h – ZGŁOSZENIE INCYDENTU (OBOWIĄZKOWE)</div>
-        <div class="tl-title">Pełne zgłoszenie do CSIRT + UODO (jeśli naruszenie danych)</div>
-        <div class="tl-body">
-          Zawartość: ocena incydentu, klasyfikacja dotkliwości, wpływ na usługi, wskaźniki IoC, podjęte działania.<br>
-          <strong>Użyć Formularza Zgłoszenia Incydentu (Załącznik C).</strong><br>
+</dd>
+</dl>
+</div>
+<!-- KARTA SZYBKIEGO REAGOWANIA -->
+<div style="background:#1a3a5c; color:white; border-radius:6px; padding:20px 24px; margin-bottom:20px;">
+<div style="font-size:1rem; font-weight:700; margin-bottom:12px; color:#ff9999;">🚨 KARTA SZYBKIEGO REAGOWANIA – INCYDENT P1/P2</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:.85rem;">
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">ZGŁOŚ NATYCHMIAST DO:</div>
+<div class="fill-critical" style="background:#ffe0e0; color:#7f0000; padding:4px 8px; border-radius:3px; margin-bottom:6px;">▸ CISO: [telefon 24/7]</div>
+<div class="fill-critical" style="background:#ffe0e0; color:#7f0000; padding:4px 8px; border-radius:3px;">▸ Helpdesk: [numer wewnętrzny]</div>
+</div>
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">NIE ROBIMY:</div>
+<div style="font-size:.82rem; color:#ffdddd;">✗ Nie usuwamy logów ani plików<br/>✗ Nie informujemy mediów bez zgody<br/>✗ Nie wyłączamy systemów bez zgody CISO</div>
+</div>
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">CSIRT (poważny incydent):</div>
+<div style="font-size:.82rem; color:#c8e6ff;">System S46 (kanał obowiązkowy) | incydent@cert.pl | +48 22 38 08 274</div>
+</div>
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">UODO (naruszenie danych os.):</div>
+<div style="font-size:.82rem; color:#c8e6ff;">kancelaria@uodo.gov.pl | 72h</div>
+</div>
+</div>
+</div>
+<!-- 1. Zakres -->
+<div class="section">
+<h2>1. Zakres i Zastosowanie</h2>
+<p>Niniejsza procedura opisuje szczegółowe kroki, formularze i terminy wymagane przy zgłaszaniu incydentów cyberbezpieczeństwa do wewnętrznych i zewnętrznych interesariuszy. Stosuje się ją łącznie z <a href="DOC-005-polityka-incydentow.html">DOC-005</a> (klasyfikacja, definicje) oraz <a href="DOC-007-plan-reagowania.html">DOC-007</a> (obsługa techniczna).</p>
+<p>Procedura obowiązuje dla wszystkich incydentów zarejestrowanych przez organizację. Obowiązek zgłoszenia do CSIRT dotyczy wyłącznie <strong>poważnych incydentów</strong> (poziom P1 i wybrane P2 wg kryteriów z DOC-005 pkt 2.3).</p>
+</div>
+<!-- 2. Oś czasu -->
+<div class="section">
+<h2>2. Oś Czasu Zgłaszania – Poważny Incydent</h2>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dot crit"></div>
+<div class="tl-time">T+0 – Wykrycie incydentu</div>
+<div class="tl-title">Zdarzenie wykryte / zgłoszone</div>
+<div class="tl-body">Pracownik, system SIEM, alert IDS/IPS lub dostawca wykrywa incydent. Natychmiastowe zgłoszenie do CISO. Uruchomienie Formularza Wstępnego (Załącznik A).</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot crit"></div>
+<div class="tl-time" style="color:#e07b00;">T+1h – Wstępna ocena</div>
+<div class="tl-title">CISO: ocena i klasyfikacja</div>
+<div class="tl-body">Czy to poważny incydent w rozumieniu KSC? Jeśli TAK → zegar 24h startuje. Uruchomienie Planu Reagowania (<a href="DOC-007-plan-reagowania.html">DOC-007</a>).</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot crit"></div>
+<div class="tl-time" style="color:#c0392b;">T+24h – WCZESNE OSTRZEŻENIE (OBOWIĄZKOWE)</div>
+<div class="tl-title">Zgłoszenie do właściwego CSIRT</div>
+<div class="tl-body">
+          Kanał: <strong>system teleinformatyczny S46</strong> – obowiązkowy kanał zgłoszeń do właściwego CSIRT (zgodnie ze znowelizowaną ustawą o KSC). Kontakt pomocniczy: <strong>incydent@cert.pl</strong> (CSIRT NASK) lub właściwy CSIRT sektorowy.<br/>
+          Zawartość: informacja o incydencie, wskazanie wpływu transgranicznego (jeśli dotyczy).<br/>
+<strong>Użyć Formularza Wczesnego Ostrzeżenia (Załącznik B).</strong>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot"></div>
+<div class="tl-time" style="color:#e07b00;">T+72h – ZGŁOSZENIE INCYDENTU (OBOWIĄZKOWE)</div>
+<div class="tl-title">Pełne zgłoszenie do CSIRT + UODO (jeśli naruszenie danych)</div>
+<div class="tl-body">
+          Zawartość: ocena incydentu, klasyfikacja dotkliwości, wpływ na usługi, wskaźniki IoC, podjęte działania.<br/>
+<strong>Użyć Formularza Zgłoszenia Incydentu (Załącznik C).</strong><br/>
           Równolegle: zgłoszenie do UODO jeśli naruszenie danych osobowych.
         </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">T+1 miesiąc – RAPORT KOŃCOWY</div>
-        <div class="tl-title">Raport końcowy do CSIRT</div>
-        <div class="tl-body">
-          Pełny opis: pierwotna przyczyna (RCA), chronologia, działania zaradcze, środki zapobiegawcze.<br>
-          <strong>Użyć Formularza Raportu Końcowego (Załącznik D).</strong>
-        </div>
-      </div>
+</div>
+<div class="tl-item">
+<div class="tl-dot"></div>
+<div class="tl-time">T+1 miesiąc – RAPORT KOŃCOWY</div>
+<div class="tl-title">Raport końcowy do CSIRT</div>
+<div class="tl-body">
+          Pełny opis: pierwotna przyczyna (RCA), chronologia, działania zaradcze, środki zapobiegawcze.<br/>
+<strong>Użyć Formularza Raportu Końcowego (Załącznik D).</strong>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Kroki procesu -->
+<div class="section">
+<h2>3. Szczegółowe Kroki Procesu</h2>
+<h3>Faza 1: Wykrycie i zgłoszenie wewnętrzne</h3>
+<div class="step-box">
+<span class="step-num">1</span>
+<strong>Wykrycie zdarzenia</strong> – przez pracownika, system monitoringu, alert SIEM, zgłoszenie dostawcy lub zewnętrzny badacz bezpieczeństwa
     </div>
-  </div>
-
-  <!-- 3. Kroki procesu -->
-  <div class="section">
-    <h2>3. Szczegółowe Kroki Procesu</h2>
-
-    <h3>Faza 1: Wykrycie i zgłoszenie wewnętrzne</h3>
-    <div class="step-box">
-      <span class="step-num">1</span>
-      <strong>Wykrycie zdarzenia</strong> – przez pracownika, system monitoringu, alert SIEM, zgłoszenie dostawcy lub zewnętrzny badacz bezpieczeństwa
+<div class="step-box">
+<span class="step-num">2</span>
+<strong>Nie usuwaj dowodów</strong> – nie kasuj plików, logów, e-maili. Zachowaj wszystko.
     </div>
-    <div class="step-box">
-      <span class="step-num">2</span>
-      <strong>Nie usuwaj dowodów</strong> – nie kasuj plików, logów, e-maili. Zachowaj wszystko.
+<div class="step-box">
+<span class="step-num">3</span>
+<strong>Zgłoś natychmiast</strong> – CISO (tel. <span class="fill-critical">▸ [numer]</span>) i/lub przez system ticketowy <span class="fill-org">▸ [nazwa]</span>. Wypełnij <strong>Formularz Wstępny (Załącznik A)</strong>.
     </div>
-    <div class="step-box">
-      <span class="step-num">3</span>
-      <strong>Zgłoś natychmiast</strong> – CISO (tel. <span class="fill-critical">▸ [numer]</span>) i/lub przez system ticketowy <span class="fill-org">▸ [nazwa]</span>. Wypełnij <strong>Formularz Wstępny (Załącznik A)</strong>.
+<div class="step-box">
+<span class="step-num">4</span>
+<strong>Izolacja (jeśli konieczna)</strong> – jeśli zainfekowane urządzenie, odłącz je od sieci (LAN/Wi-Fi), ale nie wyłączaj zasilania bez zgody CISO (tracisz dane z RAM).
     </div>
-    <div class="step-box">
-      <span class="step-num">4</span>
-      <strong>Izolacja (jeśli konieczna)</strong> – jeśli zainfekowane urządzenie, odłącz je od sieci (LAN/Wi-Fi), ale nie wyłączaj zasilania bez zgody CISO (tracisz dane z RAM).
+<h3>Faza 2: Ocena i klasyfikacja (CISO)</h3>
+<div class="step-box">
+<span class="step-num">5</span>
+<strong>Wstępna ocena</strong> – CISO ocenia: jaki typ incydentu (kategoria z DOC-005 pkt 4), jaki poziom (P1–P4), czy to poważny incydent wymagający zgłoszenia.
     </div>
-
-    <h3>Faza 2: Ocena i klasyfikacja (CISO)</h3>
-    <div class="step-box">
-      <span class="step-num">5</span>
-      <strong>Wstępna ocena</strong> – CISO ocenia: jaki typ incydentu (kategoria z DOC-005 pkt 4), jaki poziom (P1–P4), czy to poważny incydent wymagający zgłoszenia.
+<div class="step-box">
+<span class="step-num">6</span>
+<strong>Eskalacja</strong> – dla P1 i P2: powiadomienie zarządu. Dla P1: uruchomienie BCP jeśli wymagane (DOC-011).
     </div>
-    <div class="step-box">
-      <span class="step-num">6</span>
-      <strong>Eskalacja</strong> – dla P1 i P2: powiadomienie zarządu. Dla P1: uruchomienie BCP jeśli wymagane (DOC-011).
+<div class="step-box">
+<span class="step-num">7</span>
+<strong>Uruchomienie rejestru</strong> – założenie wpisu w Rejestrze Incydentów (numer INC-RRRR-NNN).
     </div>
-    <div class="step-box">
-      <span class="step-num">7</span>
-      <strong>Uruchomienie rejestru</strong> – założenie wpisu w Rejestrze Incydentów (numer INC-RRRR-NNN).
+<h3>Faza 3: Zawieranie i usuwanie</h3>
+<div class="step-box">
+<span class="step-num">8</span>
+<strong>Zawieranie</strong> – izolacja dotkniętych systemów, blokada kont, zmiana haseł, filtrowanie ruchu sieciowego. Szczegóły w <a href="DOC-007-plan-reagowania.html">DOC-007</a>.
     </div>
-
-    <h3>Faza 3: Zawieranie i usuwanie</h3>
-    <div class="step-box">
-      <span class="step-num">8</span>
-      <strong>Zawieranie</strong> – izolacja dotkniętych systemów, blokada kont, zmiana haseł, filtrowanie ruchu sieciowego. Szczegóły w <a href="DOC-007-plan-reagowania.html">DOC-007</a>.
+<div class="step-box">
+<span class="step-num">9</span>
+<strong>Zbieranie dowodów forensycznych</strong> – kopie dysków, logi, zrzuty pamięci, zapis ruchu sieciowego (PCAP).
     </div>
-    <div class="step-box">
-      <span class="step-num">9</span>
-      <strong>Zbieranie dowodów forensycznych</strong> – kopie dysków, logi, zrzuty pamięci, zapis ruchu sieciowego (PCAP).
+<div class="step-box">
+<span class="step-num">10</span>
+<strong>Usuwanie</strong> – eliminacja złośliwego oprogramowania, zamknięcie podatności, weryfikacja systemów.
     </div>
-    <div class="step-box">
-      <span class="step-num">10</span>
-      <strong>Usuwanie</strong> – eliminacja złośliwego oprogramowania, zamknięcie podatności, weryfikacja systemów.
+<h3>Faza 4: Odtwarzanie</h3>
+<div class="step-box">
+<span class="step-num">11</span>
+<strong>Odtwarzanie z backupu</strong> – zgodnie z procedurą <a href="DOC-012-backup.html">DOC-012</a> i BCP <a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a>.
     </div>
-
-    <h3>Faza 4: Odtwarzanie</h3>
-    <div class="step-box">
-      <span class="step-num">11</span>
-      <strong>Odtwarzanie z backupu</strong> – zgodnie z procedurą <a href="DOC-012-backup.html">DOC-012</a> i BCP <a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a>.
+<div class="step-box">
+<span class="step-num">12</span>
+<strong>Weryfikacja</strong> – testy odtworzonych systemów przed przywróceniem do produkcji.
     </div>
-    <div class="step-box">
-      <span class="step-num">12</span>
-      <strong>Weryfikacja</strong> – testy odtworzonych systemów przed przywróceniem do produkcji.
+<h3>Faza 5: Raportowanie zewnętrzne</h3>
+<div class="step-box">
+<span class="step-num">13</span>
+<strong>Wczesne ostrzeżenie do CSIRT</strong> – najpóźniej <strong style="color:#c0392b;">24h od wykrycia</strong> poważnego incydentu, przez <strong>system S46</strong>.
     </div>
-
-    <h3>Faza 5: Raportowanie zewnętrzne</h3>
-    <div class="step-box">
-      <span class="step-num">13</span>
-      <strong>Wczesne ostrzeżenie do CSIRT</strong> – najpóźniej <strong style="color:#c0392b;">24h od wykrycia</strong> poważnego incydentu.
+<div class="step-box">
+<span class="step-num">14</span>
+<strong>Zgłoszenie do CSIRT</strong> – najpóźniej <strong style="color:#e07b00;">72h od wykrycia</strong>, przez <strong>system S46</strong>.
     </div>
-    <div class="step-box">
-      <span class="step-num">14</span>
-      <strong>Zgłoszenie do CSIRT</strong> – najpóźniej <strong style="color:#e07b00;">72h od wykrycia</strong>.
+<div class="step-box">
+<span class="step-num">15</span>
+<strong>Zgłoszenie do UODO</strong> (jeśli dotyczy) – najpóźniej <strong style="color:#e07b00;">72h od stwierdzenia naruszenia danych osobowych</strong>.
     </div>
-    <div class="step-box">
-      <span class="step-num">15</span>
-      <strong>Zgłoszenie do UODO</strong> (jeśli dotyczy) – najpóźniej <strong style="color:#e07b00;">72h od stwierdzenia naruszenia danych osobowych</strong>.
+<h3>Faza 6: Analiza i zamknięcie</h3>
+<div class="step-box">
+<span class="step-num">16</span>
+<strong>Post-Incident Review (PIR)</strong> – analiza przyczyn (RCA), dokumentacja wyciągniętych wniosków.
     </div>
-
-    <h3>Faza 6: Analiza i zamknięcie</h3>
-    <div class="step-box">
-      <span class="step-num">16</span>
-      <strong>Post-Incident Review (PIR)</strong> – analiza przyczyn (RCA), dokumentacja wyciągniętych wniosków.
+<div class="step-box">
+<span class="step-num">17</span>
+<strong>Raport końcowy do CSIRT</strong> – w ciągu <strong>1 miesiąca</strong> od zgłoszenia.
     </div>
-    <div class="step-box">
-      <span class="step-num">17</span>
-      <strong>Raport końcowy do CSIRT</strong> – w ciągu <strong>1 miesiąca</strong> od zgłoszenia.
+<div class="step-box">
+<span class="step-num">18</span>
+<strong>Aktualizacja dokumentacji</strong> – aktualizacja Rejestru Ryzyk (DOC-003), polityk, procedur jeśli potrzeba.
     </div>
-    <div class="step-box">
-      <span class="step-num">18</span>
-      <strong>Aktualizacja dokumentacji</strong> – aktualizacja Rejestru Ryzyk (DOC-003), polityk, procedur jeśli potrzeba.
-    </div>
-  </div>
-
-  <!-- Załącznik A -->
-  <div class="section">
-    <h2>Załącznik A – Formularz Wstępnego Zgłoszenia Incydentu (wewnętrzny)</h2>
-    <div class="callout info"><div class="icon">📋</div><div>Wypełnia każdy pracownik lub pierwsza osoba wykrywająca incydent. Przesłać do CISO natychmiast.</div></div>
-    <table>
-      <tr><th colspan="2">FORMULARZ WSTĘPNY ZGŁOSZENIA INCYDENTU</th></tr>
-      <tr><td style="width:35%;"><strong>Data i godzina wykrycia</strong></td><td class="fill-critical">▸ DD.MM.RRRR HH:MM</td></tr>
-      <tr><td><strong>Zgłaszający (imię i nazwisko)</strong></td><td class="fill-critical">▸</td></tr>
-      <tr><td><strong>Kontakt zgłaszającego</strong></td><td class="fill-org">▸ [tel / e-mail]</td></tr>
-      <tr><td><strong>Co zostało zaobserwowane?</strong></td><td class="fill-critical">▸ [opis zdarzenia – co, gdzie, kiedy]</td></tr>
-      <tr><td><strong>Dotknięte systemy / urządzenia</strong></td><td class="fill-critical">▸ [nazwy systemów, IP, nr komputera]</td></tr>
-      <tr><td><strong>Czy podjęto działania? Jakie?</strong></td><td class="fill-org">▸ [np. odłączono od sieci / nic nie zrobiono]</td></tr>
-      <tr><td><strong>Czy inne osoby wiedzą?</strong></td><td class="fill-org">▸ [tak/nie – kto]</td></tr>
-      <tr><td><strong>Szacunkowy wpływ (wstępnie)</strong></td><td class="fill-org">▸ [np. systemy niedostępne / dane ujawnione / nic nie widać]</td></tr>
-    </table>
-  </div>
-
-  <!-- Załącznik B -->
-  <div class="section">
-    <h2>Załącznik B – Formularz Wczesnego Ostrzeżenia do CSIRT (T+24h)</h2>
-    <div class="callout danger"><div class="icon">🕐</div><div><strong>Termin: 24 godziny od wykrycia poważnego incydentu.</strong> Wypełnia CISO.</div></div>
-    <table>
-      <tr><th colspan="2">WCZESNE OSTRZEŻENIE – ZGŁOSZENIE DO CSIRT</th></tr>
-      <tr><td style="width:40%;"><strong>Podmiot zgłaszający (nazwa, NIP)</strong></td><td class="fill-critical">▸ [pełna nazwa organizacji, NIP]</td></tr>
-      <tr><td><strong>Sektor / rodzaj usługi</strong></td><td class="fill-critical">▸ [sektor KSC, rodzaj usługi kluczowej/ważnej]</td></tr>
-      <tr><td><strong>Osoba kontaktowa (CISO)</strong></td><td class="fill-critical">▸ [Imię Nazwisko, tel, e-mail]</td></tr>
-      <tr><td><strong>Data/godzina wykrycia</strong></td><td class="fill-critical">▸ DD.MM.RRRR HH:MM</td></tr>
-      <tr><td><strong>Data/godzina zgłoszenia</strong></td><td class="fill-critical">▸ DD.MM.RRRR HH:MM</td></tr>
-      <tr><td><strong>Krótki opis incydentu</strong></td><td class="fill-critical">▸ [typ incydentu, dotknięte systemy, wstępny zakres]</td></tr>
-      <tr><td><strong>Czy incydent ma wpływ transgraniczny?</strong></td><td class="fill-critical">▸ [TAK / NIE / NIEZNANE]</td></tr>
-      <tr><td><strong>Wstępna ocena dotkliwości</strong></td><td class="fill-critical">▸ [Niski / Średni / Wysoki / Krytyczny]</td></tr>
-      <tr><td><strong>Podjęte działania zaradcze</strong></td><td class="fill-org">▸ [izolacja, zawieranie – co zrobiono]</td></tr>
-    </table>
-  </div>
-
-  <!-- Załącznik C -->
-  <div class="section">
-    <h2>Załącznik C – Formularz Zgłoszenia Incydentu do CSIRT (T+72h)</h2>
-    <div class="callout danger"><div class="icon">🕐</div><div><strong>Termin: 72 godziny od wykrycia poważnego incydentu.</strong> Wypełnia CISO.</div></div>
-    <table>
-      <tr><th colspan="2">ZGŁOSZENIE INCYDENTU – CSIRT</th></tr>
-      <tr><td style="width:40%;"><strong>Numer referencyjny (wewnętrzny)</strong></td><td class="fill-critical">▸ INC-RRRR-NNN</td></tr>
-      <tr><td><strong>Podmiot / sektor</strong></td><td class="fill-critical">▸</td></tr>
-      <tr><td><strong>Typ incydentu (kategoria)</strong></td><td class="fill-critical">▸ [MAL/PHI/NET/WEB/ACC/DAT/INS/SUP/PHY/OTH]</td></tr>
-      <tr><td><strong>Poziom dotkliwości</strong></td><td class="fill-critical">▸ [P1/P2/P3/P4]</td></tr>
-      <tr><td><strong>Dotknięte systemy / usługi</strong></td><td class="fill-critical">▸</td></tr>
-      <tr><td><strong>Szacunkowa liczba dotkniętych użytkowników</strong></td><td class="fill-org">▸</td></tr>
-      <tr><td><strong>Opis incydentu (szczegółowy)</strong></td><td class="fill-critical">▸ [chronologia, wektor ataku, zakres]</td></tr>
-      <tr><td><strong>Wskaźniki kompromitacji (IoC)</strong></td><td class="fill-org">▸ [IP, domeny, hashes, sygnatury złośliwego kodu]</td></tr>
-      <tr><td><strong>Podjęte działania zaradcze</strong></td><td class="fill-critical">▸</td></tr>
-      <tr><td><strong>Aktualny status incydentu</strong></td><td class="fill-critical">▸ [W toku / Zawarty / Zamknięty]</td></tr>
-      <tr><td><strong>Czy naruszono dane osobowe?</strong></td><td class="fill-critical">▸ [TAK (zgłoszono do UODO DD.MM) / NIE]</td></tr>
-      <tr><td><strong>Wymagane wsparcie CSIRT?</strong></td><td class="fill-org">▸ [TAK / NIE – opis potrzeby]</td></tr>
-    </table>
-  </div>
-
-  <!-- Załącznik D -->
-  <div class="section">
-    <h2>Załącznik D – Formularz Raportu Końcowego do CSIRT (T+1 miesiąc)</h2>
-    <table>
-      <tr><th colspan="2">RAPORT KOŃCOWY INCYDENTU</th></tr>
-      <tr><td style="width:40%;"><strong>Numer referencyjny</strong></td><td class="fill-critical">▸ INC-RRRR-NNN</td></tr>
-      <tr><td><strong>Data wykrycia / Data zamknięcia</strong></td><td class="fill-critical">▸ DD.MM.RRRR / DD.MM.RRRR</td></tr>
-      <tr><td><strong>Pierwotna przyczyna (Root Cause)</strong></td><td class="fill-critical">▸ [opis pierwotnej przyczyny – podatność, błąd ludzki, itp.]</td></tr>
-      <tr><td><strong>Chronologia incydentu</strong></td><td class="fill-critical">▸ [oś czasu: wykrycie, zawieranie, usuwanie, odtworzenie]</td></tr>
-      <tr><td><strong>Wpływ na usługi / dane</strong></td><td class="fill-critical">▸ [czas niedostępności, liczba dotkniętych osób, straty finansowe]</td></tr>
-      <tr><td><strong>Wdrożone środki zaradcze</strong></td><td class="fill-critical">▸</td></tr>
-      <tr><td><strong>Wyciągnięte wnioski</strong></td><td class="fill-critical">▸ [co zmieniono, jakie procedury zaktualizowano]</td></tr>
-      <tr><td><strong>Działania zapobiegawcze</strong></td><td class="fill-org">▸ [plany na przyszłość]</td></tr>
-    </table>
-  </div>
-
-  <!-- Historia zmian -->
-  <div class="section">
-    <h2>Historia Zmian</h2>
-    <table>
-      <tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
-      <tr>
-        <td class="fill-org">▸ 1.0</td>
-        <td class="fill-org">▸ DD.MM.RRRR</td>
-        <td class="fill-org">▸</td>
-        <td class="fill-org">▸ Pierwsze wydanie</td>
-        <td class="fill-critical">▸ Zarząd</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="muted" style="text-align:right; margin-top:8px;">DOC-006 Procedura Zgłaszania Incydentów | v1.0 | NIS2/KSC</div>
+</div>
+<!-- Załącznik A -->
+<div class="section">
+<h2>Załącznik A – Formularz Wstępnego Zgłoszenia Incydentu (wewnętrzny)</h2>
+<div class="callout info"><div class="icon">📋</div><div>Wypełnia każdy pracownik lub pierwsza osoba wykrywająca incydent. Przesłać do CISO natychmiast.</div></div>
+<table>
+<tr><th colspan="2">FORMULARZ WSTĘPNY ZGŁOSZENIA INCYDENTU</th></tr>
+<tr><td style="width:35%;"><strong>Data i godzina wykrycia</strong></td><td class="fill-critical">▸ DD.MM.RRRR HH:MM</td></tr>
+<tr><td><strong>Zgłaszający (imię i nazwisko)</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Kontakt zgłaszającego</strong></td><td class="fill-org">▸ [tel / e-mail]</td></tr>
+<tr><td><strong>Co zostało zaobserwowane?</strong></td><td class="fill-critical">▸ [opis zdarzenia – co, gdzie, kiedy]</td></tr>
+<tr><td><strong>Dotknięte systemy / urządzenia</strong></td><td class="fill-critical">▸ [nazwy systemów, IP, nr komputera]</td></tr>
+<tr><td><strong>Czy podjęto działania? Jakie?</strong></td><td class="fill-org">▸ [np. odłączono od sieci / nic nie zrobiono]</td></tr>
+<tr><td><strong>Czy inne osoby wiedzą?</strong></td><td class="fill-org">▸ [tak/nie – kto]</td></tr>
+<tr><td><strong>Szacunkowy wpływ (wstępnie)</strong></td><td class="fill-org">▸ [np. systemy niedostępne / dane ujawnione / nic nie widać]</td></tr>
+</table>
+</div>
+<!-- Załącznik B -->
+<div class="section">
+<h2>Załącznik B – Formularz Wczesnego Ostrzeżenia do CSIRT (T+24h)</h2>
+<div class="callout danger"><div class="icon">🕐</div><div><strong>Termin: 24 godziny od wykrycia poważnego incydentu.</strong> Wypełnia CISO.</div></div>
+<table>
+<tr><th colspan="2">WCZESNE OSTRZEŻENIE – ZGŁOSZENIE DO CSIRT</th></tr>
+<tr><td style="width:40%;"><strong>Podmiot zgłaszający (nazwa, NIP)</strong></td><td class="fill-critical">▸ [pełna nazwa organizacji, NIP]</td></tr>
+<tr><td><strong>Sektor / rodzaj usługi</strong></td><td class="fill-critical">▸ [sektor KSC, rodzaj usługi kluczowej/ważnej]</td></tr>
+<tr><td><strong>Osoba kontaktowa (CISO)</strong></td><td class="fill-critical">▸ [Imię Nazwisko, tel, e-mail]</td></tr>
+<tr><td><strong>Data/godzina wykrycia</strong></td><td class="fill-critical">▸ DD.MM.RRRR HH:MM</td></tr>
+<tr><td><strong>Data/godzina zgłoszenia</strong></td><td class="fill-critical">▸ DD.MM.RRRR HH:MM</td></tr>
+<tr><td><strong>Krótki opis incydentu</strong></td><td class="fill-critical">▸ [typ incydentu, dotknięte systemy, wstępny zakres]</td></tr>
+<tr><td><strong>Czy incydent ma wpływ transgraniczny?</strong></td><td class="fill-critical">▸ [TAK / NIE / NIEZNANE]</td></tr>
+<tr><td><strong>Wstępna ocena dotkliwości</strong></td><td class="fill-critical">▸ [Niski / Średni / Wysoki / Krytyczny]</td></tr>
+<tr><td><strong>Podjęte działania zaradcze</strong></td><td class="fill-org">▸ [izolacja, zawieranie – co zrobiono]</td></tr>
+</table>
+</div>
+<!-- Załącznik C -->
+<div class="section">
+<h2>Załącznik C – Formularz Zgłoszenia Incydentu do CSIRT (T+72h)</h2>
+<div class="callout danger"><div class="icon">🕐</div><div><strong>Termin: 72 godziny od wykrycia poważnego incydentu.</strong> Wypełnia CISO.</div></div>
+<table>
+<tr><th colspan="2">ZGŁOSZENIE INCYDENTU – CSIRT</th></tr>
+<tr><td style="width:40%;"><strong>Numer referencyjny (wewnętrzny)</strong></td><td class="fill-critical">▸ INC-RRRR-NNN</td></tr>
+<tr><td><strong>Podmiot / sektor</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Typ incydentu (kategoria)</strong></td><td class="fill-critical">▸ [MAL/PHI/NET/WEB/ACC/DAT/INS/SUP/PHY/OTH]</td></tr>
+<tr><td><strong>Poziom dotkliwości</strong></td><td class="fill-critical">▸ [P1/P2/P3/P4]</td></tr>
+<tr><td><strong>Dotknięte systemy / usługi</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Szacunkowa liczba dotkniętych użytkowników</strong></td><td class="fill-org">▸</td></tr>
+<tr><td><strong>Opis incydentu (szczegółowy)</strong></td><td class="fill-critical">▸ [chronologia, wektor ataku, zakres]</td></tr>
+<tr><td><strong>Wskaźniki kompromitacji (IoC)</strong></td><td class="fill-org">▸ [IP, domeny, hashes, sygnatury złośliwego kodu]</td></tr>
+<tr><td><strong>Podjęte działania zaradcze</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Aktualny status incydentu</strong></td><td class="fill-critical">▸ [W toku / Zawarty / Zamknięty]</td></tr>
+<tr><td><strong>Czy naruszono dane osobowe?</strong></td><td class="fill-critical">▸ [TAK (zgłoszono do UODO DD.MM) / NIE]</td></tr>
+<tr><td><strong>Wymagane wsparcie CSIRT?</strong></td><td class="fill-org">▸ [TAK / NIE – opis potrzeby]</td></tr>
+</table>
+</div>
+<!-- Załącznik D -->
+<div class="section">
+<h2>Załącznik D – Formularz Raportu Końcowego do CSIRT (T+1 miesiąc)</h2>
+<table>
+<tr><th colspan="2">RAPORT KOŃCOWY INCYDENTU</th></tr>
+<tr><td style="width:40%;"><strong>Numer referencyjny</strong></td><td class="fill-critical">▸ INC-RRRR-NNN</td></tr>
+<tr><td><strong>Data wykrycia / Data zamknięcia</strong></td><td class="fill-critical">▸ DD.MM.RRRR / DD.MM.RRRR</td></tr>
+<tr><td><strong>Pierwotna przyczyna (Root Cause)</strong></td><td class="fill-critical">▸ [opis pierwotnej przyczyny – podatność, błąd ludzki, itp.]</td></tr>
+<tr><td><strong>Chronologia incydentu</strong></td><td class="fill-critical">▸ [oś czasu: wykrycie, zawieranie, usuwanie, odtworzenie]</td></tr>
+<tr><td><strong>Wpływ na usługi / dane</strong></td><td class="fill-critical">▸ [czas niedostępności, liczba dotkniętych osób, straty finansowe]</td></tr>
+<tr><td><strong>Wdrożone środki zaradcze</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Wyciągnięte wnioski</strong></td><td class="fill-critical">▸ [co zmieniono, jakie procedury zaktualizowano]</td></tr>
+<tr><td><strong>Działania zapobiegawcze</strong></td><td class="fill-org">▸ [plany na przyszłość]</td></tr>
+</table>
+</div>
+<!-- Historia zmian -->
+<div class="section">
+<h2>Historia Zmian</h2>
+<table>
+<tr><th>Wersja</th><th>Data</th><th>Autor</th><th>Opis</th><th>Zatwierdził</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td>
+<td class="fill-org">▸ DD.MM.RRRR</td>
+<td class="fill-org">▸</td>
+<td class="fill-org">▸ Pierwsze wydanie</td>
+<td class="fill-critical">▸ Zarząd</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right; margin-top:8px;">DOC-006 Procedura Zgłaszania Incydentów | v1.0 | NIS2/KSC</div>
 </main>
-
 <footer class="page-footer">
-  Dokumentacja NIS2/KSC SZBI &nbsp;|&nbsp; DOC-006 Procedura Zgłaszania Incydentów &nbsp;|&nbsp; <a href="../index.html" style="color:#7baed4;">← Portal</a>
-  <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">&#169; 2026 Tomasz Zysko / CrazyRat &nbsp;&middot;&nbsp; Wszelkie prawa zastrze&#380;one &nbsp;&middot;&nbsp; Dokument obj&#281;ty ochron&#261; prawa autorskiego &nbsp;&middot;&nbsp; Reprodukcja lub redystrybucja bez pisemnej zgody autora jest zabroniona</div>
+  Dokumentacja NIS2/KSC SZBI  |  DOC-006 Procedura Zgłaszania Incydentów  |  <a href="../index.html" style="color:#7baed4;">← Portal</a>
+<div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  Wszelkie prawa zastrzeżone  ·  Dokument objęty ochroną prawa autorskiego  ·  Reprodukcja lub redystrybucja bez pisemnej zgody autora jest zabroniona</div>
 </footer>
 </div>
 </body>
