@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Primary Meta Tags -->
+<title>CrazyRat - Tomasz Zysko | vCISO | ISMS NIS2 / Portal</title>
+<meta content="CrazyRat - Tomasz Zysko | vCISO | ISMS NIS2 / Portal" name="title"/>
+<meta content="Experienced cybersecurity professional specializing in penetration testing, red team operations, and security architecture. OSCP, OSWP, CISSP, CEH certified. 25+ years of experience in ethical hacking and offensive security." name="description"/>
+<meta content="penetration testing, red team, offensive security, ethical hacking, cybersecurity consultant, OSCP, CISSP, security architect, vulnerability assessment, web application security, network security, vCISO" name="keywords"/>
+<meta content="Tomasz Zysko" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+  body { background: var(--bg); }
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white; padding: 40px; margin-bottom: 28px; border-radius: 6px;
+  }
+  .hero h1 { font-size: 1.8rem; margin-bottom: 8px; }
+  .hero p { opacity: .85; max-width: 680px; line-height: 1.6; }
+  .hero .sub { font-size: .8rem; opacity: .6; margin-top: 10px; }
+  .hero .hero-license { font-size: .7rem; opacity: .5; margin-top: 14px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 10px; letter-spacing: .2px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+  .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+  .stat-box {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 6px; padding: 18px 24px; flex: 1; min-width: 140px; text-align: center;
+  }
+  .stat-box .num { font-size: 2rem; font-weight: 700; color: var(--primary); }
+  .stat-box .lbl { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<h1>Information Security Management System</h1>
+<p>Compliance documentation aligned with the NIS2 Directive. Documents logically interconnected, ready to be completed by the organization.</p>
+<div class="sub">Project version: 1.0 | Date: <span class="fill-org">▸ enter approval date</span> | Owner: <span class="fill-org">▸ organisation name</span></div>
+<div class="hero-license">© 2026 Tomasz Zysko / CrazyRat  ·  Commercial documentation protected by copyright  ·  All rights reserved  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</div>
+<!-- Colour Legend -->
+<div class="section" style="margin-bottom:20px;">
+<h2>Colour Legend – fields to be completed by the organisation</h2>
+<div class="legend">
+<div class="legend-item">
+<div class="legend-swatch" style="background:var(--fill-org);border-color:var(--fill-org-border);"></div>
+<span><strong>Yellow field</strong> – organisation enters its own value (no constraints)</span>
+</div>
+<div class="legend-item">
+<div class="legend-swatch" style="background:var(--fill-const);border-color:var(--fill-const-border);"></div>
+<span><strong>Orange field</strong> – value with constraint <span class="constraint-badge">min/max</span> shown alongside</span>
+</div>
+<div class="legend-item">
+<div class="legend-swatch" style="background:var(--fill-ref);border-color:var(--fill-ref-border);"></div>
+<span><strong>Blue field</strong> – cross-reference or date</span>
+</div>
+<div class="legend-item">
+<div class="legend-swatch" style="background:var(--fill-critical);border-color:var(--fill-critical-border);"></div>
+<span><strong>Red field</strong> – critical field, absolutely required by NIS2</span>
+</div>
+</div>
+<div class="callout info">
+<div class="icon">ℹ️</div>
+<div>Fields marked with <strong>▸</strong> indicate a place to fill in. Text in square brackets <code>[...]</code> is an instruction or example – replace it with the organisation's actual content.</div>
+</div>
+</div>
+<!-- Statistics -->
+<div class="stat-row">
+<div class="stat-box"><div class="num">21</div><div class="lbl">Documents total</div></div>
+<div class="stat-box"><div class="num">6</div><div class="lbl">Phases</div></div>
+<div class="stat-box"><div class="num" id="done-count" style="color:var(--success)">21</div><div class="lbl">Ready</div></div>
+<div class="stat-box"><div class="num" style="color:var(--success)">100%</div><div class="lbl">Completeness</div></div>
+</div>
+<!-- PHASE 1 -->
+<div class="stage-block">
+<h2><span class="badge etap1">PHASE 1</span> Foundation Documents <span class="badge active" style="margin-left:auto;">✓ Ready</span></h2>
+<p class="muted" style="margin-bottom:12px;">Security policy, risk management and risk register – the foundation of the entire ISMS.</p>
+<div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+<div class="doc-grid">
+<a class="doc-card" href="docs/DOC-001-polityka-bezpieczenstwa.html">
+<div class="doc-num">DOC-001 <span class="badge active">READY</span></div>
+<h3>Information Security Policy</h3>
+<p>Main ISMS document. Objectives, scope, roles, principles. Linked to all other documents.</p>
+</a>
+<a class="doc-card" href="docs/DOC-002-zarzadzanie-ryzykiem.html">
+<div class="doc-num">DOC-002 <span class="badge active">READY</span></div>
+<h3>Risk Management Procedure</h3>
+<p>Methodology for assessing and treating cybersecurity risks. Required under Art. 21 NIS2.</p>
+</a>
+<a class="doc-card" href="docs/DOC-003-rejestr-ryzyk.html">
+<div class="doc-num">DOC-003 <span class="badge active">READY</span></div>
+<h3>Risk Register</h3>
+<p>Register template with risk acceptance criteria and likelihood/impact matrix.</p>
+</a>
+<a class="doc-card" href="docs/DOC-004-role-i-odpowiedzialnosci.html">
+<div class="doc-num">DOC-004 <span class="badge active">READY</span></div>
+<h3>Roles and Responsibilities (RACI)</h3>
+<p>RACI matrix for all security functions. NIS2 requirement for a designated cybersecurity responsible person.</p>
+</a>
+</div>
+</div>
+<!-- PHASE 2 -->
+<div class="stage-block">
+<h2><span class="badge etap2">PHASE 2</span> Incident Management <span class="badge active" style="margin-left:auto;">✓ Ready</span></h2>
+<p class="muted" style="margin-bottom:12px;">Procedures for detecting, handling and reporting cybersecurity incidents – a key NIS2 requirement.</p>
+<div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+<div class="doc-grid">
+<a class="doc-card" href="docs/DOC-005-polityka-incydentow.html">
+<div class="doc-num">DOC-005 <span class="badge active">READY</span></div>
+<h3>Incident Management Policy</h3>
+<p>Definitions, P1–P4 classification, significance thresholds, reporting obligations to CSIRT (24h/72h).</p>
+</a>
+<a class="doc-card" href="docs/DOC-006-procedura-zglaszania.html">
+<div class="doc-num">DOC-006 <span class="badge active">READY</span></div>
+<h3>Incident Reporting Procedure</h3>
+<p>Timeline, forms A–D, step-by-step instructions, reporting to CSIRT and DPA.</p>
+</a>
+<a class="doc-card" href="docs/DOC-007-plan-reagowania.html">
+<div class="doc-num">DOC-007 <span class="badge active">READY</span></div>
+<h3>Incident Response Plan</h3>
+<p>Playbooks PB-001–004 (ransomware, account, leak, DDoS), PICERL, crisis communications.</p>
+</a>
+</div>
+</div>
+<!-- PHASE 3 -->
+<div class="stage-block">
+<h2><span class="badge etap3">PHASE 3</span> Access Control, Cryptography and Data <span class="badge active" style="margin-left:auto;">✓ Ready</span></h2>
+<p class="muted" style="margin-bottom:12px;">Technical policies on identity, passwords, encryption and information classification.</p>
+<div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+<div class="doc-grid">
+<a class="doc-card" href="docs/DOC-008-kontrola-dostepu.html">
+<div class="doc-num">DOC-008 <span class="badge active">READY</span></div>
+<h3>Access Control Policy</h3>
+<p>Access principles, MFA, access reviews, privileged access, passwords (min. 8 characters).</p>
+</a>
+<a class="doc-card" href="docs/DOC-009-kryptografia.html">
+<div class="doc-num">DOC-009 <span class="badge active">READY</span></div>
+<h3>Cryptography Policy</h3>
+<p>Algorithms, key lengths, certificate management, encryption of data at rest and in transit.</p>
+</a>
+<a class="doc-card" href="docs/DOC-010-klasyfikacja-informacji.html">
+<div class="doc-num">DOC-010 <span class="badge active">READY</span></div>
+<h3>Information Classification and Protection</h3>
+<p>Classification levels, labelling, media handling, personal data (GDPR).</p>
+</a>
+</div>
+</div>
+<!-- PHASE 4 -->
+<div class="stage-block">
+<h2><span class="badge etap4">PHASE 4</span> Continuity, Backup and Operations <span class="badge active" style="margin-left:auto;">✓ Ready</span></h2>
+<p class="muted" style="margin-bottom:12px;">Business continuity, disaster recovery, change management and vulnerability management.</p>
+<div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+<div class="doc-grid">
+<a class="doc-card" href="docs/DOC-011-ciaglosc-dzialania.html">
+<div class="doc-num">DOC-011 <span class="badge active">READY</span></div>
+<h3>Business Continuity Plan (BCP)</h3>
+<p>RTO/RPO, emergency procedures, tests, crisis communications.</p>
+</a>
+<a class="doc-card" href="docs/DOC-012-backup.html">
+<div class="doc-num">DOC-012 <span class="badge active">READY</span></div>
+<h3>Backup and Recovery Procedure</h3>
+<p>Schedule, retention, recovery tests, backup isolation.</p>
+</a>
+<a class="doc-card" href="docs/DOC-013-zarzadzanie-zmianami.html">
+<div class="doc-num">DOC-013 <span class="badge active">READY</span></div>
+<h3>Change Management Procedure</h3>
+<p>CAB, change classification, testing, rollback, maintenance windows.</p>
+</a>
+<a class="doc-card" href="docs/DOC-014-podatnosci.html">
+<div class="doc-num">DOC-014 <span class="badge active">READY</span></div>
+<h3>Vulnerability Management</h3>
+<p>Scanning, CVSS, patching SLA (critical 72h), penetration tests.</p>
+</a>
+</div>
+</div>
+<!-- PHASE 5 -->
+<div class="stage-block">
+<h2><span class="badge etap5">PHASE 5</span> Supply Chain and Human Resources <span class="badge active" style="margin-left:auto;">✓ Ready</span></h2>
+<p class="muted" style="margin-bottom:12px;">Supplier security, personnel security and training programme – required under Art. 21 NIS2.</p>
+<div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+<div class="doc-grid">
+<a class="doc-card" href="docs/DOC-015-dostawcy.html">
+<div class="doc-num">DOC-015 <span class="badge active">READY</span></div>
+<h3>Supplier Management Policy</h3>
+<p>Supplier risk assessment, contractual requirements, monitoring, supply chain audits.</p>
+</a>
+<a class="doc-card" href="docs/DOC-016-bezpieczenstwo-hr.html">
+<div class="doc-num">DOC-016 <span class="badge active">READY</span></div>
+<h3>HR Security</h3>
+<p>Employee screening, NDA agreements, offboarding, penalties for violations.</p>
+</a>
+<a class="doc-card" href="docs/DOC-017-szkolenia.html">
+<div class="doc-num">DOC-017 <span class="badge active">READY</span></div>
+<h3>Training and Awareness Programme</h3>
+<p>Training plans, phishing awareness, mandatory certifications, register.</p>
+</a>
+</div>
+</div>
+<!-- PHASE 6 -->
+<div class="stage-block">
+<h2><span class="badge etap6">PHASE 6</span> Physical, Network and Assets <span class="badge active" style="margin-left:auto;">✓ Ready</span></h2>
+<p class="muted" style="margin-bottom:12px;">Physical security, networks, asset register and compliance audit.</p>
+<div class="progress-bar-wrap"><div class="progress-bar" style="width:100%"></div></div>
+<div class="doc-grid">
+<a class="doc-card" href="docs/DOC-018-bezpieczenstwo-fizyczne.html">
+<div class="doc-num">DOC-018 <span class="badge active">READY</span></div>
+<h3>Physical and Environmental Security</h3>
+<p>Security zones, entry control, server rooms, CCTV, clean desk.</p>
+</a>
+<a class="doc-card" href="docs/DOC-019-bezpieczenstwo-sieciowe.html">
+<div class="doc-num">DOC-019 <span class="badge active">READY</span></div>
+<h3>Network and Systems Security</h3>
+<p>Segmentation, DMZ, firewall, monitoring, SOC, logs (min. 12 months).</p>
+</a>
+<a class="doc-card" href="docs/DOC-020-rejestr-aktywow.html">
+<div class="doc-num">DOC-020 <span class="badge active">READY</span></div>
+<h3>Information Asset Register</h3>
+<p>Asset classification, owners, value, critical dependencies.</p>
+</a>
+<a class="doc-card" href="docs/DOC-021-audyt-zgodnosc.html">
+<div class="doc-num">DOC-021 <span class="badge active">READY</span></div>
+<h3>Audit and Compliance Procedure</h3>
+<p>Audit plan, reporting to board, security KPIs, statement of applicability.</p>
+</a>
+</div>
+</div>
+<!-- Legal Basis -->
+<div class="section">
+<h2>Legal Basis</h2>
+<table>
+<tr><th>Regulation</th><th>Key documentation requirements</th><th>Related documents</th></tr>
+<tr><td><strong>NIS2 Directive</strong><br/>(EU 2022/2555)</td><td>Art. 21 – risk management measures, policies, continuity, supply chain, MFA, encryption, training</td><td>DOC-001, 002, 011, 015, 008, 009, 017</td></tr>
+<tr><td><strong>GDPR</strong><br/>(EU 2016/679)</td><td>Technical and organisational measures, personal data protection, data breaches</td><td>DOC-010, 005, 016</td></tr>
+<tr><td><strong>ISO/IEC 27001:2022</strong></td><td>Reference ISMS standard – Annex A forms the control baseline</td><td>All documents</td></tr>
+</table>
+</div>
+<footer style="text-align:center; color:var(--muted); font-size:.75rem; padding:24px 0 20px; border-top:1px solid var(--border); margin-top:20px;">
+<div>NIS2/ISMS Documentation v1.0 – Complete  |  21/21 documents ready  |  All 6 phases completed</div>
+<div style="margin-top:6px; font-size:.68rem; opacity:.7;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div>
+</body>
+</html>

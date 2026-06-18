@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-009 Cryptography Policy – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span><span class="doc-id">DOC-009</span>
+<span style="flex:1"></span><a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a class="active" href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Cryptography Policy</h1>
+<div class="subtitle">Algorithms, keys, certificates and encryption of data at rest and in transit</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-009</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO / IT Administrator</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2)(h) NIS2; ISO/IEC 27001:2022 A.8.24; NIST SP 800-57</dd>
+<dt>Related Documents</dt><dd><a href="DOC-008-kontrola-dostepu.html">DOC-008</a> | <a href="DOC-010-klasyfikacja-informacji.html">DOC-010</a> | <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a></dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. General Principles</h2>
+<p>The organisation uses cryptography as a primary mechanism for protecting the confidentiality and integrity of data, both at rest and in transit. The decision to apply cryptography is based on data classification (<a href="DOC-010-klasyfikacja-informacji.html">DOC-010</a>) and risk assessment results (<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002</a>).</p>
+<div class="callout warning">
+<div class="icon">⚠️</div>
+<div><strong>Deprecated algorithms – PROHIBITED:</strong> MD5, SHA-1 (for signatures), DES, 3DES, RC4, SSLv2, SSLv3, TLS 1.0, TLS 1.1. Their use constitutes a violation of this policy and requires immediate remediation.</div>
+</div>
+</div>
+<div class="section">
+<h2>2. Approved Algorithms and Key Lengths</h2>
+<table>
+<tr><th>Category</th><th>Algorithm</th><th>Min. key length</th><th>Recommended length</th><th>Organisation's policy</th></tr>
+<tr>
+<td>Symmetric encryption</td>
+<td>AES (CBC/GCM)</td>
+<td><strong>128 bit</strong></td>
+<td><strong>256 bit</strong></td>
+<td class="fill-const">▸ [e.g. AES-256-GCM]<span class="constraint-badge">min. AES-128</span></td>
+</tr>
+<tr>
+<td>Asymmetric encryption (RSA)</td>
+<td>RSA</td>
+<td><strong>2048 bit</strong></td>
+<td><strong>4096 bit</strong></td>
+<td class="fill-const">▸ [e.g. RSA-4096]<span class="constraint-badge">min. RSA-2048</span></td>
+</tr>
+<tr>
+<td>Asymmetric encryption (ECC)</td>
+<td>ECDSA / ECDH</td>
+<td><strong>256 bit (P-256)</strong></td>
+<td><strong>384 bit (P-384)</strong></td>
+<td class="fill-const">▸ [e.g. P-384]<span class="constraint-badge">min. P-256</span></td>
+</tr>
+<tr>
+<td>Hash function</td>
+<td>SHA-2 family</td>
+<td><strong>SHA-256</strong></td>
+<td><strong>SHA-384 / SHA-512</strong></td>
+<td class="fill-const">▸ [e.g. SHA-256]<span class="constraint-badge">min. SHA-256</span></td>
+</tr>
+<tr>
+<td>TLS protocol</td>
+<td>TLS</td>
+<td><strong>TLS 1.2</strong></td>
+<td><strong>TLS 1.3</strong></td>
+<td class="fill-const">▸ [e.g. TLS 1.3 preferred, 1.2 fallback]<span class="constraint-badge">min. TLS 1.2</span></td>
+</tr>
+<tr>
+<td>Key exchange</td>
+<td>ECDHE / DHE</td>
+<td>ECDHE-256 / DH-2048</td>
+<td>ECDHE-384</td>
+<td class="fill-const">▸ [e.g. ECDHE]<span class="constraint-badge">PFS required</span></td>
+</tr>
+<tr>
+<td>Disk encryption</td>
+<td>AES-XTS</td>
+<td><strong>128 bit</strong></td>
+<td><strong>256 bit</strong></td>
+<td class="fill-const">▸ [e.g. AES-XTS-256]<span class="constraint-badge">min. AES-128</span></td>
+</tr>
+<tr>
+<td>Password hashing</td>
+<td>bcrypt / Argon2 / PBKDF2</td>
+<td>bcrypt cost≥10 / Argon2id</td>
+<td>Argon2id (recommended)</td>
+<td class="fill-const">▸ [e.g. bcrypt cost=12]<span class="constraint-badge">bcrypt cost≥10</span></td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>3. Encryption of Data at Rest</h2>
+<table>
+<tr><th>Data type</th><th>Encryption requirement</th><th>Method / tool</th></tr>
+<tr>
+<td>Laptops and workstations</td>
+<td class="fill-critical"><strong>REQUIRED – all devices</strong></td>
+<td class="fill-org">▸ [e.g. BitLocker / FileVault / LUKS]</td>
+</tr>
+<tr>
+<td>Servers with key data</td>
+<td class="fill-critical"><strong>REQUIRED</strong></td>
+<td class="fill-org">▸ [e.g. filesystem-level encryption / LUKS / database TDE]</td>
+</tr>
+<tr>
+<td>Portable media (USB, external drives)</td>
+<td class="fill-critical"><strong>REQUIRED – confidential and secret data</strong></td>
+<td class="fill-org">▸ [e.g. VeraCrypt / BitLocker To Go]</td>
+</tr>
+<tr>
+<td>Cloud data</td>
+<td class="fill-const">▸ [Required for confidential+ data]<span class="constraint-badge">min. for sensitive data</span></td>
+<td class="fill-org">▸ [e.g. client-side encryption (CSE) / SSE with organisation-managed keys]</td>
+</tr>
+<tr>
+<td>Databases</td>
+<td class="fill-const">▸ [Required for personal and secret data]</td>
+<td class="fill-org">▸ [e.g. TDE (SQL Server / Oracle) / pg_crypto]</td>
+</tr>
+<tr>
+<td>Backup copies</td>
+<td class="fill-critical"><strong>REQUIRED – all copies</strong></td>
+<td class="fill-org">▸ [e.g. encryption in backup tool]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>4. Encryption of Data in Transit</h2>
+<table>
+<tr><th>Scenario</th><th>Requirement</th><th>Configuration</th></tr>
+<tr>
+<td>Browser – web server communication</td>
+<td class="fill-critical">HTTPS with TLS 1.2+ REQUIRED</td>
+<td class="fill-const">▸ [HSTS enabled, HSTS max-age ≥ 31536000 s]<span class="constraint-badge">min. TLS 1.2</span></td>
+</tr>
+<tr>
+<td>Internal API connections</td>
+<td class="fill-const">▸ [TLS 1.2+ required]<span class="constraint-badge">min. TLS 1.2</span></td>
+<td class="fill-org">▸ [mTLS for critical services]</td>
+</tr>
+<tr>
+<td>Database connections</td>
+<td class="fill-critical">TLS required</td>
+<td class="fill-org">▸ [server certificate verified]</td>
+</tr>
+<tr>
+<td>Email</td>
+<td class="fill-const">▸ [TLS for SMTP, S/MIME or PGP for confidential data]</td>
+<td class="fill-org">▸ [e.g. STARTTLS / DANE / SMTPS]</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td class="fill-critical">End-to-end encryption required</td>
+<td class="fill-org">▸ [e.g. WireGuard (ChaCha20-Poly1305) / IPsec AES-256]</td>
+</tr>
+<tr>
+<td>OT/SCADA communications</td>
+<td class="fill-critical">Encryption required where feasible</td>
+<td class="fill-org">▸ [e.g. TLS or dedicated sector protocols (IEC 62351)]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>5. Certificate Management</h2>
+<table>
+<tr><th>Parameter</th><th>Requirement</th><th>Organisation's policy</th></tr>
+<tr>
+<td>Maximum public certificate validity</td>
+<td><strong>397 days</strong> (CA/Browser Forum requirement)</td>
+<td class="fill-const">▸ [e.g. 365 days]<span class="constraint-badge">max. 397 days</span></td>
+</tr>
+<tr>
+<td>Expiry monitoring</td>
+<td>Required</td>
+<td class="fill-const">▸ [alerts 30 and 7 days before expiry]<span class="constraint-badge">min. 14 days before</span></td>
+</tr>
+<tr>
+<td>Certificate Authority (CA)</td>
+<td>Publicly trusted or internal CA for internal services</td>
+<td class="fill-org">▸ [e.g. Let's Encrypt / DigiCert / internal Microsoft CA]</td>
+</tr>
+<tr>
+<td>Certificate register</td>
+<td>Required</td>
+<td class="fill-critical">▸ [certificate register location]</td>
+</tr>
+<tr>
+<td>Certificate revocation (CRL/OCSP)</td>
+<td>Required for internal CAs</td>
+<td class="fill-org">▸ [e.g. OCSP stapling]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>6. Cryptographic Key Management</h2>
+<ul>
+<li>Cryptographic keys are protected against unauthorised access, disclosure and modification.</li>
+<li>Private keys are never transmitted over unencrypted channels.</li>
+<li>Key rotation: symmetric keys every <span class="fill-const">▸ [1 year]<span class="constraint-badge">max. 2 years</span></span>; asymmetric keys every <span class="fill-const">▸ [2 years]<span class="constraint-badge">max. 5 years</span></span>.</li>
+<li>Backup encryption keys stored in a physical safe or HSM.</li>
+<li>Key destruction procedure: secure deletion after expiry or key change – documented in register.</li>
+</ul>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – key management system</span>
+<p><strong>KMS (Key Management System):</strong> <span class="fill-org">▸ [e.g. AWS KMS / Azure Key Vault / HashiCorp Vault / Thales HSM]</span></p>
+<p><strong>Cryptographic key register:</strong> <span class="fill-critical">▸ [register location]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>7. Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸</td><td class="fill-org">▸ Initial release</td>
+<td class="fill-critical">▸ Board</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right;margin-top:8px;">DOC-009 Cryptography Policy | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">NIS2/ISMS Documentation  |  DOC-009 Cryptography Policy  |  <a href="../index.html" style="color:#7baed4;">← Portal</a> <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div></body></html>

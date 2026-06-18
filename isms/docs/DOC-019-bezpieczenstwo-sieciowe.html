@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-019 Network and Systems Security – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body><div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span><span class="doc-id">DOC-019</span>
+<span style="flex:1"></span><a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a class="active" href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Network and Systems Security Policy</h1>
+<div class="subtitle">Segmentation, firewall, IDS/IPS, monitoring, logs and email protection</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-019</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ IT Administrator / CISO</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2) NIS2; ISO/IEC 27001:2022 A.8.20–A.8.23; NIST CSF</dd>
+<dt>Related Documents</dt><dd><a href="DOC-008-kontrola-dostepu.html">DOC-008</a> | <a href="DOC-009-kryptografia.html">DOC-009</a> | <a href="DOC-014-podatnosci.html">DOC-014</a></dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. Network Architecture and Segmentation</h2>
+<p>The organisation applies network segmentation, limiting traffic flow between zones to the necessary minimum (zero trust network access – ZTNA).</p>
+<table>
+<tr><th>Network zone</th><th>Description</th><th>Contents</th><th>Isolation</th></tr>
+<tr style="background:#ffe0e0;">
+<td><strong>Internet / Untrusted</strong></td>
+<td>External – outside organisation's control</td>
+<td>Public internet</td>
+<td>Perimeter firewall</td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>DMZ</strong></td>
+<td>Demilitarised zone – public servers</td>
+<td>Web servers, reverse proxy, MX, VPN endpoint</td>
+<td>Internal and external firewall (dual firewall)</td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>Corporate network (LAN)</strong></td>
+<td>Main user network</td>
+<td>Workstations, laptops, printers</td>
+<td>Firewall rules, VLAN</td>
+</tr>
+<tr style="background:#d4ffe0;">
+<td><strong>Server network</strong></td>
+<td>Application and database servers</td>
+<td>AD servers, ERP, databases</td>
+<td>VLAN, ACL, micro-segmentation</td>
+</tr>
+<tr style="background:#ffe0e0;">
+<td><strong>OT/ICS network (if applicable)</strong></td>
+<td>Industrial control systems network</td>
+<td>PLC, SCADA, HMI</td>
+<td class="fill-critical">Physical or logical isolation from IT (air-gap or data diode)</td>
+</tr>
+<tr style="background:#dff0ff;">
+<td><strong>Management network</strong></td>
+<td>Infrastructure management network</td>
+<td>IPMI, out-of-band management, SNMP</td>
+<td>Separate VLAN, admin-only access</td>
+</tr>
+</table>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – network diagram</span>
+<p><strong>Network diagram:</strong> <span class="fill-critical">▸ [current network diagram location]</span></p>
+<p><strong>VLAN technology:</strong> <span class="fill-org">▸ [switch make/model]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>2. Firewall and Traffic Control</h2>
+<table>
+<tr><th>Requirement</th><th>Standard</th><th>Implementation</th></tr>
+<tr>
+<td>Firewall rules</td>
+<td>Default deny, permit only required traffic</td>
+<td class="fill-org">▸ [FW make/model, e.g. Palo Alto / Fortinet / pfSense]</td>
+</tr>
+<tr>
+<td>Firewall rule review</td>
+<td class="fill-const">▸ quarterly<span class="constraint-badge">min. 2×/year</span></td>
+<td class="fill-critical">▸ CISO / IT Admin</td>
+</tr>
+<tr>
+<td>Web Application Firewall (WAF)</td>
+<td>Required for public web applications</td>
+<td class="fill-org">▸ [e.g. ModSecurity / Cloudflare WAF / Azure Application Gateway]</td>
+</tr>
+<tr>
+<td>IDS/IPS</td>
+<td>Required in DMZ and server network</td>
+<td class="fill-org">▸ [e.g. Suricata / Snort / Zeek / Cisco IPS]</td>
+</tr>
+<tr>
+<td>Network Access Control (NAC)</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [e.g. Cisco ISE / ForeScout / 802.1X]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>3. Logging and Monitoring – NIS2 Requirement</h2>
+<div class="fill-block critical">
+<span class="label">⚠ Critical – obligation to collect logs for min. 12 months (NIS2)</span>
+<table>
+<tr><th>Log source</th><th>Retention</th><th>SIEM / log management tool</th></tr>
+<tr>
+<td>Server system logs (OS)</td>
+<td class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months – NIS2</span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>Firewall / IPS logs</td>
+<td class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months</span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>Active Directory logs (authentications)</td>
+<td class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months</span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>VPN logs</td>
+<td class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months</span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>Web application logs</td>
+<td class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months</span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>OT/SCADA logs (if applicable)</td>
+<td class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months</span></td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
+<p><strong>SIEM platform:</strong> <span class="fill-org">▸ [e.g. Microsoft Sentinel / Splunk / Elastic SIEM / OSSIM / Wazuh]</span></p>
+<p><strong>Logs stored in tamper-proof manner:</strong> <span class="fill-critical">▸ [YES / NO – describe mechanism: immutable storage / write-once]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>4. Endpoint Protection</h2>
+<table>
+<tr><th>Control</th><th>Requirement</th><th>Tool</th></tr>
+<tr>
+<td>Antivirus / EDR</td>
+<td class="fill-critical">REQUIRED on all workstations</td>
+<td class="fill-org">▸ [e.g. CrowdStrike Falcon / MS Defender / SentinelOne]</td>
+</tr>
+<tr>
+<td>Patch management (endpoint)</td>
+<td>Per SLA from DOC-014</td>
+<td class="fill-org">▸ [e.g. WSUS / Intune / SCCM / Ansible]</td>
+</tr>
+<tr>
+<td>Disk encryption</td>
+<td class="fill-critical">REQUIRED on laptops and mobile devices</td>
+<td class="fill-org">▸ [e.g. BitLocker / FileVault]</td>
+</tr>
+<tr>
+<td>MDM (Mobile Device Management)</td>
+<td>Required for mobile devices with access to org data</td>
+<td class="fill-org">▸ [e.g. Microsoft Intune / JAMF]</td>
+</tr>
+<tr>
+<td>DLP (Data Loss Prevention)</td>
+<td>Recommended for CONFIDENTIAL and SECRET data</td>
+<td class="fill-org">▸ [e.g. Microsoft Purview / Symantec DLP]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>5. Email Security</h2>
+<table>
+<tr><th>Mechanism</th><th>Requirement</th><th>Deployment status</th></tr>
+<tr>
+<td>SPF (Sender Policy Framework)</td>
+<td class="fill-critical">REQUIRED</td>
+<td class="fill-critical">▸ [Deployed / In progress] – DNS record: <code class="fill-org">▸ [TXT value]</code></td>
+</tr>
+<tr>
+<td>DKIM (DomainKeys Identified Mail)</td>
+<td class="fill-critical">REQUIRED</td>
+<td class="fill-critical">▸ [Deployed / In progress]</td>
+</tr>
+<tr>
+<td>DMARC</td>
+<td class="fill-critical">REQUIRED – policy at least quarantine</td>
+<td class="fill-const">▸ [Deployed – policy: quarantine/reject]<span class="constraint-badge">min. quarantine</span></td>
+</tr>
+<tr>
+<td>Anti-spam / anti-phishing filter</td>
+<td class="fill-critical">REQUIRED</td>
+<td class="fill-org">▸ [e.g. MS Defender for Office / Proofpoint / Mimecast]</td>
+</tr>
+<tr>
+<td>Email encryption (S/MIME / PGP)</td>
+<td>Required for CONFIDENTIAL data in email</td>
+<td class="fill-org">▸ [Deployed / In progress / Not applicable]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>6. DNS and Wireless Network Security</h2>
+<table>
+<tr><th>Element</th><th>Requirement</th><th>Implementation</th></tr>
+<tr>
+<td>DNS Filtering (protection against malware C2)</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [e.g. Cisco Umbrella / Cloudflare Gateway / Pi-hole]</td>
+</tr>
+<tr>
+<td>Corporate Wi-Fi</td>
+<td class="fill-const">▸ WPA3 / WPA2-Enterprise (802.1X)<span class="constraint-badge">min. WPA2-Enterprise</span></td>
+<td class="fill-org">▸ [e.g. Aruba / Ubiquiti / Cisco WLC]</td>
+</tr>
+<tr>
+<td>Guest Wi-Fi</td>
+<td>Isolated from corporate network</td>
+<td class="fill-org">▸ [separate SSID with captive portal]</td>
+</tr>
+<tr>
+<td>Remote worker home Wi-Fi</td>
+<td class="fill-const">▸ [WPA2/WPA3, separate network for company devices]</td>
+<td class="fill-org">▸ [employee guidance]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>Change History</h2>
+<table><tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr><td class="fill-org">▸ 1.0</td><td class="fill-org">▸</td><td class="fill-org">▸</td><td class="fill-org">▸ Initial release</td><td class="fill-critical">▸ Board</td></tr></table>
+</div>
+<div class="muted" style="text-align:right;margin-top:8px;">DOC-019 Network and Systems Security | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">NIS2/ISMS Documentation  |  DOC-019  |  <a href="../index.html" style="color:#7baed4;">← Portal</a> <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div></body></html>

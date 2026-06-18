@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-014 Vulnerability Management – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span><span class="doc-id">DOC-014</span>
+<span style="flex:1"></span><a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a class="active" href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Vulnerability Management and Patching</h1>
+<div class="subtitle">Scanning, CVSS classification, patching SLA and penetration tests</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-014</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO / IT Administrator</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2)(e) NIS2; ISO/IEC 27001:2022 A.8.8</dd>
+<dt>Related Documents</dt><dd><a href="DOC-013-zarzadzanie-zmianami.html">DOC-013</a> <a href="DOC-003-rejestr-ryzyk.html">DOC-003</a> <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a></dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. Vulnerability Management Process</h2>
+<p>The organisation applies a continuous process of identifying, assessing, prioritising and remediating vulnerabilities in IT/OT systems. CVSS (Common Vulnerability Scoring System) criteria form the basis for prioritising remediation actions.</p>
+</div>
+<div class="section">
+<h2>2. Vulnerability Scanning</h2>
+<table>
+<tr><th>Scanning scope</th><th>Frequency</th><th>Tool</th><th>Responsible</th></tr>
+<tr>
+<td>All IT systems (internal network)</td>
+<td class="fill-const">▸ [weekly]<span class="constraint-badge">min. 1×/month</span></td>
+<td class="fill-org">▸ [e.g. Tenable Nessus / Qualys / OpenVAS / Rapid7]</td>
+<td class="fill-critical">▸ IT Admin / CISO</td>
+</tr>
+<tr>
+<td>Web services and applications</td>
+<td class="fill-const">▸ [weekly]<span class="constraint-badge">min. 1×/month</span></td>
+<td class="fill-org">▸ [e.g. OWASP ZAP / Burp Suite / Acunetix]</td>
+<td class="fill-critical">▸ IT Admin / CISO</td>
+</tr>
+<tr>
+<td>OT/ICS systems</td>
+<td class="fill-const">▸ [quarterly + after every change]<span class="constraint-badge">min. 2×/year</span></td>
+<td class="fill-org">▸ [passive OT tool, e.g. Claroty / Dragos]</td>
+<td class="fill-critical">▸ OT Admin / CISO</td>
+</tr>
+<tr>
+<td>Internet-facing assets (external)</td>
+<td class="fill-const">▸ [weekly]<span class="constraint-badge">min. 1×/month</span></td>
+<td class="fill-org">▸ [external scanning / ASM]</td>
+<td class="fill-critical">▸ CISO</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>3. Classification and Patching SLA</h2>
+<div class="callout danger">
+<div class="icon">🕐</div>
+<div><strong>Deadlines are a NIS2 requirement. Exceeding SLA for critical vulnerabilities requires documented justification and an approved remediation plan.</strong></div>
+</div>
+<table>
+<tr>
+<th>CVSS Level</th><th>CVSS Score</th><th>Name</th>
+<th>Patching SLA</th><th>Deadline for OT systems</th>
+</tr>
+<tr style="background:#ffb0b0;">
+<td><strong>Critical</strong></td><td>9.0 – 10.0</td><td>Critical</td>
+<td class="fill-const"><strong>▸ 72 hours</strong><span class="constraint-badge">max. 72h – NIS2</span></td>
+<td class="fill-const">▸ [e.g. 7 days with isolation]<span class="constraint-badge">immediately with compensating control</span></td>
+</tr>
+<tr style="background:#ffe0e0;">
+<td><strong>High</strong></td><td>7.0 – 8.9</td><td>High</td>
+<td class="fill-const">▸ [30 days]<span class="constraint-badge">max. 30 days</span></td>
+<td class="fill-const">▸ [e.g. 60 days with compensating control]</td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>Medium</strong></td><td>4.0 – 6.9</td><td>Medium</td>
+<td class="fill-const">▸ [90 days]<span class="constraint-badge">max. 90 days</span></td>
+<td class="fill-const">▸ [e.g. 180 days]</td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>Low</strong></td><td>0.1 – 3.9</td><td>Low</td>
+<td class="fill-const">▸ [180 days]<span class="constraint-badge">max. 180 days or accept</span></td>
+<td class="fill-org">▸ [at next maintenance window]</td>
+</tr>
+<tr style="background:#d4ffe0;">
+<td>None</td><td>0.0</td><td>None/Info</td>
+<td>No SLA – CISO decision</td>
+<td>—</td>
+</tr>
+</table>
+<h3>Zero-Day Vulnerabilities</h3>
+<p>For actively exploited zero-day vulnerabilities (confirmed in-the-wild exploit) – patch or compensating control within <span class="fill-const">▸ [24 hours]<span class="constraint-badge">max. 72h per NIS2</span></span> regardless of CVSS score. Tracking: CISA KEV (Known Exploited Vulnerabilities), NVD, national CERT advisories, vendor bulletins.</p>
+</div>
+<div class="section">
+<h2>4. Compensating Controls</h2>
+<p>If a patch cannot be deployed within SLA (e.g. no maintenance window, no vendor patch available), a temporary compensating control must be implemented:</p>
+<ul>
+<li>Isolation of vulnerable system (VLAN, firewall rule),</li>
+<li>Disable the vulnerable feature/service,</li>
+<li>Enhanced monitoring of the system,</li>
+<li>Restrict access to minimum.</li>
+</ul>
+<p>Any SLA deviation must be approved by the CISO and documented in the Risk Register (<a href="DOC-003-rejestr-ryzyk.html">DOC-003</a>).</p>
+</div>
+<div class="section">
+<h2>5. Penetration Tests</h2>
+<div class="fill-block const">
+<span class="label">Requirement – penetration tests minimum once a year (NIS2)</span>
+<table>
+<tr><th>Test type</th><th>Scope</th><th>Frequency</th><th>Executor</th><th>Executor requirements</th></tr>
+<tr>
+<td>External penetration test</td>
+<td>Internet-facing services</td>
+<td class="fill-const">▸ [annually]<span class="constraint-badge">min. 1×/year – NIS2</span></td>
+<td class="fill-critical">▸ [external company – independence required]</td>
+<td class="fill-org">▸ [e.g. OSCP certified, relevant sector experience]</td>
+</tr>
+<tr>
+<td>Internal penetration test</td>
+<td>Internal network, AD, applications</td>
+<td class="fill-const">▸ [annually]<span class="constraint-badge">min. 1×/year</span></td>
+<td class="fill-org">▸ [external company or internal red team]</td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>Web application pentest</td>
+<td>Public applications (OWASP Top 10)</td>
+<td class="fill-const">▸ [after each major release + 1×/year]</td>
+<td class="fill-org">▸ [external company]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
+</div>
+<p>Penetration test results are confidential (classification: SECRET) and provided only to the CISO and Board. Identified vulnerabilities remediated per SLA in section 3.</p>
+</div>
+<div class="section">
+<h2>6. Vulnerability Intelligence Sources</h2>
+<ul>
+<li>NVD (National Vulnerability Database): nvd.nist.gov</li>
+<li>CISA KEV (Known Exploited Vulnerabilities): cisa.gov/known-exploited-vulnerabilities-catalog</li>
+<li>National CERT advisories</li>
+<li>Vendor security bulletins (Microsoft Patch Tuesday, Adobe, Apple, etc.)</li>
+<li class="fill-org">▸ [additional ISAC / sector-specific intelligence sources]</li>
+</ul>
+</div>
+<div class="section">
+<h2>7. Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr><td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD/MM/YYYY</td><td class="fill-org">▸</td><td class="fill-org">▸ Initial release</td><td class="fill-critical">▸ Board</td></tr>
+</table>
+</div>
+<div class="muted" style="text-align:right;margin-top:8px;">DOC-014 Vulnerability Management | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">NIS2/ISMS Documentation  |  DOC-014 Vulnerability Management  |  <a href="../index.html" style="color:#7baed4;">← Portal</a> <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div></body></html>

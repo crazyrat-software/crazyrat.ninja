@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-006 Incident Reporting Procedure – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+  .timeline { position:relative; padding-left:32px; }
+  .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:3px; background:var(--border); }
+  .tl-item { position:relative; margin-bottom:20px; }
+  .tl-dot { position:absolute; left:-26px; top:4px; width:16px; height:16px; border-radius:50%; border:3px solid var(--white); box-shadow:0 0 0 2px var(--primary); background:var(--primary-light); }
+  .tl-dot.crit { background:var(--accent); box-shadow:0 0 0 2px var(--accent); }
+  .tl-time { font-size:.72rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.5px; }
+  .tl-title { font-weight:700; color:var(--primary); margin:2px 0; }
+  .tl-body { font-size:.85rem; }
+  .step-box { background:var(--secondary); border:1px solid var(--border); border-radius:4px; padding:14px 16px; margin:10px 0; }
+  .step-num { display:inline-block; width:26px; height:26px; background:var(--primary); color:white; border-radius:50%; text-align:center; line-height:26px; font-size:.8rem; font-weight:700; margin-right:8px; flex-shrink:0; }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span>
+<span class="doc-id">DOC-006</span>
+<span style="flex:1"></span>
+<a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a class="active" href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Cybersecurity Incident Reporting Procedure</h1>
+<div class="subtitle">Step by step: from detection to final report – 24h / 72h / 1 month deadlines</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-006</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 23 NIS2; Art. 33–34 GDPR</dd>
+<dt>Related Documents</dt><dd>
+<a href="DOC-005-polityka-incydentow.html">DOC-005</a> |
+        <a href="DOC-007-plan-reagowania.html">DOC-007</a> |
+        <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004</a>
+</dd>
+</dl>
+</div>
+<!-- QUICK RESPONSE CARD -->
+<div style="background:#1a3a5c; color:white; border-radius:6px; padding:20px 24px; margin-bottom:20px;">
+<div style="font-size:1rem; font-weight:700; margin-bottom:12px; color:#ff9999;">🚨 QUICK RESPONSE CARD – P1/P2 INCIDENT</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:.85rem;">
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">REPORT IMMEDIATELY TO:</div>
+<div class="fill-critical" style="background:#ffe0e0; color:#7f0000; padding:4px 8px; border-radius:3px; margin-bottom:6px;">▸ CISO: [24/7 telephone]</div>
+<div class="fill-critical" style="background:#ffe0e0; color:#7f0000; padding:4px 8px; border-radius:3px;">▸ Helpdesk: [internal number]</div>
+</div>
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">DO NOT:</div>
+<div style="font-size:.82rem; color:#ffdddd;">✗ Do not delete logs or files<br/>✗ Do not inform media without approval<br/>✗ Do not shut down systems without CISO approval</div>
+</div>
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">CSIRT (significant incident):</div>
+<div style="font-size:.82rem; color:#c8e6ff;">▸ [National CSIRT contact]</div>
+</div>
+<div>
+<div style="color:#aac8ff; font-size:.7rem; margin-bottom:4px;">DPA (personal data breach):</div>
+<div style="font-size:.82rem; color:#c8e6ff;">▸ DPA contact | 72h</div>
+</div>
+</div>
+</div>
+<div class="section">
+<h2>1. Scope and Application</h2>
+<p>This procedure describes the detailed steps, forms and deadlines required when reporting cybersecurity incidents to internal and external stakeholders. It is used in conjunction with <a href="DOC-005-polityka-incydentow.html">DOC-005</a> (classification, definitions) and <a href="DOC-007-plan-reagowania.html">DOC-007</a> (technical handling).</p>
+<p>The procedure applies to all incidents registered by the organisation. The obligation to notify CSIRT applies only to <strong>significant incidents</strong> (level P1 and selected P2 per the criteria in DOC-005 section 2.3).</p>
+</div>
+<div class="section">
+<h2>2. Reporting Timeline – Significant Incident</h2>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-dot crit"></div>
+<div class="tl-time">T+0 – Incident detected</div>
+<div class="tl-title">Event detected / reported</div>
+<div class="tl-body">Employee, SIEM system, IDS/IPS alert or supplier detects the incident. Immediate notification to CISO. Initiate Initial Form (Annex A).</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot crit"></div>
+<div class="tl-time" style="color:#e07b00;">T+1h – Initial assessment</div>
+<div class="tl-title">CISO: assessment and classification</div>
+<div class="tl-body">Is this a significant incident under NIS2? If YES → 24h clock starts. Activate Response Plan (<a href="DOC-007-plan-reagowania.html">DOC-007</a>).</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot crit"></div>
+<div class="tl-time" style="color:#c0392b;">T+24h – EARLY WARNING (MANDATORY)</div>
+<div class="tl-title">Notification to competent CSIRT</div>
+<div class="tl-body">
+          Channel: <strong>▸ [National CSIRT contact]</strong> or appropriate sector CSIRT.<br/>
+          Content: information on incident, indication of cross-border impact (if applicable).<br/>
+<strong>Use Early Warning Form (Annex B).</strong>
+</div>
+</div>
+<div class="tl-item">
+<div class="tl-dot"></div>
+<div class="tl-time" style="color:#e07b00;">T+72h – INCIDENT NOTIFICATION (MANDATORY)</div>
+<div class="tl-title">Full notification to CSIRT + DPA (if data breach)</div>
+<div class="tl-body">
+          Content: incident assessment, severity classification, service impact, IoCs, actions taken.<br/>
+<strong>Use Incident Notification Form (Annex C).</strong><br/>
+          In parallel: DPA notification if personal data breach.
+        </div>
+</div>
+<div class="tl-item">
+<div class="tl-dot"></div>
+<div class="tl-time">T+1 month – FINAL REPORT</div>
+<div class="tl-title">Final report to CSIRT</div>
+<div class="tl-body">
+          Full description: root cause (RCA), chronology, remediation actions, preventive measures.<br/>
+<strong>Use Final Report Form (Annex D).</strong>
+</div>
+</div>
+</div>
+</div>
+<div class="section">
+<h2>3. Detailed Process Steps</h2>
+<h3>Phase 1: Detection and internal reporting</h3>
+<div class="step-box">
+<span class="step-num">1</span>
+<strong>Event detection</strong> – by an employee, monitoring system, SIEM alert, supplier notification or external security researcher
+    </div>
+<div class="step-box">
+<span class="step-num">2</span>
+<strong>Do not destroy evidence</strong> – do not delete files, logs, emails. Keep everything.
+    </div>
+<div class="step-box">
+<span class="step-num">3</span>
+<strong>Report immediately</strong> – CISO (tel. <span class="fill-critical">▸ [number]</span>) and/or via ticketing system <span class="fill-org">▸ [name]</span>. Complete <strong>Initial Form (Annex A)</strong>.
+    </div>
+<div class="step-box">
+<span class="step-num">4</span>
+<strong>Isolation (if necessary)</strong> – if device is infected, disconnect it from the network (LAN/Wi-Fi), but do not cut power without CISO approval (you will lose RAM data).
+    </div>
+<h3>Phase 2: Assessment and classification (CISO)</h3>
+<div class="step-box">
+<span class="step-num">5</span>
+<strong>Initial assessment</strong> – CISO assesses: what type of incident (category from DOC-005 section 4), what level (P1–P4), is this a significant incident requiring notification.
+    </div>
+<div class="step-box">
+<span class="step-num">6</span>
+<strong>Escalation</strong> – for P1 and P2: Board notification. For P1: activate BCP if required (DOC-011).
+    </div>
+<div class="step-box">
+<span class="step-num">7</span>
+<strong>Open register</strong> – create entry in Incident Register (number INC-YYYY-NNN).
+    </div>
+<h3>Phase 3: Containment and eradication</h3>
+<div class="step-box">
+<span class="step-num">8</span>
+<strong>Containment</strong> – isolate affected systems, block accounts, change passwords, filter network traffic. Details in <a href="DOC-007-plan-reagowania.html">DOC-007</a>.
+    </div>
+<div class="step-box">
+<span class="step-num">9</span>
+<strong>Forensic evidence collection</strong> – disk images, logs, memory dumps, network traffic captures (PCAP).
+    </div>
+<div class="step-box">
+<span class="step-num">10</span>
+<strong>Eradication</strong> – remove malware, close vulnerability, verify systems.
+    </div>
+<h3>Phase 4: Recovery</h3>
+<div class="step-box">
+<span class="step-num">11</span>
+<strong>Recovery from backup</strong> – in accordance with procedure <a href="DOC-012-backup.html">DOC-012</a> and BCP <a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a>.
+    </div>
+<div class="step-box">
+<span class="step-num">12</span>
+<strong>Verification</strong> – testing of restored systems before returning to production.
+    </div>
+<h3>Phase 5: External reporting</h3>
+<div class="step-box">
+<span class="step-num">13</span>
+<strong>Early warning to CSIRT</strong> – no later than <strong style="color:#c0392b;">24h from detection</strong> of a significant incident.
+    </div>
+<div class="step-box">
+<span class="step-num">14</span>
+<strong>Notification to CSIRT</strong> – no later than <strong style="color:#e07b00;">72h from detection</strong>.
+    </div>
+<div class="step-box">
+<span class="step-num">15</span>
+<strong>DPA notification</strong> (if applicable) – no later than <strong style="color:#e07b00;">72h from confirming personal data breach</strong>.
+    </div>
+<h3>Phase 6: Analysis and closure</h3>
+<div class="step-box">
+<span class="step-num">16</span>
+<strong>Post-Incident Review (PIR)</strong> – root cause analysis (RCA), documentation of lessons learned.
+    </div>
+<div class="step-box">
+<span class="step-num">17</span>
+<strong>Final report to CSIRT</strong> – within <strong>1 month</strong> of notification.
+    </div>
+<div class="step-box">
+<span class="step-num">18</span>
+<strong>Documentation update</strong> – update Risk Register (DOC-003), policies, procedures if needed.
+    </div>
+</div>
+<div class="section">
+<h2>Annex A – Initial Incident Notification Form (internal)</h2>
+<div class="callout info"><div class="icon">📋</div><div>Completed by any employee or the first person detecting the incident. Send to CISO immediately.</div></div>
+<table>
+<tr><th colspan="2">INITIAL INCIDENT NOTIFICATION FORM</th></tr>
+<tr><td style="width:35%;"><strong>Date and time of detection</strong></td><td class="fill-critical">▸ DD/MM/YYYY HH:MM</td></tr>
+<tr><td><strong>Reporter (name)</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Reporter's contact</strong></td><td class="fill-org">▸ [phone / email]</td></tr>
+<tr><td><strong>What was observed?</strong></td><td class="fill-critical">▸ [description of event – what, where, when]</td></tr>
+<tr><td><strong>Affected systems / devices</strong></td><td class="fill-critical">▸ [system names, IP addresses, computer numbers]</td></tr>
+<tr><td><strong>Any actions taken? Which?</strong></td><td class="fill-org">▸ [e.g. disconnected from network / nothing done]</td></tr>
+<tr><td><strong>Are other people aware?</strong></td><td class="fill-org">▸ [yes/no – who]</td></tr>
+<tr><td><strong>Estimated impact (preliminary)</strong></td><td class="fill-org">▸ [e.g. systems unavailable / data exposed / nothing visible]</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>Annex B – Early Warning Form to CSIRT (T+24h)</h2>
+<div class="callout danger"><div class="icon">🕐</div><div><strong>Deadline: 24 hours from detection of a significant incident.</strong> Completed by CISO.</div></div>
+<table>
+<tr><th colspan="2">EARLY WARNING – CSIRT NOTIFICATION</th></tr>
+<tr><td style="width:40%;"><strong>Reporting entity (name, ID)</strong></td><td class="fill-critical">▸ [full organisation name, Registration Number]</td></tr>
+<tr><td><strong>Sector / type of service</strong></td><td class="fill-critical">▸ [NIS2 sector, type of key/important service]</td></tr>
+<tr><td><strong>Contact person (CISO)</strong></td><td class="fill-critical">▸ [First Last Name, phone, email]</td></tr>
+<tr><td><strong>Date/time of detection</strong></td><td class="fill-critical">▸ DD/MM/YYYY HH:MM</td></tr>
+<tr><td><strong>Date/time of notification</strong></td><td class="fill-critical">▸ DD/MM/YYYY HH:MM</td></tr>
+<tr><td><strong>Brief incident description</strong></td><td class="fill-critical">▸ [incident type, affected systems, preliminary scope]</td></tr>
+<tr><td><strong>Does incident have cross-border impact?</strong></td><td class="fill-critical">▸ [YES / NO / UNKNOWN]</td></tr>
+<tr><td><strong>Preliminary severity assessment</strong></td><td class="fill-critical">▸ [Low / Medium / High / Critical]</td></tr>
+<tr><td><strong>Remediation actions taken</strong></td><td class="fill-org">▸ [isolation, containment – what has been done]</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>Annex C – Incident Notification Form to CSIRT (T+72h)</h2>
+<div class="callout danger"><div class="icon">🕐</div><div><strong>Deadline: 72 hours from detection of a significant incident.</strong> Completed by CISO.</div></div>
+<table>
+<tr><th colspan="2">INCIDENT NOTIFICATION – CSIRT</th></tr>
+<tr><td style="width:40%;"><strong>Internal reference number</strong></td><td class="fill-critical">▸ INC-YYYY-NNN</td></tr>
+<tr><td><strong>Entity / sector</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Incident type (category)</strong></td><td class="fill-critical">▸ [MAL/PHI/NET/WEB/ACC/DAT/INS/SUP/PHY/OTH]</td></tr>
+<tr><td><strong>Severity level</strong></td><td class="fill-critical">▸ [P1/P2/P3/P4]</td></tr>
+<tr><td><strong>Affected systems / services</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Estimated number of affected users</strong></td><td class="fill-org">▸</td></tr>
+<tr><td><strong>Detailed incident description</strong></td><td class="fill-critical">▸ [chronology, attack vector, scope]</td></tr>
+<tr><td><strong>Indicators of compromise (IoC)</strong></td><td class="fill-org">▸ [IPs, domains, hashes, malware signatures]</td></tr>
+<tr><td><strong>Remediation actions taken</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Current incident status</strong></td><td class="fill-critical">▸ [Ongoing / Contained / Closed]</td></tr>
+<tr><td><strong>Was personal data breached?</strong></td><td class="fill-critical">▸ [YES (DPA notified DD/MM) / NO]</td></tr>
+<tr><td><strong>CSIRT support required?</strong></td><td class="fill-org">▸ [YES / NO – describe need]</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>Annex D – Final Report Form to CSIRT (T+1 month)</h2>
+<table>
+<tr><th colspan="2">INCIDENT FINAL REPORT</th></tr>
+<tr><td style="width:40%;"><strong>Reference number</strong></td><td class="fill-critical">▸ INC-YYYY-NNN</td></tr>
+<tr><td><strong>Detection date / Closure date</strong></td><td class="fill-critical">▸ DD/MM/YYYY / DD/MM/YYYY</td></tr>
+<tr><td><strong>Root cause</strong></td><td class="fill-critical">▸ [description of root cause – vulnerability, human error, etc.]</td></tr>
+<tr><td><strong>Incident chronology</strong></td><td class="fill-critical">▸ [timeline: detection, containment, eradication, recovery]</td></tr>
+<tr><td><strong>Impact on services / data</strong></td><td class="fill-critical">▸ [downtime, number of affected persons, financial losses]</td></tr>
+<tr><td><strong>Remediation measures implemented</strong></td><td class="fill-critical">▸</td></tr>
+<tr><td><strong>Lessons learned</strong></td><td class="fill-critical">▸ [what was changed, which procedures updated]</td></tr>
+<tr><td><strong>Preventive measures</strong></td><td class="fill-org">▸ [future plans]</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td>
+<td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸</td>
+<td class="fill-org">▸ Initial release</td>
+<td class="fill-critical">▸ Board</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right; margin-top:8px;">DOC-006 Incident Reporting Procedure | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">
+  NIS2/ISMS Documentation  |  DOC-006 Incident Reporting Procedure  |  <a href="../index.html" style="color:#7baed4;">← Document Portal</a>
+<div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div>
+</body>
+</html>

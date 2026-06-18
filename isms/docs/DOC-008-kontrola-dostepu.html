@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-008 Access Control Policy – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span><span class="doc-id">DOC-008</span>
+<span style="flex:1"></span><a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a class="active" href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Access Control Policy</h1>
+<div class="subtitle">Identity management, passwords, permissions and multi-factor authentication (MFA)</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-008</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO / IT Administrator</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2)(j) NIS2; ISO/IEC 27001:2022 A.5.15–A.5.18, A.8.2–A.8.5</dd>
+<dt>Related Documents</dt><dd>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a> |
+      <a href="DOC-009-kryptografia.html">DOC-009</a> |
+      <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016</a> |
+      <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a>
+</dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. General Access Control Principles</h2>
+<ul>
+<li><strong>Least privilege</strong> – users receive only the permissions necessary for their work.</li>
+<li><strong>Need-to-know</strong> – access to data is granted only to persons who require it for their duties.</li>
+<li><strong>Segregation of duties</strong> – critical operations require more than one person.</li>
+<li><strong>Default deny</strong> – access is prohibited until explicitly granted.</li>
+<li><strong>Accountability</strong> – every access is logged and attributed to a specific user.</li>
+</ul>
+</div>
+<div class="section">
+<h2>2. User Account Management</h2>
+<h3>2.1 Account creation and modification</h3>
+<p>Accounts are created solely on the basis of a formal request approved by the line manager and administrator. Request template: <span class="fill-org">▸ [link / form location]</span>.</p>
+<table>
+<tr><th>Account type</th><th>Approval</th><th>MFA</th><th>Access review</th></tr>
+<tr>
+<td>Standard user</td>
+<td class="fill-org">▸ [line manager]</td>
+<td class="fill-const">▸ Recommended<span class="constraint-badge">required from 2025</span></td>
+<td class="fill-const">▸ every 12 months<span class="constraint-badge">min. 1×/year</span></td>
+</tr>
+<tr>
+<td>Privileged account (admin)</td>
+<td class="fill-critical">▸ CISO + line manager</td>
+<td class="fill-critical"><strong>ABSOLUTELY REQUIRED</strong></td>
+<td class="fill-const">▸ every 6 months<span class="constraint-badge">min. 2×/year</span></td>
+</tr>
+<tr>
+<td>Service / technical account</td>
+<td class="fill-critical">▸ CISO + admin</td>
+<td>N/A (password rotated)</td>
+<td class="fill-const">▸ every 6 months</td>
+</tr>
+<tr>
+<td>External account (supplier)</td>
+<td class="fill-critical">▸ CISO + system owner</td>
+<td class="fill-critical"><strong>REQUIRED</strong></td>
+<td class="fill-const">▸ every 3 months<span class="constraint-badge">min. 1×/year</span></td>
+</tr>
+<tr>
+<td>Emergency account (break-glass)</td>
+<td class="fill-critical">▸ CISO + Board</td>
+<td class="fill-critical"><strong>REQUIRED</strong></td>
+<td class="fill-const">▸ every 6 months</td>
+</tr>
+</table>
+<h3>2.2 Account blocking and deletion</h3>
+<ul>
+<li>Block on role change – immediately upon HR decision.</li>
+<li>Block on employment termination – no later than <span class="fill-const">▸ [on the day of departure, by 17:00]<span class="constraint-badge">max. 24h</span></span>. Procedure in <a href="DOC-016-bezpieczenstwo-hr.html">DOC-016</a>.</li>
+<li>Automatic block of inactive accounts after <span class="fill-const">▸ [90 days]<span class="constraint-badge">max. 90 days</span></span> of no login.</li>
+<li>Account deletion after <span class="fill-org">▸ [30 days]</span> from block, after system owner confirmation.</li>
+</ul>
+<h3>2.3 Access review</h3>
+<div class="fill-block const">
+<span class="label">Requirement – access review minimum once a year (NIS2)</span>
+<p>System owners review permissions every <span class="fill-const">▸ [6 months]<span class="constraint-badge">min. 1×/year</span></span>. Privileged accounts every <span class="fill-const">▸ [3 months]<span class="constraint-badge">min. 2×/year</span></span>. Results documented in review register. Excessive permissions removed within <span class="fill-const">▸ [5 business days]</span> of identification.</p>
+</div>
+</div>
+<div class="section">
+<h2>3. Password Policy</h2>
+<div class="callout info">
+<div class="icon">ℹ️</div>
+<div>Orange fields indicate <strong>minimum thresholds required by NIS2 / ENISA</strong>. The organisation enters its applicable policy – it must be at least equal to the minimum value.</div>
+</div>
+<h3>3.1 Standard user passwords</h3>
+<table>
+<tr><th>Parameter</th><th>NIS2 / best practice minimum</th><th>Organisation's policy</th></tr>
+<tr>
+<td>Minimum password length</td>
+<td><strong style="color:#c0392b;">min. 8 characters</strong></td>
+<td class="fill-const">▸ [enter number, e.g. 12]<span class="constraint-badge">min. 8 characters</span></td>
+</tr>
+<tr>
+<td>Upper case letters (A–Z)</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [required / recommended]</td>
+</tr>
+<tr>
+<td>Lower case letters (a–z)</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [required / recommended]</td>
+</tr>
+<tr>
+<td>Digits (0–9)</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [required / recommended]</td>
+</tr>
+<tr>
+<td>Special characters (!@#$…)</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [required / recommended]</td>
+</tr>
+<tr>
+<td>Maximum password age</td>
+<td>No mandatory max. (NIST SP 800-63B recommends no expiry with good complexity)</td>
+<td class="fill-org">▸ [e.g. 365 days / no expiry]</td>
+</tr>
+<tr>
+<td>Password history (no reuse)</td>
+<td>Recommended min. 5</td>
+<td class="fill-const">▸ [e.g. last 10]<span class="constraint-badge">min. 5</span></td>
+</tr>
+<tr>
+<td>Lockout after failed attempts</td>
+<td>Recommended</td>
+<td class="fill-const">▸ [e.g. after 5 attempts]<span class="constraint-badge">max. 10 attempts</span></td>
+</tr>
+<tr>
+<td>Lockout duration / unlock</td>
+<td>—</td>
+<td class="fill-org">▸ [e.g. 15 min automatic / manually by admin]</td>
+</tr>
+<tr>
+<td>Screen lock after inactivity</td>
+<td>Recommended</td>
+<td class="fill-const">▸ [e.g. 10 minutes]<span class="constraint-badge">max. 15 min</span></td>
+</tr>
+</table>
+<h3>3.2 Privileged account passwords (administrators)</h3>
+<table>
+<tr><th>Parameter</th><th>Minimum (ENISA recommendation)</th><th>Organisation's policy</th></tr>
+<tr>
+<td>Minimum length</td>
+<td><strong style="color:#c0392b;">min. 16 characters</strong></td>
+<td class="fill-const">▸ [e.g. 20 characters]<span class="constraint-badge">min. 16 characters</span></td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>All 4 character categories</td>
+<td class="fill-critical">Upper + lower + digits + special characters – MANDATORY</td>
+</tr>
+<tr>
+<td>Maximum age</td>
+<td>—</td>
+<td class="fill-const">▸ [e.g. 90 days]<span class="constraint-badge">max. 180 days</span></td>
+</tr>
+<tr>
+<td>PAM tool / password manager</td>
+<td>Recommended</td>
+<td class="fill-org">▸ [e.g. CyberArk / BeyondTrust / HashiCorp Vault / KeePass Enterprise]</td>
+</tr>
+</table>
+<h3>3.3 Service account passwords</h3>
+<p>Length: <span class="fill-const">▸ min. 32 random characters<span class="constraint-badge">min. 20 characters</span></span>, auto-generated (PAM or script). Rotation every <span class="fill-const">▸ [90 days]<span class="constraint-badge">max. 180 days</span></span> or after any security incident.</p>
+<h3>3.4 Absolute prohibitions</h3>
+<ul>
+<li>No dictionary words, names, dates of birth, organisation name as passwords.</li>
+<li>No sharing of passwords between users.</li>
+<li>No storing passwords in text files, emails, instant messengers, sticky notes on monitors.</li>
+<li>No using the same passwords for work and personal systems.</li>
+</ul>
+</div>
+<div class="section">
+<h2>4. Multi-Factor Authentication (MFA)</h2>
+<div class="fill-block critical">
+<span class="label">⚠ Critical – Art. 21(2)(j) NIS2: MFA required for all users of key systems</span>
+<table>
+<tr><th>Access scenario</th><th>MFA requirement</th><th>Accepted methods</th></tr>
+<tr>
+<td>Remote access (VPN, RDP, SSH)</td>
+<td><strong style="color:#c0392b;">ABSOLUTELY REQUIRED</strong></td>
+<td class="fill-org">▸ [TOTP (Google/MS Authenticator) / FIDO2 / hardware token]</td>
+</tr>
+<tr>
+<td>Privileged accounts (admins)</td>
+<td><strong style="color:#c0392b;">ABSOLUTELY REQUIRED</strong></td>
+<td class="fill-org">▸ [FIDO2 / hardware token (YubiKey) / TOTP]</td>
+</tr>
+<tr>
+<td>Key systems / OT/ICS</td>
+<td><strong style="color:#c0392b;">REQUIRED – SMS not acceptable</strong></td>
+<td class="fill-critical">▸ FIDO2 or hardware token ONLY</td>
+</tr>
+<tr>
+<td>Cloud admin panels (AWS/Azure/GCP)</td>
+<td><strong style="color:#c0392b;">REQUIRED</strong></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>Email (remote web access)</td>
+<td class="fill-const">▸ [Required]<span class="constraint-badge">min. for remote access</span></td>
+<td class="fill-org">▸ [TOTP / push notification]</td>
+</tr>
+<tr>
+<td>Internal network access (office)</td>
+<td class="fill-org">▸ [Required / Recommended]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
+<p style="margin-top:8px; font-size:.85rem;"><strong>Not acceptable:</strong> SMS as MFA method for privileged accounts and key systems (SIM swapping vulnerability). SMS only acceptable for standard accounts as a fallback option.</p>
+</div>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – deployed MFA solution</span>
+<p><strong>MFA platform:</strong> <span class="fill-org">▸ [e.g. Microsoft Entra ID MFA / Duo Security / RSA SecurID / YubiKey / FreeOTP]</span></p>
+<p><strong>Full MFA deployment date for privileged accounts:</strong> <span class="fill-critical">▸ DD/MM/YYYY</span></p>
+<p><strong>Percentage of accounts covered by MFA:</strong> <span class="fill-org">▸ [e.g. 100% privileged, X% standard]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>5. Privileged Access Management (PAM)</h2>
+<ul>
+<li>Each administrator has <strong>two separate accounts</strong>: standard (daily work) and privileged (administrative tasks only).</li>
+<li>Privileged account logins recorded in a central audit log.</li>
+<li>Privileged sessions recorded and archived for <span class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months – NIS2</span></span>.</li>
+<li>Temporary Just-In-Time (JIT) access: granted for max. <span class="fill-const">▸ [4 hours]</span>, requires re-approval by CISO.</li>
+<li>Break-glass accounts: password in sealed envelope in CISO safe; opening recorded in incident register.</li>
+</ul>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes</span>
+<p><strong>PAM system:</strong> <span class="fill-org">▸ [e.g. CyberArk / BeyondTrust / HashiCorp Vault / manual management with register]</span></p>
+<p><strong>Privileged account register:</strong> <span class="fill-critical">▸ [register location / link to DOC-020]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>6. Remote and External Access</h2>
+<table>
+<tr><th>Access type</th><th>Requirements</th><th>Tool</th></tr>
+<tr>
+<td>Employee VPN</td>
+<td>MFA required; company devices or MDM only; Split tunnelling: <span class="fill-org">▸ [allowed/prohibited]</span></td>
+<td class="fill-org">▸ [e.g. OpenVPN / Cisco AnyConnect / WireGuard]</td>
+</tr>
+<tr>
+<td>Supplier remote access</td>
+<td>MFA required; only during work period; session monitored via PAM; no access outside contract scope</td>
+<td class="fill-org">▸ [e.g. dedicated VPN / BeyondTrust Remote Access]</td>
+</tr>
+<tr>
+<td>Remote work (home office)</td>
+<td>Encrypted disk; VPN mandatory; screen lock after <span class="fill-const">▸ [5 min]<span class="constraint-badge">max. 15 min</span></span></td>
+<td class="fill-org">▸</td>
+</tr>
+<tr>
+<td>BYOD (personal devices)</td>
+<td class="fill-org">▸ [Permitted / Not permitted] – if permitted: MDM mandatory, separation of work data</td>
+<td class="fill-org">▸ [e.g. Microsoft Intune / JAMF]</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>7. Access Logging and Monitoring</h2>
+<p>All system logins are recorded and retained for <span class="fill-const">▸ [12 months]<span class="constraint-badge">min. 12 months – NIS2</span></span>. Minimum log content: user ID, timestamp (UTC), source IP address, target system, event type, result (success/denied).</p>
+<p>SIEM alerts configured for: logins outside business hours, repeated authentication failures, logins from new locations, privilege escalation. Details in <a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019</a>.</p>
+</div>
+<div class="section">
+<h2>8. Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸</td><td class="fill-org">▸ Initial release</td>
+<td class="fill-critical">▸ Board</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right;margin-top:8px;">DOC-008 Access Control Policy | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">NIS2/ISMS Documentation  |  DOC-008 Access Control  |  <a href="../index.html" style="color:#7baed4;">← Document Portal</a> <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div></body></html>

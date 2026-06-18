@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CrazyRat - Tomasz Zysko | vCISO | ISMS NIS2 / DOC-002 Risk Management Procedure</title>
+<meta content="Experienced cybersecurity professional specializing in penetration testing, red team operations, and security architecture. OSCP, OSWP, CISSP, CEH certified. 25+ years of experience in ethical hacking and offensive security." name="description"/>
+<meta content="Tomasz Zysko" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span>
+<span class="doc-id">DOC-002</span>
+<span style="flex:1"></span>
+<a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a class="active" href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Cybersecurity Risk Management Procedure</h1>
+<div class="subtitle">Methodology for identifying, analysing, assessing and treating risk</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-002</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Next Review</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO / Person responsible for cybersecurity</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2)(a) NIS2; ISO/IEC 27005:2022</dd>
+<dt>Parent Document</dt><dd><a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a></dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. Purpose and Scope</h2>
+<p>This procedure describes the cybersecurity risk management methodology applied by the organisation. It provides a systematic approach to identifying, analysing, assessing and treating risks that could affect the confidentiality, integrity or availability of information and services.</p>
+<p>The procedure applies to:</p>
+<ul>
+<li>All information systems supporting key/important services,</li>
+<li>The organisation's IT/OT infrastructure,</li>
+<li>Processes and services delivered by suppliers (supply chain).</li>
+</ul>
+<div class="callout info">
+<div class="icon">ℹ️</div>
+<div>Risk assessment results are recorded in <a href="DOC-003-rejestr-ryzyk.html"><strong>DOC-003 Risk Register</strong></a>. The procedure is applied at least once a year and after significant changes to the IT environment.</div>
+</div>
+</div>
+<div class="section">
+<h2>2. Risk Assessment Methodology</h2>
+<h3>2.1 Choice of methodology</h3>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – choice of methodology</span>
+<p>The organisation applies the following risk assessment methodology:</p>
+<p><span class="fill-org">▸ [Select one or describe your own]: OCTAVE Allegro / FAIR / ISO 27005 / NIST SP 800-30 / own methodology based on likelihood × impact matrix</span></p>
+</div>
+<h3>2.2 Rating scale</h3>
+<p>The organisation uses a <span class="fill-const">▸ [3/4/5]-level scale <span class="constraint-badge">min. 3-level</span></span> for likelihood and impact ratings:</p>
+<p class="table-caption">Table 1 – Likelihood scale</p>
+<table>
+<tr><th>Value</th><th>Level</th><th>Description</th><th>Indicative frequency</th></tr>
+<tr><td><strong>1</strong></td><td>Very low</td><td>Event highly unlikely</td><td class="fill-org">▸ [e.g. once in 10 years]</td></tr>
+<tr><td><strong>2</strong></td><td>Low</td><td>Event unlikely</td><td class="fill-org">▸ [e.g. once in 3–5 years]</td></tr>
+<tr><td><strong>3</strong></td><td>Medium</td><td>Event possible</td><td class="fill-org">▸ [e.g. once in 1–3 years]</td></tr>
+<tr><td><strong>4</strong></td><td>High</td><td>Event probable</td><td class="fill-org">▸ [e.g. once a year]</td></tr>
+<tr><td><strong>5</strong></td><td>Very high</td><td>Event very probable or recurring</td><td class="fill-org">▸ [e.g. several times a year]</td></tr>
+</table>
+<p class="table-caption">Table 2 – Impact scale</p>
+<table>
+<tr><th>Value</th><th>Level</th><th>Financial impact (indicative)</th><th>Operational impact</th><th>Reputational impact</th></tr>
+<tr><td><strong>1</strong></td><td>Minimal</td><td class="fill-org">▸ below [X currency]</td><td>No or minimal disruption</td><td>No noticeable effect</td></tr>
+<tr><td><strong>2</strong></td><td>Minor</td><td class="fill-org">▸ [X] – [Y currency]</td><td>Short-term internal disruption</td><td>Local / internal</td></tr>
+<tr><td><strong>3</strong></td><td>Moderate</td><td class="fill-org">▸ [Y] – [Z currency]</td><td>Disruption visible to customers</td><td>Local media attention</td></tr>
+<tr><td><strong>4</strong></td><td>Serious</td><td class="fill-org">▸ [Z] – [W currency]</td><td>Significant disruption to key services</td><td>National media attention</td></tr>
+<tr><td><strong>5</strong></td><td>Critical</td><td class="fill-org">▸ above [W currency]</td><td>Loss of ability to operate</td><td>International media attention, NIS2 fine</td></tr>
+</table>
+<h3>2.3 Risk level calculation</h3>
+<div style="background:#f0f4ff; border:1px solid #4a90d9; border-radius:6px; padding:16px; margin:12px 0; text-align:center;">
+<strong style="font-size:1.1rem;">Risk (R) = Likelihood (L) × Impact (I)</strong>
+<p style="font-size:.85rem; color:#5a6a7e; margin-top:6px;">Score: 1–25 (5-level scale) or 1–9 (3-level scale)</p>
+</div>
+<p class="table-caption">Table 3 – Risk matrix (example 5×5)</p>
+<table>
+<tr>
+<th>L \ I</th>
+<th style="background:#1a7a4a;">1<br/>Minimal</th>
+<th style="background:#5aab5a;">2<br/>Minor</th>
+<th style="background:#d4a000;">3<br/>Moderate</th>
+<th style="background:#e07b00;">4<br/>Serious</th>
+<th style="background:#c0392b;">5<br/>Critical</th>
+</tr>
+<tr><th>5 – V. High</th><td style="background:#d4ffe0;">5</td><td style="background:#fffbcc;">10</td><td style="background:#ffecd0;">15</td><td style="background:#ffe0e0;">20</td><td style="background:#ffb0b0;"><strong>25</strong></td></tr>
+<tr><th>4 – High</th><td style="background:#d4ffe0;">4</td><td style="background:#fffbcc;">8</td><td style="background:#ffecd0;">12</td><td style="background:#ffe0e0;">16</td><td style="background:#ffe0e0;">20</td></tr>
+<tr><th>3 – Med.</th><td style="background:#d4ffe0;">3</td><td style="background:#d4ffe0;">6</td><td style="background:#fffbcc;">9</td><td style="background:#ffecd0;">12</td><td style="background:#ffe0e0;">15</td></tr>
+<tr><th>2 – Low</th><td style="background:#d4ffe0;">2</td><td style="background:#d4ffe0;">4</td><td style="background:#d4ffe0;">6</td><td style="background:#fffbcc;">8</td><td style="background:#ffecd0;">10</td></tr>
+<tr><th>1 – V. Low</th><td style="background:#d4ffe0;">1</td><td style="background:#d4ffe0;">2</td><td style="background:#d4ffe0;">3</td><td style="background:#d4ffe0;">4</td><td style="background:#fffbcc;">5</td></tr>
+</table>
+<div style="font-size:.8rem; margin-top:8px; display:flex; gap:16px; flex-wrap:wrap;">
+<span style="background:#d4ffe0;padding:2px 8px;border-radius:3px;">Green 1–6: Acceptable</span>
+<span style="background:#fffbcc;padding:2px 8px;border-radius:3px;">Yellow 7–12: Monitor</span>
+<span style="background:#ffecd0;padding:2px 8px;border-radius:3px;">Orange 13–16: Treatment required</span>
+<span style="background:#ffe0e0;padding:2px 8px;border-radius:3px;">Red 17–25: Urgent action</span>
+</div>
+</div>
+<div class="section">
+<h2>3. Risk Management Process – Steps</h2>
+<h3>Step 1: Context establishment</h3>
+<p>Before beginning the risk assessment, define:</p>
+<ul>
+<li>Scope of assessment (system, process, service, whole organisation),</li>
+<li>Business objectives and regulatory requirements,</li>
+<li>Risk acceptance criteria (see section 4),</li>
+<li>Resources engaged in the assessment.</li>
+</ul>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – external context</span>
+<p><strong>External context:</strong> <span class="fill-org">▸ [description of the organisation's regulatory, industry and geographic environment]</span></p>
+<p><strong>Internal context:</strong> <span class="fill-org">▸ [description of the organisation's structure, processes and IT/OT systems]</span></p>
+</div>
+<h3>Step 2: Asset identification</h3>
+<p>Information asset inventory is conducted in accordance with <a class="ref-link" href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>. Asset categories:</p>
+<table>
+<tr><th>Category</th><th>Examples</th></tr>
+<tr><td>Data</td><td>Customer data, operational data, personal data, financial data, technical documentation</td></tr>
+<tr><td>Software</td><td>Operating systems, business applications, SCADA/ICS software, custom software</td></tr>
+<tr><td>Hardware</td><td>Servers, network devices, workstations, OT/IoT devices</td></tr>
+<tr><td>Services</td><td>Cloud services, network connections, third-party supplier services</td></tr>
+<tr><td>Personnel</td><td>Employees with administrative privileges, key personnel</td></tr>
+<tr><td>Locations</td><td>Server rooms, offices, industrial premises</td></tr>
+</table>
+<h3>Step 3: Threat and vulnerability identification</h3>
+<p>For each asset, threats and associated vulnerabilities are identified:</p>
+<table>
+<tr><th>Threat category</th><th>Example threats</th></tr>
+<tr><td>Malicious software</td><td>Ransomware, viruses, trojans, spyware, rootkits</td></tr>
+<tr><td>Network attacks</td><td>DDoS, man-in-the-middle, SQL injection, XSS</td></tr>
+<tr><td>Human error</td><td>Accidental data deletion, misconfiguration, phishing</td></tr>
+<tr><td>Insider threats</td><td>Data theft by employee, sabotage, unauthorised access</td></tr>
+<tr><td>Technical failures</td><td>Hardware failure, software bugs, power loss</td></tr>
+<tr><td>APT attacks</td><td>Advanced targeted attacks, espionage campaigns</td></tr>
+<tr><td>Physical threats</td><td>Equipment theft, fire, flood, physical sabotage</td></tr>
+<tr><td>Supply chain</td><td>Supplier software compromise, hardware backdoor</td></tr>
+</table>
+<h3>Step 4: Analysis and risk assessment</h3>
+<p>For each identified threat:</p>
+<ol>
+<li>Estimate <strong>likelihood</strong> (L) of occurrence per Table 1,</li>
+<li>Estimate <strong>impact</strong> (I) on CIA (confidentiality, integrity, availability) per Table 2,</li>
+<li>Calculate <strong>risk level</strong> R = L × I,</li>
+<li>Factor in existing <strong>controls</strong> (residual risk),</li>
+<li>Compare residual risk against <strong>acceptance criteria</strong> from section 4.</li>
+</ol>
+<h3>Step 5: Risk treatment</h3>
+<p>Based on the assessment, select one of the following treatment strategies:</p>
+<table>
+<tr><th>Strategy</th><th>Description</th><th>When to use</th></tr>
+<tr><td><strong>Modification</strong> (treatment)</td><td>Implement additional controls to reduce risk</td><td>Risk &gt; acceptance threshold; action is cost-effective</td></tr>
+<tr><td><strong>Acceptance</strong></td><td>Conscious acceptance of risk without further action</td><td>Risk ≤ acceptance threshold or treatment cost disproportionately high</td></tr>
+<tr><td><strong>Avoidance</strong></td><td>Cease the activity or eliminate the cause of risk</td><td>Critical risk; no cost-effective countermeasures available</td></tr>
+<tr><td><strong>Transfer</strong></td><td>Cyber insurance, SLA agreements with suppliers</td><td>Financial risk that can be transferred</td></tr>
+</table>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – risk treatment plans</span>
+<p>For each risk above the acceptance threshold, a Risk Treatment Plan (RTP) is created containing: countermeasure, responsible person, implementation deadline and effectiveness metric. RTPs are documented in <a href="DOC-003-rejestr-ryzyk.html">DOC-003</a>.</p>
+</div>
+<h3>Step 6: Risk communication</h3>
+<p>Risk assessment results are:</p>
+<ul>
+<li>Reported to the Board at least every <span class="fill-const">▸ [6 months]<span class="constraint-badge">max. 12 months</span></span>,</li>
+<li>Considered when making investment decisions,</li>
+<li>Communicated to system owners and the CISO.</li>
+</ul>
+<h3>Step 7: Monitoring and review</h3>
+<p>The risk register (DOC-003) is updated:</p>
+<ul>
+<li>Regularly every <span class="fill-const">▸ [12 months]<span class="constraint-badge">max. 12 months – NIS2</span></span>,</li>
+<li>After every significant incident,</li>
+<li>After deployment of new systems or infrastructure changes,</li>
+<li>After changes in legislation.</li>
+</ul>
+</div>
+<div class="section">
+<h2>4. Risk Acceptance Criteria</h2>
+<div class="fill-block critical">
+<span class="label">⚠ Critical – Board must approve acceptance criteria</span>
+<p>The organisation's Board approves the following risk acceptance thresholds:</p>
+<table>
+<tr><th>Risk level (R)</th><th>Classification</th><th>Required action</th><th>Approved by</th></tr>
+<tr style="background:#d4ffe0;"><td>1–6</td><td>Low (Acceptable)</td><td>Monitoring, no mandatory action</td><td class="fill-org">▸ CISO</td></tr>
+<tr style="background:#fffbcc;"><td>7–12</td><td>Medium (Monitor)</td><td>RTP within <span class="fill-const">▸ [90 days]</span>, quarterly review</td><td class="fill-org">▸ CISO + system owner</td></tr>
+<tr style="background:#ffecd0;"><td>13–16</td><td>High (Treatment required)</td><td>RTP within <span class="fill-const">▸ [30 days]</span>, Board report</td><td class="fill-critical">▸ Board</td></tr>
+<tr style="background:#ffe0e0;"><td>17–25</td><td>Critical (Urgent)</td><td>Immediate action, report within <span class="fill-const">▸ [72h]</span></td><td class="fill-critical">▸ Board (urgent)</td></tr>
+</table>
+</div>
+<p>Approval dates and signatures of the relevant decision-makers are maintained in the DOC-003 register.</p>
+</div>
+<div class="section">
+<h2>5. Documentation and Records</h2>
+<table>
+<tr><th>Document/Record</th><th>Form</th><th>Storage</th><th>Retention</th></tr>
+<tr><td>Risk Register</td><td><a href="DOC-003-rejestr-ryzyk.html">DOC-003</a> (HTML + export)</td><td class="fill-org">▸ [location – document system / sharepoint / file]</td><td class="fill-const">▸ min. 5 years<span class="constraint-badge">min. 5 years – NIS2</span></td></tr>
+<tr><td>Risk Treatment Plans</td><td>Annex to DOC-003</td><td class="fill-org">▸</td><td class="fill-const">▸ min. 5 years</td></tr>
+<tr><td>Risk assessment reports</td><td>PDF/Word document</td><td class="fill-org">▸</td><td class="fill-const">▸ min. 5 years</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>6. Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td>
+<td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸ First Last Name</td>
+<td class="fill-org">▸ Initial release</td>
+<td class="fill-critical">▸ Board</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right; margin-top:8px;">DOC-002 Risk Management Procedure | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">
+  NIS2/ISMS Documentation  |  DOC-002 Risk Management  |  <a href="../index.html" style="color:#7baed4;">← Document Portal</a>
+<div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div>
+</body>
+</html>

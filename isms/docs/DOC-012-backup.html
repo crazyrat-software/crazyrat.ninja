@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-012 Backup and Recovery Procedure – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span><span class="doc-id">DOC-012</span>
+<span style="flex:1"></span><a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a class="active" href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Backup and Data Recovery Procedure</h1>
+<div class="subtitle">3-2-1 rule, schedule, encryption and recovery tests</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-012</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ IT Administrator / CISO</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2)(c) NIS2; ISO/IEC 27001:2022 A.8.13</dd>
+<dt>Related Documents</dt><dd><a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a> | <a href="DOC-009-kryptografia.html">DOC-009</a></dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. 3-2-1 Rule and Basic Requirements</h2>
+<div class="callout info">
+<div class="icon">💾</div>
+<div>
+<strong>3-2-1 Rule (minimum):</strong><br/>
+<strong>3</strong> copies of data (1 production + 2 backup) |
+      <strong>2</strong> different media/technologies |
+      <strong>1</strong> copy off-site or offline (air-gap)
+    </div>
+</div>
+<div class="fill-block critical">
+<span class="label">⚠ Critical – backups must be isolated from the production network</span>
+<p>At least one backup copy must be <strong>offline or air-gapped</strong> – inaccessible from the production network. This prevents ransomware from encrypting backups. Organisation confirms implementation: <span class="fill-critical">▸ [YES / NO – if NO, describe implementation plan]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>2. Backup Schedule</h2>
+<table>
+<tr><th>System / dataset</th><th>Data type</th><th>Frequency</th><th>Backup type</th><th>Retention</th><th>Location</th></tr>
+<tr>
+<td class="fill-critical">▸ [File server / NAS]</td>
+<td class="fill-org">▸ User data</td>
+<td class="fill-const">▸ [Daily]<span class="constraint-badge">min. daily</span></td>
+<td class="fill-org">▸ [Full weekly + incremental daily]</td>
+<td class="fill-const">▸ [90 days]<span class="constraint-badge">min. 30 days</span></td>
+<td class="fill-critical">▸ [Location 1 + off-site Location 2]</td>
+</tr>
+<tr>
+<td class="fill-critical">▸ [ERP / CRM database]</td>
+<td class="fill-org">▸ Business data</td>
+<td class="fill-const">▸ [Every 4h / daily]<span class="constraint-badge">min. daily</span></td>
+<td class="fill-org">▸ [Full + transaction logs]</td>
+<td class="fill-const">▸ [1 year]<span class="constraint-badge">min. per legal requirements</span></td>
+<td class="fill-critical">▸</td>
+</tr>
+<tr>
+<td class="fill-critical">▸ [Domain controller / AD]</td>
+<td class="fill-org">▸ Configuration and identity</td>
+<td class="fill-const">▸ [Daily]<span class="constraint-badge">min. daily</span></td>
+<td class="fill-org">▸ [Full]</td>
+<td class="fill-const">▸ [30 days]<span class="constraint-badge">min. 30 days</span></td>
+<td class="fill-critical">▸</td>
+</tr>
+<tr>
+<td class="fill-critical">▸ [OT/SCADA systems]</td>
+<td class="fill-org">▸ Configuration and process data</td>
+<td class="fill-const">▸ [After each change + weekly]</td>
+<td class="fill-org">▸ [Configuration + snapshot]</td>
+<td class="fill-critical">▸ [min. 1 year]</td>
+<td class="fill-critical">▸ [Offline/air-gap REQUIRED]</td>
+</tr>
+<tr>
+<td class="fill-org">▸ [Virtual machines]</td>
+<td class="fill-org">▸ VM snapshots</td>
+<td class="fill-const">▸ [Daily]<span class="constraint-badge">min. daily</span></td>
+<td class="fill-org">▸ [Snapshot / full weekly]</td>
+<td class="fill-org">▸ [30 days]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>3. Technical Requirements</h2>
+<table>
+<tr><th>Requirement</th><th>Standard</th><th>Implementation in organisation</th></tr>
+<tr>
+<td>Backup encryption</td>
+<td class="fill-critical"><strong>ABSOLUTELY REQUIRED</strong></td>
+<td class="fill-org">▸ [tool + algorithm, e.g. AES-256]</td>
+</tr>
+<tr>
+<td>Integrity verification (hash)</td>
+<td>Required after every backup</td>
+<td class="fill-org">▸ [automatic SHA-256 verification / built into tool]</td>
+</tr>
+<tr>
+<td>Backup encryption keys</td>
+<td>Stored separately from backup</td>
+<td class="fill-critical">▸ [key location – physical safe / KMS]</td>
+</tr>
+<tr>
+<td>Off-site / air-gap isolation</td>
+<td class="fill-critical"><strong>REQUIRED</strong></td>
+<td class="fill-critical">▸ [solution description – cloud / tape / second DC]</td>
+</tr>
+<tr>
+<td>Immutable backup</td>
+<td>Recommended (ransomware protection)</td>
+<td class="fill-org">▸ [WORM storage / Object Lock S3 / Veeam immutable]</td>
+</tr>
+</table>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – backup tool</span>
+<p><strong>Backup software:</strong> <span class="fill-org">▸ [e.g. Veeam / Acronis / Bacula / Windows Server Backup]</span></p>
+<p><strong>Cloud provider (off-site backup):</strong> <span class="fill-org">▸ [e.g. Azure Backup / AWS S3 / Backblaze B2]</span></p>
+</div>
+</div>
+<div class="section">
+<h2>4. Data Recovery Procedure</h2>
+<h3>4.1 Standard recovery (user-deleted data)</h3>
+<ol>
+<li>User submits recovery request to helpdesk / administrator.</li>
+<li>Administrator verifies identity and data permissions.</li>
+<li>Identify backup point prior to loss (RPO).</li>
+<li>Restore to test environment → verification by owner.</li>
+<li>Copy to production environment.</li>
+<li>Close request and document in recovery register.</li>
+</ol>
+<p><strong>Completion time (SLA):</strong> <span class="fill-const">▸ [e.g. 4h for critical data, 24h for standard]</span></p>
+<h3>4.2 Emergency recovery (disaster / ransomware)</h3>
+<div class="callout danger">
+<div class="icon">⚠️</div>
+<div><strong>BEFORE restoring from backup:</strong> ensure the environment is clean (no malicious code). Restoring to an infected environment = re-infecting the backup copies.</div>
+</div>
+<ol>
+<li>Isolate infected systems (DOC-007 PB-001).</li>
+<li>Prepare a clean target environment (new system / VM).</li>
+<li>Verify backup – is the copy from before the infection? Check integrity hash.</li>
+<li>Restore to clean environment.</li>
+<li>Functional tests.</li>
+<li>Close vulnerability / attack vector <strong>BEFORE</strong> returning to network.</li>
+<li>Post-recovery monitoring for min. <span class="fill-const">▸ [72h]</span>.</li>
+</ol>
+</div>
+<div class="section">
+<h2>5. Recovery Tests</h2>
+<div class="fill-block const">
+<span class="label">Requirement – tests minimum quarterly</span>
+<table>
+<tr><th>Test type</th><th>Frequency</th><th>Scope</th><th>Responsible</th><th>Documentation</th></tr>
+<tr>
+<td>File/folder recovery test</td>
+<td class="fill-const">▸ monthly<span class="constraint-badge">min. quarterly</span></td>
+<td>Random file or folder</td>
+<td class="fill-critical">▸ IT Admin</td>
+<td>Test register</td>
+</tr>
+<tr>
+<td>Full system recovery test (DR test)</td>
+<td class="fill-const">▸ every 6 months<span class="constraint-badge">min. 1×/year</span></td>
+<td>Full recovery of critical server</td>
+<td class="fill-critical">▸ IT Admin + CISO</td>
+<td>DRP test protocol</td>
+</tr>
+<tr>
+<td>Encryption and integrity verification</td>
+<td class="fill-const">▸ after every backup (automatic)</td>
+<td>SHA-256 hash of every copy</td>
+<td>Automatic</td>
+<td>Backup tool logs</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>6. Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr><td class="fill-org">▸ 1.0</td><td class="fill-org">▸ DD/MM/YYYY</td><td class="fill-org">▸</td><td class="fill-org">▸ Initial release</td><td class="fill-critical">▸ Board</td></tr>
+</table>
+</div>
+<div class="muted" style="text-align:right;margin-top:8px;">DOC-012 Backup and Recovery Procedure | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">NIS2/ISMS Documentation  |  DOC-012 Backup and Recovery Procedure  |  <a href="../index.html" style="color:#7baed4;">← Portal</a> <div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div></body></html>

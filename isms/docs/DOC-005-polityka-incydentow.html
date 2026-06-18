@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-005 Incident Management Policy – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span>
+<span class="doc-id">DOC-005</span>
+<span style="flex:1"></span>
+<a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a class="active" href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Cybersecurity Incident Management Policy</h1>
+<div class="subtitle">Principles for detecting, classifying, handling and reporting incidents</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-005</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Next Review</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 23 NIS2; ISO/IEC 27035</dd>
+<dt>Related Documents</dt><dd>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001</a> |
+        <a href="DOC-006-procedura-zglaszania.html">DOC-006</a> |
+        <a href="DOC-007-plan-reagowania.html">DOC-007</a> |
+        <a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004</a>
+</dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. Purpose and Scope</h2>
+<p>This policy defines the principles for managing cybersecurity incidents in the organisation, including their detection, classification, handling, documentation and reporting to competent authorities – in particular to the competent CSIRT in accordance with NIS2 requirements.</p>
+<div class="callout danger">
+<div class="icon">⚠️</div>
+<div>
+<strong>Statutory obligation:</strong> Art. 23 NIS2 imposes on essential and important entities the obligation to have the capability to detect incidents and report them to the competent CSIRT within strictly defined deadlines (early warning: <strong>24 h</strong>, notification: <strong>72 h</strong>, final report: <strong>1 month</strong>).
+      </div>
+</div>
+</div>
+<div class="section">
+<h2>2. Definitions and Incident Classification</h2>
+<h3>2.1 Definitions</h3>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td><strong>Event</strong></td><td>Any observed occurrence in a system or network indicating a possible security breach</td></tr>
+<tr><td><strong>Incident</strong></td><td>An event having an actual adverse effect on the security of network and information systems</td></tr>
+<tr><td><strong>Significant incident</strong></td><td>An incident causing major disruption or likely to cause major disruption to key/important services (see significance criteria in section 2.3)</td></tr>
+<tr><td><strong>Supply chain incident</strong></td><td>An incident at a supplier or third party affecting the organisation</td></tr>
+<tr><td><strong>Vulnerability</strong></td><td>A weakness in a system that could be exploited by a threat</td></tr>
+<tr><td><strong>CSIRT</strong></td><td>Competent Computer Security Incident Response Team (National CSIRT / Sector CSIRT)</td></tr>
+</table>
+<h3>2.2 Classification by severity</h3>
+<table>
+<tr><th>Level</th><th>Name</th><th>Description</th><th>Examples</th><th>Response time</th></tr>
+<tr style="background:#d4ffe0;">
+<td><strong>P4</strong></td><td>Low</td>
+<td>Limited impact, no service disruption</td>
+<td>Single malware on a workstation, unsuccessful phishing attempt</td>
+<td class="fill-const">▸ [8h]<span class="constraint-badge">within 24h</span></td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>P3</strong></td><td>Medium</td>
+<td>Moderate impact, limited disruption</td>
+<td>DDoS on auxiliary systems, unauthorised access to unclassified data</td>
+<td class="fill-const">▸ [4h]<span class="constraint-badge">within 8h</span></td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>P2</strong></td><td>High</td>
+<td>Significant impact, disruption of important services</td>
+<td>Ransomware on back-office systems, personal data breach, privileged account compromise</td>
+<td class="fill-const">▸ [2h]<span class="constraint-badge">within 4h</span></td>
+</tr>
+<tr style="background:#ffe0e0;">
+<td><strong>P1</strong></td><td>Critical</td>
+<td>Significant incident under NIS2, disruption of key services</td>
+<td>Ransomware on OT/SCADA, attack on critical infrastructure, large-scale data breach</td>
+<td class="fill-const">▸ [1h]<span class="constraint-badge">within 2h</span></td>
+</tr>
+</table>
+<h3>2.3 Significance criteria – "significant incident" threshold (NIS2)</h3>
+<div class="fill-block critical">
+<span class="label">⚠ Critical – organisation defines thresholds per NIS2 / ENISA guidelines</span>
+<p>An incident is considered <strong>significant</strong> (requiring notification to CSIRT) when at least one of the following conditions is met:</p>
+<table>
+<tr><th>Criterion</th><th>Organisation's threshold</th><th>NIS2 minimum requirement</th></tr>
+<tr>
+<td>Duration of key service unavailability</td>
+<td class="fill-const">▸ [e.g. more than 30 min]<span class="constraint-badge">threshold per sector</span></td>
+<td>Per implementing regulation for the sector</td>
+</tr>
+<tr>
+<td>Number of affected users</td>
+<td class="fill-const">▸ [e.g. more than X users]</td>
+<td>Per implementing regulation</td>
+</tr>
+<tr>
+<td>Financial loss (estimated)</td>
+<td class="fill-const">▸ [e.g. above X currency]</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Personal data breach</td>
+<td>Any personal data breach</td>
+<td>GDPR Art. 33 (DPA notification 72h)</td>
+</tr>
+<tr>
+<td>Impact on critical infrastructure</td>
+<td>Any event affecting OT/ICS</td>
+<td>Art. 23(3) NIS2</td>
+</tr>
+<tr>
+<td>Geographic scope</td>
+<td class="fill-org">▸ [e.g. cross-border incident, min. 2 EU member states]</td>
+<td>Art. 23(6) NIS2 – notification to ENISA</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>3. Reporting Obligation and Deadlines – NIS2 Requirement</h2>
+<div class="callout danger">
+<div class="icon">🕐</div>
+<div><strong>Deadlines are statutory and non-negotiable. Failure to comply risks administrative fines.</strong></div>
+</div>
+<table>
+<tr><th>Reporting stage</th><th>Deadline</th><th>Recipient</th><th>Content</th></tr>
+<tr style="background:#ffe0e0;">
+<td><strong>Early warning</strong></td>
+<td><strong style="color:#c0392b;">24 hours</strong><br/>from detection</td>
+<td>Competent CSIRT<br/><span class="fill-critical">▸ [National CSIRT / sector CSIRT]</span></td>
+<td>Information on occurrence of a significant incident or suspicion; indication of cross-border impact (if applicable)</td>
+</tr>
+<tr style="background:#ffecd0;">
+<td><strong>Incident notification</strong></td>
+<td><strong style="color:#e07b00;">72 hours</strong><br/>from detection</td>
+<td>Competent CSIRT</td>
+<td>Incident assessment, initial severity classification, IoCs, remediation actions taken</td>
+</tr>
+<tr style="background:#fffbcc;">
+<td><strong>Intermediate report</strong><br/>(if required)</td>
+<td><strong>At CSIRT's request</strong></td>
+<td>CSIRT / supervisory authority</td>
+<td>Current handling status, incident evolution</td>
+</tr>
+<tr style="background:#d4ffe0;">
+<td><strong>Final report</strong></td>
+<td><strong>1 month</strong><br/>from notification or<br/>from incident closure</td>
+<td>Competent CSIRT</td>
+<td>Full incident description, root cause analysis (RCA), remediation measures taken, lessons learned</td>
+</tr>
+<tr style="background:#dff0ff;">
+<td><strong>Personal data breach</strong><br/>(GDPR)</td>
+<td><strong style="color:#1a4a8a;">72 hours</strong><br/>from detection</td>
+<td>DPA</td>
+<td>DPA notification: nature of breach, number of persons affected, possible consequences, measures taken</td>
+</tr>
+</table>
+<h3>3.1 Escalation and notification path</h3>
+<p>Any employee who detects or suspects an incident is required to immediately notify:</p>
+<ol>
+<li>Their line manager AND</li>
+<li>CISO / Person responsible for cybersecurity via:
+        <ul>
+<li>Telephone: <span class="fill-critical">▸ [24/7 emergency number]</span></li>
+<li>E-mail: <span class="fill-critical">▸ [security@organisation.example or dedicated address]</span></li>
+<li>Ticketing system: <span class="fill-org">▸ [system name, e.g. ServiceNow / Jira]</span></li>
+</ul>
+</li>
+</ol>
+<div class="callout warning">
+<div class="icon">⚠️</div>
+<div><strong>Do not destroy evidence!</strong> An employee who detects an incident must not take any action that could destroy evidence (logs, files). They should only report the event and – if necessary – disconnect the device from the network.</div>
+</div>
+</div>
+<div class="section">
+<h2>4. Incident Categories</h2>
+<table>
+<tr><th>Category</th><th>Type</th><th>Examples</th></tr>
+<tr><td><strong>MAL</strong></td><td>Malicious software</td><td>Ransomware, virus, trojan, spyware, rootkit, cryptominer</td></tr>
+<tr><td><strong>PHI</strong></td><td>Phishing / Social engineering</td><td>Spear phishing, vishing, smishing, BEC (Business Email Compromise)</td></tr>
+<tr><td><strong>NET</strong></td><td>Network attacks</td><td>DDoS, scanning, man-in-the-middle, brute force, port scanning</td></tr>
+<tr><td><strong>WEB</strong></td><td>Web application attacks</td><td>SQL injection, XSS, CSRF, RFI/LFI, API attack</td></tr>
+<tr><td><strong>ACC</strong></td><td>Access control breach</td><td>Unauthorised access, account takeover, privilege escalation</td></tr>
+<tr><td><strong>DAT</strong></td><td>Data breach</td><td>Data leak, exfiltration, unauthorised disclosure, lost media</td></tr>
+<tr><td><strong>INS</strong></td><td>Insider threat</td><td>Deliberate employee action, sabotage, IP theft</td></tr>
+<tr><td><strong>SUP</strong></td><td>Supply chain</td><td>Supplier software compromise, hardware backdoor</td></tr>
+<tr><td><strong>PHY</strong></td><td>Physical</td><td>Equipment theft, unauthorised access to server room</td></tr>
+<tr><td><strong>OTH</strong></td><td>Other</td><td>Unauthorised configuration change, misconfiguration, OT anomaly</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>5. Roles and Responsibilities in Incident Management</h2>
+<p>Detailed RACI matrix for incidents in <a class="ref-link" href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004</a>. Key responsibilities below:</p>
+<table>
+<tr><th>Role</th><th>Responsibilities during an incident</th></tr>
+<tr><td><strong>Every employee</strong></td><td>Immediate reporting of suspicious events; do not destroy evidence; disconnect device if necessary</td></tr>
+<tr><td><strong>CISO / IR Coordinator</strong></td><td>Assessment and classification; activating response procedure; CSIRT notification; Board escalation; documentation</td></tr>
+<tr><td><strong>IT Administrator</strong></td><td>Collecting logs and forensic evidence; system isolation; implementing countermeasures; recovery</td></tr>
+<tr><td><strong>Board</strong></td><td>Crisis decision-making; authorisation of extraordinary actions; external communications (media, regulators)</td></tr>
+<tr><td><strong>Legal Counsel / DPO</strong></td><td>Legal obligation assessment; DPA notification (if applicable); legal documentation</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>6. Incident Register</h2>
+<p>The organisation maintains a central Incident Register. Every incident (regardless of level) must be registered. The register is maintained by the CISO and retained for <span class="fill-const">▸ min. 5 years<span class="constraint-badge">min. 5 years – NIS2</span></span>.</p>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – register tool</span>
+<p><strong>Tool:</strong> <span class="fill-org">▸ [e.g. SIEM / ticketing system (ServiceNow / Jira) / dedicated spreadsheet]</span></p>
+<p><strong>Location:</strong> <span class="fill-org">▸ [path / URL to register]</span></p>
+<p><strong>Access:</strong> <span class="fill-org">▸ [who has access to the register]</span></p>
+</div>
+<h3>Minimum register entry content:</h3>
+<table>
+<tr><th>Field</th><th>Description</th><th>Required?</th></tr>
+<tr><td>Incident ID</td><td>Unique identifier (e.g. INC-2024-001)</td><td>YES</td></tr>
+<tr><td>Date and time of detection</td><td>Timestamp of first detection</td><td>YES</td></tr>
+<tr><td>Category (see section 4)</td><td>MAL / PHI / NET / WEB / ACC / DAT / INS / SUP / PHY / OTH</td><td>YES</td></tr>
+<tr><td>Severity level (P1–P4)</td><td>See section 2.2</td><td>YES</td></tr>
+<tr><td>Event description</td><td>What happened, which systems affected</td><td>YES</td></tr>
+<tr><td>Affected systems / services</td><td>List of systems/assets</td><td>YES</td></tr>
+<tr><td>Root cause (RCA)</td><td>After incident closure</td><td>YES (after closure)</td></tr>
+<tr><td>Actions taken</td><td>Chronological action log</td><td>YES</td></tr>
+<tr><td>Was CSIRT notified?</td><td>YES/NO + date and time of notification</td><td>YES (if P1)</td></tr>
+<tr><td>Was DPA notified?</td><td>YES/NO + date</td><td>YES (if applicable)</td></tr>
+<tr><td>Closure date</td><td>Timestamp of incident closure</td><td>YES</td></tr>
+<tr><td>Lessons learned</td><td>What to improve</td><td>YES (after closure)</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>7. Lessons Learned and Improvement</h2>
+<p>A Post-Incident Review (PIR) is conducted after every P1 and P2 incident, and selected P3 incidents, within <span class="fill-const">▸ [5 business days]<span class="constraint-badge">max. 2 weeks</span></span> of incident closure.</p>
+<p>The PIR answers:</p>
+<ul>
+<li>What happened and why (root cause analysis – RCA)?</li>
+<li>Did the procedures work correctly?</li>
+<li>Was CSIRT notified on time?</li>
+<li>What security changes should be implemented?</li>
+<li>Is an update to the Risk Register (DOC-003) needed?</li>
+</ul>
+<p>PIR findings are passed to the CISO and implemented as corrective actions with a specified deadline and owner.</p>
+</div>
+<div class="section">
+<h2>8. Testing Response Capabilities</h2>
+<p>The organisation regularly tests incident management procedures:</p>
+<table>
+<tr><th>Test type</th><th>Frequency</th><th>Scope</th><th>Responsible</th></tr>
+<tr>
+<td>Tabletop exercise (simulation)</td>
+<td class="fill-const">▸ min. once a year<span class="constraint-badge">min. 1/year – NIS2</span></td>
+<td>P1 incident scenario with Board and CISO</td>
+<td class="fill-critical">▸ CISO</td>
+</tr>
+<tr>
+<td>Emergency communication test</td>
+<td class="fill-const">▸ [quarterly]</td>
+<td>Verification of reporting channels and contact numbers</td>
+<td class="fill-critical">▸ CISO / IT Admin</td>
+</tr>
+<tr>
+<td>CSIRT notification test</td>
+<td class="fill-org">▸ [once a year, within exercise]</td>
+<td>Verification of forms, CSIRT communication channels</td>
+<td class="fill-critical">▸ CISO</td>
+</tr>
+</table>
+</div>
+<div class="section">
+<h2>9. Change History</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td>
+<td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸</td>
+<td class="fill-org">▸ Initial release</td>
+<td class="fill-critical">▸ Board</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right; margin-top:8px;">DOC-005 Incident Management Policy | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">
+  NIS2/ISMS Documentation  |  DOC-005 Incident Management Policy  |  <a href="../index.html" style="color:#7baed4;">← Document Portal</a>
+<div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div>
+</body>
+</html>

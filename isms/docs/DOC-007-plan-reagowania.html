@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DOC-007 Incident Response Plan – NIS2/ISMS</title>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+  .playbook { border:2px solid var(--border); border-radius:6px; margin:16px 0; overflow:hidden; }
+  .playbook-header { background:var(--primary); color:white; padding:12px 16px; font-weight:700; display:flex; gap:12px; align-items:center; }
+  .playbook-body { padding:16px; }
+  .playbook-step { display:flex; gap:10px; margin-bottom:10px; font-size:.85rem; }
+  .ps-num { min-width:24px; height:24px; border-radius:50%; background:var(--primary-light); color:white; text-align:center; line-height:24px; font-size:.75rem; font-weight:700; flex-shrink:0; }
+  .check-list { list-style:none; padding:0; }
+  .check-list li { padding:4px 0; font-size:.85rem; }
+  .check-list li::before { content:'☐ '; font-size:1rem; color:var(--primary); }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+<header class="top-bar">
+<span class="logo">ISMS / NIS2</span>
+<span class="doc-id">DOC-007</span>
+<span style="flex:1"></span>
+<a href="../index.html">← Document Portal</a>
+</header>
+<aside class="sidebar">
+<h3>Phase 1 – Foundations</h3>
+<a href="DOC-001-polityka-bezpieczenstwa.html">DOC-001 Security Policy</a>
+<a href="DOC-002-zarzadzanie-ryzykiem.html">DOC-002 Risk Management</a>
+<a href="DOC-003-rejestr-ryzyk.html">DOC-003 Risk Register</a>
+<a href="DOC-004-role-i-odpowiedzialnosci.html">DOC-004 Roles &amp; RACI</a>
+<h3>Phase 2 – Incidents</h3>
+<a href="DOC-005-polityka-incydentow.html">DOC-005 Incident Policy</a>
+<a href="DOC-006-procedura-zglaszania.html">DOC-006 Incident Reporting</a>
+<a class="active" href="DOC-007-plan-reagowania.html">DOC-007 Response Plan</a>
+<h3>Phase 3 – Access &amp; Data</h3>
+<a href="DOC-008-kontrola-dostepu.html">DOC-008 Access Control</a>
+<a href="DOC-009-kryptografia.html">DOC-009 Cryptography</a>
+<a href="DOC-010-klasyfikacja-informacji.html">DOC-010 Information Classification</a>
+<h3>Phase 4 – Operations</h3>
+<a href="DOC-011-ciaglosc-dzialania.html">DOC-011 Business Continuity</a>
+<a href="DOC-012-backup.html">DOC-012 Backup &amp; Recovery</a>
+<a href="DOC-013-zarzadzanie-zmianami.html">DOC-013 Change Management</a>
+<a href="DOC-014-podatnosci.html">DOC-014 Vulnerabilities</a>
+<h3>Phase 5 – People</h3>
+<a href="DOC-015-dostawcy.html">DOC-015 Supplier Management</a>
+<a href="DOC-016-bezpieczenstwo-hr.html">DOC-016 HR Security</a>
+<a href="DOC-017-szkolenia.html">DOC-017 Training</a>
+<h3>Phase 6 – Physical/Network</h3>
+<a href="DOC-018-bezpieczenstwo-fizyczne.html">DOC-018 Physical Security</a>
+<a href="DOC-019-bezpieczenstwo-sieciowe.html">DOC-019 Network Security</a>
+<a href="DOC-020-rejestr-aktywow.html">DOC-020 Asset Register</a>
+<a href="DOC-021-audyt-zgodnosc.html">DOC-021 Audit &amp; Compliance</a>
+</aside>
+<main class="content">
+<div class="doc-header">
+<h1>Cybersecurity Incident Response Plan</h1>
+<div class="subtitle">Playbooks, technical procedures and checklists for the Response Team</div>
+<dl class="doc-meta">
+<dt>Document Number</dt><dd>DOC-007</dd>
+<dt>Version</dt><dd class="fill-org">▸ 1.0</dd>
+<dt>Status</dt><dd><span class="badge draft">DRAFT</span></dd>
+<dt>Issue Date</dt><dd class="fill-org">▸ DD/MM/YYYY</dd>
+<dt>Owner</dt><dd class="fill-critical">▸ CISO</dd>
+<dt>Approved by</dt><dd class="fill-critical">▸ Board / CEO</dd>
+<dt>Legal Basis</dt><dd>Art. 21(2)(b) NIS2; ISO/IEC 27035</dd>
+<dt>Related Documents</dt><dd>
+<a href="DOC-005-polityka-incydentow.html">DOC-005</a> |
+        <a href="DOC-006-procedura-zglaszania.html">DOC-006</a> |
+        <a href="DOC-011-ciaglosc-dzialania.html">DOC-011</a> |
+        <a href="DOC-012-backup.html">DOC-012</a>
+</dd>
+</dl>
+</div>
+<div class="section">
+<h2>1. Purpose and Document Structure</h2>
+<p>This Incident Response Plan (IRP) contains detailed technical and organisational procedures for the Response Team. It supplements DOC-005 (policy) and DOC-006 (reporting procedures). It covers:</p>
+<ul>
+<li>General response procedure (6 PICERL phases),</li>
+<li>Playbooks for the most common incident scenarios,</li>
+<li>Operational checklists,</li>
+<li>Crisis communication procedures.</li>
+</ul>
+<div class="callout info">
+<div class="icon">ℹ️</div>
+<div>The plan must be available offline – keep a printed copy in a secure location accessible without IT system access (systems may be unavailable during an incident).</div>
+</div>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – offline copy location</span>
+<p><strong>Offline copy stored at:</strong> <span class="fill-critical">▸ [e.g. CISO safe, main reception, each administrator has a printout]</span></p>
+<p><strong>Date of last offline copy update:</strong> <span class="fill-org">▸ DD/MM/YYYY</span></p>
+</div>
+</div>
+<div class="section">
+<h2>2. General Response Procedure – 6 PICERL Phases</h2>
+<table>
+<tr><th>Phase</th><th>Name</th><th>Key actions</th><th>Responsible</th></tr>
+<tr><td><strong>P</strong></td><td>Preparation</td><td>Maintain tools, training, plans; tests; CSIRT contacts up to date</td><td class="fill-critical">▸ CISO (ongoing)</td></tr>
+<tr style="background:#ffe0e0;"><td><strong>I</strong></td><td>Identification</td><td>Alert detection, initial analysis, P1–P4 classification, internal report</td><td class="fill-critical">▸ CISO / IT Admin</td></tr>
+<tr style="background:#ffecd0;"><td><strong>C</strong></td><td>Containment</td><td>Short-term (isolation) + long-term (patch, hardening)</td><td class="fill-critical">▸ IT Admin / CISO</td></tr>
+<tr style="background:#fffbcc;"><td><strong>E</strong></td><td>Eradication</td><td>Remove malware, close attack vector, verify</td><td class="fill-critical">▸ IT Admin</td></tr>
+<tr style="background:#d4ffe0;"><td><strong>R</strong></td><td>Recovery</td><td>Restore systems, verify, post-recovery monitoring</td><td class="fill-critical">▸ IT Admin / System Owner</td></tr>
+<tr><td><strong>L</strong></td><td>Lessons Learned</td><td>PIR, update documentation, CSIRT report, Board communication</td><td class="fill-critical">▸ CISO</td></tr>
+</table>
+</div>
+<div class="section">
+<h2>3. Playbooks – Incident Scenarios</h2>
+<p>Playbooks for the most frequent and most serious incident types. The organisation may add sector-specific scenarios.</p>
+<!-- Playbook 1: Ransomware -->
+<div class="playbook">
+<div class="playbook-header">
+<span style="background:#c0392b; padding:2px 8px; border-radius:3px; font-size:.8rem;">PB-001</span>
+        Ransomware / System Encryption
+      </div>
+<div class="playbook-body">
+<p class="muted" style="margin-bottom:12px;">Category: MAL | Priority: P1 | Response time: immediate</p>
+<h4>PHASE: Identification</h4>
+<ul class="check-list">
+<li>File encryption or ransom demand confirmed?</li>
+<li>Affected systems identified (IP list / names)?</li>
+<li>Estimated infection time established (when were last good files)?</li>
+<li>Is backup available and unaffected?</li>
+</ul>
+<h4>PHASE: Containment (perform IMMEDIATELY)</h4>
+<div class="playbook-step"><div class="ps-num">1</div><div>Disconnect infected systems from network (unplug cable/disable Wi-Fi) – <strong>DO NOT cut power</strong> without CISO approval</div></div>
+<div class="playbook-step"><div class="ps-num">2</div><div>Block outbound traffic on ports 445, 139, 3389 at firewall (lateral movement)</div></div>
+<div class="playbook-step"><div class="ps-num">3</div><div>Disable VPN connections and remote access for external suppliers</div></div>
+<div class="playbook-step"><div class="ps-num">4</div><div>Notify CISO (tel. <span class="fill-critical">▸ [number]</span>) – initiate IRP Phase 2</div></div>
+<div class="playbook-step"><div class="ps-num">5</div><div>Take RAM dump from infected systems (if possible – tool: <span class="fill-org">▸ [e.g. Magnet RAM Capture, WinPmem]</span>)</div></div>
+<div class="playbook-step"><div class="ps-num">6</div><div>Preserve system logs, SIEM events, network traffic (PCAP from last 24–72h)</div></div>
+<h4>PHASE: Eradication</h4>
+<div class="playbook-step"><div class="ps-num">7</div><div>Identify ransomware variant (www.nomoreransom.org, VirusTotal)</div></div>
+<div class="playbook-step"><div class="ps-num">8</div><div>Check if decryptor exists (nomoreransom.org) – <strong>DO NOT pay ransom</strong> without consulting Board and Legal</div></div>
+<div class="playbook-step"><div class="ps-num">9</div><div>Format and reinstall infected systems (do not repair – reinstall)</div></div>
+<div class="playbook-step"><div class="ps-num">10</div><div>Close infection vector (patch vulnerability, reset passwords, remove attacker account)</div></div>
+<h4>PHASE: Recovery</h4>
+<div class="playbook-step"><div class="ps-num">11</div><div>Restore from backup prior to infection (procedure DOC-012) – verify backup is clean</div></div>
+<div class="playbook-step"><div class="ps-num">12</div><div>Verify integrity of restored data before returning to production</div></div>
+<div class="playbook-step"><div class="ps-num">13</div><div>Monitor for min. <span class="fill-const">▸ [72h]</span> after recovery for signs of re-infection</div></div>
+<h4>Reporting</h4>
+<div class="callout danger" style="margin-top:8px;">
+<div class="icon">🕐</div>
+<div><strong>Early warning to CSIRT: 24h | Notification: 72h</strong> (procedure in DOC-006)</div>
+</div>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – specialist contacts</span>
+<p><strong>External IR (forensics):</strong> <span class="fill-org">▸ [company name, telephone]</span></p>
+<p><strong>Cyber insurer:</strong> <span class="fill-org">▸ [policy number, telephone]</span></p>
+</div>
+</div>
+</div>
+<!-- Playbook 2: Account takeover -->
+<div class="playbook">
+<div class="playbook-header">
+<span style="background:#e07b00; padding:2px 8px; border-radius:3px; font-size:.8rem;">PB-002</span>
+        Account Takeover / Unauthorised Access
+      </div>
+<div class="playbook-body">
+<p class="muted" style="margin-bottom:12px;">Category: ACC | Priority: P1 (privileged account) / P2 (regular account)</p>
+<h4>PHASE: Identification</h4>
+<ul class="check-list">
+<li>What triggered the alert – SIEM, MFA alert, user report, anomaly detection?</li>
+<li>Which account was compromised (privileged / standard)?</li>
+<li>What resources did it have access to?</li>
+<li>Is the account still active?</li>
+</ul>
+<h4>PHASE: Containment</h4>
+<div class="playbook-step"><div class="ps-num">1</div><div>Immediately block account in Active Directory / IAM: <code>Disable-ADAccount -Identity [user]</code></div></div>
+<div class="playbook-step"><div class="ps-num">2</div><div>Revoke all active sessions and tokens (e.g. in Azure AD: Revoke-AzureADUserAllRefreshToken)</div></div>
+<div class="playbook-step"><div class="ps-num">3</div><div>Change passwords for service accounts accessible to the compromised account</div></div>
+<div class="playbook-step"><div class="ps-num">4</div><div>Collect login logs from the last <span class="fill-const">▸ [30 days]</span> (Active Directory, VPN, applications)</div></div>
+<h4>PHASE: Eradication and investigation</h4>
+<div class="playbook-step"><div class="ps-num">5</div><div>Log analysis – where did login originate, what actions were taken, was data exfiltrated</div></div>
+<div class="playbook-step"><div class="ps-num">6</div><div>Check if attacker created backdoor accounts or modified other accounts' permissions</div></div>
+<div class="playbook-step"><div class="ps-num">7</div><div>Password reset for user + enforce MFA before re-granting access</div></div>
+<div class="playbook-step"><div class="ps-num">8</div><div>Assess whether personal data was breached → DPA notification obligation within 72h</div></div>
+</div>
+</div>
+<!-- Playbook 3: Data breach -->
+<div class="playbook">
+<div class="playbook-header">
+<span style="background:#7a3a00; padding:2px 8px; border-radius:3px; font-size:.8rem;">PB-003</span>
+        Data Breach / Exfiltration
+      </div>
+<div class="playbook-body">
+<p class="muted" style="margin-bottom:12px;">Category: DAT | Priority: P1 (personal data / confidential) / P2 (internal data)</p>
+<h4>Special attention: GDPR</h4>
+<div class="callout danger">
+<div class="icon">⚠️</div>
+<div>
+<strong>Personal data breach → DPA notification within 72h</strong> (GDPR Art. 33).<br/>
+            If the breach may result in high risk to individuals' rights → notify the affected persons (GDPR Art. 34).
+          </div>
+</div>
+<ul class="check-list">
+<li>What data was leaked (category, number of records, personal data?)?</li>
+<li>Which individuals are affected?</li>
+<li>Where did the breach originate (source system)?</li>
+<li>Did data reach an unauthorised party?</li>
+<li>Is the data encrypted / pseudonymised?</li>
+</ul>
+<h4>PHASE: Containment</h4>
+<div class="playbook-step"><div class="ps-num">1</div><div>Block access to the system from which the breach occurred</div></div>
+<div class="playbook-step"><div class="ps-num">2</div><div>Identify and block the exfiltration channel (email, FTP, cloud storage, USB)</div></div>
+<div class="playbook-step"><div class="ps-num">3</div><div>Preserve evidence (DLP logs, database logs, network traffic)</div></div>
+<h4>PHASE: Legal assessment and reporting</h4>
+<div class="playbook-step"><div class="ps-num">4</div><div>Inform DPO / Legal Counsel – assess DPA notification obligation</div></div>
+<div class="playbook-step"><div class="ps-num">5</div><div>DPA notification within 72h of confirmation of breach</div></div>
+<div class="playbook-step"><div class="ps-num">6</div><div>Assess need to notify affected individuals (GDPR Art. 34)</div></div>
+<div class="playbook-step"><div class="ps-num">7</div><div>Keep accurate documentation of decisions and steps taken (required by DPA)</div></div>
+</div>
+</div>
+<!-- Playbook 4: DDoS -->
+<div class="playbook">
+<div class="playbook-header">
+<span style="background:#1a4a8a; padding:2px 8px; border-radius:3px; font-size:.8rem;">PB-004</span>
+        DDoS Attack – Service Unavailability
+      </div>
+<div class="playbook-body">
+<p class="muted" style="margin-bottom:12px;">Category: NET | Priority: P1 (key services) / P2 (others)</p>
+<ul class="check-list">
+<li>Which service / system is unavailable?</li>
+<li>What type of DDoS attack (volumetric, protocol, application layer)?</li>
+<li>Has the telecom operator been contacted?</li>
+<li>Is anti-DDoS protection available from the supplier?</li>
+</ul>
+<h4>Actions</h4>
+<div class="playbook-step"><div class="ps-num">1</div><div>Activate anti-DDoS protection at ISP / CDN (if available): <span class="fill-org">▸ [ISP contact details, contract number]</span></div></div>
+<div class="playbook-step"><div class="ps-num">2</div><div>Implement rate limiting and geo-blocking at firewall/WAF level</div></div>
+<div class="playbook-step"><div class="ps-num">3</div><div>Activate failover plan / backup link: <span class="fill-org">▸ [alternative ISP details]</span></div></div>
+<div class="playbook-step"><div class="ps-num">4</div><div>Monitor traffic log – collect IoCs (source IPs, attack patterns)</div></div>
+<div class="playbook-step"><div class="ps-num">5</div><div>If key service affected → early warning to CSIRT within 24h</div></div>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes</span>
+<p><strong>Anti-DDoS provider:</strong> <span class="fill-org">▸ [name, 24/7 contact number]</span></p>
+<p><strong>Telecom operators (for upstream blocking):</strong> <span class="fill-org">▸ [name, telephone]</span></p>
+</div>
+</div>
+</div>
+<div class="fill-block org" style="margin-top:16px;">
+<span class="label">▸ Organisation adds sector-specific playbooks</span>
+<p>Example additional playbooks to prepare:<br/>
+      PB-005: Phishing / Business Email Compromise (BEC)<br/>
+      PB-006: OT/SCADA system attack (if applicable)<br/>
+      PB-007: Supply chain system compromise<br/>
+      PB-008: Unauthorised physical access to IT infrastructure</p>
+</div>
+</div>
+<div class="section">
+<h2>4. Crisis Communications</h2>
+<div class="callout warning">
+<div class="icon">📢</div>
+<div><strong>No external communication (media, clients, partners) without Board and Legal Counsel approval.</strong> CISO coordinates internal communications. Press Officer coordinates external.</div>
+</div>
+<h3>4.1 Internal communications</h3>
+<table>
+<tr><th>Recipient</th><th>Message content</th><th>Deadline</th><th>Channel</th></tr>
+<tr><td>IR Team</td><td>Full technical information</td><td>Immediately</td><td class="fill-org">▸ [e.g. Teams / Signal / telephone]</td></tr>
+<tr><td>Board</td><td>Summary: what happened, impact, actions</td><td>Within 2h (P1)</td><td class="fill-org">▸ [e.g. encrypted email / telephone]</td></tr>
+<tr><td>Employees (if relevant)</td><td>Instructions: what to do / what not to do</td><td>As soon as possible</td><td class="fill-org">▸ [e.g. group email / internal announcement]</td></tr>
+</table>
+<h3>4.2 External communications</h3>
+<div class="fill-block critical">
+<span class="label">⚠ Critical – Board and Legal Counsel approval required before sending</span>
+<table>
+<tr><th>Recipient</th><th>Content</th><th>Responsible</th></tr>
+<tr><td>CSIRT</td><td>Notification form (DOC-006 Annex B/C)</td><td class="fill-critical">▸ CISO</td></tr>
+<tr><td>DPA (if personal data breach)</td><td>DPA notification form within 72h</td><td class="fill-critical">▸ CISO / DPO</td></tr>
+<tr><td>Clients / users (if required by GDPR)</td><td class="fill-org">▸ [notification template to be prepared]</td><td class="fill-critical">▸ Board / Legal</td></tr>
+<tr><td>Media</td><td>Official press statement</td><td class="fill-critical">▸ Board / Press Officer</td></tr>
+<tr><td>Suppliers affected by incident</td><td>Information on incident (if applicable)</td><td class="fill-critical">▸ CISO / Board</td></tr>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>5. IR Team Equipment and Tools</h2>
+<div class="fill-block org">
+<span class="label">▸ Organisation completes – available tools</span>
+<table>
+<tr><th>Category</th><th>Tool (organisation fills in)</th><th>Location / access</th></tr>
+<tr><td>SIEM</td><td class="fill-org">▸ [e.g. Splunk / Microsoft Sentinel / OSSIM]</td><td class="fill-org">▸</td></tr>
+<tr><td>EDR / Antivirus</td><td class="fill-org">▸ [e.g. CrowdStrike / Defender / Sophos]</td><td class="fill-org">▸</td></tr>
+<tr><td>Forensics – disk imaging</td><td class="fill-org">▸ [e.g. FTK Imager / DD]</td><td class="fill-org">▸</td></tr>
+<tr><td>Forensics – memory analysis</td><td class="fill-org">▸ [e.g. Volatility / Magnet RAM]</td><td class="fill-org">▸</td></tr>
+<tr><td>Network traffic analysis</td><td class="fill-org">▸ [e.g. Wireshark / NetworkMiner]</td><td class="fill-org">▸</td></tr>
+<tr><td>Incident management</td><td class="fill-org">▸ [e.g. TheHive / Jira / ServiceNow]</td><td class="fill-org">▸</td></tr>
+<tr><td>Emergency communication (out-of-band)</td><td class="fill-org">▸ [e.g. mobile phones, Signal]</td><td class="fill-org">▸</td></tr>
+<tr><td>Secure evidence storage</td><td class="fill-org">▸ [e.g. dedicated offline drive in safe]</td><td class="fill-critical">▸ [location]</td></tr>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>6. Change History and Plan Tests</h2>
+<table>
+<tr><th>Version</th><th>Date</th><th>Author</th><th>Description</th><th>Approved by</th></tr>
+<tr>
+<td class="fill-org">▸ 1.0</td>
+<td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸</td>
+<td class="fill-org">▸ Initial release</td>
+<td class="fill-critical">▸ Board</td>
+</tr>
+</table>
+<h3 style="margin-top:16px;">Plan test history</h3>
+<table>
+<tr><th>Test date</th><th>Test type</th><th>Scenario</th><th>Result</th><th>Corrective actions</th></tr>
+<tr>
+<td class="fill-org">▸ DD/MM/YYYY</td>
+<td class="fill-org">▸ [Tabletop / Live drill]</td>
+<td class="fill-org">▸ [e.g. Ransomware P1]</td>
+<td class="fill-org">▸ [Pass / Partial / Unsatisfactory]</td>
+<td class="fill-org">▸</td>
+</tr>
+</table>
+</div>
+<div class="muted" style="text-align:right; margin-top:8px;">DOC-007 Incident Response Plan | v1.0 | NIS2/ISMS</div>
+</main>
+<footer class="page-footer">
+  NIS2/ISMS Documentation  |  DOC-007 Incident Response Plan  |  <a href="../index.html" style="color:#7baed4;">← Document Portal</a>
+<div style="margin-top:6px; font-size:.68rem; opacity:.6; border-top:1px solid rgba(123,174,212,.2); padding-top:6px;">© 2026 Tomasz Zysko / CrazyRat  ·  All rights reserved  ·  Document protected by copyright  ·  Reproduction or distribution without the author's written consent is prohibited</div>
+</footer>
+</div>
+</body>
+</html>
