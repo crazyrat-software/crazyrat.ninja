@@ -67,6 +67,47 @@ body::after {
     z-index: -1;
 }
 
+/* Language Switcher */
+.lang-icons {
+    display: flex;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 5px 10px 5px 10px;
+    margin: 0;
+    background-color: #222;
+    visibility: hidden;
+    opacity: 0;
+    animation: showBox 1s ease 2s forwards;
+}
+
+@keyframes showBox {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.lang-icons a {
+    text-decoration: none;
+    font-size: 3.0rem;
+    line-height: 1;
+    opacity: 0.3;
+    transition: opacity 0.10s ease;
+    border: none;
+}
+
+.lang-icons a:hover,
+.lang-icons a[aria-current="true"] {
+    opacity: 1;
+}
+
 /* Typography */
 h1, h2, h3 {
     font-weight: 200;
@@ -102,12 +143,21 @@ strong {
 
 a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
     transition: opacity 0.25s ease;
+    border-left: 5px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-bottom-color: #555;
+    padding: 6px 5px;
+    transition: all .15s;
 }
 
-a:hover {
-    opacity: 0.8;
+a:hover,
+a.active {
+    
+    border-left-color: #fff;
+    border-bottom-color: #fff;
+    color: #fff;
 }
 
 /* Layout */
@@ -334,6 +384,7 @@ body.is-loading .inner > * {
 .footer {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.5);
+    text-align: center !important;
 }
 
 /* Responsive - Tablet and up */
@@ -378,31 +429,7 @@ noscript + .wrapper .inner > * {
     transition: none !important;
 }
 
-/* Language Switcher */
-.lang-icons {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 5px 10px 5px 10px;
-    margin: 0;
-    background-color: #222;
-}
 
-.lang-icons a {
-    text-decoration: none;
-    font-size: 3.0rem;
-    line-height: 1;
-    opacity: 0.6;
-    transition: opacity 0.25s ease;
-}
-
-.lang-icons a:hover,
-.lang-icons a[aria-current="true"] {
-    opacity: 1;
-}
 
 /* Print styles */
 @media print {
