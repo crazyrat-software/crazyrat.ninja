@@ -268,10 +268,12 @@ body.is-loading .inner > * {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
+    text-align: center;
 }
 
 .tagline strong {
     color: rgba(255, 255, 255, 0.9);
+    text-align: center;
 }
 
 /* Quote */
@@ -280,6 +282,7 @@ body.is-loading .inner > * {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.6);
     font-style: italic;
+    text-align: center;
 }
 
 /* Services */
