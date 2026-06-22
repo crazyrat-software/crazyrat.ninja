@@ -18,10 +18,20 @@
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: white; padding: 40px; margin-bottom: 28px; border-radius: 6px;
   }
-  .hero h1 { font-size: 1.8rem; margin-bottom: 8px; }
-  .hero p { opacity: .85; max-width: 680px; line-height: 1.6; }
+  .hero h1 { font-size: 1.8rem; margin-bottom: 8px; text-align: center; }
+  .hero p { opacity: .85; max-width: 100%px; line-height: 1.6; text-align: center;}
+  .hero a { color: #fff;}
   .hero .sub { font-size: .8rem; opacity: .6; margin-top: 10px; }
-  .hero .hero-license { font-size: .7rem; opacity: .5; margin-top: 14px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 10px; letter-spacing: .2px; }
+  .hero .hero-license { font-size: .7rem; opacity: .8; margin-top: 14px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 10px; letter-spacing: 1.5px; text-align: center; }
+  .hero .hero-footer { font-size: .7rem; opacity: .8; letter-spacing: 1.5px; text-align: center; }
+
+  .hero-license a {color: #fff; padding: 0 0 0 0; text-decoration: none; opacity: 1 !important; border-top: none !important; border-left: none !important; border-bottom: none !important;}
+  .hero-license a:active { color: #fff; padding: 0 0 0 0;text-decoration: underline; opacity:1 !important; border-top: none !important; border-left: none !important; border-bottom: none !important;}
+  .hero-license a:hover { color: #fff; padding: 0 0 0 0;text-decoration: underline; opacity:1 !important; border-top: none !important; border-left: none !important; border-bottom: none !important;}
+
+  .hero-footer a {color: #fff; padding: 0 0 0 0; text-decoration: none; opacity: 1 !important; border-top: none !important; border-left: none !important; border-bottom: none !important;}
+  .hero-footer a:active { color: #fff; padding: 0 0 0 0;text-decoration: underline; opacity:1 !important; border-top: none !important; border-left: none !important; border-bottom: none !important;}
+  .hero-footer a:hover { color: #fff; padding: 0 0 0 0;text-decoration: underline; opacity:1 !important; border-top: none !important; border-left: none !important; border-bottom: none !important;}
   .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
   .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
   .stat-box {
@@ -36,9 +46,9 @@
 <div class="wrap">
 <div class="hero">
 <h1>System Zarządzania Bezpieczeństwem Informacji</h1>
-<p>Dokumentacja zgodności z Dyrektywą NIS2 oraz nowelizacją polskiej Ustawy o Krajowym Systemie Cyberbezpieczeństwa (KSC). Dokumenty powiązane logicznie, gotowe do wypełnienia przez organizację.</p>
-<div class="sub">Wersja szablonu: 1.1 | Data: <span class="fill-org">04/06/2026</span> | Właściciel: <span class="fill-org">CRAZYRAT</span></div>
-<div class="hero-license">© 2026 Tomasz Zysko / CrazyRat  ·  Dokumentacja komercyjna objęta ochroną prawa autorskiego  ·  Wszelkie prawa zastrzeżone  ·  Reprodukcja lub dystrybucja bez pisemnej zgody autora jest zabroniona</div>
+<p>Dokumentacja zgodności z Dyrektywą NIS2 oraz nowelizacją polskiej Ustawy o Krajowym Systemie Cyberbezpieczeństwa (KSC). Dokumenty powiązane logicznie, gotowe do wypełnienia przez organizację.</p><br/>
+<div class="sub">Wersja szablonu: 1.2 | Data: <span class="fill-org">04/06/2026</span> | Właściciel: <span class="fill-org">CRAZYRAT</span></div>
+<div class="hero-license">© 2026 Tomasz Zysko / CrazyRat / <a class="hero-license" href="https://crazyrat.ninja">https://crazyrat.ninja</a> · Wszelkie prawa zastrzeżone<br/>Dokumentacja komercyjna objęta ochroną prawa autorskiego · Reprodukcja lub dystrybucja bez pisemnej zgody autora jest zabroniona</div>
 </div>
 <!-- Legenda kolorów -->
 <div class="section" style="margin-bottom:20px;">
@@ -238,8 +248,10 @@
 </table>
 </div>
 <footer style="text-align:center; color:var(--muted); font-size:.75rem; padding:24px 0 20px; border-top:1px solid var(--border); margin-top:20px;">
-<div>Dokumentacja NIS2/KSC v1.1 – Kompletna  |  4/21 dokumentów gotowych  |  1/6 etapów gotowych  |  Data modyfikacji (eksportu): 03/06/2026 14:57</div>
-<div style="margin-top:6px; font-size:.68rem; opacity:.7;">© 2026 Tomasz Zysko / CrazyRat  ·  Wszelkie prawa zastrzeżone  ·  Dokumentacja komercyjna objęta ochroną prawa autorskiego  ·  Reprodukcja lub dystrybucja bez pisemnej zgody autora jest zabroniona</div>
+<div class="sub">Dokumentacja NIS2/KSC v1.2 | 4/21 dokumentów gotowych | 1/6 etapów gotowych | Data modyfikacji (eksportu): 03/06/2026 14:57</div>
+<div class="hero">
+<div class="hero-footer">© 2026 Tomasz Zysko / CrazyRat / <a class="hero-license" href="https://crazyrat.ninja">https://crazyrat.ninja</a> · Wszelkie prawa zastrzeżone<br/>Dokumentacja komercyjna objęta ochroną prawa autorskiego  ·  Reprodukcja lub dystrybucja bez pisemnej zgody autora jest zabroniona</div>
+</div>
 </footer>
 </div>
 </body>
