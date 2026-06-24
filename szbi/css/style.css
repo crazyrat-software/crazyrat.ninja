@@ -318,7 +318,7 @@ tr:hover td { background: #dce8f5; }
 /* ---- Status badges ---- */
 .badge {
   display: inline-block;
-  font-size: .7rem;
+  font-size: .5rem;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 20px;
